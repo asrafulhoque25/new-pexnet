@@ -58,6 +58,12 @@ p { font-weight: 300 !important; }
   gap: 24px;
 }
 
+@media (max-width:767px) {
+    .nav-inner {
+  height: 56px;
+}
+}
+
 /* ========== DESKTOP NAV-MENU ========== */
 .nav-menu {
   display: flex;
@@ -290,6 +296,17 @@ font-weight: 700;
   transform: translateY(-100%);
 }
 
+
+@media (max-width:640px) {
+    .nav .common-cta {
+    display: none;
+}
+.common-cta {
+width: 100%;
+justify-content: center;
+font-size: 14px;
+}
+}
 /* ========== HAMBURGER ========== */
 .nav-hamburger {
   display: none;
@@ -416,7 +433,7 @@ font-weight: 700;
 }
 
 @media (max-width: 640px) {
-  .nav-inner { padding: 0 16px; }
+  .nav-inner { padding: 0px; }
   .mobile-menu { padding: 0 16px 28px; }
 }
 
