@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="nav bg-[#00243B]">
+        <div class="container">
+            <div class="nav-inner">
+
+                <a href="index.html" class="nav-logo  shrink-0">
+                    <img src="assets/images/Logo.svg" class="img-fluid" alt="Logo">
+                </a>
+
+                <!-- Desktop Menu — no class on ul li a -->
+                <ul class="nav-menu max-w-214 w-full justify-between">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="#" class="dropdownlink">Services <span>+</span></a>
+                        <ul>
+                            <li>
+                                <a href="mobile-app-design.html">
+                                    Mobile App Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard-design.html">
+
+                                    Dashboard Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="website-design.html">
+
+                                    Website Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="web-application-design.html">
+
+                                    Web App Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="saas-design.html">
+
+                                    SaaS Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="branding-design.html">
+
+                                    Branding
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="case-study.html">Case Studies</a></li>
+                    <li><a href="blog.html">Blogs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <!-- CTA -->
+                <!-- Navbar CTA -->
+                <div class="flex items-center gap-4">
+                    <!-- CTA -->
+                    <a href="contact.html"
+                        class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out">
+                        <span class="cta-arrow">
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="white" />
+                            </svg>
+
+                        </span>
+                        <span
+                            class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                            <span>Get a Free SEO Audit</span>
+                            <span>Get a Free SEO Audit</span>
+                        </span>
+                    </a>
+
+                    <!-- Hamburger -->
+                    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU — no class on ul li a ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <button id="mobileServicesBtn">Services <span>+</span></button>
+                <ul id="mobileServicesSubmenu">
+                    <li><a href="mobile-app-design.html">Mobile App Design</a></li>
+                    <li><a href="dashboard-design.html">Dashboard Design</a></li>
+                    <li><a href="website-design.html">Website Design</a></li>
+                    <li><a href="web-application-design.html">Web App Design</a></li>
+                    <li><a href="saas-design.html">SaaS Design</a></li>
+                    <li><a href="branding-design.html">Branding</a></li>
+                </ul>
+            </li>
+            <li><a href="case-study.html">Case Studies</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="cta-wrap">
+            <a href="contact.html" class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5">
+                <span class="cta-arrow">
+                    <svg viewBox="0 0 16 16">
+                        <path d="M12.17 6.78L6.81 1.41 8.22 0 16 7.78 8.22 15.56 6.81 14.14l5.36-5.36H0V6.78h12.17z" />
+                    </svg>
+                    <svg viewBox="0 0 16 16">
+                        <path d="M12.17 6.78L6.81 1.41 8.22 0 16 7.78 8.22 15.56 6.81 14.14l5.36-5.36H0V6.78h12.17z" />
+                    </svg>
+                </span>
+                <span class="cta-text text-[13px] leading-[20px] text-[#0d2235] h-[20px]">
+                    <span>Get a Free SEO Audit</span>
+                    <span>Get a Free SEO Audit</span>
+                </span>
+            </a>
+        </div>
+    </div>
+
+
+
+    <!-- ===== NAVBAR End ===== -->
+
+
+    <!-- banner start -->
+
+    <section class="banner relative min-h-205 pt-24 border-t border-b border-[#1F3E53] overflow-hidden bg-[#00243B]">
+    
+<!-- Vertical lines -->
+<div class="absolute inset-0 z-[1] pointer-events-none">
+    <div class="max-w-[1530px] mx-auto h-full flex justify-between px-5">
+        <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span class="rain-drop absolute inset-0"></span></div>
+        <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span class="rain-drop absolute inset-0"></span></div>
+        <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span class="rain-drop absolute inset-0"></span></div>
+        <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span class="rain-drop absolute inset-0"></span></div>
+        <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span class="rain-drop absolute inset-0"></span></div>
+    </div>
+</div>
+
+<!-- Glow — right side centered -->
+<div id="bannerGlow" class="absolute inset-0 opacity-0 pointer-events-none z-0" 
+     style="background: radial-gradient(40% 50% at 70% 50%, #076AAB 0%, transparent 100%);"></div>
+
+    <!-- Content -->
+    <div class="container relative z-[2]">
+        <div class="grid grid-cols-2 gap-10">
+            <div class="banner-left-content">
+                <div class="space-y-4">
+                    <span class="py-1 px-3 text-primary font-bold text-sm bg-[#06314D] rounded-full inline-block">Welcome to PexNet</span>
+                    <h1 class="text-[64px] text-white font-notch leading-[110%]">
+                        <span class="text-[#88D1FF] mt-6 block">Local SEO Agency</span> for Small Businesses
+                    </h1>
+                    <p class="text-base text-[#D4EEFF]">Limited budget, fierce competition, lack of technical knowledge - the struggles are real for small business owners. If you're getting traffic but no calls, team up with Pexnet - your top SEO agency for small businesses, delivering real results.</p>
+                </div>
+                <div class="flex items-center gap-3 mt-8">
+                    <a href="contact.html" class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out">
+                        <span class="cta-arrow">
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z" fill="currentColor"/>
+                            </svg>
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z" fill="white"/>
+                            </svg>
+                        </span>
+                        <span class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                            <span>Get a Free SEO Audit</span>
+                            <span>Get a Free SEO Audit</span>
+                        </span>
+                    </a>
+                    <a href="contact.html" class="common-cta bg-[#88D1FF] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out">
+                        <span class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                            <span>Get a Free SEO Audit</span>
+                            <span>Get a Free SEO Audit</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="banner-img">
+                <img src="assets/images/home-banner.png" class="img-fluid" alt="home banner">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <div class="banner-info-bottom bg-[#00243B] py-8">
+        <div class="container">
+            <div class="grid grid-cols-4 gap-6">
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/banner-info1.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-xl font-bold text-white">Projects Completed</p>
+                </div>
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/banner-info2.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-xl font-bold text-white">Happy Clients</p>
+                </div>
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/banner-info3.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-xl font-bold text-white">Years of Experience</p>
+                </div>
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/banner-info4.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-xl font-bold text-white">Star Rating</p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- banner end -->
+
+
+
+    <!-- cta section start -->
+
+    <!-- cta section end -->
+
+
+
+
+    <!-- footer section start -->
+
+    <!-- footer section end -->
+
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenLite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
