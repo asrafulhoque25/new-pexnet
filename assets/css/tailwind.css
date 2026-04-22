@@ -29,7 +29,7 @@ html, body {
     font-family: "Stack Sans Notch", sans-serif;
 }
 
-p { font-weight: 300 !important; }
+
 
 @layer base {
   .img-fluid { max-width: 100%; height: auto; }
@@ -450,7 +450,96 @@ font-size: 14px;
 
  */
 
-
-
-
 /* banner css end */
+
+
+
+/* brand section css start */
+    /* Desktop: right border except last item */
+/* Desktop 992px+ : 6 col, শুধু last ছাড়া সবার right border */
+@media (min-width: 992px) {
+  .partner-item:not(:last-child) {
+    border-right: 1px solid #bfdbfe;
+    border-bottom: none;
+  }
+}
+
+/* Tablet 641px–991px : 3 col grid */
+@media (min-width: 641px) and (max-width: 991px) {
+  /* প্রতি row এর 3rd item এ right border নেই */
+  .partner-item:not(:nth-child(3n)) {
+    border-right: 1px solid #bfdbfe;
+  }
+  /* last row (last 3 items) এ bottom border নেই, বাকি সবার আছে */
+  .partner-item:not(:nth-last-child(-n+3)) {
+    border-bottom: 1px solid #bfdbfe;
+  }
+}
+
+/* Mobile 640px- : 2 col grid */
+@media (max-width: 640px) {
+  .partner-item:not(:nth-last-child(-n+2)) {
+    border-bottom: 1px solid #bfdbfe;
+  }
+  .partner-item:nth-child(odd) {
+    border-right: 1px solid #bfdbfe;
+  }
+}
+
+#brandWrapper {
+  clip-path: inset(0px 0px 0px 0px round 0px);
+  padding: 32px 24px;
+  will-change: clip-path;
+}
+
+/* Mobile fixed */
+@media (max-width: 991px) {
+  #brandWrapper {
+    clip-path: inset(0px 20px 0px 20px round 80px) !important;
+  }
+}
+
+
+
+.partner-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+/* brand section css end */
+
+
+
+
+/* why needed section css start */
+@media (max-width:640px) {
+  .why-card-img img{
+      height: 120px;
+      width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 100px;
+}
+}
+
+
+.niche-content h3{
+  transition: color 0.3s ease;
+}
+.niche-item:hover .niche-content h3 {
+    color: var(--color-primary);
+}
+/* why needed section css end */
+
+
+
+/* game changer css start */
+.game-changer {
+    background: var(--Gradient-1, radial-gradient(50% 50% at 50% 50%, #FFF 0%, #F4FBFF 33%, #EDF8FF 66%, #DEF2FF 100%));
+    border-radius: 1000px;
+    /* overflow: hidden; — সরিয়ে দাও, clipPath নিজেই handle করবে */
+}
+
+.game-changer-wrapper {
+    position: relative;
+}
+/* game changer css end */
