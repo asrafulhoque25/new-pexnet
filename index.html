@@ -13,7 +13,7 @@
 <div>
 
     <!-- ===== NAVBAR ===== -->
-    <nav class="nav bg-[#00243B]">
+    <nav class="nav" id="mainNav">
         <div class="container">
             <div class="nav-inner">
 
@@ -157,9 +157,10 @@
     <!-- banner start -->
 
     <section
-        class="banner relative min-h-205 pt-[48px] sm:pt-[96px] border-t border-b border-[#1F3E53] overflow-hidden bg-[#00243B]">
+        class="banner relative min-h-205 pt-[48px] sm:pt-[96px] border-t border-b border-[#1F3E53] overflow-hidden bg-[#00243B]"
+        data-glow-section data-home-x="70" data-home-y="50">
 
-        <!-- Vertical lines -->
+        <!-- Vertical lines + rain drops -->
         <div class="absolute inset-0 z-[1] pointer-events-none">
             <div class="max-w-[1530px] mx-auto h-full flex justify-between px-5">
                 <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
@@ -175,9 +176,10 @@
             </div>
         </div>
 
-        <!-- Glow — right side centered -->
-        <div id="bannerGlow" class="absolute inset-0 opacity-0 pointer-events-none z-0"
-            style="background: radial-gradient(40% 50% at 70% 50%, #076AAB 0%, transparent 100%);"></div>
+        <!-- Glow div — section এর ভেতরে, আলাদা element হিসেবে -->
+        <div data-glow-el class="absolute inset-0 opacity-0 pointer-events-none z-0"
+            style="background: radial-gradient(40% 50% at 70% 50%, #076AAB 0%, transparent 100%);">
+        </div>
 
         <!-- Content -->
         <div class="container relative z-[2]">
@@ -858,10 +860,10 @@
 
 
     <!-- Game changer section start -->
-     <div class="game-changer-wrapper px-8">
-    <section class="game-changer section-padding">
-        <div class="container">
-            <div class="grid sm:grid-cols-2 grid-cols-1 gap-[44px] items-center">
+    <div class="game-changer-wrapper px-8">
+        <section class="game-changer section-padding">
+            <div class="container">
+                <div class="grid sm:grid-cols-2 grid-cols-1 gap-[44px] items-center">
                     <div class="game-changer-img">
                         <img src="assets/images/game-changer.png" class="img-fluid" alt="">
                     </div>
@@ -874,47 +876,1089 @@
                                         d="M5.41869 16C5.36947 16 5.31969 15.9939 5.27028 15.9813C5.00516 15.9135 4.81969 15.6747 4.81969 15.401V10.3315L0.598719 10.33C0.3875 10.3299 0.191969 10.2186 0.0840627 10.037C-0.0238435 9.85545 -0.0281247 9.63051 0.072719 9.44495L5.03725 0.312919C5.16813 0.0722315 5.4455 -0.048956 5.71106 0.0185128C5.97656 0.0860128 6.16241 0.325044 6.16241 0.598981V5.67817H10.4093C10.6208 5.67817 10.8167 5.78973 10.9246 5.97167C11.0324 6.15361 11.0363 6.37895 10.9348 6.56451L5.94406 15.6884C5.83719 15.8838 5.63366 16 5.41869 16Z"
                                         fill="#002F4D" />
                                 </svg>
-                            </span> Future of AI Search</p>
+                            </span> Future of AI Search
+                        </p>
                         <h2
                             class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D] my-4">
                             AI Has Changed theSEO Game</h2>
                         <div class="sm:space-y-[16px] space-y-2">
-                            <p class="text-sm sm:text-base text-[#526E80]">Did you know traditional SEO strategies alone don’t work
+                            <p class="text-sm sm:text-base text-[#526E80]">Did you know traditional SEO strategies alone
+                                don’t work
                                 anymore?</p>
-                            <p class="text-sm sm:text-base text-[#526E80]">To be precise, SEO for small businesses isn’t about GBP,
+                            <p class="text-sm sm:text-base text-[#526E80]">To be precise, SEO for small businesses isn’t
+                                about GBP,
                                 local keywords, citations, and listings anymore. AI has changed things for good.</p>
-                            <p class="text-sm sm:text-base text-[#526E80]">Google’s AI Mode and AI Overview are now a priority
+                            <p class="text-sm sm:text-base text-[#526E80]">Google’s AI Mode and AI Overview are now a
+                                priority
                                 because zero-click searches are growing everyday. By March 2025, only 40.3% of Google
                                 searches in the U.S. led to an organic click, down from 44.2% the year before.</p>
-                            <p class="text-sm sm:text-base text-[#526E80]">So, your SEO approach should now prioritize specific
+                            <p class="text-sm sm:text-base text-[#526E80]">So, your SEO approach should now prioritize
+                                specific
                                 content, stronger trust signals, and better local relevance. </p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <!-- Game Changer section end -->
+    </div>
+
+
+
+
+    <!-- Proven Results start -->
+    <section class="proven-result section-padding">
+        <div class="container">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    Proven Results for Service Businesses.</h2>
+
+            </div>
+
+
+
+            <section id="proven-results" class="proven-section">
+                <div class="sticky-cards-container">
+
+                    <div
+                        class="proven-result-wrap mt-12 p-8 rounded-3xl bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
+                        <div class="grid grid-cols-2 gap-[128px] items-center">
+                            <div class="proven-result-content flex flex-col gap-6 justify-between h-full">
+                                <div>
+                                    <div class="flex items-center gap-0 mb-6">
+                                        <img src="assets/images/proven-icon1.svg" class="img-fluid shrink-0"
+                                            alt="proven result">
+                                        <p
+                                            class="font-bold text-base leading-[120%] text-[#076AAB] py-1 px-2 border border-[#076AAB] rounded-full h-[27px] inline-flex items-center">
+                                            Moving SEO</p>
+                                    </div>
+                                    <h3 class="mb-3 text-[32px] font-bold text-[#002F4D] leading-[130%] "><span
+                                            class="text-[#076AAB]">1,400% Traffic</span> Growth in 3 Months for
+                                        SmileCrew
+                                        Orthodontics</h3>
+                                    <p class="text-[#526E80] text-base leading-[150%]">In just 3 months, the clinic saw
+                                        stronger
+                                        rankings, better local visibility, and more qualified patient enquiries.</p>
+                                    <div class="grid grid-cols-3 gap-6 mt-8">
+                                        <div class="space-y-2">
+                                            <p class="text-base text-[#526E80]">Monthly Visitors</p>
+                                            <h4 class="text-2xl leading-[120%] text-[#002F4D]">1,500+</h4>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <p class="text-base text-[#526E80]">Organic Traffic Growth</p>
+                                            <h4 class="text-2xl leading-[120%] text-[#002F4D]">1,400%</h4>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <p class="text-base text-[#526E80]">Keywords in Top 3</p>
+                                            <h4 class="text-2xl leading-[120%] text-[#002F4D]">28</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <a href="#proven-results"
+                                    class="max-w-152 w-full h-17.5 inline-flex gap-4 justify-between items-center bg-[#D4EEFF] text-white py-3 px-6 rounded-3xl hover:bg-[#62bdfa] border border-[#ABD7F4] transition-colors duration-300">
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/company-icon1.svg" class="img-fluid" alt="company icon">
+                                        <div class="space-y-1">
+                                            <p class="text-base leading-[120%] text-[#002F4D] font-bold">SmileCrew
+                                                Orthodontics
+                                            </p>
+                                            <p class="text-sm text-[#526E80]">Leander, TX</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="w-[55px] h-[46px] flex items-center justify-end border-l border-l-[#A3CEEB] gap-6">
+                                        <img src="assets/images/proven-arrow-right.svg" class="img-fluid"
+                                            alt="proven arrow right">
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                            <div class="resultproven-image rounded-3xl">
+                                <img src="assets/images/result-proven1.png" class="img-fluid" alt="result proven">
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="proven-result-wrap mt-12 p-8 rounded-3xl bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
+                        <div class="grid grid-cols-2 gap-[128px] items-center">
+                            <div class="proven-result-content flex flex-col gap-6 justify-between h-full">
+                                <div>
+                                    <div class="flex items-center gap-0 mb-6">
+                                        <img src="assets/images/proven-icon1.svg" class="img-fluid shrink-0"
+                                            alt="proven result">
+                                        <p
+                                            class="font-bold text-base leading-[120%] text-[#076AAB] py-1 px-2 border border-[#076AAB] rounded-full h-[27px] inline-flex items-center">
+                                            Moving SEO</p>
+                                    </div>
+                                    <h3 class="mb-3 text-[32px] font-bold text-[#002F4D] leading-[130%] "><span
+                                            class="text-[#076AAB]">1,400% Traffic</span> Growth in 3 Months for
+                                        SmileCrew
+                                        Orthodontics</h3>
+                                    <p class="text-[#526E80] text-base leading-[150%]">In just 3 months, the clinic saw
+                                        stronger
+                                        rankings, better local visibility, and more qualified patient enquiries.</p>
+                                    <div class="grid grid-cols-3 gap-6 mt-8">
+                                        <div class="space-y-2">
+                                            <p class="text-base text-[#526E80]">Monthly Visitors</p>
+                                            <h4 class="text-2xl leading-[120%] text-[#002F4D]">1,500+</h4>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <p class="text-base text-[#526E80]">Organic Traffic Growth</p>
+                                            <h4 class="text-2xl leading-[120%] text-[#002F4D]">1,400%</h4>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <p class="text-base text-[#526E80]">Keywords in Top 3</p>
+                                            <h4 class="text-2xl leading-[120%] text-[#002F4D]">28</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <a href="#proven-results"
+                                    class="max-w-152 w-full h-17.5 inline-flex gap-4 justify-between items-center bg-[#D4EEFF] text-white py-3 px-6 rounded-3xl hover:bg-[#62bdfa] border border-[#ABD7F4] transition-colors duration-300">
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/company-icon1.svg" class="img-fluid" alt="company icon">
+                                        <div class="space-y-1">
+                                            <p class="text-base leading-[120%] text-[#002F4D] font-bold">SmileCrew
+                                                Orthodontics
+                                            </p>
+                                            <p class="text-sm text-[#526E80]">Leander, TX</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="w-[55px] h-[46px] flex items-center justify-end border-l border-l-[#A3CEEB] gap-6">
+                                        <img src="assets/images/proven-arrow-right.svg" class="img-fluid"
+                                            alt="proven arrow right">
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                            <div class="resultproven-image rounded-3xl">
+                                <img src="assets/images/result-proven1.png" class="img-fluid" alt="result proven">
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="proven-result-wrap mt-12 p-8 rounded-3xl bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
+                        <div class="grid grid-cols-2 gap-[128px] items-center">
+                            <div class="proven-result-content flex flex-col gap-6 justify-between h-full">
+                                <div>
+                                    <div class="flex items-center gap-0 mb-6">
+                                        <img src="assets/images/proven-icon1.svg" class="img-fluid shrink-0"
+                                            alt="proven result">
+                                        <p
+                                            class="font-bold text-base leading-[120%] text-[#076AAB] py-1 px-2 border border-[#076AAB] rounded-full h-[27px] inline-flex items-center">
+                                            Moving SEO</p>
+                                    </div>
+                                    <h3 class="mb-3 text-[32px] font-bold text-[#002F4D] leading-[130%] "><span
+                                            class="text-[#076AAB]">1,400% Traffic</span> Growth in 3 Months for
+                                        SmileCrew
+                                        Orthodontics</h3>
+                                    <p class="text-[#526E80] text-base leading-[150%]">In just 3 months, the clinic saw
+                                        stronger
+                                        rankings, better local visibility, and more qualified patient enquiries.</p>
+                                    <div class="grid grid-cols-3 gap-6 mt-8">
+                                        <div class="space-y-2">
+                                            <p class="text-base text-[#526E80]">Monthly Visitors</p>
+                                            <h4 class="text-2xl leading-[120%] text-[#002F4D]">1,500+</h4>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <p class="text-base text-[#526E80]">Organic Traffic Growth</p>
+                                            <h4 class="text-2xl leading-[120%] text-[#002F4D]">1,400%</h4>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <p class="text-base text-[#526E80]">Keywords in Top 3</p>
+                                            <h4 class="text-2xl leading-[120%] text-[#002F4D]">28</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <a href="#proven-results"
+                                    class="max-w-152 w-full h-17.5 inline-flex gap-4 justify-between items-center bg-[#D4EEFF] text-white py-3 px-6 rounded-3xl hover:bg-[#62bdfa] border border-[#ABD7F4] transition-colors duration-300">
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/company-icon1.svg" class="img-fluid" alt="company icon">
+                                        <div class="space-y-1">
+                                            <p class="text-base leading-[120%] text-[#002F4D] font-bold">SmileCrew
+                                                Orthodontics
+                                            </p>
+                                            <p class="text-sm text-[#526E80]">Leander, TX</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="w-[55px] h-[46px] flex items-center justify-end border-l border-l-[#A3CEEB] gap-6">
+                                        <img src="assets/images/proven-arrow-right.svg" class="img-fluid"
+                                            alt="proven arrow right">
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                            <div class="resultproven-image rounded-3xl">
+                                <img src="assets/images/result-proven1.png" class="img-fluid" alt="result proven">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+        </div>
+    </section>
+    <!-- Proven Results start -->
+
+
+
+
+
+    <!-- Testimonials start -->
+    <section
+        class="testimonials section-padding bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
+        <div class="container">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    Results That Talk</h2>
+                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Small businesses face real
+                    challenges. When Pexnet helps them not only survive but thrive, their appreciation shows in their
+                    reviews.</p>
+            </div>
+        </div>
+
+
+
+        <div class="video-testimonial-wrapper pt-12">
+            <div class="splide" id="video-slider">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <!-- Slide 1 -->
+                        <li class="splide__slide">
+                            <div class="video-card relative rounded-2xl overflow-hidden  cursor-pointer h-100 md:h-161.5"
+                                data-video-id="video1">
+                                <!-- Video Element -->
+                                <div class="video-wrapper absolute inset-0 z-1">
+                                    <video
+                                        class="video-element w-full h-full object-cover opacity-0 transition-opacity duration-400 ease-in-out"
+                                        loop playsinline preload="metadata">
+                                        <source src="https://pexnet.com/videos/video-content-4.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+
+                                <!-- Thumbnail -->
+                                <div
+                                    class="thumbnail-wrapper absolute inset-0 z-2 transition-opacity duration-400 ease-in-out">
+                                    <img src="assets/images/video-thumbnail1.webp" alt="Thumbnail"
+                                        class="thumbnail-image w-full h-full object-cover">
+                                </div>
+
+                                <!-- Play Button -->
+                                <div
+                                    class="play-button absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:h-20 md:w-20 w-16 h-16 z-20 ">
+                                    <img src="assets/images/playbtn.svg" class="img-fluid" alt="">
+                                </div>
+
+                                <!-- Card Content -->
+                                <div
+                                    class="card-footer absolute bottom-0 left-0 right-0 sm:p-6 p-4 z-4 flex items-center">
+                                    <div class="card-info flex flex-col gap-1 justify-center">
+                                        <h3 class="text-xs sm:text-sm md:text-base text-white font-bold leading-[120%]">
+                                            Dr. Ashley</h3>
+                                        <p class="text-xs md:text-sm text-[#D4EEFF] font-normal">General & Cosmetic
+                                            Dentist</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Slide 2 -->
+                        <li class="splide__slide">
+                            <div class="video-card relative rounded-2xl overflow-hidden  cursor-pointer h-100 md:h-161.5"
+                                data-video-id="video2">
+                                <!-- Video Element -->
+                                <div class="video-wrapper absolute inset-0 z-[1]">
+                                    <video
+                                        class="video-element w-full h-full object-cover opacity-0 transition-opacity duration-400 ease-in-out"
+                                        loop playsinline preload="metadata">
+                                        <source src="https://pexnet.com/videos/video-content-6.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+
+                                <!-- Thumbnail -->
+                                <div
+                                    class="thumbnail-wrapper absolute inset-0 z-2 transition-opacity duration-400 ease-in-out">
+                                    <img src="assets/images/video-thumbnail2.webp" alt="Thumbnail"
+                                        class="thumbnail-image w-full h-full object-cover">
+                                </div>
+
+                                <!-- Play Button -->
+                                <div
+                                    class="play-button absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:h-20 md:w-20 w-16 h-16 z-20 ">
+                                    <img src="assets/images/playbtn.svg" class="img-fluid" alt="">
+                                </div>
+
+                                <!-- Card Content -->
+                                <div
+                                    class="card-footer absolute bottom-0 left-0 right-0 sm:p-6 p-4 z-4 flex items-center">
+                                    <div class="card-info flex flex-col gap-1 justify-center">
+                                        <h3 class="text-xs sm:text-sm md:text-base text-white font-bold leading-[120%]">
+                                            Melissa Brown</h3>
+                                        <p class="text-xs md:text-sm text-[#D4EEFF] font-normal">Independent Carpet
+                                            Cleaning Contractor</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Slide 3 -->
+                        <li class="splide__slide">
+                            <div class="video-card relative rounded-2xl overflow-hidden  cursor-pointer h-100 md:h-161.5"
+                                data-video-id="video3">
+                                <!-- Video Element -->
+                                <div class="video-wrapper absolute inset-0 z-[1]">
+                                    <video
+                                        class="video-element w-full h-full object-cover opacity-0 transition-opacity duration-400 ease-in-out"
+                                        loop playsinline preload="metadata">
+                                        <source src="https://pexnet.com/videos/video-content-1.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <!-- Thumbnail -->
+                                <div
+                                    class="thumbnail-wrapper absolute inset-0 z-2 transition-opacity duration-400 ease-in-out">
+                                    <img src="assets/images/video-thumbnail3.webp" alt="Thumbnail"
+                                        class="thumbnail-image w-full h-full object-cover">
+                                </div>
+
+                                <!-- Play Button -->
+                                <div
+                                    class="play-button absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:h-20 md:w-20 w-16 h-16 z-20 ">
+                                    <img src="assets/images/playbtn.svg" class="img-fluid" alt="">
+                                </div>
+
+                                <!-- Card Content -->
+                                <div
+                                    class="card-footer absolute bottom-0 left-0 right-0 sm:p-6 p-4 z-4 flex items-center">
+                                    <div class="card-info flex flex-col gap-1 justify-center">
+                                        <h3 class="text-xs sm:text-sm md:text-base text-white font-bold leading-[120%]">
+                                            Paul Simpson</h3>
+                                        <p class="text-xs md:text-sm text-[#D4EEFF] font-normal">Bankruptcy Litigation
+                                            Lawyer</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- Slide 4 -->
+                        <li class="splide__slide">
+                            <div class="video-card relative rounded-2xl overflow-hidden  cursor-pointer h-100 md:h-161.5"
+                                data-video-id="video4">
+                                <!-- Video Element -->
+                                <div class="video-wrapper absolute inset-0 z-[1]">
+                                    <video
+                                        class="video-element w-full h-full object-cover opacity-0 transition-opacity duration-400 ease-in-out"
+                                        loop playsinline preload="metadata">
+                                        <source src="https://pexnet.com/videos/video-content-2.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <!-- Thumbnail -->
+                                <div
+                                    class="thumbnail-wrapper absolute inset-0 z-2 transition-opacity duration-400 ease-in-out">
+                                    <img src="assets/images/video-thumbnail4.webp" alt="Thumbnail"
+                                        class="thumbnail-image w-full h-full object-cover">
+                                </div>
+
+                                <!-- Play Button -->
+                                <div
+                                    class="play-button absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:h-20 md:w-20 w-16 h-16 z-20 ">
+                                    <img src="assets/images/playbtn.svg" class="img-fluid" alt="">
+                                </div>
+
+                                <!-- Card Content -->
+                                <div
+                                    class="card-footer absolute bottom-0 left-0 right-0 sm:p-6 p-4 z-4 flex items-center">
+                                    <div class="card-info flex flex-col gap-1 justify-center">
+                                        <h3 class="text-xs sm:text-sm md:text-base text-white font-bold leading-[120%]">
+                                            Matthew Wade</h3>
+                                        <p class="text-xs md:text-sm text-[#D4EEFF] font-normal">Restoration Contractor
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+
+
+
+                        <!-- Slide 5 -->
+                        <li class="splide__slide">
+                            <div class="video-card relative rounded-2xl overflow-hidden  cursor-pointer h-100 md:h-161.5"
+                                data-video-id="video6">
+                                <!-- Video Element -->
+                                <div class="video-wrapper absolute inset-0 z-[1]">
+                                    <video
+                                        class="video-element w-full h-full object-cover opacity-0 transition-opacity duration-400 ease-in-out"
+                                        loop playsinline preload="metadata">
+                                        <source src="https://pexnet.com/videos/video-content-8.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+
+                                <!-- Thumbnail -->
+                                <div
+                                    class="thumbnail-wrapper absolute inset-0 z-2 transition-opacity duration-400 ease-in-out">
+                                    <img src="assets/images/video-thumbnail5.webp" alt="Thumbnail"
+                                        class="thumbnail-image w-full h-full object-cover">
+                                </div>
+
+                                <!-- Play Button -->
+                                <div
+                                    class="play-button absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:h-20 md:w-20 w-16 h-16 z-20 ">
+                                    <img src="assets/images/playbtn.svg" class="img-fluid" alt="">
+                                </div>
+
+                                <!-- Card Content -->
+                                <div
+                                    class="card-footer absolute bottom-0 left-0 right-0 sm:p-6 p-4 z-4 flex items-center">
+                                    <div class="card-info flex flex-col gap-1 justify-center">
+                                        <h3 class="text-xs sm:text-sm md:text-base text-white font-bold leading-[120%]">
+                                            Andrew Johnson</h3>
+                                        <p class="text-xs md:text-sm text-[#D4EEFF] font-normal">Personal Injury Lawyer
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- Testimonials end -->
+
+
+
+
+    <!-- content testimonial start -->
+    <section class="content-testimonial content-our-testimonial section-padding bg-[#F4FBFF]">
+        <div class="container">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    Results That Talk</h2>
+                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Small businesses face real
+                    challenges. When Pexnet helps them not only survive but thrive, their appreciation shows in their
+                    reviews.</p>
+            </div>
+
+
+
+            <!-- Cards Grid -->
+            <div class="testimonial-real-content-slider grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mt-12">
+
+                <!-- Left Sticky Card - Hidden on Mobile -->
+                <div
+                    class="testimonial-real-content-slider-sticky hidden lg:block bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-3xl py-20 px-6 lg:p-8 ">
+                    <div class="text-center flex flex-col h-full justify-between">
+                        <!-- Stats -->
+                        <div class="mb-8">
+                            <div class="flex items-center justify-center gap-3 mb-6">
+                                <img src="assets/images/testi-star.svg" class="img-fluid" alt="testi-star">
+                            </div>
+                            <p class="text-xl font-bold text-[#002F4D] text-center">100+ Clutch Reviews</p>
+                        </div>
+
+                        <!-- Clutch Logo -->
+                        <div class="mb-6 flex justify-center">
+                            <img src="assets/images/clutch.svg" class="img-fluid" alt="">
+                        </div>
+
+
+
+                        <!-- Arrow Controls - Desktop -->
+                        <div class="testimonial-real-content-slider-arrows-desktop" id="arrowsDesktop"></div>
+                    </div>
+                </div>
+
+                <!-- Right Slider Cards -->
+                <div class="testimonial-real-content-slider-main lg:col-span-2">
+                    <div class="splide" id="testimonialSlider">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+
+                                <!-- Slide 1 -->
+                                <li class="splide__slide">
+                                    <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+                                        <div
+                                            class="testimonial-real-content-slider-card overflow-hidden relative min-h-[480px] border-[#D4EEFF] border-1 bg-white rounded-3xl py-8 lg:px-8 px-4 h-full flex justify-between flex-col">
+
+                                            <!-- Stars and content-->
+                                            <div>
+                                                <div class="flex gap-1 mb-6">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+
+                                                </div>
+                                                <div class="testi-content">
+                                                    <h3 class="text-[#002F4D] text-xl font-bold mb-3">Calls Doubled in 6
+                                                        Weeks</h3>
+                                                    <p class="text-base text-[#526E80] leading150">PexNet completely
+                                                        changed our local visibility. Within 6 weeks, our Google
+                                                        Business Profile started pulling in real leads, not just random
+                                                        traffic. Calls doubled, reviews improved, and we finally outrank
+                                                        competitors we've been chasing for years.</p>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Author -->
+                                            <div
+                                                class="flex items-center justify-between pt-6 border-t border-t-[#D4EEFF]">
+                                                <div class="flex items-center gap-3">
+                                                    <img src="assets/images/testmonial-author.png"
+                                                        alt="testimonal author" class="w-[46px] h-[46px] object-cover">
+                                                    <div>
+                                                        <h4 class="text-[#002F4D] font-bold text-base leading120 mb-1">
+                                                            Nate Samson</h4>
+                                                        <p class="text-sm text-[#526E80] leading120">Kayrouz &
+                                                            Associates</p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <img src="assets/images/quote.svg" class="img-fluid" alt="quote">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </li>
+
+                                <!-- Slide 2 -->
+                                <li class="splide__slide">
+                                    <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+                                        <div
+                                            class="testimonial-real-content-slider-card overflow-hidden relative min-h-[480px] border-[#D4EEFF] border-1 bg-white rounded-3xl py-8 lg:px-8 px-4 h-full flex justify-between flex-col">
+
+                                            <!-- Stars and content-->
+                                            <div>
+                                                <div class="flex gap-1 mb-6">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+
+                                                </div>
+                                                <div class="testi-content">
+                                                    <h3 class="text-[#002F4D] text-xl font-bold mb-3">Calls Doubled in 6
+                                                        Weeks</h3>
+                                                    <p class="text-base text-[#526E80] leading150">PexNet completely
+                                                        changed our local visibility. Within 6 weeks, our Google
+                                                        Business Profile started pulling in real leads, not just random
+                                                        traffic. Calls doubled, reviews improved, and we finally outrank
+                                                        competitors we've been chasing for years.</p>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Author -->
+                                            <div
+                                                class="flex items-center justify-between pt-6 border-t border-t-[#D4EEFF]">
+                                                <div class="flex items-center gap-3">
+                                                    <img src="assets/images/testmonial-author.png"
+                                                        alt="testimonal author" class="w-[46px] h-[46px] object-cover">
+                                                    <div>
+                                                        <h4 class="text-[#002F4D] font-bold text-base leading120 mb-1">
+                                                            Nate Samson</h4>
+                                                        <p class="text-sm text-[#526E80] leading120">Kayrouz &
+                                                            Associates</p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <img src="assets/images/quote.svg" class="img-fluid" alt="quote">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </li>
+
+                                <!-- Slide 3 -->
+                                <li class="splide__slide">
+                                    <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+                                        <div
+                                            class="testimonial-real-content-slider-card overflow-hidden relative min-h-[480px] border-[#D4EEFF] border-1 bg-white rounded-3xl py-8 lg:px-8 px-4 h-full flex justify-between flex-col">
+
+                                            <!-- Stars and content-->
+                                            <div>
+                                                <div class="flex gap-1 mb-6">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+                                                    <img src="assets/images/single-star.svg" class="img-fluid"
+                                                        alt="star">
+
+                                                </div>
+                                                <div class="testi-content">
+                                                    <h3 class="text-[#002F4D] text-xl font-bold mb-3">Calls Doubled in 6
+                                                        Weeks</h3>
+                                                    <p class="text-base text-[#526E80] leading150">PexNet completely
+                                                        changed our local visibility. Within 6 weeks, our Google
+                                                        Business Profile started pulling in real leads, not just random
+                                                        traffic. Calls doubled, reviews improved, and we finally outrank
+                                                        competitors we've been chasing for years.</p>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Author -->
+                                            <div
+                                                class="flex items-center justify-between pt-6 border-t border-t-[#D4EEFF]">
+                                                <div class="flex items-center gap-3">
+                                                    <img src="assets/images/testmonial-author.png"
+                                                        alt="testimonal author" class="w-[46px] h-[46px] object-cover">
+                                                    <div>
+                                                        <h4 class="text-[#002F4D] font-bold text-base leading120 mb-1">
+                                                            Nate Samson</h4>
+                                                        <p class="text-sm text-[#526E80] leading120">Kayrouz &
+                                                            Associates</p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <img src="assets/images/quote.svg" class="img-fluid" alt="quote">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Arrow Controls - Mobile (Below Slider) -->
+                    <div class="testimonial-real-content-slider-arrows-mobile lg:hidden" id="arrowsMobile">
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+    <!-- content testimonial end -->
+
+
+
+
+    <!-- Free Website Audit start -->
+    <section class="free-audit-section section-padding bg-[#00243B] relative overflow-hidden" data-glow-section
+        data-home-x="70" data-home-y="50">
+
+        <!-- Glow div -->
+        <div data-glow-el class="absolute inset-0 opacity-0 pointer-events-none z-0"
+            style="background: radial-gradient(40% 50% at 70% 50%, #076AAB 0%, transparent 100%);">
+        </div>
+
+        <div class="container relative z-[2]">
+            <div class="grid grid-cols-2 items-center">
+                <div class="common-title text-start space-y-4 max-w-152 w-full">
+                    <h2
+                        class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-white">
+                        Free Website Audit
+                    </h2>
+                    <p class="text-sm sm:text-base leading-[150%] text-[#D4EEFF] max-w-184 w-full">
+                        Get a quick SEO audit report now - easy to understand, even if you're not technical.
+                    </p>
+                    <a href="contact.html"
+                        class="common-cta mt-6 bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out">
+                        <span class="cta-arrow">
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="white" />
+                            </svg>
+                        </span>
+                        <span
+                            class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                            <span>Get a Free SEO Audit</span>
+                            <span>Get a Free SEO Audit</span>
+                        </span>
+                    </a>
+                </div>
+                <div>
+                    <img src="assets/images/website-audit.svg" class="img-fluid" alt="Free Website Audit">
+                </div>
             </div>
         </div>
     </section>
-    <!-- Game Changer section end -->
-</div>
-
-  
+    <!-- Free Website Audit end -->
 
 
-    <!-- Proven Results start -->
-     <section class="proven-result section-padding">
+
+    <!-- Tools We Prefer start -->
+     <section class="tools-we-prefer bg-[#F4FBFF] section-padding">
         <div class="container">
-               <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+ <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
                 <h2
-                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
-                    Why Small Businesses Fall
-                    Behind in the SEO Race</h2>
-                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Over the years, we’ve seen
-                    many
-                    locally owned businesses miss out on quality online for a few common mistakes. Could you be making
-                    the same ones?</p>
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">Tools We Prefer</h2>
+                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Pexnet uses only the quality SEO tools. They arm us with ​much-valued data and insights to make your campaign a success. </p>
+            </div>
+
+              <div class="all-tools grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-x-8 sm:gap-y-4 mt-12">
+                    <!-- Item 1 -->
+                    <div class="all-tools-wrap">
+                        <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
+ <div class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
+                            <div class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
+                                <div class="flex flex-col sm:col-span-4 gap-2">
+                                    <h3 class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
+                                    Research & Keyword
+                                </h3>
+                                <p class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">Find high-intent keywords your customers are actively searching for.</p>
+                                </div>
+                                <div
+                                    class="grid grid-cols-3 gap-1.5 items-center justify-start group-hover:translate-x-[10px] transition-all duration-300 sm:col-span-8 w-full sm:px-4 h-full">
+                                    <div class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools1.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Google Keyword Planner
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools2.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Ahrefs
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools3.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Semrush
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                       
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="all-tools-wrap">
+                        <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
+<div class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
+                            <div class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
+                                 <div class="flex flex-col sm:col-span-4 gap-2">
+                                    <h3 class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
+                                    Local Listings & Citations
+                                </h3>
+                                <p class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">Strengthen your local presence with accurate and consistent business listings.</p>
+                                </div>
+                                <div
+                                    class="grid grid-cols-3 gap-1.5 items-center justify-start group-hover:translate-x-[10px] transition-all duration-300 sm:col-span-8 w-full sm:px-4 h-full">
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools4.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            GBP
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools5.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            BrightLocal
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools6.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Moz Local
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="all-tools-wrap">
+                            <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
+   <div class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
+                            <div class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
+                                <div class="flex flex-col sm:col-span-4 gap-2">
+                                    <h3 class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
+                                    Tracking & Analytics
+                                </h3>
+                                <p class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">Measure performance and uncover insights that drive smarter SEO decisions.</p>
+                                </div>
+                                <div
+                                    class="grid grid-cols-3 gap-1.5 items-center justify-start group-hover:translate-x-[10px] transition-all duration-300 sm:col-span-8 w-full sm:px-4 h-full">
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools7.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Google Analytics 4
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools8.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Google Search Console
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools9.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Bright Local
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                     
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="all-tools-wrap">
+                            <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
+   <div class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
+                            <div class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
+                                 <div class="flex flex-col sm:col-span-4 gap-2">
+                                    <h3 class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
+                                    Reviews & Reputation
+                                </h3>
+                                <p class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">Build trust and credibility through reviews and strong online reputation signals.</p>
+                                </div>
+                                <div
+                                    class="grid grid-cols-3 gap-1.5 items-center justify-start group-hover:translate-x-[10px] transition-all duration-300 sm:col-span-8 w-full sm:px-4 h-full">
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools10.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Birdeye
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools11.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Yext
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools9.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            BrightLocal
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                     
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="all-tools-wrap">
+                            <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
+                                <div class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
+                            <div class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
+                                      <div class="flex flex-col sm:col-span-4 gap-2">
+                                    <h3 class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
+                                    Technical
+                                </h3>
+                                <p class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">Fix technical issues to improve site health, speed, and search visibility.</p>
+                                </div>
+                                <div
+                                    class="grid grid-cols-3 gap-1.5 items-center justify-start group-hover:translate-x-[10px] transition-all duration-300 sm:col-span-8 w-full sm:px-4 h-full">
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools13.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Screaming Frog
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools14.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Ahrefs
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools15.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Semrush
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                        
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="all-tools-wrap">
+                            <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
+ <div class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
+                            <di class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
+                                    <div class="flex flex-col sm:col-span-4 gap-2">
+                                    <h3 class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
+                                    On-Page Optimization
+                                </h3>
+                                <p class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">Optimize pages for better rankings, relevance, and user experience.</p>
+                                </div>
+                                <div
+                                    class="grid grid-cols-3 gap-1.5 items-center justify-start group-hover:translate-x-[10px] transition-all duration-300 sm:col-span-8 w-full sm:px-4 h-full">
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools16.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            RankMath
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools17.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            Yoast
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools18.svg"
+                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                            All-in-One SEO
+                                        </p>
+                                    </div>
+                                </div>
+                            </di>
+                        </div>
+                                </div>
+                       
+                    </div>
+                </div>
+        </div>
+     </section>
+    <!-- Tools We Prefer end -->
+
+
+
+
+
+    <!-- Articles & Blogs start -->
+     <section class="article section-padding bg-[var(--Gradient-1,radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%))]">
+        <div class="container">
+             <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">Articles & Blogs</h2>
+                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Our resources keep you one step ahead of the upcoming trends, competitors, and algorithm changes.</p>
+            </div>
+
+            <div class="grid grid-cols-3">
+                <div class="border border-[#D4EEFF] rounded-3xl p-1.5 flex flex-col justify-between">
+                    <div>
+                        <img src="assets/images/blog1.webp" class="w-full h-auto object-cover rounded-[20px]" alt="blog image">
+                        <h3 class="text-xl font-bold text-[#002F4D] mb-4">How to Optimize Your Google Business Profile for Local SEO</h3>
+                        <p class="text-base leading150 text-[#526E80]">Learn how to optimize your Google Business Profile to improve local search visibility and attract more customers.</p>
+                    </div>
+                    <div class="mt-6">
+                        <a href="#" class="text-sm font-bold text-[#BFFB4F] hover:text-[#05314D] transition-colors duration-300">Read More</a>
+                    </div>
+                </div>
             </div>
         </div>
      </section>
-    <!-- Proven Results start -->
+    <!-- Articles & Blogs end -->
+
+
 
 
 
@@ -928,14 +1972,14 @@
 
 
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
     <script
         src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
     <script src="assets/js/script.js"></script>
-</body>
+    </body>
 
 </html>

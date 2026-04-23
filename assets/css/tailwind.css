@@ -25,9 +25,9 @@ html, body {
   scroll-behavior: smooth;
 }
 
-.font-notch{
+/* .font-notch{
     font-family: "Stack Sans Notch", sans-serif;
-}
+} */
 
 
 
@@ -50,13 +50,6 @@ html, body {
   z-index: 100;
 }
 
-.nav-inner {
-  height: 92px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
 
 @media (max-width:767px) {
     .nav-inner {
@@ -220,6 +213,45 @@ html, body {
   height: 12px;
   fill: #c8f135;
 }
+
+
+
+/* ========== NAV SCROLL SHRINK + GLASS ========== */
+
+
+
+
+/* glass border bottom line */
+.nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 30%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.12) 70%,
+    transparent 100%
+  );
+  opacity: var(--border-op, 0);
+  transition: none; /* JS control করছে */
+}
+
+
+.nav-inner {
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  transition: none;
+  will-change: height;
+}
+
 
 /* ========== COMMON CTA ========== */
 .common-cta {
@@ -533,13 +565,266 @@ font-size: 14px;
 
 
 /* game changer css start */
-.game-changer {
-    background: var(--Gradient-1, radial-gradient(50% 50% at 50% 50%, #FFF 0%, #F4FBFF 33%, #EDF8FF 66%, #DEF2FF 100%));
-    border-radius: 1000px;
-    /* overflow: hidden; — সরিয়ে দাও, clipPath নিজেই handle করবে */
+/* game changer css */
+.game-changer-wrapper {
+  position: relative;
+  /* এটা যোগ করো — pin হওয়ার সময় wrapper এর height ঠিক রাখে */
+  overflow: visible;
 }
 
-.game-changer-wrapper {
-    position: relative;
+.game-changer {
+  background: radial-gradient(50% 50% at 50% 50%, #FFF 0%, #F4FBFF 33%, #EDF8FF 66%, #DEF2FF 100%);
+  border-radius: 1000px;
+  /* will-change যোগ করো — GPU layer এ রাখবে, flicker কমবে */
+  will-change: clip-path;
 }
 /* game changer css end */
+
+
+
+
+
+
+
+
+
+/* Proven Results Animation */
+.proven-result-wrap {
+  position: relative;
+  overflow: hidden;
+  transform-origin: center top;
+  will-change: transform;
+}
+
+/* shimmer overlay */
+.proven-result-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.45) 50%, transparent 60%);
+  transform: translateX(-100%);
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 24px;
+}
+
+/* magnetic glow spot */
+/* .proven-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(7,106,171,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+} */
+
+/* content blocks — initial hidden state */
+.proven-result-content > div,
+.proven-result-content > a {
+  will-change: transform, opacity;
+}
+
+.resultproven-image {
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+
+.resultproven-image img {
+  will-change: transform;
+  display: block;
+  width: 100%;
+}
+
+/* stat numbers */
+.proven-result-wrap h4 {
+  display: inline-block;
+  will-change: transform;
+}
+
+
+
+
+
+
+
+
+/* video testimonial start */
+
+.card-footer {
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    bottom: -2px;
+    height: 92px;
+    z-index: 4;
+    display: flex;
+    align-items: flex-end;
+    align-content: flex-end;
+    transition: .0s all linear;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+/* Blur layer — mask দিয়ে fade */
+.card-footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+   
+
+background: linear-gradient(180deg, rgba(0, 47, 77, 0.00) 0%, #002F4D 100%);
+
+backdrop-filter: blur(24px);
+    z-index: 2;
+}
+
+
+.card-footer .card-info{
+    position: relative;
+    z-index: 22;
+}
+
+.card-footer .card-info p{
+      display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+@media (max-width:640px) {
+  .card-footer {
+    position: absolute;
+    height: 68px;
+}
+}
+
+
+  .video-card:hover .thumbnail-wrapper {
+            opacity: 0;
+        }
+
+        .video-card:hover .video-element {
+            opacity: 1;
+        }
+
+        .video-card:hover .play-button {
+            opacity: 0;
+        }
+        .video-card:hover .card-footer {
+            opacity: 0;
+        }
+
+
+       
+/* video testimonial end */
+
+
+
+
+/* ========== TESTIMONIAL CONTENT SLIDER ========== */
+.testimonial-real-content-slider-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-real-content-slider-card:hover .quote-icon img {
+    filter: brightness(1.45) saturate(1.1) hue-rotate(2deg);
+    transition: filter 0.3s ease;
+}
+
+
+
+
+
+/* ========== SPLIDE ARROWS - COMMON STYLES ========== */
+.content-testimonial .splide__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px !important;
+    height: 64px !important;
+    background: white !important;
+    border: none !important;
+    border-radius: 50%;
+}
+.content-testimonial .splide__arrow:hover {
+    background: #076AAB !important;
+
+}
+.content-testimonial .splide__arrow:hover svg *{
+    fill: #fff !important;
+    /* fill: #fff !important; */
+    stroke: transparent !important;
+
+}
+.content-testimonial .splide__arrow svg *{
+    fill: #076AAB ;
+}
+
+
+/* Hide all default splide arrows */
+.latest-blog-slider .splide__arrows,
+.testimonial-real-content-slider-main .splide__arrows {
+    display: none !important;
+}
+
+/* ========== TESTIMONIAL SLIDER ARROWS ========== */
+.testimonial-real-content-slider-arrows-desktop,
+.testimonial-real-content-slider-arrows-mobile {
+    gap: 12px;
+    justify-content: center;
+}
+
+.testimonial-real-content-slider-arrows-desktop .splide__arrow,
+.testimonial-real-content-slider-arrows-mobile .splide__arrow {
+    position: static;
+    background: transparent;
+    border: 1px solid #e5e7eb;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    opacity: 1;
+    transform: none;
+    transition: .3s all linear;
+}
+
+.testimonial-real-content-slider-arrows-desktop .splide__arrow:hover,
+.testimonial-real-content-slider-arrows-mobile .splide__arrow:hover {
+    background: #076AAB;
+    border-color: #076AAB;
+}
+
+.testimonial-real-content-slider-arrows-desktop .splide__arrow:hover svg path,
+.testimonial-real-content-slider-arrows-mobile .splide__arrow:hover svg path {
+    stroke: #fff !important;
+}
+
+.testimonial-real-content-slider-arrows-mobile {
+    margin-top: 32px;
+}
+
+/* Responsive - Desktop Only */
+.testimonial-real-content-slider-arrows-desktop {
+    display: none !important;
+}
+
+@media (min-width: 1024px) {
+    .testimonial-real-content-slider-arrows-desktop {
+        display: flex !important;
+    }
+}
+
+/* Responsive - Mobile Only */
+.testimonial-real-content-slider-arrows-mobile {
+    display: flex !important;
+}
+
+@media (min-width: 1024px) {
+    .testimonial-real-content-slider-arrows-mobile {
+        display: none !important;
+    }
+}
