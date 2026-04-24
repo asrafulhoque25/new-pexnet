@@ -44,7 +44,7 @@ html, body {
 
 
 /* ========== NAV ========== */
-.nav {
+nav {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -53,7 +53,10 @@ html, body {
 
 @media (max-width:767px) {
     .nav-inner {
-  height: 56px;
+     height: 56px;
+}
+.nav-inner .common-cta{
+  display: none;
 }
 }
 
@@ -489,54 +492,25 @@ font-size: 14px;
 /* brand section css start */
     /* Desktop: right border except last item */
 /* Desktop 992px+ : 6 col, শুধু last ছাড়া সবার right border */
-@media (min-width: 992px) {
-  .partner-item:not(:last-child) {
-    border-right: 1px solid #bfdbfe;
-    border-bottom: none;
-  }
-}
 
-/* Tablet 641px–991px : 3 col grid */
-@media (min-width: 641px) and (max-width: 991px) {
-  /* প্রতি row এর 3rd item এ right border নেই */
-  .partner-item:not(:nth-child(3n)) {
+  .partner-item {
     border-right: 1px solid #bfdbfe;
   }
-  /* last row (last 3 items) এ bottom border নেই, বাকি সবার আছে */
-  .partner-item:not(:nth-last-child(-n+3)) {
+
+  @media (max-width:640px) {
+      .partner-item {
     border-bottom: 1px solid #bfdbfe;
+    border-right: 1px solid transparent;
   }
-}
-
-/* Mobile 640px- : 2 col grid */
-@media (max-width: 640px) {
-  .partner-item:not(:nth-last-child(-n+2)) {
-    border-bottom: 1px solid #bfdbfe;
+  .logo-circle{
+    height: 60px;
+    width: 60px;
   }
-  .partner-item:nth-child(odd) {
-    border-right: 1px solid #bfdbfe;
+  
   }
-}
-
-#brandWrapper {
-  clip-path: inset(0px 0px 0px 0px round 0px);
-  padding: 32px 24px;
-  will-change: clip-path;
-}
-
-/* Mobile fixed */
-@media (max-width: 991px) {
-  #brandWrapper {
-    clip-path: inset(0px 20px 0px 20px round 80px) !important;
-  }
-}
 
 
 
-.partner-item {
-  opacity: 0;
-  transform: translateY(20px);
-}
 /* brand section css end */
 
 
@@ -574,7 +548,7 @@ font-size: 14px;
 
 .game-changer {
   background: radial-gradient(50% 50% at 50% 50%, #FFF 0%, #F4FBFF 33%, #EDF8FF 66%, #DEF2FF 100%);
-  border-radius: 1000px;
+  border-radius: 25px;
   /* will-change যোগ করো — GPU layer এ রাখবে, flicker কমবে */
   will-change: clip-path;
 }
@@ -639,13 +613,22 @@ font-size: 14px;
   width: 100%;
 }
 
-/* stat numbers */
-.proven-result-wrap h4 {
-  display: inline-block;
-  will-change: transform;
+
+
+.proven-stack-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
-
+.proven-result-wrap {
+    position: sticky;
+    will-change: transform;
+    transform-origin: top center;
+    overflow: hidden;
+    margin-bottom: 16px;
+    /* top JS দিয়ে set হবে */
+}
 
 
 
@@ -827,4 +810,67 @@ backdrop-filter: blur(24px);
     .testimonial-real-content-slider-arrows-mobile {
         display: none !important;
     }
+}
+
+
+
+
+
+/* footer  */
+
+/* .footer-nav ul li a{
+  color:  #D4EEFF;
+font-size: 14px;
+line-height: 150%; 
+}
+.footer-nav ul li a:hover{
+} */
+
+.footer-nav ul{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.footer-social-link{
+  flex-wrap: wrap;
+}
+
+/* footer text animation  */
+.footer-nav ul li a {
+    position: relative;
+    display: inline-block;
+    color:  #D4EEFF;
+    text-decoration: none;
+    background-image: linear-gradient(to right, #BFFB4F, #BFFB4F);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: background-size 0.4s ease, color 0.4s ease;
+}
+
+.footer-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 100%;
+    height: 1px;
+    background-color: #BFFB4F;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.4s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: transparent;
+    background-size: 100% 100%;
+}
+
+.footer-nav ul li a:hover::after {
+    transform: scaleY(1);
+    transform-origin: top center;
 }

@@ -11,69 +11,40 @@ const lenis = new Lenis({
 });
 
 // ============================================
-// NAV LERP SYSTEM — এখানে add করো
+// NAV LERP SYSTEM
 // ============================================
 const mainNav = document.getElementById('mainNav');
 const navInner = mainNav.querySelector('.nav-inner');
 const navLogo = mainNav.querySelector('.nav-logo img');
 
-// Initial background inline set — CSS override হবে না
 mainNav.style.background = 'rgba(0, 36, 59, 1)';
-mainNav.style.backdropFilter = 'blur(0px) saturate(160%)';
-mainNav.style.webkitBackdropFilter = 'blur(0px) saturate(160%)';
 
 const isMobileNav = () => window.innerWidth < 768;
 const NAV_H_DESKTOP = { max: 92, min: 58 };
 const NAV_H_MOBILE  = { max: 56, min: 44 };
 
-let currentH     = isMobileNav() ? NAV_H_MOBILE.max : NAV_H_DESKTOP.max;
-let targetH      = currentH;
-let currentBlur  = 0;
-let targetBlur   = 0;
-let currentAlpha = 1;
-let targetAlpha  = 1;
-let lastScroll   = 0;
-let velocity     = 0;
+let currentH = isMobileNav() ? NAV_H_MOBILE.max : NAV_H_DESKTOP.max;
+let targetH  = currentH;
 
 function lerpFn(a, b, t) { return a + (b - a) * t; }
-function clamp(val, min, max) { return Math.min(Math.max(val, min), max); }
 
 function navTick() {
-  currentH     = lerpFn(currentH,     targetH,     0.08);
-  currentBlur  = lerpFn(currentBlur,  targetBlur,  0.06);
-  currentAlpha = lerpFn(currentAlpha, targetAlpha, 0.06);
-
+  currentH = lerpFn(currentH, targetH, 0.08);
   navInner.style.height = currentH.toFixed(2) + 'px';
-  mainNav.style.background = `rgba(0, 36, 59, ${currentAlpha.toFixed(3)})`;
-  mainNav.style.backdropFilter = `blur(${currentBlur.toFixed(2)}px) saturate(160%)`;
-  mainNav.style.webkitBackdropFilter = `blur(${currentBlur.toFixed(2)}px) saturate(160%)`;
-
-  const shadowAlpha = clamp(currentBlur / 20, 0, 0.4);
-  mainNav.style.boxShadow = `0 1px 0 rgba(255,255,255,${(shadowAlpha * 0.15).toFixed(3)}) inset, 0 8px 32px rgba(0,0,0,${shadowAlpha.toFixed(3)})`;
-  mainNav.style.setProperty('--border-op', clamp(currentBlur / 20, 0, 1).toFixed(3));
-
   requestAnimationFrame(navTick);
 }
 navTick();
 
-// ============================================
+
+
 // LENIS SCROLL
-// ============================================
 lenis.on('scroll', ({ scroll }) => {
   ScrollTrigger.update();
 
   const mobile = isMobileNav();
   const h = mobile ? NAV_H_MOBILE : NAV_H_DESKTOP;
 
-  if (scroll < 80) {
-    targetH     = h.max;
-    targetBlur  = 0;
-    targetAlpha = 1;
-  } else {
-    targetH     = h.min;
-    targetBlur  = 16;
-    targetAlpha = 0.6;
-  }
+  targetH = scroll < 80 ? h.max : h.min;
 });
 
 window.addEventListener('resize', () => {
@@ -98,10 +69,7 @@ ScrollTrigger.scrollerProxy(document.body, {
 });
 
 
-
-// ============================================
 // MOBILE MENU & NAVBAR
-// ============================================
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileServicesBtn = document.getElementById('mobileServicesBtn');
@@ -126,7 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function lerp(a, b, t) { return a + (b - a) * t; }
 
-  // ── Rain drops (শুধু banner-এ যেখানে .rain-drop আছে) ──
   document.querySelectorAll(".rain-drop").forEach((drop, i) => {
     gsap.set(drop, {
       y: "-100%", opacity: 0,
@@ -154,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  // ── Magnetic Glow — সব [data-glow-section] এ চলবে ──
+  // ── Magnetic Glow — 
   document.querySelectorAll("[data-glow-section]").forEach(section => {
     const glow = section.querySelector("[data-glow-el]");
     if (!glow) return;
@@ -240,47 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
    
  
-    const wrapper = document.getElementById('brandWrapper');
-    const items   = wrapper.querySelectorAll('.partner-item');
-    const isMobile = () => window.innerWidth < 992;
- 
-    if (!isMobile()) {
-      // Desktop: clip-path inset animation
-      // from: inset(0px 0px 0px 0px round 0px)  → full width, sharp corners
-      // to:   inset(0px 20px 0px 20px round 9999px) → pill with 20px side margin
- 
-      gsap.fromTo(wrapper,
-        { clipPath: 'inset(0px 0px 0px 0px round 0px)' },
-        {
-          clipPath: 'inset(0px 20px 0px 20px round 9999px)',
-          ease: 'power2.inOut',
-          scrollTrigger: {
-            trigger: wrapper,
-            start: 'top 85%',
-            end:   'top 20%',
-            scrub: 2,
-          }
-        }
-      );
-    }
- 
-    // Items stagger — both mobile & desktop
-    gsap.to(items, {
-      opacity: 1,
-      y: 0,
-      duration: 0.55,
-      stagger: 0.08,
-      ease: 'back.out(1.4)',
-      scrollTrigger: {
-        trigger: wrapper,
-        start: 'top 80%',
-        toggleActions: 'play none none none',
-      }
-    });
- 
-    window.addEventListener('resize', () => ScrollTrigger.refresh());
-
-
 
     //why needed card
 
@@ -525,217 +451,105 @@ window.addEventListener('load', () => {
 
 
 
+//proven result 
 
+// ============================================
+// PROVEN RESULTS — MAGNETIC BOUNCE STACK
+// ============================================
+(function initProvenStack() {
 
-// ── Proven Results — Scroll Reveal + Magnetic + Shimmer ──
-gsap.utils.toArray(".proven-result-wrap").forEach((card, i) => {
+    const cards = gsap.utils.toArray('.proven-result-wrap');
+    if (cards.length === 0) return;
 
-  // ── গোলাপি glow spot তৈরি করো
-  const glow = document.createElement("div");
-  glow.classList.add("proven-glow");
-  card.appendChild(glow);
+    // ── DYNAMIC TOP OFFSET — যতগুলো card হোক কাজ করবে
+    const BASE_TOP = 160;
+    const STEP = 60; // প্রতিটা card এর মধ্যে gap
 
-  const content    = card.querySelector(".proven-result-content");
-  const contentTop = content.querySelector("div:first-child");
-  const cta        = content.querySelector("a");
-  const image      = card.querySelector(".resultproven-image");
-  const imgEl      = image.querySelector("img");
-  const stats      = card.querySelectorAll("h4");
-  const badge      = card.querySelector(".proven-result-content .flex");
-
-  // ── 1. SCROLL REVEAL ──
-  // badge — বাম থেকে আসে
-  gsap.fromTo(badge,
-    { x: -40, opacity: 0 },
-    {
-      x: 0, opacity: 1, duration: 0.7, ease: "power3.out",
-      scrollTrigger: { trigger: card, start: "top 80%", once: true }
-    }
-  );
-
-  // heading + para — নিচ থেকে stagger
-  gsap.fromTo(contentTop.querySelectorAll("h3, p"),
-    { y: 50, opacity: 0 },
-    {
-      y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power3.out",
-      scrollTrigger: { trigger: card, start: "top 75%", once: true }
-    }
-  );
-
-  // stats — scale bounce
-  gsap.fromTo(stats,
-    { scale: 0.5, opacity: 0, y: 20 },
-    {
-      scale: 1, opacity: 1, y: 0,
-      duration: 0.6, stagger: 0.1, ease: "back.out(1.8)",
-      scrollTrigger: { trigger: card, start: "top 70%", once: true }
-    }
-  );
-
-  // cta — নিচ থেকে
-  gsap.fromTo(cta,
-    { y: 30, opacity: 0 },
-    {
-      y: 0, opacity: 1, duration: 0.6, ease: "power3.out",
-      scrollTrigger: { trigger: card, start: "top 65%", once: true }
-    }
-  );
-
-  // image — clip-path reveal (ডান থেকে উন্মোচন)
-  gsap.fromTo(imgEl,
-    { clipPath: "inset(0 100% 0 0 round 16px)", scale: 1.08 },
-    {
-      clipPath: "inset(0 0% 0 0 round 16px)", scale: 1,
-      duration: 1.1, ease: "power4.inOut",
-      scrollTrigger: { trigger: card, start: "top 78%", once: true }
-    }
-  );
-
-  // shimmer — reveal হওয়ার পর একবার চলে
-  ScrollTrigger.create({
-    trigger: card,
-    start: "top 78%",
-    scroller: document.body,
-    once: true,
-    onEnter: () => {
-      gsap.to(card, {
-        "--shimmer": "100%",
-        duration: 0,
-        onComplete: () => {
-          gsap.fromTo(card.querySelector("::before") || card,
-            {},
-            {}
-          );
-          // shimmer via pseudo — GSAP দিয়ে class টগল
-          setTimeout(() => {
-            card.style.setProperty("--sh", "1");
-            gsap.fromTo({ v: 0 }, { v: 1 }, {
-              duration: 0.8,
-              ease: "power2.inOut",
-              delay: 0.6,
-              onUpdate: function() {
-                const x = gsap.utils.mapRange(0, 1, -100, 100, this.targets()[0].v);
-                card.style.setProperty("background-image",
-                  `radial-gradient(50% 50% at 50% 50%,#FFF 0%,#F4FBFF 33%,#EDF8FF 66%,#DEF2FF 100%),
-                   linear-gradient(105deg, transparent 40%, rgba(255,255,255,${0.5 - Math.abs(this.targets()[0].v - 0.5) * 0.5}) 50%, transparent 60%)`
-                );
-              }
-            });
-          }, 100);
-        }
-      });
-    }
-  });
-
-  // ── 2. MAGNETIC MOUSE INTERACTION ──
-  let isInside = false;
-  let rafId;
-  let mouseX = 0, mouseY = 0;
-  let glowX = 0, glowY = 0;
-  let tiltX = 0, tiltY = 0;
-
-  function lerp(a, b, t) { return a + (b - a) * t; }
-
-  function magneticTick() {
-    if (!isInside) return;
-
-    const rect = card.getBoundingClientRect();
-    const relX = mouseX - rect.left;
-    const relY = mouseY - rect.top;
-
-    // glow follows cursor — smooth lag
-    glowX = lerp(glowX, relX, 0.1);
-    glowY = lerp(glowY, relY, 0.1);
-    glow.style.left = glowX + "px";
-    glow.style.top  = glowY + "px";
-
-    // subtle card tilt
-    const cx   = rect.width / 2;
-    const cy   = rect.height / 2;
-    const dx   = (relX - cx) / cx; // -1 to 1
-    const dy   = (relY - cy) / cy;
-    tiltX = lerp(tiltX, dy * -3, 0.08); // rotateX
-    tiltY = lerp(tiltY, dx * 3, 0.08);  // rotateY
-
-    gsap.set(card, {
-      rotateX: tiltX,
-      rotateY: tiltY,
-      transformPerspective: 1000,
+    cards.forEach((card, i) => {
+        card.style.top = (BASE_TOP + i * STEP) + 'px';
     });
 
-    gsap.set(imgEl, {
-      x: dx * 3,
-      y: dy * 1,
+    // বাকি সব আগের মতোই...
+    gsap.set(cards, {
+        y: 60,
+        opacity: 0,
+        scale: 0.97,
+        transformOrigin: 'top center',
+        transformPerspective: 1200,
     });
 
-    rafId = requestAnimationFrame(magneticTick);
-  }
+    cards.forEach((card, i) => {
 
-  card.addEventListener("mouseenter", () => {
-    isInside = true;
-    glow.style.opacity = "1";
-    cancelAnimationFrame(rafId);
-    magneticTick();
-  });
-
-  card.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  card.addEventListener("mouseleave", () => {
-    isInside = false;
-    glow.style.opacity = "0";
-    cancelAnimationFrame(rafId);
-
-    // reset smoothly
-    gsap.to(card, {
-      rotateX: 0, rotateY: 0,
-      duration: 0.6, ease: "power2.out"
-    });
-    gsap.to(imgEl, {
-      x: 0, y: 0,
-      duration: 0.6, ease: "power2.out"
-    });
-    tiltX = 0; tiltY = 0;
-  });
-
-  // ── 3. STAT COUNTER — scroll এ number count up ──
-  stats.forEach((stat) => {
-    const original = stat.textContent.trim();
-    const num      = parseFloat(original.replace(/[^0-9.]/g, ""));
-    const suffix   = original.replace(/[0-9.,]/g, "");
-    if (isNaN(num)) return;
-
-    ScrollTrigger.create({
-      trigger: card,
-      start: "top 70%",
-      scroller: document.body,
-      once: true,
-      onEnter: () => {
-        gsap.fromTo({ val: 0 }, { val: num }, {
-          duration: 1.5,
-          ease: "power2.out",
-          onUpdate: function() {
-            const v = this.targets()[0].val;
-            stat.textContent = (num % 1 === 0
-              ? Math.round(v).toLocaleString()
-              : v.toFixed(1)) + suffix;
-          },
-          onComplete: () => {
-            stat.textContent = original;
-          }
+        gsap.to(card, {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            ease: 'back.out(1.3)',
+            scrollTrigger: {
+                trigger: card,
+                scroller: document.body,
+                start: 'top 85%',
+                once: true,
+            },
+            delay: i * 0.06,
         });
-      }
+
+        gsap.fromTo(card,
+            { rotateX: 0 },
+            {
+                rotateX: 3,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: card,
+                    scroller: document.body,
+                    start: 'top 60%',
+                    end: 'bottom 20%',
+                    scrub: 1.5,
+                },
+            }
+        );
+
+        if (i > 0) {
+            ScrollTrigger.create({
+                trigger: card,
+                scroller: document.body,
+                start: 'top 60%',
+                once: true,
+                onEnter: () => {
+                    cards.slice(0, i).forEach((prev, j) => {
+                        const stepsBack = i - j;
+                        gsap.to(prev, {
+                            scale: 1 - stepsBack * 0.03,
+                            duration: 0.5,
+                            ease: 'power2.inOut',
+                        });
+                    });
+                }
+            });
+        }
+
+        card.addEventListener('mouseenter', () => {
+            gsap.to(card, {
+                y: -8,
+                scale: 1.008,
+                duration: 0.4,
+                ease: 'power2.out',
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                y: 0,
+                scale: 1,
+                duration: 0.6,
+                ease: 'elastic.out(1, 0.6)',
+            });
+        });
+
     });
-  });
 
-});
-
-
-
-
-
+})();
 
 
 // ============================================
@@ -889,3 +703,141 @@ function initContentTestimonialSlider() {
 }
 
 initContentTestimonialSlider();
+
+
+
+
+
+//faq
+
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length === 0) return;
+
+    faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const content = item.querySelector('.faq-content');
+        const border = item.querySelector('.faq-border');
+        const iconClose = item.querySelector('.icon-close'); // + icon
+        const iconOpen = item.querySelector('.icon-open');   // − icon
+
+        if (!trigger) return;
+
+        trigger.addEventListener('click', function () {
+            const isOpen = item.classList.contains('active');
+
+            // Close all others
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                    const oc = otherItem.querySelector('.faq-content');
+                    const ob = otherItem.querySelector('.faq-border');
+                    const oClose = otherItem.querySelector('.icon-close');
+                    const oOpen = otherItem.querySelector('.icon-open');
+                    if (oc) oc.style.maxHeight = '0';
+                    if (ob) ob.classList.add('hidden');
+                    if (oClose) oClose.classList.remove('hidden');
+                    if (oOpen) oOpen.classList.add('hidden');
+                }
+            });
+
+            // Toggle current
+            if (isOpen) {
+                item.classList.remove('active');
+                if (content) content.style.maxHeight = '0';
+                if (border) border.classList.add('hidden');
+                if (iconClose) iconClose.classList.remove('hidden');
+                if (iconOpen) iconOpen.classList.add('hidden');
+            } else {
+                item.classList.add('active');
+                if (content) content.style.maxHeight = content.scrollHeight + 'px';
+                if (border) border.classList.remove('hidden');
+                if (iconClose) iconClose.classList.add('hidden');
+                if (iconOpen) iconOpen.classList.remove('hidden');
+            }
+        });
+    });
+}
+
+
+function initFAQGrid() {
+    const wrap = document.getElementById('faqGridWrap');
+    if (!wrap) return;
+
+    const items = Array.from(wrap.querySelectorAll('.faq-item'));
+    if (items.length === 0) return;
+
+    // Create 2 column divs
+    const leftCol = document.createElement('div');
+    const rightCol = document.createElement('div');
+    leftCol.className = 'flex flex-col gap-0 w-full md:w-1/2';
+    rightCol.className = 'flex flex-col gap-0 w-full md:w-1/2';
+
+    // Distribute items: odd → left, even → right
+    items.forEach((item, index) => {
+        if (index % 2 === 0) {
+            leftCol.appendChild(item);
+        } else {
+            rightCol.appendChild(item);
+        }
+    });
+
+    // Replace wrap content with 2 columns
+    wrap.innerHTML = '';
+    wrap.className = 'flex flex-col md:flex-row gap-8 items-start';
+    wrap.appendChild(leftCol);
+    wrap.appendChild(rightCol);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    initFAQGrid(); 
+    initFAQ();    
+});
+
+
+
+
+
+// partner slider
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    // ========== PARTNER SLIDER ==========
+    const partnerSliderElement = document.getElementById('partner-slider');
+
+    if (partnerSliderElement && typeof Splide !== 'undefined') {
+
+        const partnerSplide = new Splide('#partner-slider', {
+            type: 'loop',
+            drag: 'free',
+            focus: 'center',
+            perPage: 6,
+            gap: '0px',
+            arrows: false,
+            pagination: false,
+            autoScroll: {
+                speed: 1,
+                pauseOnHover: true,
+                pauseOnFocus: false,
+            },
+            breakpoints: {
+                1280: { perPage: 5 },
+                1024: { perPage: 4 },
+                768:  { perPage: 3 },
+                640:  { perPage: 2,gap: '8px', },
+            }
+        });
+
+        if (window.splide && window.splide.Extensions) {
+            partnerSplide.mount(window.splide.Extensions);
+        } else {
+            partnerSplide.mount();
+        }
+    }
+
+});
+
+// ============================================
+// BRAND / PARTNER SLIDER
+// ============================================

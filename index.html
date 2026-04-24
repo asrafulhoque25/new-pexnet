@@ -13,7 +13,7 @@
 <div>
 
     <!-- ===== NAVBAR ===== -->
-    <nav class="nav" id="mainNav">
+    <nav id="mainNav" style="background: rgba(0, 36, 59, 1);">
         <div class="container">
             <div class="nav-inner">
 
@@ -77,7 +77,7 @@
                 <div class="flex items-center gap-4">
                     <!-- CTA -->
                     <a href="contact.html"
-                        class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:block hidden">
+                        class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out md:block hidden">
                         <span class="cta-arrow">
                             <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -188,7 +188,7 @@
                     <div class="sm:space-y-4 space-y-3">
                         <span
                             class="py-1 px-3 text-primary font-bold sm:text-sm text-xs bg-[#06314D] rounded-full inline-block">Welcome
-                            to PexNet</span>
+                            to Pexnet</span>
                         <h1
                             class="md::mt-6 mt-3 mt-1 lg:text-[64px] md:text-[48px] sm:text-[42px] text-4xl text-white font-notch leading-[110%]">
                             <span class="text-[#88D1FF] block">Local SEO Agency</span> for Small Businesses
@@ -200,7 +200,7 @@
                     </div>
                     <div class="flex flex-wrap items-center gap-3 sm:mt-8 mt-6">
                         <a href="contact.html"
-                            class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out">
+                            class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px] ">
                             <span class="cta-arrow">
                                 <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -222,7 +222,7 @@
                             </span>
                         </a>
                         <a href="contact.html"
-                            class="common-cta bg-[#88D1FF] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out">
+                            class="common-cta bg-[#88D1FF] hover:bg-[#05314D] sm:h-13 h-[44px] px-5 group duration-500 ease-in-out">
                             <span
                                 class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
                                 <span>Get a Free SEO Audit</span>
@@ -271,67 +271,85 @@
 
     <!-- brand section start -->
 
-    <section class="brand-section py-8 partner-section bg-[#F4FBFF]">
-        <div id="brandWrapper" class="bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] 
-            grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 items-center">
+<section class="brand-section py-8 partner-section bg-[#F4FBFF] px-3">
+    <div id="brandWrapper" class="bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] sm:py-8 py-6 sm:rounded-full rounded-[60px] overflow-hidden">
 
-            <!-- Meta -->
-            <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
-                <div class="logo-circle">
-                    <img src="assets/images/brand1.svg" class="img-fluid" alt="brand logo">
-                </div>
-                <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Meta</p>
-                <p class="text-base text-[#526E80]">Business Partner</p>
+        <div id="partner-slider" class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+
+                    <!-- Meta -->
+                    <li class="splide__slide">
+                        <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
+                            <div class="logo-circle">
+                                <img src="assets/images/brand1.svg" class="img-fluid" alt="brand logo">
+                            </div>
+                            <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Meta</p>
+                            <p class="text-sm sm:text-base text-[#526E80] text-center line-clamp-1">Business Partner</p>
+                        </div>
+                    </li>
+
+                    <!-- Google -->
+                    <li class="splide__slide">
+                        <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
+                            <div class="logo-circle">
+                                <img src="assets/images/brand2.svg" class="img-fluid" alt="brand logo">
+                            </div>
+                            <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Google</p>
+                            <p class="text-sm sm:text-base text-[#526E80] text-center line-clamp-1">Partner</p>
+                        </div>
+                    </li>
+
+                    <!-- Microsoft -->
+                    <li class="splide__slide">
+                        <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
+                            <div class="logo-circle">
+                                <img src="assets/images/brand3.svg" class="img-fluid" alt="brand logo">
+                            </div>
+                            <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Microsoft</p>
+                            <p class="text-sm sm:text-base text-[#526E80] text-center line-clamp-1">Advertising Partner</p>
+                        </div>
+                    </li>
+
+                    <!-- Upwork -->
+                    <li class="splide__slide">
+                        <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
+                            <div class="logo-circle">
+                                <img src="assets/images/brand4.svg" class="img-fluid" alt="brand logo">
+                            </div>
+                            <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Upwork</p>
+                            <p class="text-sm sm:text-base text-[#526E80] text-center line-clamp-1">Top Rated Agency</p>
+                        </div>
+                    </li>
+
+                    <!-- Clutch -->
+                    <li class="splide__slide">
+                        <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
+                            <div class="logo-circle">
+                                <img src="assets/images/brand6.svg" class="img-fluid" alt="brand logo">
+                            </div>
+                            <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Clutch</p>
+                            <p class="text-sm sm:text-base text-[#526E80] text-center line-clamp-1">Top Local SEO Company 2024</p>
+                        </div>
+                    </li>
+
+                    <!-- Web Excellence Award -->
+                    <li class="splide__slide">
+                        <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
+                            <div class="logo-circle">
+                                <img src="assets/images/brand7.svg" class="img-fluid" alt="brand logo">
+                            </div>
+                            <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1 text-center">Web Excellence Award</p>
+                            <p class="text-sm sm:text-base text-[#526E80] text-center line-clamp-1">2023</p>
+                        </div>
+                    </li>
+
+                </ul>
             </div>
-
-            <!-- Google -->
-            <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
-                <div class="logo-circle">
-                    <img src="assets/images/brand2.svg" class="img-fluid" alt="brand logo">
-                </div>
-                <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Google</p>
-                <p class="text-base text-[#526E80]">Partner</p>
-            </div>
-
-            <!-- Microsoft -->
-            <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
-                <div class="logo-circle">
-                    <img src="assets/images/brand3.svg" class="img-fluid" alt="brand logo">
-                </div>
-                <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Microsoft</p>
-                <p class="text-base text-[#526E80]">Advertising Partner</p>
-            </div>
-
-            <!-- Upwork -->
-            <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
-                <div class="logo-circle">
-                    <img src="assets/images/brand4.svg" class="img-fluid" alt="brand logo">
-                </div>
-                <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Upwork</p>
-                <p class="text-base text-[#526E80]">Top Rated Agency</p>
-            </div>
-
-            <!-- Clutch -->
-            <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
-                <div class="logo-circle">
-                    <img src="assets/images/brand6.svg" class="img-fluid" alt="brand logo">
-                </div>
-                <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Clutch</p>
-                <p class="text-base text-[#526E80] text-center">Top Local SEO Company 2024</p>
-            </div>
-
-            <!-- Web Excellence Award -->
-            <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
-                <div class="logo-circle">
-                    <img src="assets/images/brand7.svg" class="img-fluid" alt="brand logo">
-                </div>
-                <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1 text-center">Web Excellence
-                    Award</p>
-                <p class="text-base text-[#526E80]">2023</p>
-            </div>
-
         </div>
-    </section>
+
+    </div>
+</section>
 
     <!-- brand section end -->
 
@@ -352,7 +370,7 @@
             </div>
 
 
-            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-8 gap-6">
+            <div class="sm:mt-12 mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-8 md:gap-4 gap-4">
                 <div class="why-outer bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
                     <div class="why-need-card bg-white md:pt-6 sm:pt-4 pt-3 rounded-3xl border border-[#D4EEFF] h-full">
                         <div class="why-card-img px-3">
@@ -493,9 +511,9 @@
         <div class="container ">
 
             <div
-                class="lg:border lg:border-l lg:border-l-[#15425f] lg:border-r lg:border-r-transparent lg:border-b-transparent  flex flex-col lg:flex-row items-start gap-3">
+                class="lg:border lg:border-l lg:border-l-white/8 lg:border-r lg:border-r-transparent lg:border-b-transparent  flex flex-col lg:flex-row items-start gap-3">
                 <div
-                    class="common-title max-w-[502px] w-full text-start space-y-4 lg:sticky top-12 pl-3  pt-[96px] lg:pb-[96px]">
+                    class="common-title max-w-[502px] w-full text-start space-y-4 lg:sticky top-12 pl-3  md:pt-[96px] sm:pt-[60px] pt-[48px] lg:pb-[96px]">
                     <h2
                         class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#fff]">
                         Our Focus Niches</h2>
@@ -507,7 +525,7 @@
                         you offer.</p>
                     <div class="lg:block hidden mt-8">
                         <a href="contact.html"
-                            class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out">
+                            class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px]">
                             <span class="cta-arrow">
                                 <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -531,8 +549,8 @@
                     </div>
                 </div>
                 <div
-                    class="grid sm:grid-cols-2 grid-cols-1 lg:gap-6 sm:gap-4 gap-3 w-full relative sm:px-3 sm:border sm:border-l-[#15425f] sm:border-r-[#15425f]  lg:pt-[96px] lg:pb-[96px]  sm:border-t-0 sm:border-b-0 h-full">
-                    <div class="h-full w-[0.5px] bg-[#15425f] absolute left-1/2 -translate-x-1/2 sm:block hidden">
+                    class="grid sm:grid-cols-2 grid-cols-1 lg:gap-6 sm:gap-4 gap-3 w-full relative sm:px-3 sm:border sm:border-l-white/8 sm:border-r-white/8  lg:pt-[96px] lg:pb-[96px]  sm:border-t-0 sm:border-b-0 h-full">
+                    <div class="h-full w-[0.5px] bg-white/8 absolute left-1/2 -translate-x-1/2 sm:block hidden">
 
                     </div>
                     <a href="#"
@@ -732,7 +750,7 @@
                 </div>
                 <div class="lg:hidden w-full mt-8 flex justify-center">
                     <a href="contact.html"
-                        class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out">
+                        class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px]">
                         <span class="cta-arrow">
                             <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -825,9 +843,9 @@
                                 qualified traffic and higher conversions. </p>
                         </li>
                     </ul>
-                    <div class="lg:block hidden mt-8">
+                    <div class=" mt-8">
                         <a href="contact.html"
-                            class="common-cta bg-[#076AAB] hover:bg-[#BFFB4F] h-[44px] px-5 group duration-500 ease-in-out">
+                            class="common-cta bg-[#076AAB] hover:bg-[#BFFB4F] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px]">
                             <span class="cta-arrow">
                                 <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -918,11 +936,12 @@
 
 
 
-            <section id="proven-results" class="proven-section">
-                <div class="sticky-cards-container">
+            <div id="proven-results" class="proven-section">
 
-                    <div
-                        class="proven-result-wrap mt-12 p-8 rounded-3xl bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
+                <div class="proven-sticky-wrapper">
+
+                    <div class="proven-stack-container">
+                    <div class="proven-result-wrap mt-12 p-8 rounded-3xl bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
                         <div class="grid grid-cols-2 gap-[128px] items-center">
                             <div class="proven-result-content flex flex-col gap-6 justify-between h-full">
                                 <div>
@@ -984,8 +1003,7 @@
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="proven-result-wrap mt-12 p-8 rounded-3xl bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
+                    <div class="proven-result-wrap mt-12 p-8 rounded-3xl bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
                         <div class="grid grid-cols-2 gap-[128px] items-center">
                             <div class="proven-result-content flex flex-col gap-6 justify-between h-full">
                                 <div>
@@ -1047,8 +1065,7 @@
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="proven-result-wrap mt-12 p-8 rounded-3xl bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
+                    <div class="proven-result-wrap mt-12 p-8 rounded-3xl bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
                         <div class="grid grid-cols-2 gap-[128px] items-center">
                             <div class="proven-result-content flex flex-col gap-6 justify-between h-full">
                                 <div>
@@ -1110,9 +1127,74 @@
                             </div>
                         </div>
                     </div>
+                    <div class="proven-result-wrap mt-12 p-8 rounded-3xl bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
+                        <div class="grid grid-cols-2 gap-[128px] items-center">
+                            <div class="proven-result-content flex flex-col gap-6 justify-between h-full">
+                                <div>
+                                    <div class="flex items-center gap-0 mb-6">
+                                        <img src="assets/images/proven-icon1.svg" class="img-fluid shrink-0"
+                                            alt="proven result">
+                                        <p
+                                            class="font-bold text-base leading-[120%] text-[#076AAB] py-1 px-2 border border-[#076AAB] rounded-full h-[27px] inline-flex items-center">
+                                            Moving SEO</p>
+                                    </div>
+                                    <h3 class="mb-3 text-[32px] font-bold text-[#002F4D] leading-[130%] "><span
+                                            class="text-[#076AAB]">1,400% Traffic</span> Growth in 3 Months for
+                                        SmileCrew
+                                        Orthodontics</h3>
+                                    <p class="text-[#526E80] text-base leading-[150%]">In just 3 months, the clinic saw
+                                        stronger
+                                        rankings, better local visibility, and more qualified patient enquiries.</p>
+                                    <div class="grid grid-cols-3 gap-6 mt-8">
+                                        <div class="space-y-2">
+                                            <p class="text-base text-[#526E80]">Monthly Visitors</p>
+                                            <h4 class="text-2xl leading-[120%] text-[#002F4D]">1,500+</h4>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <p class="text-base text-[#526E80]">Organic Traffic Growth</p>
+                                            <h4 class="text-2xl leading-[120%] text-[#002F4D]">1,400%</h4>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <p class="text-base text-[#526E80]">Keywords in Top 3</p>
+                                            <h4 class="text-2xl leading-[120%] text-[#002F4D]">28</h4>
+                                        </div>
+                                    </div>
+                                </div>
 
+
+                                <a href="#proven-results"
+                                    class="max-w-152 w-full h-17.5 inline-flex gap-4 justify-between items-center bg-[#D4EEFF] text-white py-3 px-6 rounded-3xl hover:bg-[#62bdfa] border border-[#ABD7F4] transition-colors duration-300">
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/company-icon1.svg" class="img-fluid" alt="company icon">
+                                        <div class="space-y-1">
+                                            <p class="text-base leading-[120%] text-[#002F4D] font-bold">SmileCrew
+                                                Orthodontics
+                                            </p>
+                                            <p class="text-sm text-[#526E80]">Leander, TX</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="w-[55px] h-[46px] flex items-center justify-end border-l border-l-[#A3CEEB] gap-6">
+                                        <img src="assets/images/proven-arrow-right.svg" class="img-fluid"
+                                            alt="proven arrow right">
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                            <div class="resultproven-image rounded-3xl">
+                                <img src="assets/images/result-proven1.png" class="img-fluid" alt="result proven">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
-            </section>
+
+
+
+            </div>
 
 
         </div>
@@ -1636,31 +1718,39 @@
 
 
     <!-- Tools We Prefer start -->
-     <section class="tools-we-prefer bg-[#F4FBFF] section-padding">
+    <section class="tools-we-prefer bg-[#F4FBFF] section-padding">
         <div class="container">
- <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
                 <h2
-                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">Tools We Prefer</h2>
-                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Pexnet uses only the quality SEO tools. They arm us with ​much-valued data and insights to make your campaign a success. </p>
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    Tools We Prefer</h2>
+                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Pexnet uses only the quality
+                    SEO tools. They arm us with ​much-valued data and insights to make your campaign a success. </p>
             </div>
 
-              <div class="all-tools grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-x-8 sm:gap-y-4 mt-12">
-                    <!-- Item 1 -->
-                    <div class="all-tools-wrap">
-                        <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
- <div class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
-                            <div class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
+            <div class="all-tools grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-x-8 sm:gap-y-4 mt-12">
+                <!-- Item 1 -->
+                <div class="all-tools-wrap">
+                    <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
+                        <div
+                            class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
+                            <div
+                                class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
                                 <div class="flex flex-col sm:col-span-4 gap-2">
-                                    <h3 class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
-                                    Research & Keyword
-                                </h3>
-                                <p class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">Find high-intent keywords your customers are actively searching for.</p>
+                                    <h3
+                                        class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300 text-[#002F4D]">
+                                        Research & Keyword
+                                    </h3>
+                                    <p
+                                        class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
+                                        Find high-intent keywords your customers are actively searching for.</p>
                                 </div>
                                 <div
                                     class="grid grid-cols-3 gap-1.5 items-center justify-start group-hover:translate-x-[10px] transition-all duration-300 sm:col-span-8 w-full sm:px-4 h-full">
-                                    <div class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
-                                        <img src="assets/images/tools1.svg"
-                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                    <div
+                                        class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
+                                        <img src="assets/images/tools1.svg" class="w-10 h-10 sm:h-[42px] object-contain"
+                                            alt="">
                                         <p
                                             class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
                                             Google Keyword Planner
@@ -1668,8 +1758,8 @@
                                     </div>
                                     <div
                                         class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
-                                        <img src="assets/images/tools2.svg"
-                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <img src="assets/images/tools2.svg" class="w-10 h-10 sm:h-[42px] object-contain"
+                                            alt="">
                                         <p
                                             class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
                                             Ahrefs
@@ -1677,8 +1767,8 @@
                                     </div>
                                     <div
                                         class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
-                                        <img src="assets/images/tools3.svg"
-                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <img src="assets/images/tools3.svg" class="w-10 h-10 sm:h-[42px] object-contain"
+                                            alt="">
                                         <p
                                             class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
                                             Semrush
@@ -1687,27 +1777,33 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
-                       
                     </div>
 
-                    <!-- Item 2 -->
-                    <div class="all-tools-wrap">
-                        <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
-<div class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
-                            <div class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
-                                 <div class="flex flex-col sm:col-span-4 gap-2">
-                                    <h3 class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
-                                    Local Listings & Citations
-                                </h3>
-                                <p class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">Strengthen your local presence with accurate and consistent business listings.</p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="all-tools-wrap">
+                    <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
+                        <div
+                            class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
+                            <div
+                                class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
+                                <div class="flex flex-col sm:col-span-4 gap-2">
+                                    <h3
+                                        class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300 text-[#002F4D]">
+                                        Local Listings & Citations
+                                    </h3>
+                                    <p
+                                        class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
+                                        Strengthen your local presence with accurate and consistent business listings.
+                                    </p>
                                 </div>
                                 <div
                                     class="grid grid-cols-3 gap-1.5 items-center justify-start group-hover:translate-x-[10px] transition-all duration-300 sm:col-span-8 w-full sm:px-4 h-full">
                                     <div
                                         class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
-                                        <img src="assets/images/tools4.svg"
-                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <img src="assets/images/tools4.svg" class="w-10 h-10 sm:h-[42px] object-contain"
+                                            alt="">
                                         <p
                                             class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
                                             GBP
@@ -1715,8 +1811,8 @@
                                     </div>
                                     <div
                                         class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
-                                        <img src="assets/images/tools5.svg"
-                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <img src="assets/images/tools5.svg" class="w-10 h-10 sm:h-[42px] object-contain"
+                                            alt="">
                                         <p
                                             class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
                                             BrightLocal
@@ -1724,8 +1820,8 @@
                                     </div>
                                     <div
                                         class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
-                                        <img src="assets/images/tools6.svg"
-                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <img src="assets/images/tools6.svg" class="w-10 h-10 sm:h-[42px] object-contain"
+                                            alt="">
                                         <p
                                             class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
                                             Moz Local
@@ -1734,27 +1830,32 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
-                        
                     </div>
 
-                    <!-- Item 3 -->
-                    <div class="all-tools-wrap">
-                            <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
-   <div class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
-                            <div class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
+                </div>
+
+                <!-- Item 3 -->
+                <div class="all-tools-wrap">
+                    <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
+                        <div
+                            class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
+                            <div
+                                class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
                                 <div class="flex flex-col sm:col-span-4 gap-2">
-                                    <h3 class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
-                                    Tracking & Analytics
-                                </h3>
-                                <p class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">Measure performance and uncover insights that drive smarter SEO decisions.</p>
+                                    <h3
+                                        class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300 text-[#002F4D]">
+                                        Tracking & Analytics
+                                    </h3>
+                                    <p
+                                        class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
+                                        Measure performance and uncover insights that drive smarter SEO decisions.</p>
                                 </div>
                                 <div
                                     class="grid grid-cols-3 gap-1.5 items-center justify-start group-hover:translate-x-[10px] transition-all duration-300 sm:col-span-8 w-full sm:px-4 h-full">
                                     <div
                                         class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
-                                        <img src="assets/images/tools7.svg"
-                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <img src="assets/images/tools7.svg" class="w-10 h-10 sm:h-[42px] object-contain"
+                                            alt="">
                                         <p
                                             class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
                                             Google Analytics 4
@@ -1762,8 +1863,8 @@
                                     </div>
                                     <div
                                         class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
-                                        <img src="assets/images/tools8.svg"
-                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <img src="assets/images/tools8.svg" class="w-10 h-10 sm:h-[42px] object-contain"
+                                            alt="">
                                         <p
                                             class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
                                             Google Search Console
@@ -1771,29 +1872,36 @@
                                     </div>
                                     <div
                                         class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
-                                        <img src="assets/images/tools9.svg"
-                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
-                                        <p class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
+                                        <img src="assets/images/tools9.svg" class="w-10 h-10 sm:h-[42px] object-contain"
+                                            alt="">
+                                        <p
+                                            class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
                                             Bright Local
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                                </div>
-                     
                     </div>
 
-                    <!-- Item 4 -->
-                    <div class="all-tools-wrap">
-                            <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
-   <div class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
-                            <div class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
-                                 <div class="flex flex-col sm:col-span-4 gap-2">
-                                    <h3 class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
-                                    Reviews & Reputation
-                                </h3>
-                                <p class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">Build trust and credibility through reviews and strong online reputation signals.</p>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="all-tools-wrap">
+                    <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
+                        <div
+                            class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
+                            <div
+                                class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
+                                <div class="flex flex-col sm:col-span-4 gap-2">
+                                    <h3
+                                        class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300 text-[#002F4D]">
+                                        Reviews & Reputation
+                                    </h3>
+                                    <p
+                                        class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
+                                        Build trust and credibility through reviews and strong online reputation
+                                        signals.</p>
                                 </div>
                                 <div
                                     class="grid grid-cols-3 gap-1.5 items-center justify-start group-hover:translate-x-[10px] transition-all duration-300 sm:col-span-8 w-full sm:px-4 h-full">
@@ -1817,8 +1925,8 @@
                                     </div>
                                     <div
                                         class="text-center inline-flex justify-center items-center flex-col sm:gap-3 gap-2 sm:gap-1 p-3 rounded-[16px] bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] h-full">
-                                        <img src="assets/images/tools9.svg"
-                                            class="w-10 h-10 sm:h-[42px] object-contain" alt="">
+                                        <img src="assets/images/tools9.svg" class="w-10 h-10 sm:h-[42px] object-contain"
+                                            alt="">
                                         <p
                                             class="text-xs text-[#526E80] font-bold group-hover:text-[#002F4D] transition-all duration-400">
                                             BrightLocal
@@ -1827,20 +1935,25 @@
                                 </div>
                             </div>
                         </div>
-                                </div>
-                     
                     </div>
 
-                    <!-- Item 5 -->
-                    <div class="all-tools-wrap">
-                            <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
-                                <div class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
-                            <div class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
-                                      <div class="flex flex-col sm:col-span-4 gap-2">
-                                    <h3 class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
-                                    Technical
-                                </h3>
-                                <p class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">Fix technical issues to improve site health, speed, and search visibility.</p>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="all-tools-wrap">
+                    <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
+                        <div
+                            class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
+                            <div
+                                class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
+                                <div class="flex flex-col sm:col-span-4 gap-2">
+                                    <h3
+                                        class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300 text-[#002F4D]">
+                                        Technical
+                                    </h3>
+                                    <p
+                                        class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
+                                        Fix technical issues to improve site health, speed, and search visibility.</p>
                                 </div>
                                 <div
                                     class="grid grid-cols-3 gap-1.5 items-center justify-start group-hover:translate-x-[10px] transition-all duration-300 sm:col-span-8 w-full sm:px-4 h-full">
@@ -1874,20 +1987,25 @@
                                 </div>
                             </div>
                         </div>
-                                </div>
-                        
                     </div>
 
-                    <!-- Item 6 -->
-                    <div class="all-tools-wrap">
-                            <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
- <div class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
-                            <di class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
-                                    <div class="flex flex-col sm:col-span-4 gap-2">
-                                    <h3 class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
-                                    On-Page Optimization
-                                </h3>
-                                <p class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">Optimize pages for better rankings, relevance, and user experience.</p>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="all-tools-wrap">
+                    <div class=" bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5 h-full">
+                        <div
+                            class="bg-white p-3 sm:p-6 rounded-2xl sm:rounded-3xl group hover:bg-primary transition-all duration-300 h-full border border-[#D4EEFF]">
+                            <di
+                                class="flex flex-col sm:grid sm:grid-cols-12 items-start sm:items-center justify-between transition-all duration-300 gap-3 sm:gap-0 h-full">
+                                <div class="flex flex-col sm:col-span-4 gap-2">
+                                    <h3
+                                        class="text-base sm:text-xl font-bold  group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300 text-[#002F4D]">
+                                        On-Page Optimization
+                                    </h3>
+                                    <p
+                                        class="text-sm text-[#526E80] leading150 group-hover:translate-x-[10px] group-hover:text-white transition-all duration-300">
+                                        Optimize pages for better rankings, relevance, and user experience.</p>
                                 </div>
                                 <div
                                     class="grid grid-cols-3 gap-1.5 items-center justify-start group-hover:translate-x-[10px] transition-all duration-300 sm:col-span-8 w-full sm:px-4 h-full">
@@ -1921,12 +2039,12 @@
                                 </div>
                             </di>
                         </div>
-                                </div>
-                       
                     </div>
+
                 </div>
+            </div>
         </div>
-     </section>
+    </section>
     <!-- Tools We Prefer end -->
 
 
@@ -1934,124 +2052,812 @@
 
 
     <!-- Articles & Blogs start -->
-     <section class="article section-padding bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
+    <section
+        class="article section-padding bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
         <div class="container">
-             <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
                 <h2
-                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">Articles & Blogs</h2>
-                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Our resources keep you one step ahead of the upcoming trends, competitors, and algorithm changes.</p>
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    Articles & Blogs</h2>
+                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Our resources keep you one
+                    step ahead of the upcoming trends, competitors, and algorithm changes.</p>
             </div>
 
             <div class="grid sm:grid-cols-3 grid-cols-1 gap-8 mt-12">
                 <div class="border border-[#D4EEFF] rounded-3xl p-1.5 flex flex-col justify-between bg-white">
-                    <div> 
+                    <div>
                         <div class="blog-img">
-                            <img src="assets/images/blog1.webp" class="w-full h-auto object-cover rounded-[20px]" alt="blog image">
-                        </div>
-                       
-                    <div class="px-6 pt-6 space-y-4">
-                           <div class="flex items-center gap-3">
-                        <div class="inline-flex items-center gap-1.5 rounded-2xl px-3 py-1.5 bg-[radial-gradient(50%_50%_at_50%_50%,_#FFF_0%,_#F4FBFF_33%,_#EDF8FF_66%,_#DEF2FF_100%)]">
-                            <img src="assets/images/blog-category-img.svg" class="img-fluid" alt="blog category image">
-                            <p class="text-sm font-normal text-[#076AAB]">Dental</p>
+                            <img src="assets/images/blog1.webp" class="w-full h-auto object-cover rounded-[20px]"
+                                alt="blog image">
                         </div>
 
-                        <div class="flex items-center gap-2">
-                            <img src="assets/images/blog-author1.png" class="img-fluid rounded-full" alt="blog author image">
-                            <p class="text-sm text-[#076AAB]">Riadul Islam</p>
-                        </div>
-                       </div>
-                    
+                        <div class="px-6 pt-6 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="inline-flex items-center gap-1.5 rounded-2xl px-3 py-1.5 bg-[radial-gradient(50%_50%_at_50%_50%,_#FFF_0%,_#F4FBFF_33%,_#EDF8FF_66%,_#DEF2FF_100%)]">
+                                    <img src="assets/images/blog-category-img.svg" class="img-fluid"
+                                        alt="blog category image">
+                                    <p class="text-sm font-normal text-[#076AAB]">Dental</p>
+                                </div>
 
-                        <div class="flex items-center justify-between gap-6 ">
-                            <h3 class="text-2xl font-bold text-[#076AAB] leading120 line-clamp-2">How to Optimize Your Google Business Profile for Local SEO</h3>
-                            <div class="publish-date shrink-0 bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-2xl w-[58px] h-[58px] flex items-center justify-center flex-col">
-                                <p class="text-[20px] font-bold leading120 text-[#076AAB] mb-1">08</p>
-                                <p class="text-xs font-normal leading120 text-[#076AAB] uppercase">Apr</p>
+                                <div class="flex items-center gap-2">
+                                    <img src="assets/images/blog-author1.png" class="img-fluid rounded-full"
+                                        alt="blog author image">
+                                    <p class="text-sm text-[#076AAB]">Riadul Islam</p>
+                                </div>
                             </div>
+
+
+                            <div class="flex items-center justify-between gap-6 ">
+                                <h3 class="text-2xl font-bold text-[#076AAB] leading120 line-clamp-2">How to Optimize
+                                    Your Google Business Profile for Local SEO</h3>
+                                <div
+                                    class="publish-date shrink-0 bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-2xl w-[58px] h-[58px] flex items-center justify-center flex-col">
+                                    <p class="text-[20px] font-bold leading120 text-[#076AAB] mb-1">08</p>
+                                    <p class="text-xs font-normal leading120 text-[#076AAB] uppercase">Apr</p>
+                                </div>
+                            </div>
+                            <p class="text-base leading150 text-[#526E80] line-clamp-2">A patient with a severe
+                                toothache isn’t going to wait until the next day. They would simply search online,
+                                select a dentist, and book an appointment ASAP! On the other side, despite providing
+                                value-for-money</p>
+
                         </div>
-                        <p class="text-base leading150 text-[#526E80] line-clamp-2">A patient with a severe toothache isn’t going to wait until the next day. They would simply search online, select a dentist, and book an appointment ASAP! On the other side, despite providing value-for-money</p>
-                    
-                    </div>
                     </div>
                     <div class="mt-12 pb-6 px-6">
-                        <a href="#" class="text-base font-bold text-[#526E80] hover:text-[#05314D] underline transition-colors duration-300">Read more</a>
+                        <a href="#"
+                            class="text-base font-bold text-[#526E80] hover:text-[#05314D] underline transition-colors duration-300">Read
+                            more</a>
                     </div>
                 </div>
                 <div class="border border-[#D4EEFF] rounded-3xl p-1.5 flex flex-col justify-between bg-white">
-                    <div> 
+                    <div>
                         <div class="blog-img">
-                            <img src="assets/images/blog1.webp" class="w-full h-auto object-cover rounded-[20px]" alt="blog image">
-                        </div>
-                       
-                    <div class="px-6 pt-6 space-y-4">
-                           <div class="flex items-center gap-3">
-                        <div class="inline-flex items-center gap-1.5 rounded-2xl px-3 py-1.5 bg-[radial-gradient(50%_50%_at_50%_50%,_#FFF_0%,_#F4FBFF_33%,_#EDF8FF_66%,_#DEF2FF_100%)]">
-                            <img src="assets/images/blog-category-img.svg" class="img-fluid" alt="blog category image">
-                            <p class="text-sm font-normal text-[#076AAB]">Dental</p>
+                            <img src="assets/images/blog1.webp" class="w-full h-auto object-cover rounded-[20px]"
+                                alt="blog image">
                         </div>
 
-                        <div class="flex items-center gap-2">
-                            <img src="assets/images/blog-author1.png" class="img-fluid rounded-full" alt="blog author image">
-                            <p class="text-sm text-[#076AAB]">Riadul Islam</p>
-                        </div>
-                       </div>
-                    
+                        <div class="px-6 pt-6 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="inline-flex items-center gap-1.5 rounded-2xl px-3 py-1.5 bg-[radial-gradient(50%_50%_at_50%_50%,_#FFF_0%,_#F4FBFF_33%,_#EDF8FF_66%,_#DEF2FF_100%)]">
+                                    <img src="assets/images/blog-category-img.svg" class="img-fluid"
+                                        alt="blog category image">
+                                    <p class="text-sm font-normal text-[#076AAB]">Dental</p>
+                                </div>
 
-                        <div class="flex items-center justify-between gap-6 ">
-                            <h3 class="text-2xl font-bold text-[#076AAB] leading120 line-clamp-2">How to Optimize Your Google Business Profile for Local SEO</h3>
-                            <div class="publish-date shrink-0 bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-2xl w-[58px] h-[58px] flex items-center justify-center flex-col">
-                                <p class="text-[20px] font-bold leading120 text-[#076AAB] mb-1">08</p>
-                                <p class="text-xs font-normal leading120 text-[#076AAB] uppercase">Apr</p>
+                                <div class="flex items-center gap-2">
+                                    <img src="assets/images/blog-author1.png" class="img-fluid rounded-full"
+                                        alt="blog author image">
+                                    <p class="text-sm text-[#076AAB]">Riadul Islam</p>
+                                </div>
                             </div>
+
+
+                            <div class="flex items-center justify-between gap-6 ">
+                                <h3 class="text-2xl font-bold text-[#076AAB] leading120 line-clamp-2">How to Optimize
+                                    Your Google Business Profile for Local SEO</h3>
+                                <div
+                                    class="publish-date shrink-0 bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-2xl w-[58px] h-[58px] flex items-center justify-center flex-col">
+                                    <p class="text-[20px] font-bold leading120 text-[#076AAB] mb-1">08</p>
+                                    <p class="text-xs font-normal leading120 text-[#076AAB] uppercase">Apr</p>
+                                </div>
+                            </div>
+                            <p class="text-base leading150 text-[#526E80] line-clamp-2">A patient with a severe
+                                toothache isn’t going to wait until the next day. They would simply search online,
+                                select a dentist, and book an appointment ASAP! On the other side, despite providing
+                                value-for-money</p>
+
                         </div>
-                        <p class="text-base leading150 text-[#526E80] line-clamp-2">A patient with a severe toothache isn’t going to wait until the next day. They would simply search online, select a dentist, and book an appointment ASAP! On the other side, despite providing value-for-money</p>
-                    
-                    </div>
                     </div>
                     <div class="mt-12 pb-6 px-6">
-                        <a href="#" class="text-base font-bold text-[#526E80] hover:text-[#05314D] underline transition-colors duration-300">Read more</a>
+                        <a href="#"
+                            class="text-base font-bold text-[#526E80] hover:text-[#05314D] underline transition-colors duration-300">Read
+                            more</a>
                     </div>
                 </div>
                 <div class="border border-[#D4EEFF] rounded-3xl p-1.5 flex flex-col justify-between bg-white">
-                    <div> 
+                    <div>
                         <div class="blog-img">
-                            <img src="assets/images/blog1.webp" class="w-full h-auto object-cover rounded-[20px]" alt="blog image">
-                        </div>
-                       
-                    <div class="px-6 pt-6 space-y-4">
-                           <div class="flex items-center gap-3">
-                        <div class="inline-flex items-center gap-1.5 rounded-2xl px-3 py-1.5 bg-[radial-gradient(50%_50%_at_50%_50%,_#FFF_0%,_#F4FBFF_33%,_#EDF8FF_66%,_#DEF2FF_100%)]">
-                            <img src="assets/images/blog-category-img.svg" class="img-fluid" alt="blog category image">
-                            <p class="text-sm font-normal text-[#076AAB]">Dental</p>
+                            <img src="assets/images/blog1.webp" class="w-full h-auto object-cover rounded-[20px]"
+                                alt="blog image">
                         </div>
 
-                        <div class="flex items-center gap-2">
-                            <img src="assets/images/blog-author1.png" class="img-fluid rounded-full" alt="blog author image">
-                            <p class="text-sm text-[#076AAB]">Riadul Islam</p>
-                        </div>
-                       </div>
-                    
+                        <div class="px-6 pt-6 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="inline-flex items-center gap-1.5 rounded-2xl px-3 py-1.5 bg-[radial-gradient(50%_50%_at_50%_50%,_#FFF_0%,_#F4FBFF_33%,_#EDF8FF_66%,_#DEF2FF_100%)]">
+                                    <img src="assets/images/blog-category-img.svg" class="img-fluid"
+                                        alt="blog category image">
+                                    <p class="text-sm font-normal text-[#076AAB]">Dental</p>
+                                </div>
 
-                        <div class="flex items-center justify-between gap-6 ">
-                            <h3 class="text-2xl font-bold text-[#076AAB] leading120 line-clamp-2">How to Optimize Your Google Business Profile for Local SEO</h3>
-                            <div class="publish-date shrink-0 bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-2xl w-[58px] h-[58px] flex items-center justify-center flex-col">
-                                <p class="text-[20px] font-bold leading120 text-[#076AAB] mb-1">08</p>
-                                <p class="text-xs font-normal leading120 text-[#076AAB] uppercase">Apr</p>
+                                <div class="flex items-center gap-2">
+                                    <img src="assets/images/blog-author1.png" class="img-fluid rounded-full"
+                                        alt="blog author image">
+                                    <p class="text-sm text-[#076AAB]">Riadul Islam</p>
+                                </div>
                             </div>
+
+
+                            <div class="flex items-center justify-between gap-6 ">
+                                <h3 class="text-2xl font-bold text-[#076AAB] leading120 line-clamp-2">How to Optimize
+                                    Your Google Business Profile for Local SEO</h3>
+                                <div
+                                    class="publish-date shrink-0 bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-2xl w-[58px] h-[58px] flex items-center justify-center flex-col">
+                                    <p class="text-[20px] font-bold leading120 text-[#076AAB] mb-1">08</p>
+                                    <p class="text-xs font-normal leading120 text-[#076AAB] uppercase">Apr</p>
+                                </div>
+                            </div>
+                            <p class="text-base leading150 text-[#526E80] line-clamp-2">A patient with a severe
+                                toothache isn’t going to wait until the next day. They would simply search online,
+                                select a dentist, and book an appointment ASAP! On the other side, despite providing
+                                value-for-money</p>
+
                         </div>
-                        <p class="text-base leading150 text-[#526E80] line-clamp-2">A patient with a severe toothache isn’t going to wait until the next day. They would simply search online, select a dentist, and book an appointment ASAP! On the other side, despite providing value-for-money</p>
-                    
-                    </div>
                     </div>
                     <div class="mt-12 pb-6 px-6">
-                        <a href="#" class="text-base font-bold text-[#526E80] hover:text-[#05314D] underline transition-colors duration-300">Read more</a>
+                        <a href="#"
+                            class="text-base font-bold text-[#526E80] hover:text-[#05314D] underline transition-colors duration-300">Read
+                            more</a>
                     </div>
                 </div>
             </div>
         </div>
-     </section>
+    </section>
     <!-- Articles & Blogs end -->
+
+
+
+
+    <!-- Frequently Asked Questions start -->
+    <section class="faq section-padding bg-white">
+        <div class="container">
+            <div class="max-w-[1100px] w-full mx-auto pb-12">
+
+                <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                    <h2
+                        class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                      Frequently Asked Questions</h2>
+                    <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">If you don’t see your question answered below, feel free to reach out to us. We're happy to help. </p>
+                </div>
+            </div>
+
+            <!-- FAQ Grid - 2 columns -->
+            <div class="faq-wrap-grid" id="faqGridWrap">
+
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+    <!-- Frequently Asked Questions end -->
+
+
+
+    <!-- contact section start -->
+    <section class="section-padding bg-[radial-gradient(82.97%_50%_at_69.58%_50%,#076AAB_0%,#00243B_100%)]">
+        <div class="container">
+            <div class="grid grid-cols-2 items-center gap-8">
+                <div class="contact-left">
+                    <div class="common-title text-start space-y-4 ">
+                        <h2
+                            class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#fff]">
+                            Why Pexnet Is Your SEO Agency for Small Businesses</h2>
+                        <p class="text-sm sm:text-base leading-[150%] text-[#D4EEFF] ">Every niche and every
+                            business has different conditions and unique challenges. Traditional SEO with a generic
+                            approach
+                            doesn’t work until highly customized to your business environment and SEO goals.</p>
+
+                    </div>
+
+                    <div class="pt-12">
+                        <div class="grid grid-cols-2 gap-8">
+                            <a href="https://wa.me/447832716848"
+                                class="flex items-center gap-3 transition-transform hover:scale-104" target="_blank">
+                                <img src="assets/images/contact-icon1.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal text-base">WhatsApp</p>
+                                    <p class="text-[#fff] font-bold text-xl">+447832716848</p>
+                                </div>
+                            </a>
+
+                            <a href="https://t.me/+447832716848"
+                                class="flex items-center gap-3 transition-transform hover:scale-104" target="_blank">
+                                <img src="assets/images/contact-icon2.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal text-base">Telegram</p>
+                                    <p class="text-[#fff] font-bold text-xl">+447832716848</p>
+                                </div>
+                            </a>
+
+                            <a href="tel:+447832716848"
+                                class="flex items-center gap-3 transition-transform hover:scale-104">
+                                <img src="assets/images/contact-icon3.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal text-base">Phone</p>
+                                    <p class="text-[#fff] font-bold text-xl">+447832716848</p>
+                                </div>
+                            </a>
+
+                            <a href="mailto:support@pexnet.com"
+                                class="flex items-center gap-3 transition-transform hover:scale-104">
+                                <img src="assets/images/contact-icon4.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal text-base">Email</p>
+                                    <p class="text-[#fff] font-bold text-xl break-all">support@pexnet.com</p>
+                                </div>
+                            </a>
+
+                            <div class="flex items-center gap-3 transition-transform hover:scale-104">
+                                <img src="assets/images/contact-icon5.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal text-base">ClickUp</p>
+                                    <p class="text-[#fff] font-bold text-xl break-all">admin@pexnet.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3 transition-transform hover:scale-104">
+                                <img src="assets/images/contact-icon6.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal text-base">Slack</p>
+                                    <p class="text-[#fff] font-bold text-xl break-all">admin@pexnet.com</p>
+                                </div>
+                            </div>
+
+                            <a href="mailto:admin@pexnet.com"
+                                class="flex items-center gap-3 transition-transform hover:scale-104">
+                                <img src="assets/images/contact-icon7.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal text-base">Microsoft Teams</p>
+                                    <p class="text-[#fff] font-bold text-xl break-all">admin@pexnet.com</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <div class=" p-8 bg-[#2a8fd2]/[0.12] rounded-3xl">
+                        <h2 class="text-[32px] font-bold text-white mb-8 leading120">Book a Free 30-Minute
+                            Consultation</h2>
+
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <input type="text" placeholder="First name*"
+                                    class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                <input type="text" placeholder="Last name"
+                                    class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                <input type="email" placeholder="Email address*"
+                                    class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                <div
+                                    class="flex items-center bg-[#00243B] rounded-full overflow-hidden focus-within:ring-1 focus-within:ring-[#BFFB4F]">
+                                    <div
+                                        class="relative flex items-center px-1.5 bg-[#00243B] h-full ">
+                                        <select
+                                            class=" text-[#2A8FD2] outline-none cursor-pointer appearance-none pl-3 pr-8 py-2 focus:ring-0 bg-[#2a8fd2]/12 rounded-full">
+                                            <option value="+88">+88</option>
+                                            <option value="+1">+1</option>
+                                            <option value="+44">+44</option>
+                                        </select>
+                                        <span class="absolute right-5 pointer-events-none text-[#2A8FD2]"><svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.82984 0H10.1465C10.3113 0.000691026 10.4722 0.0502368 10.6089 0.142372C10.7455 0.234508 10.8518 0.365096 10.9142 0.517623C10.9767 0.670151 10.9925 0.837766 10.9597 0.999277C10.9268 1.16079 10.8469 1.30894 10.7298 1.425L6.07984 6.075C6.00237 6.15311 5.9102 6.2151 5.80865 6.25741C5.7071 6.29972 5.59818 6.3215 5.48817 6.3215C5.37816 6.3215 5.26924 6.29972 5.16769 6.25741C5.06614 6.2151 4.97398 6.15311 4.89651 6.075L0.246506 1.425C0.129488 1.30894 0.0495125 1.16079 0.0166915 0.999277C-0.0161295 0.837766 -0.000321766 0.670151 0.0621162 0.517623C0.124554 0.365096 0.230818 0.234508 0.367471 0.142372C0.504124 0.0502368 0.665029 0.000691026 0.82984 0Z" fill="#2A8FD2"/>
+</svg>
+</span>
+                                    </div>
+                                    <input type="tel" placeholder="Phone"
+                                        class="w-full bg-transparent text-white placeholder-[#92B9D2] py-4 px-3 border-none outline-none">
+                                </div>
+
+                                <input type="text" placeholder="Company name"
+                                    class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                <input type="url" placeholder="Website URL"
+                                    class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                <div class="relative">
+                                    <select
+                                        class="w-full bg-[#00243B] text-white py-4 px-6 rounded-full appearance-none outline-none cursor-pointer focus:ring-1 focus:ring-[#BFFB4F]">
+                                        <option value="" disabled selected>Choose your service</option>
+                                        <option value="web">Web Development</option>
+                                        <option value="app">App Development</option>
+                                        <option value="marketing">Digital Marketing</option>
+                                    </select>
+                                    <span
+                                        class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-[#5ca2ff]"><svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.82984 0H10.1465C10.3113 0.000691026 10.4722 0.0502368 10.6089 0.142372C10.7455 0.234508 10.8518 0.365096 10.9142 0.517623C10.9767 0.670151 10.9925 0.837766 10.9597 0.999277C10.9268 1.16079 10.8469 1.30894 10.7298 1.425L6.07984 6.075C6.00237 6.15311 5.9102 6.2151 5.80865 6.25741C5.7071 6.29972 5.59818 6.3215 5.48817 6.3215C5.37816 6.3215 5.26924 6.29972 5.16769 6.25741C5.06614 6.2151 4.97398 6.15311 4.89651 6.075L0.246506 1.425C0.129488 1.30894 0.0495125 1.16079 0.0166915 0.999277C-0.0161295 0.837766 -0.000321766 0.670151 0.0621162 0.517623C0.124554 0.365096 0.230818 0.234508 0.367471 0.142372C0.504124 0.0502368 0.665029 0.000691026 0.82984 0Z" fill="#92B9D2"/>
+</svg>
+</span>
+                                </div>
+
+                                <div class="relative">
+                                    <select
+                                        class="w-full bg-[#00243B] text-white py-4 px-6 rounded-full appearance-none outline-none cursor-pointer focus:ring-1 focus:ring-[#BFFB4F]">
+                                        <option value="" disabled selected>How did you hear about us?</option>
+                                        <option value="google">Google</option>
+                                        <option value="social">Social Media</option>
+                                        <option value="referral">Referral</option>
+                                    </select>
+                                    <span
+                                        class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-[#5ca2ff]"><svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.82984 0H10.1465C10.3113 0.000691026 10.4722 0.0502368 10.6089 0.142372C10.7455 0.234508 10.8518 0.365096 10.9142 0.517623C10.9767 0.670151 10.9925 0.837766 10.9597 0.999277C10.9268 1.16079 10.8469 1.30894 10.7298 1.425L6.07984 6.075C6.00237 6.15311 5.9102 6.2151 5.80865 6.25741C5.7071 6.29972 5.59818 6.3215 5.48817 6.3215C5.37816 6.3215 5.26924 6.29972 5.16769 6.25741C5.06614 6.2151 4.97398 6.15311 4.89651 6.075L0.246506 1.425C0.129488 1.30894 0.0495125 1.16079 0.0166915 0.999277C-0.0161295 0.837766 -0.000321766 0.670151 0.0621162 0.517623C0.124554 0.365096 0.230818 0.234508 0.367471 0.142372C0.504124 0.0502368 0.665029 0.000691026 0.82984 0Z" fill="#92B9D2"/>
+</svg>
+</span>
+                                </div>
+                            </div>
+
+                            <textarea placeholder="Write your message" rows="6"
+                                class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-6 px-6 rounded-3xl border-none outline-none focus:ring-1 focus:ring-[#BFFB4F] resize-none"></textarea>
+
+                            <button type="submit"
+                            class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px] w-full flex justify-center">
+                            <span class="cta-arrow">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Submit</span>
+                                <span>Submit</span>
+                            </span>
+                        </button>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+    <!-- contact section end -->
+
+
+
+
+    <!-- location section start -->
+     <section class="section-padding">
+        <div class="container">
+             <div class="max-w-[1100px] w-full mx-auto">
+
+                <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                    <h2 class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                     Our Clients Now Lead Local Searches in These <span class="text-[#076AAB]">U.S. Cities</span></h2>
+                    </div>
+            </div>
+
+   <!-- Locations Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-12 pt-12 border-t border-t-[#C3E0F3]">
+                    <!-- Column 1 -->
+                    <div class="flex flex-col gap-3">
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            ARLINGTON
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            ATLANTA
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            AUSTIN
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            BALTIMORE
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            CHICAGO
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="flex flex-col gap-3">
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            CLEVELAND
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            DALLAS
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            DENVER
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            HOUSTON
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            JACKSONVILLE
+                        </div>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="flex flex-col gap-3">
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            KANSAS CITY
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            LAS VEGAS
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            LOS ANGELES
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            LOUISVILLE
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            NEW YORK CITY
+                        </div>
+                    </div>
+
+                    <!-- Column 4 -->
+                    <div class="flex flex-col gap-3">
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            MIAMI
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            MINNEAPOLIS
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            PHOENIX
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            NEW ORLEANS
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            ORLANDO
+                        </div>
+                    </div>
+
+                    <!-- Column 5 -->
+                    <div class="flex flex-col gap-3">
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            PHILADELPHIA
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            PORTLAND
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            SAN ANTONIO
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            SAN DIEGO
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            SEATTLE
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+     </section>
+    <!-- location section end -->
+
+
+
+
+    <!-- cta section end -->
+     <section class="cta section-padding bg-[#00243B]">
+        <div class="container">
+                <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                    <h2
+                        class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#fff]">
+                     We’re All Ears!
+                    </h2>
+                    <p class="text-base leading-[150%] text-[#D4EEFF] max-w-184 w-full mx-auto">A simple, open conversation can create new doorways to your professional and business success. Don’t hesitate. Take the first step right now.</p>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:mt-8 mt-6">
+                        <a href="contact.html"
+                            class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] sm:h-13 h-[44px] px-5 group duration-500 ease-in-out">
+                            <span class="cta-arrow">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Get a Free SEO Audit</span>
+                                <span>Get a Free SEO Audit</span>
+                            </span>
+                        </a>
+                        <a href="contact.html"
+                            class="common-cta bg-[#88D1FF] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px]">
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Get a Free SEO Audit</span>
+                                <span>Get a Free SEO Audit</span>
+                            </span>
+                        </a>
+                    </div>
+        </div>
+     </section>
+    <!-- cta section end -->
 
 
 
@@ -2060,6 +2866,163 @@
 
 
     <!-- footer section start -->
+
+    <footer class="bg-[radial-gradient(50%_50.08%_at_50%_50.08%,_#076AAB_0%,_#00243B_100%)] border-t border-t-white/12 ">
+        <div class="container">
+            <div class="grid grid-cols-4">
+                <div class="px-8 py-24 border-l border-l-white/8 border-r border-r-white/8">
+
+                    <div class="mb-8">
+                        <img src="assets/images/logo-footer.svg" class="img-fluid" alt="footer-logo">
+                    </div>
+                    <div class="flex md:justify-start justify-center md:gap-1.5 gap-1 lg:gap-1.5 footer-social-link">
+                            <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                                <img src="assets/images/footer-social1.svg" class="img-fluid" alt="social link">
+
+                            </a>
+                            <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                                <img src="assets/images/footer-social2.svg" class="img-fluid" alt="social link">
+                            </a>
+                            <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                                <img src="assets/images/footer-social3.svg" class="img-fluid" alt="social link">
+                            </a>
+                            <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                               <img src="assets/images/footer-social4.svg" class="img-fluid" alt="social link">
+                            </a>
+                            <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                               <img src="assets/images/footer-social5.svg" class="img-fluid" alt="social link">
+                            </a>
+                        </div>
+                </div>
+                <div class="px-8 py-24 border-r border-r-white/8">
+                    <div class="footer-nav">
+                        <h3 class="text-xl font-bold leading120 text-[#fff] mb-4">
+                            Services
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    SEO for Dental Clinics
+                                </a>
+                            </li>
+                            <li>
+                                <a href="case-study.html">
+                                    SEO for Law Firms
+                                </a>
+                            </li>
+                            <li>
+                                <a href="aboutus.html" >
+                                    SEO for Carpet Cleaning Companies
+                                </a>
+                            </li>
+                            <li>
+                                <a href="blog.html" >
+                                    SEO for Moving Companies
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contactus.html" >
+                                    SEO for Restoration Companies
+                                </a>
+                            </li>
+                        </ul>
+
+                        
+                    </div>
+
+                     <div class="footer-nav">
+                        <h3 class="text-xl font-bold leading120 text-[#fff] mb-4">
+                            Resources
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Case Studies
+                                </a>
+                            </li>
+                            <li>
+                                <a href="case-study.html">
+                                    Blog
+                                </a>
+                            </li>
+                      
+                        </ul>
+
+                        
+                    </div>
+                </div>
+                <div class="px-8 py-24 border-r border-r-white/8">
+                    <div class="footer-nav">
+                        <h3 class="text-xl font-bold leading120 text-[#fff] mb-4">
+                            Pexnet
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    About
+                                </a>
+                            </li>
+                            <li>
+                                <a href="case-study.html">
+                                    Contact
+                                </a>
+                            </li>
+                            <li>
+                                <a href="aboutus.html" >
+                                    Careers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="blog.html" >
+                                    Faq’s
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="px-8 py-24 border-r border-r-white/8">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">Get Quality Leads from Us</h3>
+                        <p class="text-[#D4EEFF] text-sm leading150">PexNet Newsletter - Subscribe for SEO news, trends, updates, & more.</p>
+                        <div class="mt-6">
+                            <form class="space-y-3">
+            <div class="relative">
+                <input 
+                    type="email" 
+                    id="email"
+                    name="email"
+                    placeholder="Email address"
+                    required
+                    class="w-full bg-white/8 text-white placeholder:text-[#92B9D2] py-4 px-6 text-base h-[56px] flex items-center justify-center leading150 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F] transition duration-200"
+                >
+            </div>
+
+            <button type="submit" class="common-cta w-full bg-[#88D1FF] text-[#002F4D] text-base h-[56px] flex items-center justify-center font-bold py-2 rounded-full transition duration-300 hover:bg-[#D4EEFF] hover:text-[#00243B] active:scale-[0.98]"
+            >
+
+            <span class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Subscribe</span>
+                                <span>Subscribe</span>
+                            </span>
+                
+            </button>
+        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-t-white/12 py-8 ">
+            <div class="container">
+                <div class="grid grid-cols-4 items-center  w-full">
+                    <p class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">© 2026 Pexnet</p>
+                    <a href="#" class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">Terms and Conditions</a>
+                    <a href="#" class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">Privacy Policy</a>
+                    <a href="mailto:info@pexnet.com" class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">© 2026 Pexnet</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- footer section end -->
 
