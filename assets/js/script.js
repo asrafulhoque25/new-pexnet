@@ -461,15 +461,34 @@ window.addEventListener('load', () => {
     const cards = gsap.utils.toArray('.proven-result-wrap');
     if (cards.length === 0) return;
 
-    // ── DYNAMIC TOP OFFSET — যতগুলো card হোক কাজ করবে
-    const BASE_TOP = 160;
-    const STEP = 60; // প্রতিটা card এর মধ্যে gap
+    // ── RESPONSIVE VALUES
+    function getStackConfig() {
+        const w = window.innerWidth;
+        if (w < 640) {
+            return { base: 80, step: 80 };  
+        } else if (w < 1024) {
+            return { base: 120, step: 70 };  
+        } else {
+            return { base: 160, step: 60 };  
+        }
+    }
 
-    cards.forEach((card, i) => {
-        card.style.top = (BASE_TOP + i * STEP) + 'px';
+    
+    function setCardTops() {
+        const { base, step } = getStackConfig();
+        cards.forEach((card, i) => {
+            card.style.top = (base + i * step) + 'px';
+        });
+    }
+
+    setCardTops();
+
+    window.addEventListener('resize', () => {
+        setCardTops();
+        ScrollTrigger.refresh();
     });
 
-    // বাকি সব আগের মতোই...
+
     gsap.set(cards, {
         y: 60,
         opacity: 0,
@@ -773,7 +792,7 @@ function initFAQGrid() {
     leftCol.className = 'flex flex-col gap-0 w-full md:w-1/2';
     rightCol.className = 'flex flex-col gap-0 w-full md:w-1/2';
 
-    // Distribute items: odd → left, even → right
+   
     items.forEach((item, index) => {
         if (index % 2 === 0) {
             leftCol.appendChild(item);
@@ -782,9 +801,9 @@ function initFAQGrid() {
         }
     });
 
-    // Replace wrap content with 2 columns
+   
     wrap.innerHTML = '';
-    wrap.className = 'flex flex-col md:flex-row gap-8 items-start';
+    wrap.className = 'flex flex-col md:flex-row md:gap-8 items-start';
     wrap.appendChild(leftCol);
     wrap.appendChild(rightCol);
 }
