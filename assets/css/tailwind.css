@@ -911,6 +911,156 @@ backdrop-filter: blur(24px);
 }
 
 
+
+
+
+
+/* common shape animation */
+.common-shape {
+  background-image: none;
+  height: 442px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width:640px) {
+  .common-shape{
+    height: 350px;
+  }
+}
+@media (max-width:440px) {
+  .common-shape{
+    height: 300px ;
+  }
+}
+
+.common-shape-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url(../images/animationshape.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  z-index: 0;
+}
+
+.common-shape img {
+  position: relative;
+  z-index: 2;
+}
+/* common shape animation end */
+
+
+
+
+
+
+/* blog-img */
+.blog-img{
+  overflow: hidden;
+}
+/* blog-img */
+
+
+/* Local image trailer for about-banner-img */
+
+section.about-banner {
+    overflow: hidden !important;
+}
+.about-banner-img {
+    position: relative;
+    overflow: visible;
+}
+
+.image-trailer-local {
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* gallery hidden রাখো কিন্তু display:none নয় */
+.image-gallery-local {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.trail-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 12px;
+    transform-origin: center;
+    display: block;
+    flex-shrink: 0;
+}
+
+
+/* trial image end  */
+
+
+
+
+
+
+
+/* makes different start  */
+  .makes-different-bg{
+    background-image: url(../images/makes-different-shape.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+/* make different end  */
+
+
+/* signature svg  */
+#sig-line {
+  fill: none;
+  stroke: #076AAB;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
+}
+#sig-line.go {
+  animation: drawSig 3s linear forwards;
+}
+
+#sig-arrow {
+  opacity: 0;
+}
+#sig-arrow.go {
+  animation: showArrow 0.2s ease forwards;
+  animation-delay: 3s;
+}
+
+@keyframes drawSig {
+  0%   { stroke-dashoffset: 2500; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes showArrow {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+/* signature svg  */
+
+
 /* footer  */
 
 /* .footer-nav ul li a{

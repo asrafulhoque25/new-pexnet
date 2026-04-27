@@ -1,0 +1,747 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="nav bg-[#00243B]">
+        <div class="container">
+            <div class="nav-inner">
+
+                <a href="index.html" class="nav-logo  shrink-0">
+                    <img src="assets/images/Logo.svg" class="img-fluid" alt="Logo">
+                </a>
+
+                <!-- Desktop Menu — no class on ul li a -->
+                <ul class="nav-menu max-w-214 w-full justify-between">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="#" class="dropdownlink">Services <span>+</span></a>
+                        <ul>
+                            <li>
+                                <a href="mobile-app-design.html">
+                                    Mobile App Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard-design.html">
+
+                                    Dashboard Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="website-design.html">
+
+                                    Website Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="web-application-design.html">
+
+                                    Web App Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="saas-design.html">
+
+                                    SaaS Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="branding-design.html">
+
+                                    Branding
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="case-study.html">Case Studies</a></li>
+                    <li><a href="blog.html">Blogs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <!-- CTA -->
+                <!-- Navbar CTA -->
+                <div class="flex items-center gap-4">
+                    <!-- CTA -->
+                    <a href="contact.html"
+                        class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:block hidden">
+                        <span class="cta-arrow">
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="white" />
+                            </svg>
+
+                        </span>
+                        <span
+                            class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                            <span>Get a Free SEO Audit</span>
+                            <span>Get a Free SEO Audit</span>
+                        </span>
+                    </a>
+
+                    <!-- Hamburger -->
+                    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU — no class on ul li a ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <button id="mobileServicesBtn">Services <span>+</span></button>
+                <ul id="mobileServicesSubmenu">
+                    <li><a href="mobile-app-design.html">Mobile App Design</a></li>
+                    <li><a href="dashboard-design.html">Dashboard Design</a></li>
+                    <li><a href="website-design.html">Website Design</a></li>
+                    <li><a href="web-application-design.html">Web App Design</a></li>
+                    <li><a href="saas-design.html">SaaS Design</a></li>
+                    <li><a href="branding-design.html">Branding</a></li>
+                </ul>
+            </li>
+            <li><a href="case-study.html">Case Studies</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="cta-wrap">
+            <a href="contact.html" class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5">
+                <span class="cta-arrow">
+                    <svg viewBox="0 0 16 16">
+                        <path d="M12.17 6.78L6.81 1.41 8.22 0 16 7.78 8.22 15.56 6.81 14.14l5.36-5.36H0V6.78h12.17z" />
+                    </svg>
+                    <svg viewBox="0 0 16 16">
+                        <path d="M12.17 6.78L6.81 1.41 8.22 0 16 7.78 8.22 15.56 6.81 14.14l5.36-5.36H0V6.78h12.17z" />
+                    </svg>
+                </span>
+                <span class="cta-text text-[13px] leading-[20px] text-[#0d2235] h-[20px]">
+                    <span>Get a Free SEO Audit</span>
+                    <span>Get a Free SEO Audit</span>
+                </span>
+            </a>
+        </div>
+    </div>
+
+
+
+    <!-- ===== NAVBAR End ===== -->
+
+
+    <!-- banner start -->
+
+    <section class="about-banner relative min-h-172 pt-[48px] sm:pt-[96px] border-t border-b border-[#1F3E53] overflow-hidden bg-[#00243B]"
+    
+    data-glow-section data-home-x="70" data-home-y="50">
+
+        <!-- Vertical lines -->
+        <div class="absolute inset-0 z-[1] pointer-events-none">
+            <div class="max-w-[1530px] mx-auto h-full flex justify-between px-5">
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+            </div>
+        </div>
+
+        <!-- Glow — right side centered -->
+        <div data-glow-el class="absolute inset-0 opacity-0 pointer-events-none z-0"
+            style="background: radial-gradient(40% 50% at 70% 50%, #076AAB 0%, transparent 100%);">
+        </div>
+
+        <!-- Content -->
+        <div class="container relative z-[2]">
+            <div class="grid md:grid-cols-2 grid-cols-1 items-center md:gap-10 sm:gap-5 gap-4">
+                <div class="banner-left-content pl-1">
+                    <div class="sm:space-y-4 space-y-3">
+                        <h1
+                            class="md::mt-6 mt-3 mt-1 lg:text-[64px] md:text-[48px] sm:text-[42px] text-4xl text-white font-notch leading-[110%]">
+                            About Pexnet </h1>
+                        <div class="space-y-3">
+                            <p class="sm:text-base text-sm text-[#D4EEFF]">At Pexnet, we’re like a close-knit family
+                                working together to delight every client. We care for your business just like our own,
+                                and don’t stop until you see meaningful returns on your investment.</p>
+                            <p class="sm:text-base text-sm text-[#D4EEFF]">Learn, apply, iterate, deliver - this pretty
+                                much sums up the way we think, work, and grow along with you. While no one can guarantee
+                                instant success, we can promise continuous progress worth your time, effort, and
+                                investment.</p>
+                        </div>
+                    </div>
+                   <div class="flex flex-wrap items-center gap-3 sm:mt-8 mt-6">
+                        <a href="contact.html"
+                            class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px] ">
+                            <span class="cta-arrow">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Get a Free SEO Audit</span>
+                                <span>Get a Free SEO Audit</span>
+                            </span>
+                        </a>
+                        <a href="contact.html"
+                            class="common-cta bg-[#88D1FF] hover:bg-[#05314D] sm:h-13 h-[44px] px-5 group duration-500 ease-in-out">
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Get a Free SEO Audit</span>
+                                <span>Get a Free SEO Audit</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+                <div class="about-banner-img">
+                    <div class="image-trailer-local"></div> <!-- LOCAL trailer -->
+
+                    <div class="common-animation">
+                        <div class="common-shape">
+                            <div class="common-shape-bg"></div>
+                            <img src="assets/images/members.png" class="img-fluid" alt="member">
+                        </div>
+                    </div>
+
+                    <!-- Hidden image gallery (local) -->
+                    <div class="image-gallery-local" style="display:none;">
+                        <img src="assets/images/member-photos-1.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-2.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-3.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-4.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-5.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-6.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-7.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-8.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-9.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-10.webp" class="trail-img" alt="all members">
+                    </div>
+                </div>
+               
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <div class="banner-info-bottom bg-[#00243B] py-8">
+        <div class="container">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-6 sm:gap-4 gap-2">
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/about-info-1.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-base sm:text-lg lg:text-xl font-bold text-white">90-Day Campaign</p>
+                </div>
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/about-info-2.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-base sm:text-lg lg:text-xl font-bold text-white">Custom Strategy </p>
+                </div>
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/about-info-3.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-base sm:text-lg lg:text-xl font-bold text-white">Weekly+Monthly Reporting</p>
+                </div>
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/about-info-4.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-base sm:text-lg lg:text-xl font-bold text-white">No Lock-in Contracts</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner end -->
+
+
+
+
+
+    <!-- Who We Are start -->
+    <section class="who-we-are section-padding">
+        <div class="container">
+            <div class="grid md:grid-cols-2 grid-cols-1 gap-8 items-center">
+                <div class="who-we-are-left order-2 md:order-1">
+                    <img src="assets/images/who-we-are.png" class="img-fluid" alt="who-we-are">
+                </div>
+                <div class="who-we-are-right order-1 md:order-2">
+                    <div class="common-title max-w-248 w-full mx-auto text-start space-y-4">
+                        <h2
+                            class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                            Who We Are</h2>
+                        <div class="space-y-4 mb-8">
+                            <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Pexnet is much
+                                more than an SEO agency. We have different values. Our strong company culture is built
+                                on growth - not just for our clients, but also for ourselves.</p>
+                            <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">It’s impossible
+                                to thrive in the fast-paced SEO industry if we’re not growth-oriented. This mindset is
+                                what makes us unique. We invest a significant portion of our profits in training and
+                                education to make our team more responsible and efficient.</p>
+                            <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Pexnet was
+                                founded with a dream - to be a name of trust when small-scale businesses look for
+                                personalized SEO services. With our integrity, hard work, and dedication, we’re getting
+                                closer to that dream every passing day.</p>
+                        </div>
+
+                        <a href="contact.html"
+                            class="common-cta bg-[#076AAB] hover:bg-[#BFFB4F] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px] ">
+                            <span class="cta-arrow">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="white" />
+                                </svg>
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </span>
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#fff] group-hover:text-[#00243B] h-[20px] duration-500 ease-in-out">
+                                <span>Get a Free SEO Audit</span>
+                                <span>Get a Free SEO Audit</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Who We Are end -->
+
+
+
+    <!-- our core value start -->
+    <section class="core-value bg-[#F4FBFF] section-padding">
+        <div class="container">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    Our Core Values</h2>
+                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">These principles define what
+                    drives us and how we work on a day to day basis. You’ll see them in how we plan, execute, and solve
+                    SEO problems for every client.</p>
+            </div>
+
+            <div class="md:mt-12 sm:mt-10 mt-8">
+                <div class="grid md:grid-cols-3 grid-cols-1">
+                    <div class="md:px-4 pb-4 md:pb-0 md:mb-0 mb-4 lg:px-8 border-b md:border-b-transparent border-b-[#92B9D2] md:border-l border-l-[#92B9D2]">
+                        <h3 class="text-[#002F4D] text-2xl sm:text-[28px] md:text-[32px] font-bold mb-3 leading120">Mission</h3>
+                        <p class="text-base text-[#526E80] leading150">Since small businesses usually have budget
+                            constraints, our aim is to ensure measurable growth that compounds over time for every firm.
+                        </p>
+                    </div>
+                    <div class="md:px-4 pb-4 md:pb-0 md:mb-0 mb-4 lg:px-8 border-b md:border-b-transparent border-b-[#92B9D2] md:border-l border-l-[#92B9D2]">
+                        <h3 class="text-[#002F4D] text-2xl sm:text-[28px] md:text-[32px] font-bold mb-3 leading120">Vision</h3>
+                        <p class="text-base text-[#526E80] leading150">We see ourselves become the most trusted growth
+                            partner for niche businesses worldwide - not by being the biggest agency, but by being the
+                            one that provides value consistently.</p>
+                    </div>
+                    <div class="md:px-4 pb-4 md:pb-0 md:mb-0 mb-4 lg:px-8 border-b md:border-b-transparent border-b-[#92B9D2] md:border-l border-l-[#92B9D2]">
+                        <h3 class="text-[#002F4D] text-2xl sm:text-[28px] md:text-[32px] font-bold mb-3 leading120">Goal</h3>
+                        <p class="text-base text-[#526E80] leading150">Our goal is to make SEO results sustainable so
+                            our clients don’t have to worry about local rankings after the campaign ends.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="svg-animation md:mt-12 sm:mt-10 mt-8">
+                <svg id="main-svg" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="-10 -30 1520 290"
+                    fill="none">
+                    <path id="sig-line"
+                        d="M0 233.493C240.781 170.652 611.432 104.792 775.157 104.792C938.883 104.792 710.561 231.919 704.061 205.155C697.56 178.392 1224.22 43.9185 1491 0.493408"
+                        stroke="#076AAB" stroke-width="2" fill="none" stroke-linecap="round" />
+                    <g id="sig-arrow">
+                        <path
+                            d="M21.3708 5.72535L-0.00108169 -2.87924e-05L7.86449 9.34505L5.72524 21.3709L21.3708 5.72535Z"
+                            fill="#076AAB" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </section>
+    <!-- our core value end -->
+
+
+
+
+    <!-- What Makes Us Different -->
+    <section class="make-differents section-padding">
+        <div class="container">
+            <div class="grid md:grid-cols-2 grid-cols-1 items-center gap-8">
+                <div class="common-title max-w-248 w-full mx-auto text-start space-y-4">
+                    <h2
+                        class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                        What Makes Us Different</h2>
+                    <div class="sm:space-y-4 space-y-3 mb-8">
+                        <p class="text-sm sm:text-base leading-[150%] text-[#426073] max-w-184 w-full mx-auto">So many businesses
+                            fail at SEO because they hired cookie-cutter agencies. They usually use the same template
+                            for everything - from audit and keyword strategy to content and site structure.</p>
+                        <p class="text-sm sm:text-base leading-[150%] text-[#426073] max-w-184 w-full mx-auto">In reality, every
+                            niche comes with its own challenges. For example, a law firm or dental clinic has to meet
+                            Google’s YMYL (Your Money Your Life) standards, while a restoration company deals with
+                            urgent, high-intent searches.</p>
+                        <p class="text-sm sm:text-base leading-[150%] text-[#426073] max-w-184 w-full mx-auto">Then comes the
+                            unique factors that make your business - your market, your competition, your location, and
+                            your SEO goals. And on top of all that, you now have to worry about AI’s impact on search
+                            behaviors.</p>
+                        <p class="text-sm sm:text-base leading-[150%] text-[#426073] max-w-184 w-full mx-auto">So, how do we do
+                            your SEO? We specialize in niche-specific SEO only. We’ve spent years working within a
+                            select group of industries, so we know how they work from the inside out. We take our time
+                            to study your firm and services, service areas, competitors, and other business conditions.
+                        </p>
+                        <p class="text-sm sm:text-base leading-[150%] text-[#426073] max-w-184 w-full mx-auto">After the audit, our
+                            SEOs fix the technical and on-page issues, optimize your Google Business Profile, and
+                            improve your site structure. We’re also affiliated with niche-specific writers that
+                            contribute to the industry with highly informative, valuable content. </p>
+                        <p class="text-sm sm:text-base leading-[150%] text-[#426073] max-w-184 w-full mx-auto">Instead of just
+                            increasing visitors, we care more about building your credibility so people can confidently
+                            ask for your services. That’s how we’ve helped 800+ local businesses grow over the years.
+                            We’re confident we can help you do the same with a highly personalized plan. </p>
+
+                        <div class="md:p-8 sm:p-5 p-4 rounded-3xl makes-different-bg md:mt-6 mt-3">
+                            <h3 class="lg:text-[32px] sm:text-[28px] text-2xl font-bold leading120 text-[#076AAB] sm:px-4 px-3 lg:px-5 border-l border-l-[#076AAB]">Every
+                                business entity is different, so should be their SEO approach.</h3>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="makes-different-img">
+                    <img src="assets/images/makes-different.png" class="img-fluid" alt="make different">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- What Makes Us Different-->
+
+
+
+
+    <!-- about counter start -->
+    <section class="px-3 relative">
+        <!-- Vertical lines -->
+        <div class="absolute inset-0 z-[1] pointer-events-none">
+            <div class="max-w-[1530px] mx-auto h-full flex justify-between px-5">
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden md:block hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden md:block hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+            </div>
+        </div>
+        <div
+            class="about-counter section-padding bg-[radial-gradient(50%_50%_at_50%_50%,#076AAB_0%,#00243B_100%)] rounded-[48px]">
+            <div class="container">
+                <div class="grid md:grid-cols-4 grid-cols-2 gap-6">
+                    <div class="about-counter-item flex flex-col gap-6">
+                        <div class="flex justify-center w-full anim-icon">
+                            <img src="assets/images/about-counter-1.svg" class="text-center lg:w-[96px] md:w-[72px] w-[64px]" alt="about counter icon">
+                        </div>
+                        <div class="sm:space-y-2 space-y-1.5 md:space-y-3">
+                            <p class="counter lg:text-[56px] md:text-[42px] sm:text-[36px] text-[32px] text-white font-bold text-center leading120"
+                                data-target="10" data-suffix="+">0</p>
+                            <p class="md:text-base sm:text-sm text-xs font-bold text-white text-center">Years of Deep Industry
+                                Expertise</p>
+                        </div>
+                    </div>
+                    <div class="about-counter-item flex flex-col gap-6">
+                        <div class="flex justify-center w-full anim-icon">
+                            <img src="assets/images/about-counter-2.svg" class="text-center lg:w-[96px] md:w-[72px] w-[64px]" alt="about counter icon">
+                        </div>
+                        <div class="sm:space-y-2 space-y-1.5 md:space-y-3">
+                            <p class="counter lg:text-[56px] md:text-[42px] sm:text-[36px] text-[32px] text-white font-bold text-center leading120"
+                                data-target="20" data-suffix="+">0</p>
+                            <p class="md:text-base sm:text-sm text-xs font-bold text-white text-center">Years of Deep Industry
+                                Expertise</p>
+                        </div>
+                    </div>
+                    <div class="about-counter-item flex flex-col gap-6">
+                        <div class="flex justify-center w-full anim-icon">
+                            <img src="assets/images/about-counter-3.svg" class="text-center lg:w-[96px] md:w-[72px] w-[64px]" alt="about counter icon">
+                        </div>
+                        <div class="sm:space-y-2 space-y-1.5 md:space-y-3">
+                            <p class="counter lg:text-[56px] md:text-[42px] sm:text-[36px] text-[32px] text-white font-bold text-center leading120"
+                                data-target="5" data-suffix="" data-pad="2">0</p>
+                            <p class="md:text-base sm:text-sm text-xs font-bold text-white text-center">Years of Deep Industry
+                                Expertise</p>
+                        </div>
+                    </div>
+                    <div class="about-counter-item flex flex-col gap-6">
+                        <div class="flex justify-center w-full anim-icon">
+                            <img src="assets/images/about-counter-4.svg" class="text-center lg:w-[96px] md:w-[72px] w-[64px]" alt="about counter icon">
+                        </div>
+                        <div class="sm:space-y-2 space-y-1.5 md:space-y-3">
+                            <p class="counter lg:text-[56px] md:text-[42px] sm:text-[36px] text-[32px] text-white font-bold text-center leading120"
+                                data-target="800" data-suffix="+">0</p>
+                            <p class="md:text-base sm:text-sm text-xs font-bold text-white text-center">Years of Deep Industry
+                                Expertise</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about counter end -->
+
+
+
+
+
+
+    <!--  Our Core Values start -->
+    <section class="core-value section-padding">
+        <div class="container">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    Our Core Values</h2>
+                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">These principles define what
+                    drives us and how we work on a day to day basis. You’ll see them in how we plan, execute, and solve
+                    SEO problems for every client.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 sm:grid-cols-2  gap-x-8 gap-y-12 md:mt-12 sm:mt-10 mt-8">
+                <div class="mission-item lg:px-8 md:px-2 px-0 flex flex-col md:gap-6 gap-4">
+                    <div class="mission-icon flex justify-center anim-icon">
+                        <img src="assets/images/values-1.svg" class="img-fluid w-17.5 md:w-24" alt="values">
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#002F4D] text-center leading120">SME-First Approach</h3>
+                        <p class="text-sm md:text-base text-[#526E80] leading150 text-center">Pexnet specializes in niche-SEO only.
+                            Our decisions, strategies, and priorities are based on the unique goals, challenges, and
+                            market conditions of locally owned businesses.</p>
+                    </div>
+                </div>
+                <div class="mission-item lg:px-8 md:px-2 px-0 flex flex-col md:gap-6 gap-4">
+                    <div class="mission-icon flex justify-center anim-icon">
+                        <img src="assets/images/values-2.svg" class="img-fluid w-17.5 md:w-24" alt="values">
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#002F4D] text-center leading120">Impactful Results</h3>
+                        <p class="text-sm md:text-base text-[#526E80] leading150 text-center">Rankings mean nothing without real
+                            growth. We care more about conversions than traffic because visibility matters only when it
+                            turns into revenue.</p>
+                    </div>
+                </div>
+                <div class="mission-item lg:px-8 md:px-2 px-0 flex flex-col md:gap-6 gap-4">
+                    <div class="mission-icon flex justify-center anim-icon">
+                        <img src="assets/images/values-3.svg" class="img-fluid w-17.5 md:w-24" alt="values">
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#002F4D] text-center leading120">Integrity Over Everything</h3>
+                        <p class="text-sm md:text-base text-[#526E80] leading150 text-center">Honesty goes a long way. If a
+                            strategy isn’t right for your business, we’ll tell you straight. We keep everything
+                            transparent so you know what’s happening and why.</p>
+                    </div>
+                </div>
+                <div class="mission-item lg:px-8 md:px-2 px-0 flex flex-col md:gap-6 gap-4">
+                    <div class="mission-icon flex justify-center anim-icon">
+                        <img src="assets/images/values-4.svg" class="img-fluid w-17.5 md:w-24" alt="values">
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#002F4D] text-center leading120">Local & Global Standards</h3>
+                        <p class="text-sm md:text-base text-[#526E80] leading150 text-center">We bring world-class SEO practices to
+                            the local level so service providers can compete with confidence in their own niches.</p>
+                    </div>
+                </div>
+                <div class="mission-item lg:px-8 md:px-2 px-0 flex flex-col md:gap-6 gap-4">
+                    <div class="mission-icon flex justify-center anim-icon">
+                        <img src="assets/images/values-5.svg" class="img-fluid w-17.5 md:w-24" alt="values">
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#002F4D] text-center leading120">Committed to Progress</h3>
+                        <p class="text-sm md:text-base text-[#526E80] leading150 text-center">SEO changes every other day. We stay
+                            curious, keep learning, and refine our tactics so our clients never have to scramble to
+                            catch up.</p>
+                    </div>
+                </div>
+                <div class="mission-item lg:px-8 md:px-2 px-0 flex flex-col md:gap-6 gap-4">
+                    <div class="mission-icon flex justify-center anim-icon">
+                        <img src="assets/images/values-6.svg" class="img-fluid w-17.5 md:w-24" alt="values">
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#002F4D] text-center leading120">Long-Term Partnerships</h3>
+                        <p class="text-sm md:text-base text-[#526E80] leading150 text-center">Every business starts with a
+                            long-term vision. Our job is to protect and support it with strategies built for stability,
+                            consistency, and growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  Our Core Values end -->
+
+
+
+
+    <!--  CEO statements start -->
+    <section class="ceo-statements">
+        <div class="container">
+            <div class="seo-statement-wrap lg:rounded-[48px] md:rounded-4xl sm:rounded-3xl rounded-2xl grid md:grid-cols-2 items-end bg-[#076AAB] overflow-hidden">
+                <div class="statements-left md:order-1 order-2">
+                    <img src="assets/images/ceo.png" class="img-fluid" alt="ceo">
+                </div>
+                <div class="statement-right md:order-2 order-1 md:px-8 md:py-8 sm:px-6 sm:py-6 px-4 py-6 lg:px-12 lg:py-12 flex flex-col justify-between h-full">
+                    <div class="">
+                        <h3
+                            class="md:mb-6 mb-4 lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#fff]">
+                            CEO’s Statement</h3>
+                        <div class="md:space-y-4 space-y-3">
+                            <p class="text-white text-sm sm:text-base leading150">Hello there,</p>
+                            <p class="text-white text-sm sm:text-base leading150">“Pexnet was born from an obvious gap
+                                in the SEO industry. There was no lack of digital marketing and SEO firms before Pexnet,
+                                but they mainly targeted large enterprise clients because of their big budget. They
+                                didn’t care much about small business owners who faced the real challenges - financial
+                                constraints, poor web presence, management issues, and so on.</p>
+                            <p class="text-white text-sm sm:text-base leading150">Pexnet was launched in 2016 to ensure
+                                comprehensive SEO support for independent, local businesses that big companies paid
+                                fortunes for. It didn’t take long for us to secure clients worldwide.</p>
+                            <p class="text-white text-sm sm:text-base leading150">We’re now a UK-Bangladesh hybrid
+                                agency. All the admin work is performed in our headquarters in London, while our
+                                regional office in Bangladesh handles the daily operations. I believe we grew so fast
+                                because we’ve always focused on scaling without losing the personal, niche-focused
+                                approach that makes us different.</p>
+                            <p class="text-white text-sm sm:text-base leading150">Finally, my heartiest thanks to our
+                                esteemed clients, partners, and other stakeholders for trusting our capabilities. You
+                                are our motivation to strive for the best - no matter the circumstances - and create
+                                value in this highly competitive and fast-changing industry.”</p>
+                            <p class="text-white text-sm sm:text-base leading150">Sincerely,</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between gap-4 items-end">
+                        <p class="text-white font-bold text-base sm:text-lg md:text-xl">Md Roni Biswas</p>
+                        <div class="quote-img ">
+    <img src="assets/images/about-quote.png" class="img-fluid quote-mask-img" alt="quote">
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  CEO statements end -->
+
+
+
+    <!-- Our Niche Specializations start -->
+    <section class="niche-specialization section-padding">
+        <div class="container">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    Our Niche Specializations</h2>
+            </div>
+
+            <div class="grid md:grid-cols-5 grid-cols-2 gap-y-6 md:gap-y-0 sm:mt-10 mt-8 md:mt-12">
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/specialization-1.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Dental Clinic</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/specialization-2.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Law Firm</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/specialization-3.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Carpet Cleaning Company</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/specialization-4.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Moving Company</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4 col-span-2 md:col-span-1 flex justify-center">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/specialization-5.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Restoration Company</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Niche Specializations end -->
+
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <!-- jQuery -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    </body>
+
+</html>
