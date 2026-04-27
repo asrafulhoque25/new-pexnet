@@ -317,7 +317,7 @@ window.addEventListener('load', () => {
 
   function getStackConfig() {
     const w = window.innerWidth;
-    if (w < 640)  return { base: 80,  step: 80 };
+    if (w < 640)  return { base: 80,  step: 50 };
     if (w < 1024) return { base: 120, step: 70 };
     return                { base: 160, step: 60 };
   }
@@ -374,7 +374,7 @@ window.addEventListener('load', () => {
     const cards = gsap.utils.toArray('.article .grid > div');
     if (!cards.length) return;
 
-    // সব img শুরুতে hide
+  
     cards.forEach((card) => {
         const img = card.querySelector('.blog-reveal-img');
         const wrap = card.querySelector('.blog-img');
@@ -405,13 +405,35 @@ window.addEventListener('load', () => {
             });
         },
         {
-            threshold: 0.25, // ← section এর 25% দেখা গেলে fire হবে
+            threshold: 0.25, 
         }
     );
 
     observer.observe(section);
 })();
 // blog img end
+
+
+
+// select start
+
+document.querySelectorAll('select').forEach(select => {
+    
+    if (select.value === '') {
+        select.style.color = '#92B9D2';
+    }
+
+    select.addEventListener('change', function () {
+        if (this.value === '') {
+            this.style.color = '#92B9D2';
+        } else {
+            this.style.color = '#ffffff';
+        }
+    });
+});
+
+
+//select end
 
 
 
