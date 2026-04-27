@@ -202,9 +202,6 @@
   .relative {
     position: relative;
   }
-  .sticky {
-    position: sticky;
-  }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
@@ -237,9 +234,6 @@
   }
   .left-4 {
     left: calc(var(--spacing) * 4);
-  }
-  .-z-10 {
-    z-index: calc(10 * -1);
   }
   .z-0 {
     z-index: 0;
@@ -3041,6 +3035,12 @@ section.about-banner {
   .footer-nav ul {
     margin-bottom: 24px;
   }
+}
+.footer-social-link a img {
+  transition: filter 0.3s ease;
+}
+.footer-social-link a:hover img {
+  filter: brightness(0) saturate(100%) invert(11%) sepia(42%) saturate(1200%) hue-rotate(175deg) brightness(95%) contrast(103%);
 }
 @property --tw-translate-x {
   syntax: "*";
