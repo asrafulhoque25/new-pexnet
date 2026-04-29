@@ -862,13 +862,17 @@ document.addEventListener('DOMContentLoaded', function () {
 //signature svg animation
 
 (function () {
-  var path  = document.getElementById('sig-line');
+   var path  = document.getElementById('sig-line');
   var arrow = document.getElementById('sig-arrow');
+  var svg   = document.getElementById('main-svg');
+
+
+    if (!path || !arrow || !svg) return;
 
   function placeArrow() {
     var len = path.getTotalLength();
-    var p1  = path.getPointAtLength(len - 4);
-    var p2  = path.getPointAtLength(len);
+    var p1  = path.getPointAtLength(len - 3);
+    var p2  = path.getPointAtLength(len + 4);
 
     var angle = Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Math.PI;
 
@@ -888,20 +892,13 @@ document.addEventListener('DOMContentLoaded', function () {
     );
   }
 
-  var svg = document.getElementById('main-svg');
-
-  if ('IntersectionObserver' in window) {
+   if ('IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) {
           placeArrow();
-
-          var sigLine  = document.getElementById('sig-line');
-          var sigArrow = document.getElementById('sig-arrow');
-
-          sigLine.classList.add('go');
-          sigArrow.classList.add('go');
-
+          document.getElementById('sig-line').classList.add('go');
+          document.getElementById('sig-arrow').classList.add('go');
           obs.disconnect();
         }
       });
@@ -964,61 +961,62 @@ counters.forEach((counter) => {
 
 // ceo quote animaiton
 
-gsap.fromTo('.quote-mask-img',
+
+if (document.querySelector('.quote-mask-img') && document.querySelector('.quote-img')) {
+  gsap.fromTo('.quote-mask-img',
     {
-        clipPath: 'inset(100% 100% 0% 0% round 12px)',
-        opacity: 0,
-        rotate: 45,
-        scale: 0.6,
-        transformOrigin: 'bottom right',
+      clipPath: 'inset(100% 100% 0% 0% round 12px)',
+      opacity: 0,
+      rotate: 45,
+      scale: 0.6,
+      transformOrigin: 'bottom right',
     },
     {
-        clipPath: 'inset(0% 0% 0% 0% round 12px)',
-        opacity: 1,
-        rotate: 0,
-        scale: 1,
-        transformOrigin: 'bottom right',
-        duration: 0.9,
-        ease: 'back.out(1.4)',
-        delay: 0.2,
-        scrollTrigger: {
-            trigger: '.quote-img',
-            start: 'top 95%',
-            end: 'bottom 10%',
-            once: false,
-            onEnter: (self) => self.animation.restart(),
-            onEnterBack: (self) => self.animation.restart(),
-            onLeave: () => {
-                gsap.set('.quote-mask-img', {
-                    clipPath: 'inset(100% 100% 0% 0% round 12px)',
-                    opacity: 0,
-                    rotate: 45,
-                    scale: 0.6,
-                });
-            },
-            onLeaveBack: () => {
-                gsap.set('.quote-mask-img', {
-                    clipPath: 'inset(100% 100% 0% 0% round 12px)',
-                    opacity: 0,
-                    rotate: 45,
-                    scale: 0.6,
-                });
-            },
-        }
+      clipPath: 'inset(0% 0% 0% 0% round 12px)',
+      opacity: 1,
+      rotate: 0,
+      scale: 1,
+      transformOrigin: 'bottom right',
+      duration: 0.9,
+      ease: 'back.out(1.4)',
+      delay: 0.2,
+      scrollTrigger: {
+        trigger: '.quote-img',
+        start: 'top 95%',
+        end: 'bottom 10%',
+        once: false,
+        onEnter: (self) => self.animation.restart(),
+        onEnterBack: (self) => self.animation.restart(),
+        onLeave: () => {
+          gsap.set('.quote-mask-img', {
+            clipPath: 'inset(100% 100% 0% 0% round 12px)',
+            opacity: 0,
+            rotate: 45,
+            scale: 0.6,
+          });
+        },
+        onLeaveBack: () => {
+          gsap.set('.quote-mask-img', {
+            clipPath: 'inset(100% 100% 0% 0% round 12px)',
+            opacity: 0,
+            rotate: 45,
+            scale: 0.6,
+          });
+        },
+      }
     }
-);
-
-
+  );
+}
 
 //icon global animaiton
-// সব anim-icon group করো তাদের parent grid অনুযায়ী
+
 const iconGroups = new Map();
 
 document.querySelectorAll('.anim-icon').forEach((icon) => {
     const img = icon.querySelector('img, svg');
     if (!img) return;
 
-    // initial state সেট করো
+  
     gsap.set(img, {
         scale: 0,
         rotate: -15,
@@ -1026,7 +1024,7 @@ document.querySelectorAll('.anim-icon').forEach((icon) => {
         transformOrigin: 'center center',
     });
 
-    // parent grid/container খোঁজো
+    
     const parent = icon.closest('.grid, [class*="grid"]') || icon.parentElement;
 
     if (!iconGroups.has(parent)) {
@@ -1035,7 +1033,7 @@ document.querySelectorAll('.anim-icon').forEach((icon) => {
     iconGroups.get(parent).push({ icon, img });
 });
 
-// প্রতিটা group-এর জন্য একটাই ScrollTrigger
+
 iconGroups.forEach((items, parent) => {
     const imgs  = items.map(item => item.img);
     const icons = items.map(item => item.icon);
@@ -1047,7 +1045,7 @@ iconGroups.forEach((items, parent) => {
             opacity: 1,
             duration: 0.65,
             ease: 'back.out(1.7)',
-            stagger: 0.12, // ← একটার পর একটা
+            stagger: 0.12, 
         });
     };
 
@@ -1058,12 +1056,12 @@ iconGroups.forEach((items, parent) => {
             opacity: 0,
             duration: 0.35,
             ease: 'power2.in',
-            stagger: 0, // reset একসাথে
+            stagger: 0, 
         });
     };
 
     ScrollTrigger.create({
-        trigger: parent,   // ← পুরো grid একটা trigger
+        trigger: parent,  
         start: 'top 85%',
         end: 'bottom 15%',
         once: false,
@@ -1073,7 +1071,7 @@ iconGroups.forEach((items, parent) => {
         onLeaveBack:  animateOut,
     });
 
-    // Magnetic hover — আলাদাভাবে প্রতিটা icon-এ
+
     const STRENGTH = 18;
     const TILT     = 12;
 
@@ -1120,3 +1118,329 @@ iconGroups.forEach((items, parent) => {
         });
     });
 });
+
+
+
+
+
+//single service rolling animation
+(function () {
+    const TOTAL = 6;
+
+    // Responsive BOX_H
+function getBoxH() {
+    if (window.innerWidth <= 776) return 56;
+    if (window.innerWidth <= 1024) return 62;
+    return 90;
+}
+
+    let BOX_H = getBoxH();
+
+    const roller = document.getElementById('numRoller');
+    if (!roller) return;
+    const numBox = roller.closest('.sticky');
+    if (!numBox) return;
+    let currentNum = 0;
+    let isHovering = false;
+
+    // CSS inject
+    const style = document.createElement('style');
+    style.textContent = `
+        .strategy-item {
+            transition: background 0.4s ease, padding-left 0.3s ease;
+            border-radius: 12px;
+            padding-left: 12px;
+            cursor: default;
+        }
+        .strategy-item:hover {
+            background: radial-gradient(50% 50% at 50% 50%, rgba(42,143,210,0.08) 0%, rgba(7,106,171,0.08) 100%);
+            padding-left: 20px;
+        }
+        .strategy-item h3,
+        .strategy-item p {
+            transition: color 0.3s ease;
+        }
+        .num-box-inner {
+            transition: background 0.5s ease, border-color 0.5s ease;
+        }
+        .num-box-inner.hovered {
+            background: radial-gradient(50% 50% at 50% 50%, #2A8FD2 0%, #076AAB 100%);
+            border-color: transparent;
+        }
+        .num-digit-el {
+            transition: color 0.4s ease;
+        }
+        .num-digit-el.white {
+            color: #fff !important;
+        }
+    `;
+    document.head.appendChild(style);
+
+    numBox.classList.add('num-box-inner');
+
+function buildRoller() {
+    roller.innerHTML = '';
+    for (let i = 1; i <= TOTAL; i++) {
+        const div = document.createElement('div');
+        div.className = 'num-digit-el';
+
+        let fontSize = '52px';
+        if (BOX_H <= 56) fontSize = '32px';
+        else if (BOX_H <= 62) fontSize = '42px';
+
+        div.style.cssText = `
+            width: ${BOX_H}px;
+            height: ${BOX_H}px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: ${fontSize};
+            font-weight: 700;
+            color: #076AAB;
+            flex-shrink: 0;
+        `;
+        div.textContent = i;
+        roller.appendChild(div);
+    }
+}
+
+    function setDigitColors(white) {
+        document.querySelectorAll('.num-digit-el').forEach(d => {
+            d.style.color = white ? '#fff' : '#076AAB';
+        });
+    }
+
+    function rollTo(num) {
+        if (num === currentNum) return;
+        currentNum = num;
+        roller.style.transform = `translateY(-${(num - 1) * BOX_H}px)`;
+    }
+
+    function getActiveNum() {
+        const items = document.querySelectorAll('.strategy-item');
+        let activeNum = 1;
+        let bestRatio = 0;
+
+        items.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            const visiblePx = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+            const ratio = visiblePx / rect.height;
+            if (ratio > bestRatio) {
+                bestRatio = ratio;
+                activeNum = parseInt(item.dataset.num, 10);
+            }
+        });
+
+        return activeNum;
+    }
+
+    function onScroll() {
+        if (!isHovering) {
+            rollTo(getActiveNum());
+        }
+    }
+
+    // Hover interaction
+    const items = document.querySelectorAll('.strategy-item');
+    items.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            isHovering = true;
+            const num = parseInt(item.dataset.num, 10);
+            numBox.classList.add('hovered');
+            setDigitColors(true);
+            roller.style.transition = 'transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            rollTo(num);
+        });
+
+        item.addEventListener('mouseleave', () => {
+            isHovering = false;
+            numBox.classList.remove('hovered');
+            setDigitColors(false);
+            roller.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            rollTo(getActiveNum());
+        });
+    });
+
+    // Rebuild on resize
+    window.addEventListener('resize', () => {
+        const newBoxH = getBoxH();
+        if (newBoxH === BOX_H) return;
+        BOX_H = newBoxH;
+        buildRoller();
+        roller.style.transition = 'none';
+        roller.style.transform = `translateY(-${(currentNum - 1) * BOX_H}px)`;
+        setTimeout(() => {
+            roller.style.transition = 'transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        }, 100);
+    });
+
+    // Init
+    buildRoller();
+    roller.style.transition = 'none';
+    roller.style.transform = 'translateY(0)';
+    currentNum = 1;
+
+    setTimeout(() => {
+        roller.style.transition = 'transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    }, 100);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+
+
+
+
+
+
+// play video on scroll
+// play video on scroll - multiple videos
+const plySections = document.querySelectorAll('.makes-different-img');
+
+plySections.forEach((plySection) => {
+    const plyVideo = plySection.querySelector('video');
+
+    if (plyVideo) {
+        plyVideo.muted = true;
+        plyVideo.playsInline = true;
+        plyVideo.pause();
+        plyVideo.currentTime = 0;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        plyVideo.currentTime = 0;
+                        plyVideo.play().catch((e) => console.warn('Play blocked:', e));
+                    } else {
+                        plyVideo.pause();
+                        plyVideo.currentTime = 0;
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        observer.observe(plySection);
+    }
+});
+
+
+
+//footer animation
+
+(function () {
+    const footer = document.getElementById('animatedFooter');
+    const gradientBg = document.getElementById('footerGradientBg');
+
+    if (!footer || !gradientBg) return;
+
+    function updateScrollGradient() {
+        const rect = footer.getBoundingClientRect();
+        const windowH = window.innerHeight;
+        const footerH = footer.offsetHeight;
+
+        const progress = Math.min(
+            Math.max((windowH - rect.top) / (windowH + footerH), 0),
+            1
+        );
+
+        const yPos = -10 + progress * 60;
+        const size = 40 + progress * 30;
+        const opacity = Math.min(progress * 2, 1);
+
+        gradientBg.style.background = `radial-gradient(
+            ${size}% ${size}% at 50% ${yPos}%,
+            rgba(7, 106, 171, ${opacity}) 0%,
+            transparent 70%
+        )`;
+    }
+
+    let targetX = 50;
+    let targetY = 50;
+    let currentX = 50;
+    let currentY = 50;
+    let rafId = null;
+    let isMouseInFooter = false;
+
+    function lerp(a, b, t) {
+        return a + (b - a) * t;
+    }
+
+    function animateMouseGradient() {
+        currentX = lerp(currentX, targetX, 0.03);
+        currentY = lerp(currentY, targetY, 0.03);
+
+        const rect = footer.getBoundingClientRect();
+        const windowH = window.innerHeight;
+        const footerH = footer.offsetHeight;
+        const scrollProgress = Math.min(
+            Math.max((windowH - rect.top) / (windowH + footerH), 0),
+            1
+        );
+
+        const size = 40 + scrollProgress * 30;
+        const opacity = Math.min(scrollProgress * 2, 1);
+
+        gradientBg.style.background = `radial-gradient(
+            ${size}% ${size}% at ${currentX}% ${currentY}%,
+            rgba(7, 106, 171, ${opacity}) 0%,
+            transparent 70%
+        )`;
+
+        rafId = requestAnimationFrame(animateMouseGradient);
+    }
+
+    // ✅ FIXED mouseenter — mouse এর exact position থেকে শুরু করবে
+    footer.addEventListener('mouseenter', (e) => {
+        isMouseInFooter = true;
+
+        const rect = footer.getBoundingClientRect();
+        currentX = ((e.clientX - rect.left) / rect.width) * 100;
+        currentY = ((e.clientY - rect.top) / rect.height) * 100;
+        targetX = currentX;
+        targetY = currentY;
+
+        if (rafId) cancelAnimationFrame(rafId);
+        animateMouseGradient();
+    });
+
+    footer.addEventListener('mousemove', (e) => {
+        const rect = footer.getBoundingClientRect();
+        targetX = ((e.clientX - rect.left) / rect.width) * 100;
+        targetY = ((e.clientY - rect.top) / rect.height) * 100;
+    });
+
+    // ✅ FIXED mouseleave — cleanly center এ ফিরে যাবে
+    footer.addEventListener('mouseleave', () => {
+        isMouseInFooter = false;
+
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = null;
+
+        targetX = 50;
+        targetY = 50;
+
+        function returnToCenter() {
+            currentX = lerp(currentX, 50, 0.025);
+            currentY = lerp(currentY, 50, 0.025);
+
+            updateScrollGradient();
+
+            if (Math.abs(currentX - 50) > 0.1 || Math.abs(currentY - 50) > 0.1) {
+                rafId = requestAnimationFrame(returnToCenter);
+            } else {
+                rafId = null;
+            }
+        }
+        returnToCenter();
+    });
+
+    window.addEventListener('scroll', () => {
+        if (!isMouseInFooter) {
+            updateScrollGradient();
+        }
+    }, { passive: true });
+
+    updateScrollGradient();
+})();

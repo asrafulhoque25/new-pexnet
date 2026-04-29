@@ -1,0 +1,2199 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dental</title>
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="mainNav" style="background: rgba(0, 36, 59, 1);">
+        <div class="container">
+            <div class="nav-inner">
+
+                <a href="index.html" class="nav-logo  shrink-0">
+                    <img src="assets/images/Logo.svg" class="img-fluid" alt="Logo">
+                </a>
+
+                <!-- Desktop Menu — no class on ul li a -->
+                <ul class="nav-menu max-w-214 w-full justify-between">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="#" class="dropdownlink">Services <span>+</span></a>
+                        <ul>
+                            <li>
+                                <a href="mobile-app-design.html">
+                                    Mobile App Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard-design.html">
+
+                                    Dashboard Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="website-design.html">
+
+                                    Website Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="web-application-design.html">
+
+                                    Web App Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="saas-design.html">
+
+                                    SaaS Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="branding-design.html">
+
+                                    Branding
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="case-study.html">Case Studies</a></li>
+                    <li><a href="blog.html">Blogs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <!-- CTA -->
+                <!-- Navbar CTA -->
+                <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                    <!-- CTA -->
+                    <a href="contact.html"
+                        class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out md:block hidden">
+                        <span class="cta-arrow">
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="white" />
+                            </svg>
+
+                        </span>
+                        <span
+                            class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                            <span>Get a Free SEO Audit</span>
+                            <span>Get a Free SEO Audit</span>
+                        </span>
+                    </a>
+
+                    <!-- Hamburger -->
+                    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU — no class on ul li a ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <button id="mobileServicesBtn">Services <span>+</span></button>
+                <ul id="mobileServicesSubmenu">
+                    <li><a href="mobile-app-design.html">Mobile App Design</a></li>
+                    <li><a href="dashboard-design.html">Dashboard Design</a></li>
+                    <li><a href="website-design.html">Website Design</a></li>
+                    <li><a href="web-application-design.html">Web App Design</a></li>
+                    <li><a href="saas-design.html">SaaS Design</a></li>
+                    <li><a href="branding-design.html">Branding</a></li>
+                </ul>
+            </li>
+            <li><a href="case-study.html">Case Studies</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="cta-wrap">
+            <a href="contact.html" class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5">
+                <span class="cta-arrow">
+                    <svg viewBox="0 0 16 16">
+                        <path d="M12.17 6.78L6.81 1.41 8.22 0 16 7.78 8.22 15.56 6.81 14.14l5.36-5.36H0V6.78h12.17z" />
+                    </svg>
+                    <svg viewBox="0 0 16 16">
+                        <path d="M12.17 6.78L6.81 1.41 8.22 0 16 7.78 8.22 15.56 6.81 14.14l5.36-5.36H0V6.78h12.17z" />
+                    </svg>
+                </span>
+                <span class="cta-text text-[13px] leading-[20px] text-[#0d2235] h-[20px]">
+                    <span>Get a Free SEO Audit</span>
+                    <span>Get a Free SEO Audit</span>
+                </span>
+            </a>
+        </div>
+    </div>
+
+
+
+    <!-- ===== NAVBAR End ===== -->
+
+
+    <!-- banner start -->
+
+    <section
+        class="about-banner relative min-h-[70vh] pt-[48px] sm:pt-[96px] pb-[48px] sm:pb-[96px] flex items-center border-t border-b border-[#1F3E53] overflow-hidden bg-[#00243B]"
+        data-glow-section data-home-x="70" data-home-y="50">
+
+        <!-- Vertical lines -->
+        <div class="absolute inset-0 z-[1] pointer-events-none">
+            <div class="max-w-[1530px] mx-auto h-full flex justify-between px-5">
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+            </div>
+        </div>
+
+        <!-- Glow — right side centered -->
+        <div data-glow-el class="absolute inset-0 opacity-0 pointer-events-none z-0"
+            style="background: radial-gradient(40% 50% at 70% 50%, #076AAB 0%, transparent 100%);">
+        </div>
+
+        <!-- Content -->
+        <div class="container relative z-[2]">
+            <div class="grid md:grid-cols-2 grid-cols-1 items-center md:gap-10 sm:gap-5 gap-4">
+                <div class="banner-left-content pl-1">
+                    <div class="sm:space-y-4 space-y-3">
+                        <h1
+                            class="md::mt-6 mt-3 mt-1 lg:text-[64px] md:text-[48px] sm:text-[42px] text-4xl text-white font-notch leading-[110%]">
+                            SEO Services for <span class="text-[#88D1FF]">Dental Clinics</span></h1>
+                        <div class="space-y-3">
+                            <p class="sm:text-base text-sm text-[#D4EEFF] font-normal">Pexnet’s highly personalized
+                                dental SEO services not only increase your local visibility, but also help you generate
+                                more, qualified leads. </p>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3 sm:mt-8 mt-6">
+                            <a href="contact.html"
+                                class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px] ">
+                                <span class="cta-arrow">
+                                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                            fill="white" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                    <span>Get a Free Dental SEO Audit</span>
+                                    <span>Get a Free Dental SEO Audit</span>
+                                </span>
+                            </a>
+                            <a href="contact.html"
+                                class="common-cta bg-[#88D1FF] hover:bg-[#05314D] sm:h-13 h-[44px] px-5 group duration-500 ease-in-out">
+                                <span
+                                    class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                    <span>Book a Strategy Call</span>
+                                    <span>Book a Strategy Call</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-right">
+                    <img src="assets/images/services.webp" class="img-fluid" alt="services">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <div class="banner-info-bottom bg-[#00243B] py-8">
+        <div class="container">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-6 sm:gap-4 gap-2">
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/dental-banner-info-1.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-base sm:text-lg lg:text-xl font-bold text-white">Special Focus on Service Pages</p>
+                </div>
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/dental-banner-info-2.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-base sm:text-lg lg:text-xl font-bold text-white">Priorities on Local Visibility</p>
+                </div>
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/dental-banner-info-3.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-base sm:text-lg lg:text-xl font-bold text-white">Practical Priorities</p>
+                </div>
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/about-info-3.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-base sm:text-lg lg:text-xl font-bold text-white">Detailed Reporting for Informed
+                        Decisions</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner end -->
+
+
+
+
+    <!-- brand section start -->
+
+    <section class="brand-section py-8 partner-section bg-[#F4FBFF] px-3">
+        <div id="brandWrapper"
+            class="bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] sm:py-8 py-6 sm:rounded-full rounded-[60px] overflow-hidden">
+
+            <div id="partner-slider" class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+
+                        <!-- Meta -->
+                        <li class="splide__slide">
+                            <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
+                                <div class="logo-circle">
+                                    <img src="assets/images/brand1.svg" class="img-fluid" alt="brand logo">
+                                </div>
+                                <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Meta</p>
+                                <p class="text-sm sm:text-base text-[#526E80] text-center line-clamp-1">Business Partner
+                                </p>
+                            </div>
+                        </li>
+
+                        <!-- Google -->
+                        <li class="splide__slide">
+                            <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
+                                <div class="logo-circle">
+                                    <img src="assets/images/brand2.svg" class="img-fluid" alt="brand logo">
+                                </div>
+                                <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Google</p>
+                                <p class="text-sm sm:text-base text-[#526E80] text-center line-clamp-1">Partner</p>
+                            </div>
+                        </li>
+
+                        <!-- Microsoft -->
+                        <li class="splide__slide">
+                            <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
+                                <div class="logo-circle">
+                                    <img src="assets/images/brand3.svg" class="img-fluid" alt="brand logo">
+                                </div>
+                                <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Microsoft</p>
+                                <p class="text-sm sm:text-base text-[#526E80] text-center line-clamp-1">Advertising
+                                    Partner</p>
+                            </div>
+                        </li>
+
+                        <!-- Upwork -->
+                        <li class="splide__slide">
+                            <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
+                                <div class="logo-circle">
+                                    <img src="assets/images/brand4.svg" class="img-fluid" alt="brand logo">
+                                </div>
+                                <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Upwork</p>
+                                <p class="text-sm sm:text-base text-[#526E80] text-center line-clamp-1">Top Rated Agency
+                                </p>
+                            </div>
+                        </li>
+
+                        <!-- Clutch -->
+                        <li class="splide__slide">
+                            <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
+                                <div class="logo-circle">
+                                    <img src="assets/images/brand6.svg" class="img-fluid" alt="brand logo">
+                                </div>
+                                <p class="text-base sm:text-lg md:text-xl font-bold text-[#002F4D] mb-1">Clutch</p>
+                                <p class="text-sm sm:text-base text-[#526E80] text-center line-clamp-1">Top Local SEO
+                                    Company 2024</p>
+                            </div>
+                        </li>
+
+                        <!-- Web Excellence Award -->
+                        <li class="splide__slide">
+                            <div class="partner-item flex flex-col items-center md:px-4 px-3 md:py-0 py-3">
+                                <div class="logo-circle">
+                                    <img src="assets/images/brand7.svg" class="img-fluid" alt="brand logo">
+                                </div>
+                                <p
+                                    class="text-base sm:text-lg lg:text-xl font-bold text-[#002F4D] mb-1 text-center leading120 line-clamp-1">
+                                    Web Excellence Award</p>
+                                <p class="text-sm sm:text-base text-[#526E80] text-center line-clamp-1">2023</p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- brand section end -->
+
+
+
+    <!-- Why Dental seo needed start -->
+    <section class="why-seo section-padding bg-[#F4FBFF]">
+        <div class="container">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    Why Dental Practices Still Miss Patient Enquiries</h2>
+                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Even if you’ve managed to
+                    rank in Google’s map pack, patients may still not choose you if they don’t find you credible enough.
+                    That’s why we prioratize strengthening your trust signals to boost conversions.</p>
+            </div>
+
+
+            <div class="sm:mt-12 mt-8  flex flex-wrap justify-center lg:gap-8 md:gap-4 gap-4">
+                <div class="service-item why-outer bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+                    <div class="why-need-card bg-white md:pt-6 sm:pt-4 pt-3 rounded-3xl border border-[#D4EEFF] h-full">
+                        <div class="why-card-img px-3">
+                            <img src="assets/images/why-dental-service-1.svg" class="img-fluid" alt="why-seo">
+                        </div>
+                        <div class="why-card-content sm:mt-6 mt-4 md:px-6 sm:px-4 px-3 sm:pb-6 pb-4 md:pb-8">
+                            <h3
+                                class="text-xl sm:text-2xl font-bold leading-[120%] text-[#076AAB] mb-2 sm:mb-3 md:mb-4">
+                                Too Vague Service Pages</h3>
+                            <p class="text-[#526E80] text-xs sm:text-sm leading-[150%]">Your service pages aren’t just
+                                SEO pages, they’re decision pages too. Patients aren’t just browsing, they’re also
+                                comparing. These vital pages shouldn’t read like brochures. </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="service-item why-outer bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+                    <div class="why-need-card bg-white md:pt-6 sm:pt-4 pt-3 rounded-3xl border border-[#D4EEFF] h-full">
+                        <div class="why-card-img px-3">
+                            <img src="assets/images/why-dental-service-2.svg" class="img-fluid" alt="why-seo">
+                        </div>
+                        <div class="why-card-content sm:mt-6 mt-4 md:px-6 sm:px-4 px-3 sm:pb-6 pb-4 md:pb-8">
+                            <h3
+                                class="text-xl sm:text-2xl font-bold leading-[120%] text-[#076AAB] mb-2 sm:mb-3 md:mb-4">
+                                Unstable Google Maps Visibility</h3>
+                            <p class="text-[#526E80] text-xs sm:text-sm leading-[150%]">Some days you’ve good
+                                visibility, some days bad. That doesn’t work because you need stability for consistent
+                                lead acquisition. </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="service-item why-outer bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+                    <div class="why-need-card bg-white md:pt-6 sm:pt-4 pt-3 rounded-3xl border border-[#D4EEFF] h-full">
+                        <div class="why-card-img px-3">
+                            <img src="assets/images/why-dental-service-3.svg" class="img-fluid" alt="why-seo">
+                        </div>
+                        <div class="why-card-content sm:mt-6 mt-4 md:px-6 sm:px-4 px-3 sm:pb-6 pb-4 md:pb-8">
+                            <h3
+                                class="text-xl sm:text-2xl font-bold leading-[120%] text-[#076AAB] mb-2 sm:mb-3 md:mb-4">
+                                Lesser Reviews Than Competitors</h3>
+                            <p class="text-[#526E80] text-xs sm:text-sm leading-[150%]">If your competitors are racking
+                                up glowing recent reviews, they’re taking a big chunk of qualified leads. That means you
+                                need a steady stream of positive reviews too to keep up. </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="service-item why-outer bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+                    <div class="why-need-card bg-white md:pt-6 sm:pt-4 pt-3 rounded-3xl border border-[#D4EEFF] h-full">
+                        <div class="why-card-img px-3">
+                            <img src="assets/images/why-dental-service-4.svg" class="img-fluid" alt="why-seo">
+                        </div>
+                        <div class="why-card-content sm:mt-6 mt-4 md:px-6 sm:px-4 px-3 sm:pb-6 pb-4 md:pb-8">
+                            <h3
+                                class="text-xl sm:text-2xl font-bold leading-[120%] text-[#076AAB] mb-2 sm:mb-3 md:mb-4">
+                                Wrong Traffic, No Enquiry</h3>
+                            <p class="text-[#526E80] text-xs sm:text-sm leading-[150%]">You see lots of visitors, but
+                                nobody reaches out to you. Why? Because your weak SEO brought in unrelated searches.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="service-item why-outer bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+                    <div class="why-need-card bg-white md:pt-6 sm:pt-4 pt-3 rounded-3xl border border-[#D4EEFF] h-full">
+                        <div class="why-card-img px-3">
+                            <img src="assets/images/why-dental-service-5.svg" class="img-fluid" alt="why-seo">
+                        </div>
+                        <div class="why-card-content sm:mt-6 mt-4 md:px-6 sm:px-4 px-3 sm:pb-6 pb-4 md:pb-8">
+                            <h3
+                                class="text-xl sm:text-2xl font-bold leading-[120%] text-[#076AAB] mb-2 sm:mb-3 md:mb-4">
+                                No Clear Direction for the Visitor</h3>
+                            <p class="text-[#526E80] text-xs sm:text-sm leading-[150%]">Your traffic is leaving your
+                                site after some time because they don’t know what to do next. It happens because
+                                calling, filling out a form, or booking an appointment isn’t simple and fast.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="service-item why-outer bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+                    <div class="why-need-card bg-white md:pt-6 sm:pt-4 pt-3 rounded-3xl border border-[#D4EEFF] h-full">
+                        <div class="why-card-img px-3">
+                            <img src="assets/images/why-dental-service-6.svg" class="img-fluid" alt="why-seo">
+                        </div>
+                        <div class="why-card-content sm:mt-6 mt-4 md:px-6 sm:px-4 px-3 sm:pb-6 pb-4 md:pb-8">
+                            <h3
+                                class="text-xl sm:text-2xl font-bold leading-[120%] text-[#076AAB] mb-2 sm:mb-3 md:mb-4">
+                                Expecting Fast Results</h3>
+                            <p class="text-[#526E80] text-xs sm:text-sm leading-[150%]">SEO is more like a marathon than
+                                a sprint. It takes custom tactics and continuous adjustments to find what works and what
+                                doesn’t for your unique conditions and challenges.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- Why Dental needed end -->
+
+
+
+    <!-- Why seo needed end -->
+    <section class="section-padding relative bg-[radial-gradient(82.97%_50%_at_69.58%_50%,#076AAB_0%,#00243B_100%)] ">
+        <div class="container ">
+
+            <div class="grid md:grid-cols-2 lg:gap-[70px] sm:gap-10 gap-8 items-center">
+                <div class="dentail-images">
+                    <img src="assets/images/why-needed-dental-seo.png" class="img-fluid" alt="dental image">
+                </div>
+                <div>
+                    <div class="text-start">
+                        <h2
+                            class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#fff]">
+                            Why SEO for Dental Practices is Different</h2>
+                        <p class="text-sm sm:text-base leading-[150%] text-[#D4EEFF] max-w-184 w-full mt-4">Dental
+                            patients search for care in different ways depending on their needs. Some look for emergency
+                            aid, while others are interested in Invisalign or implants. Here, factors like the type of
+                            the treatment, your location, and credibility matter most. </p>
+                    </div>
+                    <div class="md:mt-12 sm:mt-10 mt-8">
+                        <h3 class="md:text-[32px] sm:text-[28px] text-2xl text-[#88D1FF] leading120 font-bold mb-3">Examples of High-Intent Dental
+                            Searches</h3>
+                        <p class="sm:text-base text-sm leading150 text-[#D4EEFF]">To be specific, you’ll try ranking for keywords
+                            like:</p>
+                    </div>
+                    <ul class="space-y-3 md:mt-6 mt-4">
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-shape.svg" class="img-fluid" alt="points">
+                                <p class="text-xs sm:text-sm md:text-base text-[#D4EEFF] leading120">Dentist near me</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-shape.svg" class="img-fluid" alt="points">
+                                <p class="text-xs sm:text-sm md:text-base text-[#D4EEFF] leading120">Emergency dentist in [your location]</p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-shape.svg" class="img-fluid" alt="points">
+                                <p class="text-xs sm:text-sm md:text-base text-[#D4EEFF] leading120">Dental implants in [your location]</p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-shape.svg" class="img-fluid" alt="points">
+                                <p class="text-xs sm:text-sm md:text-base text-[#D4EEFF] leading120">Invisalign dentist near me</p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-shape.svg" class="img-fluid" alt="points">
+                                <p class="text-xs sm:text-sm md:text-base text-[#D4EEFF] leading120">Cosmetic dentist in [your location]</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="mt-4 text-sm sm:text-base leading150 text-[#D4EEFF]">Since traditional SEO can’t cater to these
+                        high-intent searches, your local dental SEO approach should be totally different. </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- Why seo needed end -->
+
+
+
+
+
+
+    <!--  Dental Practices start -->
+    <section class="section-padding ">
+        <div class="container">
+            <div class="grid md:grid-cols-2 md:gap-12 sm:gap-10 gap-8">
+                <div>
+                    <div class="common-title text-start space-y-4 ">
+                        <h2
+                            class="lg:text-[56px] md:text-[42px] sm:text-[38px] text-[32px] leading120 font-bold font-notch text-[#002F4D]">
+                            How Local Search Has Changed for Dental Practices</h2>
+                        <p class="text-sm sm:text-base leading-[150%] text-[#526E80] max-w-184 w-full">Increasing your
+                            local visibility is only half the battle. You may have lots of traffic but no inquiry from
+                            patients; let alone conversions. That happens because your trust signals (e.g. GBP, reviews,
+                            mentions) are weak. So, they can’t really trust you.</p>
+
+                    </div>
+                    <div class="sm:mt-10 mt-8 md:mt-12">
+                        <h3 class="md:text-[32px] sm:text-[24px] text-xl text-[#076AAB] leading120 font-bold mb-3">What Search Engines & Patients
+                            Care about</h3>
+
+                    </div>
+                    <ul class="space-y-3 md:mt-6 mt-4">
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-dark.svg" class="img-fluid" alt="points">
+                                <p class="md:text-base sm:text-sm text-xs font-bold text-[#526E80] leading120">Types of dental services you
+                                    provide</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-dark.svg" class="img-fluid" alt="points">
+                                <p class="md:text-base sm:text-sm text-xs font-bold text-[#526E80] leading120">Types of patient you cater to
+                                </p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-dark.svg" class="img-fluid" alt="points">
+                                <p class="md:text-base sm:text-sm text-xs font-bold text-[#526E80] leading120">Areas where you serve</p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-dark.svg" class="img-fluid" alt="points">
+                                <p class="md:text-base sm:text-sm text-xs font-bold text-[#526E80] leading120">How credible and trustworthy
+                                    you are</p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-dark.svg" class="img-fluid" alt="points">
+                                <p class="md:text-base sm:text-sm text-xs font-bold text-[#526E80] leading120">Your experience and expertise
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-dark.svg" class="img-fluid" alt="points">
+                                <p class="md:text-base sm:text-sm text-xs font-bold text-[#526E80] leading120">If you’re easy to contact with
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-dark.svg" class="img-fluid" alt="points">
+                                <p class="md:text-base sm:text-sm text-xs font-bold text-[#526E80] leading120">How responsive you are</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="mt-4 md:text-base text-sm leading150 text-[#526E80]">So, you should focus on optimizing your overall
+                        web presence instead of just your website.</p>
+                </div>
+                <div class="dental-practice-img">
+                    <img src="assets/images/dental-practice.svg" class="img-fluid" alt="dental rating">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dental Practices end -->
+
+
+
+
+    <!-- Turn Your Website into a Front Desk start -->
+    <section class="free-audit-section section-padding bg-[#00243B] relative overflow-hidden" data-glow-section
+        data-home-x="70" data-home-y="50">
+
+        <!-- Vertical lines + rain drops -->
+        <div class="absolute inset-0 z-[1] pointer-events-none">
+            <div class="max-w-[1530px] mx-auto h-full flex justify-between md:px-5 px-4">
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+            </div>
+        </div>
+
+        <!-- Glow div -->
+        <div data-glow-el class="absolute inset-0 opacity-0 pointer-events-none z-0"
+            style="background: radial-gradient(40% 50% at 70% 50%, #076AAB 0%, transparent 100%);">
+        </div>
+
+        <div class="container relative z-[2]">
+            <div class="grid md:grid-cols-2 grid-cols-1 sm:gap-0 gap-4 items-center">
+                <div class="common-title text-start space-y-4 max-w-152 w-full">
+                    <h2
+                        class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-white">
+                        Turn Your Website into a Front Desk
+                    </h2>
+                    <p class="text-sm sm:text-base leading-[150%] text-[#D4EEFF] max-w-184 w-full">
+                        Enough of relying on referrals while other practices are capturing all the online leads. Get
+                        found by patients searching for you.
+                    </p>
+                    <a href="contact.html"
+                        class="common-cta md:mt-6 sm:mt-3 mt-2 bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out">
+                        <span class="cta-arrow">
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="white" />
+                            </svg>
+                        </span>
+                        <span
+                            class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                            <span>Book a Free 30-Min Consultation</span>
+                            <span>Book a Free 30-Min Consultation</span>
+                        </span>
+                    </a>
+                </div>
+                <div>
+                    <img src="assets/images/front-desk.svg" class="img-fluid" alt="Free Website Audit">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Turn Your Website into a Front Desk end -->
+
+
+
+
+    <!--  Our Core Values start -->
+    <section class="core-value section-padding">
+        <div class="container">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    What to Expect From Dental SEO</h2>
+                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Dental SEO involves lots of
+                    things to increase your local visibility, website traffic, and patient bookings. It takes some time,
+                    but the results are well worth it.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 sm:grid-cols-2  gap-x-8 gap-y-12 md:mt-12 sm:mt-10 mt-8">
+                <div class="mission-item lg:px-8 md:px-2 px-0 flex flex-col md:gap-6 gap-4">
+                    <div class="mission-icon flex justify-center anim-icon">
+                        <img src="assets/images/expect-dental-seo-1.svg" class="img-fluid w-17.5 md:w-24" alt="values">
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#002F4D] text-center leading120">Better Local
+                            Rankings</h3>
+                        <p class="text-sm md:text-base text-[#526E80] leading150 text-center">You’ll show up on top for
+                            transactional keywords like “Dentist near me</p>
+                    </div>
+                </div>
+                <div class="mission-item lg:px-8 md:px-2 px-0 flex flex-col md:gap-6 gap-4">
+                    <div class="mission-icon flex justify-center anim-icon">
+                        <img src="assets/images/expect-dental-seo-2.svg" class="img-fluid w-17.5 md:w-24" alt="values">
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#002F4D] text-center leading120">More Patient
+                            Calls & Bookings</h3>
+                        <p class="text-sm md:text-base text-[#526E80] leading150 text-center">Your bookings will
+                            increase after ranking on high-intent searches e.g. “emergency dental clinic in [your
+                            location]”</p>
+                    </div>
+                </div>
+                <div class="mission-item lg:px-8 md:px-2 px-0 flex flex-col md:gap-6 gap-4">
+                    <div class="mission-icon flex justify-center anim-icon">
+                        <img src="assets/images/expect-dental-seo-3.svg" class="img-fluid w-17.5 md:w-24" alt="values">
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#002F4D] text-center leading120">Optimized GBP
+                        </h3>
+                        <p class="text-sm md:text-base text-[#526E80] leading150 text-center">Patients will get to know
+                            about your clinic and trust you more with images, videos, positive reviews, and updated
+                            posts. </p>
+                    </div>
+                </div>
+                <div class="mission-item lg:px-8 md:px-2 px-0 flex flex-col md:gap-6 gap-4">
+                    <div class="mission-icon flex justify-center anim-icon">
+                        <img src="assets/images/expect-dental-seo-4.svg" class="img-fluid w-17.5 md:w-24" alt="values">
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#002F4D] text-center leading120">Helpful Content
+                        </h3>
+                        <p class="text-sm md:text-base text-[#526E80] leading150 text-center">Patients will find
+                            immediate answers to their queries with helpful blogs and practical guides </p>
+                    </div>
+                </div>
+                <div class="mission-item lg:px-8 md:px-2 px-0 flex flex-col md:gap-6 gap-4">
+                    <div class="mission-icon flex justify-center anim-icon">
+                        <img src="assets/images/expect-dental-seo-5.svg" class="img-fluid w-17.5 md:w-24" alt="values">
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#002F4D] text-center leading120">Better Site
+                            Performance</h3>
+                        <p class="text-sm md:text-base text-[#526E80] leading150 text-center">You’ll have a
+                            high-performing, fast, mobile-friendly, and secure dental website that drives results</p>
+                    </div>
+                </div>
+                <div class="mission-item lg:px-8 md:px-2 px-0 flex flex-col md:gap-6 gap-4">
+                    <div class="mission-icon flex justify-center anim-icon">
+                        <img src="assets/images/expect-dental-seo-6.svg" class="img-fluid w-17.5 md:w-24" alt="values">
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl md:text-2xl font-bold text-[#002F4D] text-center leading120">Sustainable
+                            Growth</h3>
+                        <p class="text-sm md:text-base text-[#526E80] leading150 text-center">You’ll have a steady flow
+                            of traffic once you rank organically</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  Our Core Values end -->
+
+
+
+    <!--  Dental SEO Strategy Looks Like start -->
+<section class="dental-seo-strategy section-padding bg-[radial-gradient(50%_50%_at_50%_50%,_#FFF_0%,_#F4FBFF_33%,_#EDF8FF_66%,_#DEF2FF_100%)]">
+    <div class="container">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+
+            <!-- LEFT STICKY SIDE -->
+            <div class="md:sticky top-30 common-title max-w-248 w-full mx-auto text-start space-y-4">
+                <h2 class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    How Our Dental SEO Strategy Looks Like
+                </h2>
+                <div class="space-y-4 mb-8">
+                    <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">
+                        We create a highly personalized plan based on your practice's unique needs. Here are the steps we usually follow.
+                    </p>
+                </div>
+                <a href="contact.html" class="common-cta bg-[#076AAB] hover:bg-[#BFFB4F] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px]">
+                    <span class="cta-arrow">
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z" fill="white"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                    <span class="cta-text text-[13px] leading-[20px] text-[#fff] group-hover:text-[#00243B] h-[20px] duration-500 ease-in-out">
+                        <span>Get a Free Dental SEO Audit</span>
+                        <span>Get a Free Dental SEO Audit</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="flex md:gap-6 gap-4 items-start">
+
+                <!-- SINGLE STICKY NUMBER BOX — RIGHT SIDE এ -->
+                <div class="num-outer-box sticky top-16 md:top-30 shrink-0 border border-[#076AAB] rounded-2xl md:rounded-3xl flex items-center justify-center overflow-hidden">
+                 <div class="rollar-box">
+                        <div id="numRoller" style="display: flex; flex-direction: column; transition: transform 0.5s cubic-bezier(.4,0,.2,1); will-change: transform;"></div>
+                    </div>
+                </div>
+
+                <!-- STRATEGY LIST -->
+                <div class="number-strategy flex-1" id="strategyList">
+                    <div class="strategy-item py-8 border-b border-b-[#D4EEFF]" data-num="1">
+                        <div class="space-y-3">
+                            <h3 class="text-2xl text-[#076AAB] leading-[120%] font-bold">Comprehensive Audit</h3>
+                            <p class="text-base text-[#526E80] leading-[150%]">We thoroughly review your website, service pages, GBP, reviews, citations, and backlinks to find what's holding you back.</p>
+                        </div>
+                    </div>
+                    <div class="strategy-item py-8 border-b border-b-[#D4EEFF]" data-num="2">
+                        <div class="space-y-3">
+                            <h3 class="text-2xl text-[#076AAB] leading-[120%] font-bold">Keyword & Market Research</h3>
+                            <p class="text-base text-[#526E80] leading-[150%]">Our SEOs take their time to identify the exact search terms dental patients in your area are using. We also analyze your competitors to find the hidden opportunities for your practice.</p>
+                        </div>
+                    </div>
+                    <div class="strategy-item py-8 border-b border-b-[#D4EEFF]" data-num="3">
+                        <div class="space-y-3">
+                            <h3 class="text-2xl text-[#076AAB] leading-[120%] font-bold">Content Strategy & Planning</h3>
+                            <p class="text-base text-[#526E80] leading-[150%]">Based on our research, we create and update service pages, blogs, and location-specific content that revolves around patient concerns and questions.</p>
+                        </div>
+                    </div>
+                    <div class="strategy-item py-8 border-b border-b-[#D4EEFF]" data-num="4">
+                        <div class="space-y-3">
+                            <h3 class="text-2xl text-[#076AAB] leading-[120%] font-bold">Technical SEO Setup</h3>
+                            <p class="text-base text-[#526E80] leading-[150%]">Many dental websites can't deliver because of technical issues. We fix the existing problems to help Google crawl, render, and index every page efficiently.</p>
+                        </div>
+                    </div>
+                    <div class="strategy-item py-8 border-b border-b-[#D4EEFF]" data-num="5">
+                        <div class="space-y-3">
+                            <h3 class="text-2xl text-[#076AAB] leading-[120%] font-bold">Practice-Specific SAP Optimization</h3>
+                            <p class="text-base text-[#526E80] leading-[150%]">Your Service Area Pages (SAPs) are super important because they help patients make decisions. We structure and add valuable content targeting local intent.</p>
+                        </div>
+                    </div>
+                    <div class="strategy-item py-8 border-b border-b-[#D4EEFF]" data-num="6">
+                        <div class="space-y-3">
+                            <h3 class="text-2xl text-[#076AAB] leading-[120%] font-bold">Building Relevance & Trust</h3>
+                            <p class="text-base text-[#526E80] leading-[150%]">This is where we focus on building your trust and reputation so you show up for the right searches and give patients enough confidence to pick you.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Dental SEO Strategy Looks Like end -->
+
+
+
+
+    <!--  SEO Services for Dental Practices start -->
+    <section class="md:pt-[96px] sm:pt-[60px] pt-[48px] bg-[#00243B]">
+        <div class="container">
+            <div class="max-w-[992px] w-full mx-auto space-y-4 md:pb-12 sm:pb-10 pb-8">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-white text-center">
+                    Our Value-Driven SEO Services for Dental Practices
+                </h2>
+                <p class="text-sm sm:text-base leading-[150%] text-[#D4EEFF] max-w-184 mx-auto w-full text-center">
+                    Pexnet’s full-fledged dental SEO services are designed to make your clinic more visible not only on
+                    maps or SERPs, but also on Google’s AI overviews and AI mode.
+                </p>
+            </div>
+
+        </div>
+        <div
+            class="border-t border-t-white/8 lg:border-l lg:border-l-white/8 lg:border-r lg:border-r-transparent lg:border-b-transparent  flex flex-col lg:flex-row items-start gap-3">
+        </div>
+
+<div class="container md:pb-[96px] sm:pb-[60px] pb-[48px]">
+    <div class="grid md:px-6 sm:px-2 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2  gap-x-0 md:gap-y-6 sm:gap-y-4 gap-y-3 w-full relative  md:pt-6 sm:pt-4 pt-2 md:pb-6 sm:pb-4 pb-2 h-full bg-[radial-gradient(50%_50%_at_50%_50%,_#076AAB_0%,_#00243B_100%)]  ">
+        <!-- Vertical lines + rain drops -->
+        <div class="absolute inset-0 z-[1] pointer-events-none">
+            <div class="max-w-[1504px] mx-auto h-full flex justify-between md:px-5">
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden lg:block hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden md:block hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden sm:block hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+            </div>
+        </div>
+        <div class="servicecommon-item md:px-6 sm:px-4 px-2 h-full">
+            <div class="  space-y-4 md:space-y-6 bg-[#00243B] rounded-3xl backdrop-blur-3xl md:p-8 sm:p-6 p-4 h-full">
+            <div class="comon-service-box-icon">
+                <img src="assets/images/dental-practice-icon.svg" class="img-fluid" alt="practice">
+            </div>
+            <div class="space-y-3">
+                <h3 class="sm:text-2xl text-xl font-bold text-white leading120">Local SEO & Google Business Profile</h3>
+                <p class="text-[#92B9D2] text-sm leading150">Your Google Business Profile, local citations, and
+                    map visibility are optimized to show your practice on top of local searches.</p>
+            </div>
+        </div>
+        </div>
+        <div class="servicecommon-item md:px-6 sm:px-4 px-2 h-full">
+            <div class="  space-y-4 md:space-y-6 bg-[#00243B] rounded-3xl backdrop-blur-3xl md:p-8 sm:p-6 p-4 h-full">
+            <div class="comon-service-box-icon">
+                <img src="assets/images/dental-practice-icon-2.svg" class="img-fluid" alt="practice">
+            </div>
+            <div class="space-y-3">
+                <h3 class="sm:text-2xl text-xl font-bold text-white leading120">Service Page SEO</h3>
+                <p class="text-[#92B9D2] text-sm leading150">Since service pages are mainly what convert traffic into patients, they're treated with special focus and care.</p>
+            </div>
+        </div>
+        </div>
+        <div class="servicecommon-item md:px-6 sm:px-4 px-2 h-full">
+            <div class="  space-y-4 md:space-y-6 bg-[#00243B] rounded-3xl backdrop-blur-3xl md:p-8 sm:p-6 p-4 h-full">
+            <div class="comon-service-box-icon">
+                <img src="assets/images/dental-practice-icon-3.svg" class="img-fluid" alt="practice">
+            </div>
+            <div class="space-y-3">
+                <h3 class="sm:text-2xl text-xl font-bold text-white leading120">On-Page & Content Optimization</h3>
+                <p class="text-[#92B9D2] text-sm leading150">Your keywords, headings, URLs, site structure, and content are improved to help Google better understand your location and services.</p>
+            </div>
+        </div>
+        </div>
+        <div class="servicecommon-item md:px-6 sm:px-4 px-2 h-full">
+            <div class="  space-y-4 md:space-y-6 bg-[#00243B] rounded-3xl backdrop-blur-3xl md:p-8 sm:p-6 p-4 h-full">
+            <div class="comon-service-box-icon">
+                <img src="assets/images/dental-practice-icon-4.svg" class="img-fluid" alt="practice">
+            </div>
+            <div class="space-y-3">
+                <h3 class="sm:text-2xl text-xl font-bold text-white leading120">Technical & UX Support</h3>
+                <p class="text-[#92B9D2] text-sm leading150">Aside from the technicalities, we create a smooth user journey so the visitor turns into a valuable lead naturally.</p>
+            </div>
+        </div>
+        </div>
+        <div class="servicecommon-item md:px-6 sm:px-4 px-2 h-full">
+            <div class="  space-y-4 md:space-y-6 bg-[#00243B] rounded-3xl backdrop-blur-3xl md:p-8 sm:p-6 p-4 h-full">
+            <div class="comon-service-box-icon">
+                <img src="assets/images/dental-practice-icon-5.svg" class="img-fluid" alt="practice">
+            </div>
+            <div class="space-y-3">
+                <h3 class="sm:text-2xl text-xl font-bold text-white leading120">Building Trust & Credibility</h3>
+                <p class="text-[#92B9D2] text-sm leading150">This step involves creating strategies to increase your positive reviews and showcase your involvement in the local community.</p>
+            </div>
+        </div>
+        </div>
+        <div class="servicecommon-item md:px-6 sm:px-4 px-2 h-full">
+            <div class="  space-y-4 md:space-y-6 bg-[#00243B] rounded-3xl backdrop-blur-3xl md:p-8 sm:p-6 p-4 h-full">
+            <div class="comon-service-box-icon">
+                <img src="assets/images/dental-practice-icon-6.svg" class="img-fluid" alt="practice">
+            </div>
+            <div class="space-y-3">
+                <h3 class="sm:text-2xl text-xl font-bold text-white leading120">Tracking & Reporting</h3>
+                <p class="text-[#92B9D2] text-sm leading150">Based on analytics, campaign performance, and user behavior, every lead is tracked and reached out until they ask for your services.</p>
+            </div>
+        </div>
+        </div>
+        
+
+    </div>
+</div>
+
+    </section>
+    <!--  SEO Services for Dental Practices end -->
+
+
+
+
+
+        <!--  Practices & Specialties Our Dental SEO Services Cover start -->
+    <section class="core-value section-padding">
+        <div class="container">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    Practices & Specialties Our Dental SEO Services Cover</h2>
+                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Our hyper-local SEO services cover the most common practices by dental practices.</p>
+            </div>
+
+             <div class="grid md:grid-cols-5 grid-cols-2 gap-y-6 md:gap-y-0 sm:mt-10 mt-8 md:mt-12">
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/specialization-1.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Invisalign SEO</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/dentail-services-icon-2.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Emergency Dentist SEO</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/dentail-services-icon-3.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Cosmetic Dentistry SEO</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/dentail-services-icon-4.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Family Dentist SEO</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/dentail-services-icon-5.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Orthodontist SEO</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/dentail-services-icon-6.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Pediatric Dentist SEO</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/dentail-services-icon-7.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Oral Surgeon SEO</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/dentail-services-icon-8.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Periodontist SEO</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/dentail-services-icon-9.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Endodontist SEO</h3>
+                    </div>
+                </div>
+                <div class="md:px-6 md:py-8 sm:px-4 py-0 px-4">
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="mission-icon flex justify-center anim-icon">
+                            <img src="assets/images/dentail-services-icon-10.svg" class="img-fluid sm:w-auto w-20" alt="values">
+                        </div>
+                        <h3 class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] text-center">Dental Veneers SEO</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  Practices & Specialties Our Dental SEO Services Cover end -->
+
+
+        <!-- Free Website Audit start -->
+    <section class="free-audit-section section-padding bg-[#00243B] relative overflow-hidden" data-glow-section
+        data-home-x="70" data-home-y="50">
+
+              <!-- Vertical lines + rain drops -->
+        <div class="absolute inset-0 z-[1] pointer-events-none">
+            <div class="max-w-[1530px] mx-auto h-full flex justify-between px-5">
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+            </div>
+        </div>
+
+        <!-- Glow div -->
+        <div data-glow-el class="absolute inset-0 opacity-0 pointer-events-none z-0"
+            style="background: radial-gradient(40% 50% at 70% 50%, #076AAB 0%, transparent 100%);">
+        </div>
+
+        <div class="container relative z-[2]">
+            <div class="grid sm:grid-cols-2 grid-cols-1 sm:gap-0 gap-8 items-center">
+                <div class="common-title text-start space-y-4 max-w-152 w-full">
+                        <span
+                            class="py-1 px-3 text-primary font-bold sm:text-sm text-xs bg-[#06314D] rounded-full inline-block">SEO Audit</span>
+                    <h2
+                        class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-white">
+                        Free Website Audit
+                    </h2>
+                    <p class="text-sm sm:text-base leading-[150%] text-[#D4EEFF] max-w-184 w-full">
+                        Get a quick SEO audit report now - easy to understand, even if you're not technical.
+                    </p>
+                    <a href="contact.html"
+                        class="common-cta md:mt-6 sm:mt-3 mt-2 bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out">
+                        <span class="cta-arrow">
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="white" />
+                            </svg>
+                        </span>
+                        <span
+                            class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                            <span>Get a Free SEO Audit</span>
+                            <span>Get a Free SEO Audit</span>
+                        </span>
+                    </a>
+                </div>
+                <div>
+                    <img src="assets/images/website-audit.svg" class="img-fluid" alt="Free Website Audit">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Free Website Audit end -->
+
+
+
+
+        <!-- Why Team Up With Pexnet start -->
+    <section class="section-padding bg-[#F4FBFF]">
+        <div class="container">
+            <div class="grid md:grid-cols-2 md:gap-12 sm:gap:10 gap-8">
+                   <div class="teamup-pexnet-img">
+                    <img src="assets/images/teamup.webp" class="img-fluid" alt="dental rating">
+                </div>
+                <div>
+                    <div class="common-title text-start space-y-4 ">
+                        <h2
+                            class="lg:text-[56px] md:text-[42px] sm:text-[38px] text-[32px] leading120 font-bold font-notch text-[#002F4D]">
+                            Why Team Up With Pexnet</h2>
+                   <div class="space-y-3">
+                         <p class="text-sm sm:text-base leading-[150%] text-[#526E80] max-w-184 w-full">So many dentists can’t hit their SEO goals because they work with cookie-cutter agencies. These firms have more or less the same strategy and resources for all of their clients. 
+</p>
+                         <p class="text-sm sm:text-base leading-[150%] text-[#526E80] max-w-184 w-full">So many dentists can’t hit their SEO goals because they work with cookie-cutter agencies. These firms have more or less the same strategy and resources for all of their clients. 
+</p>
+                         <p class="text-sm sm:text-base leading-[150%] text-[#526E80] max-w-184 w-full">So many dentists can’t hit their SEO goals because they work with cookie-cutter agencies. These firms have more or less the same strategy and resources for all of their clients. 
+</p>
+                         <p class="text-sm sm:text-base leading-[150%] text-[#526E80] max-w-184 w-full">So many dentists can’t hit their SEO goals because they work with cookie-cutter agencies. These firms have more or less the same strategy and resources for all of their clients. 
+</p>
+                   </div>
+
+                    </div>
+                    <div class="md:mt-12 sm:mt-10 mt-8">
+                        <h3 class="md:text-[32px] sm:text-[24px] text-xl text-[#076AAB] leading120 font-bold sm:mb-4 mb-3">With us, you’ll have:</h3>
+                        <p class="sm:text-base text-sm font-bold text-[#526E80]">Audit-first approach</p>
+                    </div>
+                    <ul class="space-y-3 md:mt-3 mt-3">
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-dark.svg" class="img-fluid" alt="points">
+                                <p class="md:text-base sm:text-sm text-xs font-bold text-[#526E80] leading120">Detailed, customized plan</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-dark.svg" class="img-fluid" alt="points">
+                                <p class="md:text-base sm:text-sm text-xs font-bold text-[#526E80] leading120">Improved conversions, not just site visitors</p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-dark.svg" class="img-fluid" alt="points">
+                                <p class="md:text-base sm:text-sm text-xs font-bold text-[#526E80] leading120">Better trust signals</p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center md:gap-4 gap-3 svgpoint">
+                                <img src="assets/images/point-dark.svg" class="img-fluid" alt="points">
+                                <p class="md:text-base sm:text-sm text-xs font-bold text-[#526E80] leading120">Consistent growth on your local presence</p>
+
+                            </div>
+                        </li>
+                      
+                    </ul>
+                    <p class="mt-4 md:text-base text-sm leading150 text-[#526E80]">So, you should focus on optimizing your overall
+                        web presence instead of just your website.</p>
+                </div>
+             
+            </div>
+        </div>
+    </section>
+    <!-- Why Team Up With Pexnet end -->
+
+
+            <!--  Real Results for Busy Dentists start -->
+    <section class="core-value section-padding">
+        <div class="container">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                    Real Results for Busy Dentists</h2>
+                <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">Getting more visitors is only part of the game. We call it a success when our clients get more calls with every passing week.</p>
+            </div>
+
+              <div
+                            class=" mt-12  p-4 md:p-6 lg:p-8 rounded-3xl bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
+                            <div
+                                class="grid md:grid-cols-2 grid-cols-1  gap-6 sm:gap-[30px] md:gap-[60px] lg:gap-[128px] items-center">
+                                <div class="proven-result-content flex flex-col gap-6 justify-between h-full">
+                                    <div>
+                                        <div class="flex items-center gap-0 mb-4 md:mb-6">
+                                            <img src="assets/images/proven-icon1.svg" class="img-fluid shrink-0"
+                                                alt="proven result">
+                                            <p
+                                                class="text-xs sm:text-sm font-bold lg:text-base leading-[120%] text-[#076AAB] py-1 px-2 border border-[#076AAB] rounded-full h-[27px] inline-flex items-center">
+                                                Moving SEO</p>
+                                        </div>
+                                        <h3
+                                            class="mb-3 text-2xl sm:text-[28px] lg:text-[32px] font-bold text-[#002F4D] leading120 line-clamp-3">
+                                            <span class="text-[#076AAB]">1,400% Traffic</span> Growth in 3 Months for
+                                            SmileCrew
+                                            Orthodontics</h3>
+                                        <p class="text-[#526E80] text-sm md:text-base leading150 line-clamp-3">In just 3
+                                            months, the clinic saw
+                                            stronger
+                                            rankings, better local visibility, and more qualified patient enquiries.</p>
+                                        <div class="grid grid-cols-3 gap-2 sm:gap-3 md:gap-6 md:mt-8 mt-6">
+                                            <div class="space-y-2">
+                                                <p class="text-xs sm:text-sm lg:text-base text-[#526E80] line-clamp-1">
+                                                    Monthly Visitors</p>
+                                                <h4 class="text-xl md:text-2xl leading-[120%] text-[#002F4D]">1,500+
+                                                </h4>
+                                            </div>
+                                            <div class="space-y-2">
+                                                <p class="text-xs sm:text-sm lg:text-base text-[#526E80] line-clamp-1">
+                                                    Organic Traffic Growth</p>
+                                                <h4 class="text-xl md:text-2xl leading-[120%] text-[#002F4D]">1,400%
+                                                </h4>
+                                            </div>
+                                            <div class="space-y-2">
+                                                <p class="text-xs sm:text-sm lg:text-base text-[#526E80] line-clamp-1">
+                                                    Keywords in Top 3</p>
+                                                <h4 class="text-xl md:text-2xl leading-[120%] text-[#002F4D]">28</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <a href="#proven-results"
+                                        class="max-w-152 w-full min-h-17.5 inline-flex gap-4 justify-between items-center bg-[#D4EEFF] text-white py-3 px-4 md:px-6 rounded-3xl hover:bg-[#62bdfa] border border-[#ABD7F4] transition-colors duration-300">
+
+                                        <div class="flex items-center gap-3">
+                                            <img src="assets/images/company-icon1.svg" class="img-fluid"
+                                                alt="company icon">
+                                            <div class="space-y-1">
+                                                <p
+                                                    class="text-xs sm:text-sm md:text-base leading120 text-[#002F4D] font-bold">
+                                                    SmileCrew
+                                                    Orthodontics
+                                                </p>
+                                                <p class="text-xs sm:text-sm text-[#526E80]">Leander, TX</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="w-[55px] h-[46px] flex items-center justify-end border-l border-l-[#A3CEEB] gap-6">
+                                            <img src="assets/images/proven-arrow-right.svg" class="img-fluid"
+                                                alt="proven arrow right">
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                                <div class="resultproven-image rounded-3xl">
+                                    <img src="assets/images/result-proven1.png" class="img-fluid" alt="result proven">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex w-full justify-center md:mt-12 sm:mt-10 mt-8">
+                <a href="contact.html"
+                            class="common-cta bg-[#076AAB] hover:bg-[#BFFB4F] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px] ">
+                            <span class="cta-arrow">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="white" />
+                                </svg>
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </span>
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#fff] group-hover:text-[#00243B] h-[20px] duration-500 ease-in-out">
+                                <span>View more blogs</span>
+                                <span>View more blogs</span>
+                            </span>
+                        </a>
+            </div>
+        </div>
+    </section>
+    <!--  Real Results for Busy Dentists end -->
+
+
+
+    <!-- Frequently Asked Questions start -->
+    <section class="faq section-padding bg-white">
+        <div class="container">
+            <div class="max-w-[1100px] w-full mx-auto sm:pb-10 pb-8 md:pb-12">
+
+                <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                    <h2
+                        class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                      Frequently Asked Questions</h2>
+                    <p class="text-base leading-[150%] text-[#526E80] max-w-184 w-full mx-auto">If you don’t see your question answered below, feel free to reach out to us. We're happy to help. </p>
+                </div>
+            </div>
+
+            <!-- FAQ Grid - 2 columns -->
+            <div class="faq-wrap-grid" id="faqGridWrap">
+
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 sm:w-10 sm:h-10 w-8 h-8 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 sm:w-10 sm:h-10 w-8 h-8 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 sm:w-10 sm:h-10 w-8 h-8 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 sm:w-10 sm:h-10 w-8 h-8 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 sm:w-10 sm:h-10 w-8 h-8 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 sm:w-10 sm:h-10 w-8 h-8 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 sm:w-10 sm:h-10 w-8 h-8 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="faq-item bg-white  border-b border-b-[#C3E0F3] overflow-hidden transition-all duration-300">
+                    <button class="faq-trigger w-full flex items-center justify-between px-0 sm:py-3 py-2 text-left">
+                        <h3 class="sm:text-xl text-[#002F4D] font-bold leading120 pr-4">
+                            How is AI changing SEO?
+                        </h3>
+                        <div
+                            class="faq-icon shrink-0 sm:w-10 sm:h-10 w-8 h-8 rounded-2xl flex items-center justify-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_50%,#EDF8FF_100%)] transition-all duration-300">
+
+                            <svg class="icon-open hidden" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0V2H14V0H0Z" fill="#076AAB" />
+                            </svg>
+                            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.0001 10.9997L22.0002 10.9995V12.9995L13.0001 12.9997V21.9996H11.0001V12.9997L2.00004 12.9999L2 10.9999L11.0001 10.9997L11 2.00001L13 2L13.0001 10.9997Z"
+                                    fill="#076AAB" />
+                            </svg>
+                        </div>
+                    </button>
+                    <!-- <div class="faq-border hidden border-t border-[#dbf1ff]"></div> -->
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div class="pt-1 pb-4">
+                            <p class="text-base text-[#426073]">
+                                AI is changing SEO by making search results more personalized and efficient...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+    <!-- Frequently Asked Questions end -->
+
+
+
+    <!-- contact section start -->
+    <section class="section-padding bg-[radial-gradient(82.97%_50%_at_69.58%_50%,#076AAB_0%,#00243B_100%)]">
+        <div class="container">
+            <div class="grid lg:grid-cols-2 grid-cols-1 items-center gap-8">
+                <div class="contact-left">
+                    <div class="common-title text-start space-y-4 ">
+                        <h2
+                            class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading120 font-bold font-notch text-[#fff]">
+                           Make Your Phone Ring Like Never Before!</h2>
+                        <p class="text-sm sm:text-base leading-[150%] text-[#D4EEFF] ">We’re a friendly team that loves solving SEO challenges for locally owned businesses.</p>
+
+                    </div>
+
+                    <div class="sm:pt-10 pt-8 md:pt-12">
+                        <div class="grid grid-cols-2 md:gap-8 gap-4">
+                            <a href="https://wa.me/447832716848"
+                                class="flex items-center sm:flex-nowrap flex-wrap gap-3 transition-transform hover:scale-104" target="_blank">
+                                <img src="assets/images/contact-icon1.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">WhatsApp</p>
+                                    <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base">+447832716848</p>
+                                </div>
+                            </a>
+
+                            <a href="https://t.me/+447832716848"
+                                class="flex items-center sm:flex-nowrap flex-wrap gap-3 transition-transform hover:scale-104" target="_blank">
+                                <img src="assets/images/contact-icon2.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">Telegram</p>
+                                    <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base">+447832716848</p>
+                                </div>
+                            </a>
+
+                            <a href="tel:+447832716848"
+                                class="flex items-center sm:flex-nowrap flex-wrap gap-3 transition-transform hover:scale-104">
+                                <img src="assets/images/contact-icon3.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">Phone</p>
+                                    <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base">+447832716848</p>
+                                </div>
+                            </a>
+
+                            <a href="mailto:support@pexnet.com"
+                                class="flex items-center sm:flex-nowrap flex-wrap gap-3 transition-transform hover:scale-104">
+                                <img src="assets/images/contact-icon4.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">Email</p>
+                                    <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base break-all">support@pexnet.com</p>
+                                </div>
+                            </a>
+
+                            <div class="flex items-center sm:flex-nowrap flex-wrap gap-3 transition-transform hover:scale-104">
+                                <img src="assets/images/contact-icon5.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">ClickUp</p>
+                                    <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base break-all">admin@pexnet.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center sm:flex-nowrap flex-wrap gap-3 transition-transform hover:scale-104">
+                                <img src="assets/images/contact-icon6.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">Slack</p>
+                                    <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base break-all">admin@pexnet.com</p>
+                                </div>
+                            </div>
+
+                            <a href="mailto:admin@pexnet.com"
+                                class="flex items-center sm:flex-nowrap flex-wrap gap-3 transition-transform hover:scale-104">
+                                <img src="assets/images/contact-icon7.svg" class="img-fluid" alt="contact icon">
+                                <div>
+                                    <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">Microsoft Teams</p>
+                                    <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base break-all">admin@pexnet.com</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <div class=" md:px-8 md:py-8 sm:px-6 sm:py-6 px-3 py-6 bg-[#2a8fd2]/[0.12] rounded-3xl">
+                        <h2 class="md:text-[32px] sm:text-[28px] text-2xl font-bold text-white sm:mb-8 mb-6 leading120">Book a Free 30-Minute
+                            Consultation</h2>
+
+                        <form class="lg:space-y-6 space-y-3" >
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-5">
+                                <input type="text" placeholder="First name*"
+                                    class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                <input type="text" placeholder="Last name"
+                                    class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                <input type="email" placeholder="Email address*"
+                                    class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                <div
+                                    class="flex items-center bg-[#00243B] rounded-full overflow-hidden focus-within:ring-1 focus-within:ring-[#BFFB4F]">
+                                    <div
+                                        class="relative flex items-center px-1.5 bg-[#00243B] h-full ">
+                                        <select
+                                            class=" text-[#2A8FD2] outline-none cursor-pointer appearance-none pl-3 pr-8 py-2 focus:ring-0 bg-[#2a8fd2]/12 rounded-full">
+                                            <option value="+88">+88</option>
+                                            <option value="+1">+1</option>
+                                            <option value="+44">+44</option>
+                                        </select>
+                                        <span class="absolute right-5 pointer-events-none text-[#2A8FD2]"><svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.82984 0H10.1465C10.3113 0.000691026 10.4722 0.0502368 10.6089 0.142372C10.7455 0.234508 10.8518 0.365096 10.9142 0.517623C10.9767 0.670151 10.9925 0.837766 10.9597 0.999277C10.9268 1.16079 10.8469 1.30894 10.7298 1.425L6.07984 6.075C6.00237 6.15311 5.9102 6.2151 5.80865 6.25741C5.7071 6.29972 5.59818 6.3215 5.48817 6.3215C5.37816 6.3215 5.26924 6.29972 5.16769 6.25741C5.06614 6.2151 4.97398 6.15311 4.89651 6.075L0.246506 1.425C0.129488 1.30894 0.0495125 1.16079 0.0166915 0.999277C-0.0161295 0.837766 -0.000321766 0.670151 0.0621162 0.517623C0.124554 0.365096 0.230818 0.234508 0.367471 0.142372C0.504124 0.0502368 0.665029 0.000691026 0.82984 0Z" fill="#2A8FD2"/>
+</svg>
+</span>
+                                    </div>
+                                    <input type="tel" placeholder="Phone"
+                                        class="w-full bg-transparent text-white placeholder-[#92B9D2] py-4 px-3 border-none outline-none">
+                                </div>
+
+                                <input type="text" placeholder="Company name"
+                                    class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                <input type="url" placeholder="Website URL"
+                                    class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                <div class="relative">
+                                    <select
+                                        class="w-full bg-[#00243B] text-white py-4 px-6 rounded-full appearance-none outline-none cursor-pointer focus:ring-1 focus:ring-[#BFFB4F]">
+                                        <option value="" disabled selected>Choose your service</option>
+                                        <option value="web">Web Development</option>
+                                        <option value="app">App Development</option>
+                                        <option value="marketing">Digital Marketing</option>
+                                    </select>
+                                    <span
+                                        class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-[#5ca2ff]"><svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.82984 0H10.1465C10.3113 0.000691026 10.4722 0.0502368 10.6089 0.142372C10.7455 0.234508 10.8518 0.365096 10.9142 0.517623C10.9767 0.670151 10.9925 0.837766 10.9597 0.999277C10.9268 1.16079 10.8469 1.30894 10.7298 1.425L6.07984 6.075C6.00237 6.15311 5.9102 6.2151 5.80865 6.25741C5.7071 6.29972 5.59818 6.3215 5.48817 6.3215C5.37816 6.3215 5.26924 6.29972 5.16769 6.25741C5.06614 6.2151 4.97398 6.15311 4.89651 6.075L0.246506 1.425C0.129488 1.30894 0.0495125 1.16079 0.0166915 0.999277C-0.0161295 0.837766 -0.000321766 0.670151 0.0621162 0.517623C0.124554 0.365096 0.230818 0.234508 0.367471 0.142372C0.504124 0.0502368 0.665029 0.000691026 0.82984 0Z" fill="#92B9D2"/>
+</svg>
+</span>
+                                </div>
+
+                                <div class="relative">
+                                    <select
+                                        class="w-full bg-[#00243B] text-white py-4 px-6 rounded-full appearance-none outline-none cursor-pointer focus:ring-1 focus:ring-[#BFFB4F]">
+                                        <option value="" disabled selected>How did you hear about us?</option>
+                                        <option value="google">Google</option>
+                                        <option value="social">Social Media</option>
+                                        <option value="referral">Referral</option>
+                                    </select>
+                                    <span
+                                        class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-[#5ca2ff]"><svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.82984 0H10.1465C10.3113 0.000691026 10.4722 0.0502368 10.6089 0.142372C10.7455 0.234508 10.8518 0.365096 10.9142 0.517623C10.9767 0.670151 10.9925 0.837766 10.9597 0.999277C10.9268 1.16079 10.8469 1.30894 10.7298 1.425L6.07984 6.075C6.00237 6.15311 5.9102 6.2151 5.80865 6.25741C5.7071 6.29972 5.59818 6.3215 5.48817 6.3215C5.37816 6.3215 5.26924 6.29972 5.16769 6.25741C5.06614 6.2151 4.97398 6.15311 4.89651 6.075L0.246506 1.425C0.129488 1.30894 0.0495125 1.16079 0.0166915 0.999277C-0.0161295 0.837766 -0.000321766 0.670151 0.0621162 0.517623C0.124554 0.365096 0.230818 0.234508 0.367471 0.142372C0.504124 0.0502368 0.665029 0.000691026 0.82984 0Z" fill="#92B9D2"/>
+</svg>
+</span>
+                                </div>
+                            </div>
+
+                            <textarea placeholder="Write your message" rows="6"
+                                class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-6 px-6 rounded-3xl border-none outline-none focus:ring-1 focus:ring-[#BFFB4F] resize-none"></textarea>
+
+                            <button type="submit"
+                            class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px] w-full flex justify-center">
+                            <span class="cta-arrow">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Submit</span>
+                                <span>Submit</span>
+                            </span>
+                        </button>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+    <!-- contact section end -->
+
+
+
+
+    <!-- location section start -->
+     <section class="section-padding">
+        <div class="container">
+             <div class="max-w-[1100px] w-full mx-auto">
+
+                <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                    <h2 class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                     Our Clients Now Lead Local Searches in These <span class="text-[#076AAB]">U.S. Cities</span></h2>
+                    </div>
+            </div>
+
+   <!-- Locations Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 lg:mt-12 sm:mt-8 mt-6 lg:pt-12 sm:pt-8 pt-6 border-t border-t-[#C3E0F3]">
+                    <!-- Column 1 -->
+                    <div class="flex flex-col gap-3">
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            ARLINGTON
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            ATLANTA
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            AUSTIN
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            BALTIMORE
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            CHICAGO
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="flex flex-col gap-3">
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            CLEVELAND
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            DALLAS
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            DENVER
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            HOUSTON
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            JACKSONVILLE
+                        </div>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="flex flex-col gap-3">
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            KANSAS CITY
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            LAS VEGAS
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            LOS ANGELES
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            LOUISVILLE
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            NEW YORK CITY
+                        </div>
+                    </div>
+
+                    <!-- Column 4 -->
+                    <div class="flex flex-col gap-3">
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            MIAMI
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            MINNEAPOLIS
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            PHOENIX
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            NEW ORLEANS
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            ORLANDO
+                        </div>
+                    </div>
+
+                    <!-- Column 5 -->
+                    <div class="flex flex-col gap-3">
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            PHILADELPHIA
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            PORTLAND
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            SAN ANTONIO
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            SAN DIEGO
+                        </div>
+                        <div 
+                            class="md:text-xl sm:text-lg text-base font-bold text-[#002F4D] hover:text-[#426073] transition-colors duration-300">
+                            SEATTLE
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+     </section>
+    <!-- location section end -->
+
+
+
+
+    <!-- cta section end -->
+     <section class="cta section-padding bg-[#00243B]">
+        <div class="container">
+                <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                    <h2
+                        class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#fff]">
+                     We’re All Ears!
+                    </h2>
+                    <p class="text-base leading-[150%] text-[#D4EEFF] max-w-184 w-full mx-auto">A simple, open conversation can create new doorways to your professional and business success. Don’t hesitate. Take the first step right now.</p>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:mt-8 mt-6">
+                        <a href="contact.html"
+                            class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] sm:h-13 h-[44px] px-5 group duration-500 ease-in-out">
+                            <span class="cta-arrow">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Get a Free SEO Audit</span>
+                                <span>Get a Free SEO Audit</span>
+                            </span>
+                        </a>
+                        <a href="contact.html"
+                            class="common-cta bg-[#88D1FF] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px]">
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Get a Free SEO Audit</span>
+                                <span>Get a Free SEO Audit</span>
+                            </span>
+                        </a>
+                    </div>
+        </div>
+     </section>
+    <!-- cta section end -->
+
+
+
+
+
+
+
+    <!-- footer section start -->
+ <!-- <footer class="bg-[radial-gradient(50%_50.08%_at_50%_50.08%,_#076AAB_0%,_#00243B_100%)] border-t border-t-white/12 "> -->
+    <footer class="bg-[#00243B] border-t border-t-white/12 footer-animated" id="animatedFooter">
+         <div class="footer-gradient-bg" id="footerGradientBg"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="grid grid-cols-1 lg:grid-cols-4">
+                <div class=" lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-l border-l-white/8 border-r border-r-white/8">
+
+                    <div class="lg:mb-8 sm:mb-6 mb-4">
+                        <img src="assets/images/logo-footer.svg" class="img-fluid" alt="footer-logo">
+                    </div>
+                    <div class="flex justify-start  md:gap-1.5 gap-1 lg:gap-1.5 footer-social-link">
+                            <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                                <img src="assets/images/footer-social1.svg" class="img-fluid" alt="social link">
+
+                            </a>
+                            <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                                <img src="assets/images/footer-social2.svg" class="img-fluid" alt="social link">
+                            </a>
+                            <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                                <img src="assets/images/footer-social3.svg" class="img-fluid" alt="social link">
+                            </a>
+                            <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                               <img src="assets/images/footer-social4.svg" class="img-fluid" alt="social link">
+                            </a>
+                            <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                               <img src="assets/images/footer-social5.svg" class="img-fluid" alt="social link">
+                            </a>
+                        </div>
+                </div>
+               <div class="col-span-2">
+                <div class="grid grid-cols-2 border-b lg:border-b-transparent border-b-white/8">
+                     <div class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-l border-t lg:border-l-transparent lg:border-t-transparent border-t-white/8 border-l-white/8 border-r border-r-white/8">
+                    <div class="footer-nav">
+                        <h3 class="text-base sm:text-lg md:text-xl font-bold leading120 text-[#fff] mb-4">
+                            Services
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    SEO for Dental Clinics
+                                </a>
+                            </li>
+                            <li>
+                                <a href="case-study.html">
+                                    SEO for Law Firms
+                                </a>
+                            </li>
+                            <li>
+                                <a href="aboutus.html" >
+                                    SEO for Carpet Cleaning Companies
+                                </a>
+                            </li>
+                            <li>
+                                <a href="blog.html" >
+                                    SEO for Moving Companies
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contactus.html" >
+                                    SEO for Restoration Companies
+                                </a>
+                            </li>
+                        </ul>
+
+                        
+                    </div>
+
+                     <div class="footer-nav">
+                        <h3 class="text-base sm:text-lg md:text-xl font-bold leading120 text-[#fff] mb-4">
+                            Resources
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Case Studies
+                                </a>
+                            </li>
+                            <li>
+                                <a href="case-study.html">
+                                    Blog
+                                </a>
+                            </li>
+                      
+                        </ul>
+
+                        
+                    </div>
+                </div>
+                <div class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-t lg:border-t-transparent border-t-white/8 border-r border-r-white/8">
+                    <div class="footer-nav">
+                        <h3 class="text-base sm:text-lg md:text-xl font-bold leading120 text-[#fff] mb-4">
+                            Pexnet
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    About
+                                </a>
+                            </li>
+                            <li>
+                                <a href="case-study.html">
+                                    Contact
+                                </a>
+                            </li>
+                            <li>
+                                <a href="aboutus.html" >
+                                    Careers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="blog.html" >
+                                    Faq’s
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+               </div>
+                <div class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-r border-l lg:border-l-transparent border-l-white/8 border-r-white/8">
+                    <div>
+                        <h3 class="text-xl font-bold text-white sm:mb-4 mb-3">Get Quality Leads from Us</h3>
+                        <p class="text-[#D4EEFF] sm:text-sm text-xs leading150">PexNet Newsletter - Subscribe for SEO news, trends, updates, & more.</p>
+                        <div class="mt-6">
+                            <form class="space-y-3">
+            <div class="relative">
+                <input 
+                    type="email" 
+                    id="email"
+                    name="email"
+                    placeholder="Email address"
+                    required
+                    class="w-full bg-white/8 text-white placeholder:text-[#92B9D2] py-4 px-6 text-base h-[56px] flex items-center justify-center leading150 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F] transition duration-200"
+                >
+            </div>
+
+            <button type="submit" class="common-cta w-full bg-[#88D1FF] text-[#002F4D] text-base h-[56px] flex items-center justify-center font-bold py-2 rounded-full transition duration-300 hover:bg-[#D4EEFF] hover:text-[#00243B] active:scale-[0.98]"
+            >
+
+            <span class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Subscribe</span>
+                                <span>Subscribe</span>
+                            </span>
+                
+            </button>
+        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-t-white/12 py-8 footer-bottom">
+            <div class="container">
+                <div class="grid md:grid-cols-4 grid-cols-1 justify-center items-center md:text-start text-center gap-4 w-full">
+                    <p class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">© 2026 Pexnet</p>
+                    <div class="col-span-2 grid grid-cols-2">
+                    <div class="inline-block footer-bottom-link sm:px-8">
+                        <a href="#" class=" text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200 inline-block">Terms and Conditions</a>
+                    </div>
+                    <div class="inline-block footer-bottom-link sm:px-8">
+                        <a href="#" class=" text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200 inline-block">Privacy Policy</a>
+                    </div>
+                    </div>
+                   <div class="inline-block footer-bottom-link px-8">
+                     <a href="mailto:info@pexnet.com" class=" text-[#D4EEFF] text-sm hover:text-white transition-colors inline-block duration-200">info@pexnet.com</a>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- footer section end -->
+
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    </body>
+
+</html>
