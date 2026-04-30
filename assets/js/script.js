@@ -1634,79 +1634,141 @@ function initProvenCardAnimation() {
 // init
 document.addEventListener("DOMContentLoaded", initProvenCardAnimation);
 
+
+
+
 // Filter section in team page
-document.addEventListener("DOMContentLoaded", () => {
+// Team Filter & Scroll
+// Team Filter & Scroll
+const filterBtns = document.querySelectorAll('.filter-btn');
+const sections = document.querySelectorAll('.team-section');
 
-    const buttons = document.querySelectorAll(".filter-btn");
-    const container = document.querySelector(".flex-1");
-    const sections = Array.from(document.querySelectorAll(".team-section")).map(sec => sec.closest(".mb-14"));
+let isClicking = false;
+let clickTimeout = null;
 
-    buttons.forEach(btn => {
+// ===== MOBILE SELECT =====
+const aside = document.querySelector('aside');
 
-        btn.addEventListener("click", () => {
+// Create select dropdown for mobile
+const mobileSelect = document.createElement('select');
+mobileSelect.className = 'team-mobile-select';
+mobileSelect.innerHTML = `
+    <option value="all">All</option>
+    <option value="featured">Featured Leadership</option>
+    <option value="seo-strategy">SEO Strategy Team</option>
+    <option value="content">Content Team</option>
+    <option value="design-dev">Design & Development Team</option>
+    <option value="social-ppc">Social Media & PPC Team</option>
+`;
 
-            const filter = btn.dataset.filter;
+// Insert select before buttons
+aside.insertBefore(mobileSelect, aside.firstChild);
 
-            // active state
-            buttons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
+// Mobile select CSS inject
+const mobileStyle = document.createElement('style');
+mobileStyle.textContent = `
+    .team-mobile-select {
+        display: none;
+        width: 100%;
+        padding: 14px 20px;
+        border-radius: 9999px;
+        font-weight: 600;
+        font-size: 16px;
+        color: #076AAB;
+        background: #fff;
+        border: 1px solid #076AAB;
+        cursor: pointer;
+        outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23076AAB' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 20px center;
+        padding-right: 48px;
+    }
 
-            // get target section wrapper
-            const target =
-                filter === "all"
-                    ? null
-                    : sections.find(sec =>
-                        sec.querySelector(".team-section")?.dataset.category === filter
-                    );
+    @media (max-width: 1023px) {
+        .team-mobile-select {
+            display: block;
+        }
+        .filter-btn {
+            display: none !important;
+        }
+    }
+`;
+document.head.appendChild(mobileStyle);
 
-            const others = sections.filter(sec => sec !== target);
+// ===== SHARED FUNCTIONS =====
+function setActiveBtn(filter) {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    const target = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+    if (target) target.classList.add('active');
+    mobileSelect.value = filter;
+}
 
-            // OUT animation (motion blur fade)
-            gsap.to(sections, {
-                opacity: 0,
-                y: 30,
-                filter: "blur(8px)",
-                scale: 0.98,
-                duration: 0.25,
-                ease: "power2.in",
-                onComplete: () => {
+function scrollToFilter(filter) {
+    isClicking = true;
+    clearTimeout(clickTimeout);
+    clickTimeout = setTimeout(() => {
+        isClicking = false;
+    }, 1000);
 
-                    // reorder DOM (MOVE TO TOP)
-                    if (target && filter !== "all") {
-                        container.prepend(target);
-                    } else {
-                        // restore original order (optional reset)
-                        sections.forEach(sec => container.appendChild(sec));
-                    }
+    if (filter === 'all') {
+        const firstSection = document.querySelector('.team-section')?.closest('.team-devider-point');
+        if (firstSection) {
+            const offset = 80;
+            const top = firstSection.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+        return;
+    }
 
-                    // IN animation (smooth reveal)
-                    gsap.fromTo(
-                        sections,
-                        {
-                            opacity: 0,
-                            y: 30,
-                            filter: "blur(8px)",
-                            scale: 0.98
-                        },
-                        {
-                            opacity: 1,
-                            y: 0,
-                            scale: 1,
-                            filter: "blur(0px)",
-                            duration: 0.6,
-                            stagger: 0.08,
-                            ease: "power3.out"
-                        }
-                    );
+    const targetSection = document.querySelector(`.team-section[data-category="${filter}"]`);
+    if (!targetSection) return;
 
-                }
-            });
+    const wrapper = targetSection.closest('.team-devider-point');
+    if (!wrapper) return;
 
-        });
+    const offset = 80;
+    const top = wrapper.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+}
 
+// ===== DESKTOP BUTTONS =====
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        setActiveBtn(filter);
+        scrollToFilter(filter);
     });
-
 });
+
+// ===== MOBILE SELECT =====
+mobileSelect.addEventListener('change', () => {
+    const filter = mobileSelect.value;
+    setActiveBtn(filter);
+    scrollToFilter(filter);
+});
+
+// ===== SCROLL SPY =====
+const observer = new IntersectionObserver(
+    (entries) => {
+        if (isClicking) return;
+
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const category = entry.target.dataset.category;
+                setActiveBtn(category);
+            }
+        });
+    },
+    {
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+    }
+);
+
+sections.forEach(section => observer.observe(section));
 
 
 // Career details page

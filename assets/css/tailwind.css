@@ -1219,6 +1219,7 @@ section.about-banner {
     border: 2px solid transparent;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-align: start;
 }
 .filter-sidebar {
   will-change: transform;
@@ -1229,6 +1230,22 @@ section.about-banner {
     border: 2px solid #076AAB ;
 }
 
+.team-devider-point{
+  margin-bottom: 48px;
+}
+
+@media (max-width:767px) {
+.team-devider-point{
+  margin-bottom: 42px;
+}
+
+}
+@media (max-width:640px) {
+.team-devider-point{
+  margin-bottom: 38px;
+}
+
+}
 /* NOMAN'CSS ENDS HERE */
 
 /* footer  */
