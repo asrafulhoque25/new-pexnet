@@ -1121,18 +1121,17 @@ iconGroups.forEach((items, parent) => {
 
 
 
-
-
 //single service rolling animation
 (function () {
-    const TOTAL = 6;
+    // Count items dynamically instead of hardcoding
+    const TOTAL = document.querySelectorAll('.strategy-item').length;
 
     // Responsive BOX_H
-function getBoxH() {
-    if (window.innerWidth <= 776) return 56;
-    if (window.innerWidth <= 1024) return 62;
-    return 90;
-}
+    function getBoxH() {
+        if (window.innerWidth <= 776) return 56;
+        if (window.innerWidth <= 1024) return 62;
+        return 90;
+    }
 
     let BOX_H = getBoxH();
 
@@ -1178,31 +1177,31 @@ function getBoxH() {
 
     numBox.classList.add('num-box-inner');
 
-function buildRoller() {
-    roller.innerHTML = '';
-    for (let i = 1; i <= TOTAL; i++) {
-        const div = document.createElement('div');
-        div.className = 'num-digit-el';
+    function buildRoller() {
+        roller.innerHTML = '';
+        for (let i = 1; i <= TOTAL; i++) {
+            const div = document.createElement('div');
+            div.className = 'num-digit-el';
 
-        let fontSize = '52px';
-        if (BOX_H <= 56) fontSize = '32px';
-        else if (BOX_H <= 62) fontSize = '42px';
+            let fontSize = '52px';
+            if (BOX_H <= 56) fontSize = '32px';
+            else if (BOX_H <= 62) fontSize = '42px';
 
-        div.style.cssText = `
-            width: ${BOX_H}px;
-            height: ${BOX_H}px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: ${fontSize};
-            font-weight: 700;
-            color: #076AAB;
-            flex-shrink: 0;
-        `;
-        div.textContent = i;
-        roller.appendChild(div);
+            div.style.cssText = `
+                width: ${BOX_H}px;
+                height: ${BOX_H}px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: ${fontSize};
+                font-weight: 700;
+                color: #076AAB;
+                flex-shrink: 0;
+            `;
+            div.textContent = i;
+            roller.appendChild(div);
+        }
     }
-}
 
     function setDigitColors(white) {
         document.querySelectorAll('.num-digit-el').forEach(d => {
@@ -1287,8 +1286,6 @@ function buildRoller() {
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 })();
-
-
 
 
 
@@ -1444,3 +1441,299 @@ plySections.forEach((plySection) => {
 
     updateScrollGradient();
 })();
+
+
+
+
+
+
+
+// Tab filter case study page
+function initFilterSystem(tabSelector, cardSelector) {
+  const buttons = document.querySelectorAll(tabSelector);
+  const cards = document.querySelectorAll(cardSelector);
+
+  if (!buttons.length || !cards.length) return;
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+
+      // active state
+      buttons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const visibleCards = [];
+      const hiddenCards = [];
+
+      cards.forEach(card => {
+        const category = (card.dataset.category || "").split(" ");
+        const match = filter === "all" || category.includes(filter);
+
+        if (match) visibleCards.push(card);
+        else hiddenCards.push(card);
+      });
+
+      // fade out hidden
+      gsap.to(hiddenCards, {
+        opacity: 0,
+        y: 15,
+        scale: 0.98,
+        filter: "blur(10px)",
+        duration: 0.35,
+        ease: "power2.out",
+        stagger: 0.03,
+        onComplete: () => {
+          hiddenCards.forEach(c => (c.style.display = "none"));
+        }
+      });
+
+      // reveal next frame
+      requestAnimationFrame(() => {
+        visibleCards.forEach(card => {
+          card.style.display = "block";
+
+          gsap.set(card, {
+            opacity: 0,
+            y: 12,
+            scale: 0.98,
+            filter: "blur(10px)"
+          });
+        });
+
+        gsap.to(visibleCards, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.05
+        });
+      });
+    });
+  });
+}
+
+/* INIT — only proven results now */
+document.addEventListener("DOMContentLoaded", () => {
+  initFilterSystem(".tab-btn-case", ".proven-result-card");
+});
+
+
+// Tab filter blog page
+function initFilterSystem(tabSelector, cardSelector) {
+  const buttons = document.querySelectorAll(tabSelector);
+  const cards = document.querySelectorAll(cardSelector);
+
+  if (!buttons.length || !cards.length) return;
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+
+      buttons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const visible = [];
+      const hidden = [];
+
+      cards.forEach(card => {
+        const category = (card.dataset.category || "").split(" ");
+        const match = filter === "all" || category.includes(filter);
+
+        if (match) visible.push(card);
+        else hidden.push(card);
+      });
+
+
+      gsap.to(hidden, {
+        opacity: 0,
+        y: 20,
+        scale: 0.98,
+        filter: "blur(10px)",
+        duration: 0.35,
+        ease: "power2.out",
+        stagger: 0.02,
+        onComplete: () => {
+          hidden.forEach(el => {
+            el.style.display = "none";
+          });
+
+          revealVisible(visible);
+        }
+      });
+
+      function revealVisible(items) {
+        items.forEach(el => {
+          el.style.display = "block";
+        });
+
+        // force browser to recalc layout before animation
+        requestAnimationFrame(() => {
+          gsap.fromTo(
+            items,
+            {
+              opacity: 0,
+              y: 20,
+              scale: 0.98,
+              filter: "blur(10px)"
+            },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              filter: "blur(0px)",
+              duration: 0.6,
+              ease: "power3.out",
+              stagger: 0.05,
+              clearProps: "filter"
+            }
+          );
+        });
+      }
+    });
+  });
+}
+
+/* INIT */
+document.addEventListener("DOMContentLoaded", () => {
+  initFilterSystem(".tab-btn-blog", ".blog-card");
+});
+
+
+
+function initProvenCardAnimation() {
+  const cards = document.querySelectorAll(".proven-result-card");
+
+  if (!cards.length) return;
+
+  cards.forEach((card) => {
+    // initial state
+    gsap.set(card, {
+      opacity: 0,
+      y: 40,
+      filter: "blur(12px)"
+    });
+
+    gsap.to(card, {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      duration: 0.9,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: card,
+        start: "top 85%",
+        toggleActions: "play none none none"
+      }
+    });
+  });
+}
+
+// init
+document.addEventListener("DOMContentLoaded", initProvenCardAnimation);
+
+// Filter section in team page
+document.addEventListener("DOMContentLoaded", () => {
+
+    const buttons = document.querySelectorAll(".filter-btn");
+    const container = document.querySelector(".flex-1");
+    const sections = Array.from(document.querySelectorAll(".team-section")).map(sec => sec.closest(".mb-14"));
+
+    buttons.forEach(btn => {
+
+        btn.addEventListener("click", () => {
+
+            const filter = btn.dataset.filter;
+
+            // active state
+            buttons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            // get target section wrapper
+            const target =
+                filter === "all"
+                    ? null
+                    : sections.find(sec =>
+                        sec.querySelector(".team-section")?.dataset.category === filter
+                    );
+
+            const others = sections.filter(sec => sec !== target);
+
+            // OUT animation (motion blur fade)
+            gsap.to(sections, {
+                opacity: 0,
+                y: 30,
+                filter: "blur(8px)",
+                scale: 0.98,
+                duration: 0.25,
+                ease: "power2.in",
+                onComplete: () => {
+
+                    // reorder DOM (MOVE TO TOP)
+                    if (target && filter !== "all") {
+                        container.prepend(target);
+                    } else {
+                        // restore original order (optional reset)
+                        sections.forEach(sec => container.appendChild(sec));
+                    }
+
+                    // IN animation (smooth reveal)
+                    gsap.fromTo(
+                        sections,
+                        {
+                            opacity: 0,
+                            y: 30,
+                            filter: "blur(8px)",
+                            scale: 0.98
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            filter: "blur(0px)",
+                            duration: 0.6,
+                            stagger: 0.08,
+                            ease: "power3.out"
+                        }
+                    );
+
+                }
+            });
+
+        });
+
+    });
+
+});
+
+
+// Career details page
+// progress fill animation
+  gsap.to(".progress-fill", {
+    width: "100%",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".central-content-wrap",
+      start: "top top",
+      end: "bottom 40%",
+      scrub: true
+    }
+  });
+  document.querySelectorAll(".left-aside a").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const target = document.querySelector(link.getAttribute("href"));
+    if (!target) return;
+
+    lenis.scrollTo(target, {
+      offset: -100, // navbar height
+      duration: 1.2,
+      easing: (t) => 1 - Math.pow(1 - t, 3) // smooth ease
+    });
+  });
+});
+
+// JAVASCRIPT BY NOMAN ENDS HERE

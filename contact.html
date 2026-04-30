@@ -1,0 +1,713 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="mainNav" style="background: rgba(0, 36, 59, 1);">
+        <div class="container">
+            <div class="nav-inner">
+
+                <a href="index.html" class="nav-logo  shrink-0">
+                    <img src="assets/images/Logo.svg" class="img-fluid" alt="Logo">
+                </a>
+
+                <!-- Desktop Menu — no class on ul li a -->
+                <ul class="nav-menu max-w-214 w-full justify-between">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="#" class="dropdownlink">Services <span>+</span></a>
+                        <ul>
+                            <li>
+                                <a href="mobile-app-design.html">
+                                    Mobile App Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard-design.html">
+
+                                    Dashboard Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="website-design.html">
+
+                                    Website Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="web-application-design.html">
+
+                                    Web App Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="saas-design.html">
+
+                                    SaaS Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="branding-design.html">
+
+                                    Branding
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="case-study.html">Case Studies</a></li>
+                    <li><a href="blog.html">Blogs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <!-- CTA -->
+                <!-- Navbar CTA -->
+                <div class="flex items-center gap-4">
+                    <!-- CTA -->
+                    <a href="contact.html"
+                        class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out md:block hidden">
+                        <span class="cta-arrow">
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="white" />
+                            </svg>
+
+                        </span>
+                        <span
+                            class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                            <span>Get a Free SEO Audit</span>
+                            <span>Get a Free SEO Audit</span>
+                        </span>
+                    </a>
+
+                    <!-- Hamburger -->
+                    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU — no class on ul li a ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <button id="mobileServicesBtn">Services <span>+</span></button>
+                <ul id="mobileServicesSubmenu">
+                    <li><a href="mobile-app-design.html">Mobile App Design</a></li>
+                    <li><a href="dashboard-design.html">Dashboard Design</a></li>
+                    <li><a href="website-design.html">Website Design</a></li>
+                    <li><a href="web-application-design.html">Web App Design</a></li>
+                    <li><a href="saas-design.html">SaaS Design</a></li>
+                    <li><a href="branding-design.html">Branding</a></li>
+                </ul>
+            </li>
+            <li><a href="case-study.html">Case Studies</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="cta-wrap">
+            <a href="contact.html" class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5">
+                <span class="cta-arrow">
+                    <svg viewBox="0 0 16 16">
+                        <path d="M12.17 6.78L6.81 1.41 8.22 0 16 7.78 8.22 15.56 6.81 14.14l5.36-5.36H0V6.78h12.17z" />
+                    </svg>
+                    <svg viewBox="0 0 16 16">
+                        <path d="M12.17 6.78L6.81 1.41 8.22 0 16 7.78 8.22 15.56 6.81 14.14l5.36-5.36H0V6.78h12.17z" />
+                    </svg>
+                </span>
+                <span class="cta-text text-[13px] leading-[20px] text-[#0d2235] h-[20px]">
+                    <span>Get a Free SEO Audit</span>
+                    <span>Get a Free SEO Audit</span>
+                </span>
+            </a>
+        </div>
+    </div>
+
+
+
+    <!-- ===== NAVBAR End ===== -->
+
+
+    <!-- banner start -->
+
+    <section
+        class="banner relative min-h-80 md:min-h-105.5 pt-[48px] pb-[48px] sm:pb-[90px] sm:pt-[90px] border-t border-b border-[#1F3E53] overflow-hidden bg-[#00243B]"
+        data-glow-section data-home-x="70" data-home-y="50">
+
+        <!-- Vertical lines + rain drops -->
+        <div class="absolute inset-0 z-[1] pointer-events-none">
+            <div class="max-w-[1530px] mx-auto h-full flex justify-between px-5">
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+            </div>
+        </div>
+
+        <div data-glow-el class="absolute inset-0 opacity-0 pointer-events-none z-0"
+            style="background: radial-gradient(40% 50% at 70% 50%, #076AAB 0%, transparent 100%);">
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-2 px-5 ">
+            <div class="container relative z-[2]">
+                <div class="grid lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-0">
+                    <div class="contact-left pl-2">
+                        <div class="common-title text-start space-y-4 ">
+                            <span
+                                class="py-1 px-3 text-primary font-bold sm:text-sm text-xs bg-[#06314D] rounded-full inline-block">Welcome
+                                to Pexnet</span>
+                            <h2
+                                class="lg:text-[64px] md:text-[48px] sm:text-[38px] text-[32px] leading-[110%] font-normal font-notch text-[#fff]">
+                                <span class="text-[#88D1FF]">PexNet’s</span> right here.</h2>
+                            <p class="text-sm sm:text-base leading-[150%] text-[#D4EEFF] ">We’re a friendly team that
+                                Just share your needs and concerns in whatever simple way works for you.</p>
+
+                        </div>
+
+                        <div class="sm:pt-10 pt-8 md:pt-12">
+                            <div class="grid grid-cols-2 md:gap-8 gap-4">
+                                <a href="https://wa.me/447832716848"
+                                    class="flex items-center gap-3 transition-transform hover:scale-104"
+                                    target="_blank">
+                                    <img src="assets/images/contact-icon1.svg" class="img-fluid" alt="contact icon">
+                                    <div>
+                                        <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">WhatsApp
+                                        </p>
+                                        <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base">+447832716848
+                                        </p>
+                                    </div>
+                                </a>
+
+                                <a href="https://t.me/+447832716848"
+                                    class="flex items-center gap-3 transition-transform hover:scale-104"
+                                    target="_blank">
+                                    <img src="assets/images/contact-icon2.svg" class="img-fluid" alt="contact icon">
+                                    <div>
+                                        <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">Telegram
+                                        </p>
+                                        <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base">+447832716848
+                                        </p>
+                                    </div>
+                                </a>
+
+                                <a href="tel:+447832716848"
+                                    class="flex items-center gap-3 transition-transform hover:scale-104">
+                                    <img src="assets/images/contact-icon3.svg" class="img-fluid" alt="contact icon">
+                                    <div>
+                                        <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">Phone</p>
+                                        <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base">+447832716848
+                                        </p>
+                                    </div>
+                                </a>
+
+                                <a href="mailto:support@pexnet.com"
+                                    class="flex items-center gap-3 transition-transform hover:scale-104">
+                                    <img src="assets/images/contact-icon4.svg" class="img-fluid" alt="contact icon">
+                                    <div>
+                                        <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">Email</p>
+                                        <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base break-all">
+                                            support@pexnet.com</p>
+                                    </div>
+                                </a>
+
+                                <div class="flex items-center gap-3 transition-transform hover:scale-104">
+                                    <img src="assets/images/contact-icon5.svg" class="img-fluid" alt="contact icon">
+                                    <div>
+                                        <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">ClickUp
+                                        </p>
+                                        <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base break-all">
+                                            admin@pexnet.com</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-3 transition-transform hover:scale-104">
+                                    <img src="assets/images/contact-icon6.svg" class="img-fluid" alt="contact icon">
+                                    <div>
+                                        <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">Slack</p>
+                                        <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base break-all">
+                                            admin@pexnet.com</p>
+                                    </div>
+                                </div>
+
+                                <a href="mailto:admin@pexnet.com"
+                                    class="flex items-center gap-3 transition-transform hover:scale-104">
+                                    <img src="assets/images/contact-icon7.svg" class="img-fluid" alt="contact icon">
+                                    <div>
+                                        <p class="text-[#D4EEFF] font-normal md:text-base sm:text-sm text-xs">Microsoft
+                                            Teams</p>
+                                        <p class="text-[#fff] font-bold lg:text-xl sm:text-lg text-base break-all">
+                                            admin@pexnet.com</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-right">
+                        <div class=" md:px-8 md:py-8 sm:px-6 sm:py-6 px-3 py-6 bg-[#2a8fd2]/[0.12] rounded-3xl">
+                            <h2
+                                class="md:text-[32px] sm:text-[28px] text-2xl font-bold text-white sm:mb-8 mb-6 leading120">
+                                Book a Free 30-Minute
+                                Consultation</h2>
+
+                            <form class="lg:space-y-6 space-y-3">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-5">
+                                    <input type="text" placeholder="First name*"
+                                        class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                    <input type="text" placeholder="Last name"
+                                        class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                    <input type="email" placeholder="Email address*"
+                                        class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                    <div
+                                        class="flex items-center bg-[#00243B] rounded-full overflow-hidden focus-within:ring-1 focus-within:ring-[#BFFB4F]">
+                                        <div class="relative flex items-center px-1.5 bg-[#00243B] h-full ">
+                                            <select
+                                                class=" text-[#2A8FD2] outline-none cursor-pointer appearance-none pl-3 pr-8 py-2 focus:ring-0 bg-[#2a8fd2]/12 rounded-full">
+                                                <option value="+88">+88</option>
+                                                <option value="+1">+1</option>
+                                                <option value="+44">+44</option>
+                                            </select>
+                                            <span class="absolute right-5 pointer-events-none text-[#2A8FD2]"><svg
+                                                    width="11" height="7" viewBox="0 0 11 7" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M0.82984 0H10.1465C10.3113 0.000691026 10.4722 0.0502368 10.6089 0.142372C10.7455 0.234508 10.8518 0.365096 10.9142 0.517623C10.9767 0.670151 10.9925 0.837766 10.9597 0.999277C10.9268 1.16079 10.8469 1.30894 10.7298 1.425L6.07984 6.075C6.00237 6.15311 5.9102 6.2151 5.80865 6.25741C5.7071 6.29972 5.59818 6.3215 5.48817 6.3215C5.37816 6.3215 5.26924 6.29972 5.16769 6.25741C5.06614 6.2151 4.97398 6.15311 4.89651 6.075L0.246506 1.425C0.129488 1.30894 0.0495125 1.16079 0.0166915 0.999277C-0.0161295 0.837766 -0.000321766 0.670151 0.0621162 0.517623C0.124554 0.365096 0.230818 0.234508 0.367471 0.142372C0.504124 0.0502368 0.665029 0.000691026 0.82984 0Z"
+                                                        fill="#2A8FD2" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <input type="tel" placeholder="Phone"
+                                            class="w-full bg-transparent text-white placeholder-[#92B9D2] py-4 px-3 border-none outline-none">
+                                    </div>
+
+                                    <input type="text" placeholder="Company name"
+                                        class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                    <input type="url" placeholder="Website URL"
+                                        class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-4 px-6 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F]">
+
+                                    <div class="relative">
+                                        <select
+                                            class="w-full bg-[#00243B] text-white py-4 px-6 rounded-full appearance-none outline-none cursor-pointer focus:ring-1 focus:ring-[#BFFB4F]">
+                                            <option value="" disabled selected>Choose your service</option>
+                                            <option value="web">Web Development</option>
+                                            <option value="app">App Development</option>
+                                            <option value="marketing">Digital Marketing</option>
+                                        </select>
+                                        <span
+                                            class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-[#5ca2ff]"><svg
+                                                width="11" height="7" viewBox="0 0 11 7" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M0.82984 0H10.1465C10.3113 0.000691026 10.4722 0.0502368 10.6089 0.142372C10.7455 0.234508 10.8518 0.365096 10.9142 0.517623C10.9767 0.670151 10.9925 0.837766 10.9597 0.999277C10.9268 1.16079 10.8469 1.30894 10.7298 1.425L6.07984 6.075C6.00237 6.15311 5.9102 6.2151 5.80865 6.25741C5.7071 6.29972 5.59818 6.3215 5.48817 6.3215C5.37816 6.3215 5.26924 6.29972 5.16769 6.25741C5.06614 6.2151 4.97398 6.15311 4.89651 6.075L0.246506 1.425C0.129488 1.30894 0.0495125 1.16079 0.0166915 0.999277C-0.0161295 0.837766 -0.000321766 0.670151 0.0621162 0.517623C0.124554 0.365096 0.230818 0.234508 0.367471 0.142372C0.504124 0.0502368 0.665029 0.000691026 0.82984 0Z"
+                                                    fill="#92B9D2" />
+                                            </svg>
+                                        </span>
+                                    </div>
+
+                                    <div class="relative">
+                                        <select
+                                            class="w-full bg-[#00243B] text-white py-4 px-6 rounded-full appearance-none outline-none cursor-pointer focus:ring-1 focus:ring-[#BFFB4F]">
+                                            <option value="" disabled selected>How did you hear about us?</option>
+                                            <option value="google">Google</option>
+                                            <option value="social">Social Media</option>
+                                            <option value="referral">Referral</option>
+                                        </select>
+                                        <span
+                                            class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-[#5ca2ff]"><svg
+                                                width="11" height="7" viewBox="0 0 11 7" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M0.82984 0H10.1465C10.3113 0.000691026 10.4722 0.0502368 10.6089 0.142372C10.7455 0.234508 10.8518 0.365096 10.9142 0.517623C10.9767 0.670151 10.9925 0.837766 10.9597 0.999277C10.9268 1.16079 10.8469 1.30894 10.7298 1.425L6.07984 6.075C6.00237 6.15311 5.9102 6.2151 5.80865 6.25741C5.7071 6.29972 5.59818 6.3215 5.48817 6.3215C5.37816 6.3215 5.26924 6.29972 5.16769 6.25741C5.06614 6.2151 4.97398 6.15311 4.89651 6.075L0.246506 1.425C0.129488 1.30894 0.0495125 1.16079 0.0166915 0.999277C-0.0161295 0.837766 -0.000321766 0.670151 0.0621162 0.517623C0.124554 0.365096 0.230818 0.234508 0.367471 0.142372C0.504124 0.0502368 0.665029 0.000691026 0.82984 0Z"
+                                                    fill="#92B9D2" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <textarea placeholder="Write your message" rows="6"
+                                    class="w-full bg-[#00243B] text-white placeholder-[#92B9D2] py-6 px-6 rounded-3xl border-none outline-none focus:ring-1 focus:ring-[#BFFB4F] resize-none"></textarea>
+
+                                <button type="submit"
+                                    class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px] w-full flex justify-center">
+                                    <span class="cta-arrow">
+                                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                                fill="white" />
+                                        </svg>
+                                    </span>
+                                    <span
+                                        class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                        <span>Submit</span>
+                                        <span>Submit</span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- banner end -->
+
+
+
+    <!-- Map section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-5 lg:px-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 ">
+
+                <div class="space-y-10">
+                    <div>
+                        <h2 class="text-[56px] font-bold text-[#002F4D] leading-[120%] mb-4">
+                            We’re Here for You
+                        </h2>
+                        <p class="text-[#526E80] text-[16px] leading-[150%]">
+                            Team Pexnet is so excited to get to know about you, your business, and your goals!
+                        </p>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-5">
+                            <div
+                                class="w-24 h-24 shrink-0 bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-3xl flex items-center justify-center ">
+                                <img src="assets/images/building-icon.svg" alt="building-icon">
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-[#076AAB] mb-1">Our Headquater</h4>
+                                <p class="text-[#526E80] text-[16px] sm:text-lg font-normal leading-[150%]">
+                                    128 City Road<br>
+                                    London EC1V 2NX UNITED KINGDOM
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5">
+                            <div
+                                class="w-24 h-24 shrink-0 bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-3xl flex items-center justify-center ">
+                                <img src="assets/images/marker-icon.svg" alt="marker-icon">
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-[#076AAB] mb-1">Regional Office</h4>
+                                <p class="text-[#526E80] text-[16px] sm:text-lg font-normal leading-[150%]">
+                                    23/6, Rupayan Shelford Tower, 16th Floor<br>
+                                    Shyamoli, Dhaka – 1207
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative w-full h-100 md:h-180 overflow-hidden rounded-3xl">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423284.0443549684!2d-118.74137449752135!3d34.020608418062245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1777465665771!5m2!1sen!2sbd"
+                        class="absolute inset-0 w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- cta section end -->
+    <section class="cta section-padding bg-[#00243B]">
+        <div class="container">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#fff]">
+                    We’re All Ears!
+                </h2>
+                <p class="text-base leading-[150%] text-[#D4EEFF] max-w-184 w-full mx-auto">A simple, open conversation
+                    can create new doorways to your professional and business success. Don’t hesitate. Take the first
+                    step right now.</p>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:mt-8 mt-6">
+                <a href="contact.html"
+                    class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] sm:h-13 h-[44px] px-5 group duration-500 ease-in-out">
+                    <span class="cta-arrow">
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                fill="currentColor" />
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                fill="white" />
+                        </svg>
+                    </span>
+                    <span
+                        class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                        <span>Get a Free SEO Audit</span>
+                        <span>Get a Free SEO Audit</span>
+                    </span>
+                </a>
+                <a href="contact.html"
+                    class="common-cta bg-[#88D1FF] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px]">
+                    <span
+                        class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                        <span>Get a Free SEO Audit</span>
+                        <span>Get a Free SEO Audit</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- cta section end -->
+
+    <!-- footer section start -->
+
+    <footer
+        class="bg-[radial-gradient(50%_50.08%_at_50%_50.08%,_#076AAB_0%,_#00243B_100%)] border-t border-t-white/12 ">
+        <div class="container">
+            <div class="grid grid-cols-1 lg:grid-cols-4">
+                <div
+                    class=" lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-l border-l-white/8 border-r border-r-white/8">
+
+                    <div class="lg:mb-8 sm:mb-6 mb-4">
+                        <img src="assets/images/logo-footer.svg" class="img-fluid" alt="footer-logo">
+                    </div>
+                    <div class="flex justify-start  md:gap-1.5 gap-1 lg:gap-1.5 footer-social-link">
+                        <a href="#" target="_blank"
+                            class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                            <img src="assets/images/footer-social1.svg" class="img-fluid" alt="social link">
+
+                        </a>
+                        <a href="#" target="_blank"
+                            class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                            <img src="assets/images/footer-social2.svg" class="img-fluid" alt="social link">
+                        </a>
+                        <a href="#" target="_blank"
+                            class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                            <img src="assets/images/footer-social3.svg" class="img-fluid" alt="social link">
+                        </a>
+                        <a href="#" target="_blank"
+                            class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                            <img src="assets/images/footer-social4.svg" class="img-fluid" alt="social link">
+                        </a>
+                        <a href="#" target="_blank"
+                            class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                            <img src="assets/images/footer-social5.svg" class="img-fluid" alt="social link">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <div class="grid grid-cols-2 border-b lg:border-b-transparent border-b-white/8">
+                        <div
+                            class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-l border-t lg:border-l-transparent lg:border-t-transparent border-t-white/8 border-l-white/8 border-r border-r-white/8">
+                            <div class="footer-nav">
+                                <h3 class="text-base sm:text-lg md:text-xl font-bold leading120 text-[#fff] mb-4">
+                                    Services
+                                </h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            SEO for Dental Clinics
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="case-study.html">
+                                            SEO for Law Firms
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="aboutus.html">
+                                            SEO for Carpet Cleaning Companies
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html">
+                                            SEO for Moving Companies
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="contactus.html">
+                                            SEO for Restoration Companies
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+
+                            <div class="footer-nav">
+                                <h3 class="text-base sm:text-lg md:text-xl font-bold leading120 text-[#fff] mb-4">
+                                    Resources
+                                </h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            Case Studies
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="case-study.html">
+                                            Blog
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+
+                            </div>
+                        </div>
+                        <div
+                            class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-t lg:border-t-transparent border-t-white/8 border-r border-r-white/8">
+                            <div class="footer-nav">
+                                <h3 class="text-base sm:text-lg md:text-xl font-bold leading120 text-[#fff] mb-4">
+                                    Pexnet
+                                </h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            About
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="case-study.html">
+                                            Contact
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="aboutus.html">
+                                            Careers
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html">
+                                            Faq’s
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-r border-l lg:border-l-transparent border-l-white/8 border-r-white/8">
+                    <div>
+                        <h3 class="text-xl font-bold text-white sm:mb-4 mb-3">Get Quality Leads from Us</h3>
+                        <p class="text-[#D4EEFF] sm:text-sm text-xs leading150">PexNet Newsletter - Subscribe for SEO
+                            news, trends, updates, & more.</p>
+                        <div class="mt-6">
+                            <form class="space-y-3">
+                                <div class="relative">
+                                    <input type="email" id="email" name="email" placeholder="Email address" required
+                                        class="w-full bg-white/8 text-white placeholder:text-[#92B9D2] py-4 px-6 text-base h-[56px] flex items-center justify-center leading150 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F] transition duration-200">
+                                </div>
+
+                                <button type="submit"
+                                    class="common-cta w-full bg-[#88D1FF] text-[#002F4D] text-base h-[56px] flex items-center justify-center font-bold py-2 rounded-full transition duration-300 hover:bg-[#D4EEFF] hover:text-[#00243B] active:scale-[0.98]">
+
+                                    <span
+                                        class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                        <span>Subscribe</span>
+                                        <span>Subscribe</span>
+                                    </span>
+
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-t-white/12 py-8 ">
+            <div class="container">
+                <div
+                    class="grid md:grid-cols-4 grid-cols-1 justify-center items-center md:text-start text-center gap-4 w-full">
+                    <p class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">© 2026 Pexnet
+                    </p>
+                    <div class="col-span-2 grid grid-cols-2">
+                        <a href="#"
+                            class="sm:px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">Terms
+                            and Conditions</a>
+                        <a href="#"
+                            class="sm:px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">Privacy
+                            Policy</a>
+                    </div>
+                    <a href="mailto:info@pexnet.com"
+                        class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">© 2026
+                        Pexnet</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- footer section end -->
+
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js">
+    </script>
+    <script src="assets/js/script.js"></script>
+    </body>
+
+</html>

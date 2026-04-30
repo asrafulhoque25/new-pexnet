@@ -1,0 +1,1205 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team</title>
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<div>
+
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="mainNav" style="background: rgba(0, 36, 59, 1);">
+        <div class="container">
+            <div class="nav-inner">
+
+                <a href="index.html" class="nav-logo  shrink-0">
+                    <img src="assets/images/Logo.svg" class="img-fluid" alt="Logo">
+                </a>
+
+                <!-- Desktop Menu — no class on ul li a -->
+                <ul class="nav-menu max-w-214 w-full justify-between">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="#" class="dropdownlink">Services <span>+</span></a>
+                        <ul>
+                            <li>
+                                <a href="mobile-app-design.html">
+                                    Mobile App Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard-design.html">
+
+                                    Dashboard Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="website-design.html">
+
+                                    Website Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="web-application-design.html">
+
+                                    Web App Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="saas-design.html">
+
+                                    SaaS Design
+                                </a>
+                            </li>
+                            <li>
+                                <a href="branding-design.html">
+
+                                    Branding
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="case-study.html">Case Studies</a></li>
+                    <li><a href="blog.html">Blogs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <!-- CTA -->
+                <!-- Navbar CTA -->
+                <div class="flex items-center gap-4">
+                    <!-- CTA -->
+                    <a href="contact.html"
+                        class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out md:block hidden">
+                        <span class="cta-arrow">
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                    fill="white" />
+                            </svg>
+
+                        </span>
+                        <span
+                            class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                            <span>Get a Free SEO Audit</span>
+                            <span>Get a Free SEO Audit</span>
+                        </span>
+                    </a>
+
+                    <!-- Hamburger -->
+                    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU — no class on ul li a ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <button id="mobileServicesBtn">Services <span>+</span></button>
+                <ul id="mobileServicesSubmenu">
+                    <li><a href="mobile-app-design.html">Mobile App Design</a></li>
+                    <li><a href="dashboard-design.html">Dashboard Design</a></li>
+                    <li><a href="website-design.html">Website Design</a></li>
+                    <li><a href="web-application-design.html">Web App Design</a></li>
+                    <li><a href="saas-design.html">SaaS Design</a></li>
+                    <li><a href="branding-design.html">Branding</a></li>
+                </ul>
+            </li>
+            <li><a href="case-study.html">Case Studies</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="cta-wrap">
+            <a href="contact.html" class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5">
+                <span class="cta-arrow">
+                    <svg viewBox="0 0 16 16">
+                        <path d="M12.17 6.78L6.81 1.41 8.22 0 16 7.78 8.22 15.56 6.81 14.14l5.36-5.36H0V6.78h12.17z" />
+                    </svg>
+                    <svg viewBox="0 0 16 16">
+                        <path d="M12.17 6.78L6.81 1.41 8.22 0 16 7.78 8.22 15.56 6.81 14.14l5.36-5.36H0V6.78h12.17z" />
+                    </svg>
+                </span>
+                <span class="cta-text text-[13px] leading-[20px] text-[#0d2235] h-[20px]">
+                    <span>Get a Free SEO Audit</span>
+                    <span>Get a Free SEO Audit</span>
+                </span>
+            </a>
+        </div>
+    </div>
+
+
+
+    <!-- ===== NAVBAR End ===== -->
+
+
+    <!-- banner start -->
+
+    <section
+        class="about-banner relative min-h-205 pt-[48px] sm:pt-[96px] border-t border-b border-[#1F3E53] overflow-hidden bg-[#00243B]"
+        data-glow-section data-home-x="70" data-home-y="50">
+
+        <!-- Vertical lines -->
+        <div class="absolute inset-0 z-[1] pointer-events-none">
+            <div class="max-w-[1530px] mx-auto h-full flex justify-between px-5">
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+                <div class="banner-line w-px h-full bg-white/[0.08] relative overflow-hidden"><span
+                        class="rain-drop absolute inset-0"></span></div>
+            </div>
+        </div>
+
+        <!-- Glow — right side centered -->
+        <div data-glow-el class="absolute inset-0 opacity-0 pointer-events-none z-0"
+            style="background: radial-gradient(40% 50% at 70% 50%, #076AAB 0%, transparent 100%);">
+        </div>
+
+        <!-- Content -->
+        <div class="container relative z-[2]">
+            <div class="grid md:grid-cols-2 grid-cols-1 items-center md:gap-10 sm:gap-5 gap-4">
+                <div class="banner-left-content pl-1 max-w-152.75">
+                    <div class="sm:space-y-4 space-y-3">
+                        <h1
+                            class="md:mt-6 mt-3 mt-1 lg:text-[64px] md:text-[48px] sm:text-[42px] text-4xl text-white font-notch leading-[110%] ">
+                            The <span class="text-[#88D1FF]">Pexnet Team</span> Says Hello!</h1>
+                        <div class="space-y-3">
+                            <p class="sm:text-base text-sm text-[#D4EEFF]">Pexnet is much more than a typical SEO firm.
+                                We’re driven by passion and growth, which wonderfully reflects in everything we deliver.
+                            </p>
+                            <p class="sm:text-base text-sm text-[#D4EEFF]">Our philosophy is simple - we’re never
+                                satisfied until you are. From day one, our clients feel our energy, commitment, and
+                                ambition; and they continue to see the impact long after the project is complete.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="about-banner-img">
+                    <div class="image-trailer-local"></div> <!-- LOCAL trailer -->
+
+                    <div class="common-animation">
+                        <div class="common-shape">
+                            <div class="common-shape-bg"></div>
+                            <img src="assets/images/team.png" class="img-fluid" alt="team">
+                        </div>
+                    </div>
+
+                    <!-- Hidden image gallery (local) -->
+                    <div class="image-gallery-local" style="display:none;">
+                        <img src="assets/images/member-photos-1.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-2.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-3.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-4.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-5.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-6.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-7.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-8.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-9.webp" class="trail-img" alt="all members">
+                        <img src="assets/images/member-photos-10.webp" class="trail-img" alt="all members">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="banner-info-bottom bg-[#00243B] py-8">
+        <div class="container">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-6 sm:gap-4 gap-2">
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/about-info-1.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-base sm:text-lg lg:text-xl font-bold text-white">10+ Years of Deep Industry Expertise
+                    </p>
+                </div>
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/about-teams.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-base sm:text-lg lg:text-xl font-bold text-white">20+ Pro SEOs Obsessed with Growth
+                    </p>
+                </div>
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/trophy.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-base sm:text-lg lg:text-xl font-bold text-white">5 High-Competitive Niches Served</p>
+                </div>
+                <div class="banner-info-item flex items-center gap-3">
+                    <img src="assets/images/about-client.svg" class="img-fluid shrink-0" alt="banner info">
+                    <p class="text-base sm:text-lg lg:text-xl font-bold text-white">800+ Clients Served</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner end -->
+
+
+    <!-- Team members start -->
+    <section class="bg-[#F4FBFF] py-16 sm:px-6">
+        <div class="container">
+            <div class=" flex flex-col lg:flex-row gap-10">
+
+
+                <!-- Tab buttons area -->
+                <aside class="w-full lg:w-1/4 space-y-3 ">
+
+                    <button class="filter-btn active" data-filter="all">
+                        <img src="assets/images/apps.svg" alt=""> All
+                    </button>
+
+                    <button class="filter-btn" data-filter="featured">
+                        <img src="assets/images/search.svg" alt=""> Featured Leadership
+                    </button>
+
+                    <button class="filter-btn" data-filter="seo-strategy">
+                        <img src="assets/images/files.svg" alt=""> SEO Strategy Team
+                    </button>
+
+                    <button class="filter-btn" data-filter="content">
+                        <img src="assets/images/megaphone.svg" alt=""> Content Team
+                    </button>
+
+                    <button class="filter-btn" data-filter="design-dev">
+                        <img src="assets/images/laptop.svg" alt=""> Design & Development Team
+                    </button>
+
+                    <button class="filter-btn" data-filter="social-ppc">
+                        <img src="assets/images/user-headset.svg" alt=""> Social Media & PPC Team
+                    </button>
+
+                </aside>
+
+                <div class="flex-1">
+
+                    <div class="mb-14">
+                        <!-- content area -->
+                        <div class="team-section" data-category="featured">
+                            <h2 class="text-[32px] font-bold leading-[130%] text-[#076AAB] capitalize mb-8">Featured
+                                Leadership</h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-2xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-2xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-2xl overflow-hidden">
+                                        <img src="assets/images/roni-biswas.jpg" alt="Md-Roni-Biswas"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-2xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Roni Biswas
+                                        </h3>
+                                        <p class="text-[#526E80] text-[16px] font-normal leading-[150%]">
+                                            CEO
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-2xl pb-1.5 h-full">
+                                <div class="bg-white rounded-2xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-2xl overflow-hidden">
+                                        <img src="assets/images/shanto-ahammed.jpg" alt="Md-shanto-ahammed"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-2xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Shanto Ahammed
+                                        </h3>
+                                        <p class="text-[#526E80] text-[16px] font-normal leading-[150%]">
+                                            Account Manager
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-2xl pb-1.5 h-full">
+                                <div class="bg-white rounded-2xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-2xl overflow-hidden">
+                                        <img src="assets/images/azmirul-imran.jpg" alt="Amirul-imran"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-2xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Azmirul Imran
+                                        </h3>
+                                        <p class="text-[#526E80] text-[16px] font-normal leading-[150%]">
+                                            Team Lead
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-14">
+                        <!-- content area -->
+                        <div class="team-section" data-category="seo-strategy">
+                            <h2 class="text-[32px] font-bold leading-[130%] text-[#076AAB] capitalize mb-8">SEO Strategy
+                                Team</h2>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Tanvir-ahmmed.jpg" alt="Md-Tanvir-ahmmed"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Tanvir Ahmmed
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            Technical SEO Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/riadul-islam.jpg" alt="Md-Riadul-Islam"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Riadul Islam
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            Local SEO Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Mahin-sarkar.jpg" alt="Md-Mahin-Sarkar"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Mahin Sarkar
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            GBP Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Hridoy-hossain.jpg" alt="Hridoy-Hossain"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Hridoy Hossain
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            GBP Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/feroz-al-mamun.jpg" alt="Feroz-Al-Mamun"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Feroz Al Mamun
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            Linkbuilding Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Taskir-ahamed-emon.jpg" alt="Taksir-Ahmed-Emon"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Taksir Ahmed Emon
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            Outreach Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Tawrat-siddique.jpg" alt="Md-Tawrat-Siddique"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Tawrat Siddique
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            SEO Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Rakib-hassan.jpg" alt="Md-Rakib-Hassan"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Rakib Hassan
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            SEO Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Mirza-limon.jpg" alt="Md-Mirza-Limon-Hossain"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Mirza Limon Hossain
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            SEO Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Tariqul-islam.jpg" alt="Md-Tariqul-Islam"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Tariqul Islam
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            SEO Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Md-Asif.jpg" alt="Md-Asif"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Asif
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            SEO Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Ruhul-Amin.jpg" alt="Md-Ruhul-Amin"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Ruhul Amin
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            SEO Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Md-Nijam-uddin.jpg" alt="Md-Nijam-Uddin"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Nijam Uddin
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            SEO Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-14">
+                        <!-- content area -->
+                        <div class="team-section" data-category="content">
+                            <h2 class="text-[32px] font-bold leading-[130%] text-[#076AAB] capitalize mb-8">Content Team
+                            </h2>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Imtiaz-Ahasan.jpg" alt="Chowdhury-Imtiaz-Ahasan"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Chowdhury Imtiaz Ahasan
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            Editor/Proofreader
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Atique-yeasir.jpg" alt="Md-Atique-Yeasir"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Atique Yeasir
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            Copywriter
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Faria-ahamed.jpg" alt="Faria-Ahammed-Juthi"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Faria Ahammed Juthi
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            Content Writer
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="mb-14">
+                        <!-- content area -->
+                        <div class="team-section" data-category="design-dev">
+                            <h2 class="text-[32px] font-bold leading-[130%] text-[#076AAB] capitalize mb-8">Design &
+                                Development Team
+                            </h2>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/asraful-hoque.jpg" alt="Md-Ashraful-Haque"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Ashraful Haque
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            Web Developer
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Ashikur-Rahman.jpg" alt="Md-Ashikur-Rahman"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Md Ashikur Rahman
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            Web Developer
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Shihabul-islam.jpg" alt="SK-Shihabul-Islam"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            SK Shihabul Islam
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            UI/UX Designer
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Ahad-uddin.jpg" alt="Ahad-Uddin"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Ahad Uddin
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            Graphics Designer
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="mb-14">
+                        <!-- content area -->
+                        <div class="team-section" data-category="social-ppc">
+                            <h2 class="text-[32px] font-bold leading-[130%] text-[#076AAB] capitalize mb-8">Social Media
+                                &
+                                PPC Team
+                            </h2>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+                            <!-- card -->
+                            <div class="bg-[#DEF2FF] rounded-3xl pb-1.5 h-full">
+
+                                <div class="bg-white rounded-3xl border border-[#D4EEFF] h-full flex flex-col">
+
+                                    <!-- Image -->
+                                    <div class="bg-linear-to-b from-blue-500 to-blue-400 rounded-t-3xl overflow-hidden">
+                                        <img src="assets/images/Rifat-Hossain.jpg" alt="Rifat-Hossain"
+                                            class="w-full h-full object-cover">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-5 grow">
+                                        <h3 class="text-xl text-[#002F4D] font-bold leading-[120%] mb-2 line-clamp-2">
+                                            Rifat Hossain
+                                        </h3>
+                                        <p class="text-[#526E80] text-[14px]">
+                                            Social Media Specialist
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </section>
+<!-- Team members end -->
+
+
+<!-- cta section end -->
+<section class="cta section-padding bg-[#00243B]">
+    <div class="container">
+        <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+            <h2
+                class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#fff]">
+                We’re All Ears!
+            </h2>
+            <p class="text-base leading-[150%] text-[#D4EEFF] max-w-184 w-full mx-auto">A simple, open conversation
+                can create new doorways to your professional and business success. Don’t hesitate. Take the first
+                step right now.</p>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:mt-8 mt-6">
+            <a href="contact.html"
+                class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] sm:h-13 h-[44px] px-5 group duration-500 ease-in-out">
+                <span class="cta-arrow">
+                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                            fill="currentColor" />
+                    </svg>
+                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                            fill="white" />
+                    </svg>
+                </span>
+                <span
+                    class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                    <span>Get a Free SEO Audit</span>
+                    <span>Get a Free SEO Audit</span>
+                </span>
+            </a>
+            <a href="contact.html"
+                class="common-cta bg-[#88D1FF] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px]">
+                <span
+                    class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                    <span>Get a Free SEO Audit</span>
+                    <span>Get a Free SEO Audit</span>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- cta section end -->
+
+
+
+<!-- footer section start -->
+
+<footer class="bg-[radial-gradient(50%_50.08%_at_50%_50.08%,#076AAB_0%,#00243B_100%)] border-t border-t-white/12 ">
+    <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-4">
+            <div
+                class=" lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-l border-l-white/8 border-r border-r-white/8">
+
+                <div class="lg:mb-8 sm:mb-6 mb-4">
+                    <img src="assets/images/logo-footer.svg" class="img-fluid" alt="footer-logo">
+                </div>
+                <div class="flex justify-start  md:gap-1.5 gap-1 lg:gap-1.5 footer-social-link">
+                    <a href="#" target="_blank"
+                        class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                        <img src="assets/images/footer-social1.svg" class="img-fluid" alt="social link">
+
+                    </a>
+                    <a href="#" target="_blank"
+                        class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                        <img src="assets/images/footer-social2.svg" class="img-fluid" alt="social link">
+                    </a>
+                    <a href="#" target="_blank"
+                        class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                        <img src="assets/images/footer-social3.svg" class="img-fluid" alt="social link">
+                    </a>
+                    <a href="#" target="_blank"
+                        class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                        <img src="assets/images/footer-social4.svg" class="img-fluid" alt="social link">
+                    </a>
+                    <a href="#" target="_blank"
+                        class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors">
+                        <img src="assets/images/footer-social5.svg" class="img-fluid" alt="social link">
+                    </a>
+                </div>
+            </div>
+            <div class="col-span-2">
+                <div class="grid grid-cols-2 border-b lg:border-b-transparent border-b-white/8">
+                    <div
+                        class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-l border-t lg:border-l-transparent lg:border-t-transparent border-t-white/8 border-l-white/8 border-r border-r-white/8">
+                        <div class="footer-nav">
+                            <h3 class="text-base sm:text-lg md:text-xl font-bold leading120 text-[#fff] mb-4">
+                                Services
+                            </h3>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        SEO for Dental Clinics
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="case-study.html">
+                                        SEO for Law Firms
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="aboutus.html">
+                                        SEO for Carpet Cleaning Companies
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="blog.html">
+                                        SEO for Moving Companies
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="contactus.html">
+                                        SEO for Restoration Companies
+                                    </a>
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                        <div class="footer-nav">
+                            <h3 class="text-base sm:text-lg md:text-xl font-bold leading120 text-[#fff] mb-4">
+                                Resources
+                            </h3>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        Case Studies
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="case-study.html">
+                                        Blog
+                                    </a>
+                                </li>
+
+                            </ul>
+
+
+                        </div>
+                    </div>
+                    <div
+                        class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-t lg:border-t-transparent border-t-white/8 border-r border-r-white/8">
+                        <div class="footer-nav">
+                            <h3 class="text-base sm:text-lg md:text-xl font-bold leading120 text-[#fff] mb-4">
+                                Pexnet
+                            </h3>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        About
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="case-study.html">
+                                        Contact
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="aboutus.html">
+                                        Careers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="blog.html">
+                                        Faq’s
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-r border-l lg:border-l-transparent border-l-white/8 border-r-white/8">
+                <div>
+                    <h3 class="text-xl font-bold text-white sm:mb-4 mb-3">Get Quality Leads from Us</h3>
+                    <p class="text-[#D4EEFF] sm:text-sm text-xs leading150">PexNet Newsletter - Subscribe for SEO
+                        news, trends, updates, & more.</p>
+                    <div class="mt-6">
+                        <form class="space-y-3">
+                            <div class="relative">
+                                <input type="email" id="email" name="email" placeholder="Email address" required
+                                    class="w-full bg-white/8 text-white placeholder:text-[#92B9D2] py-4 px-6 text-base h-[56px] flex items-center justify-center leading150 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F] transition duration-200">
+                            </div>
+
+                            <button type="submit"
+                                class="common-cta w-full bg-[#88D1FF] text-[#002F4D] text-base h-[56px] flex items-center justify-center font-bold py-2 rounded-full transition duration-300 hover:bg-[#D4EEFF] hover:text-[#00243B] active:scale-[0.98]">
+
+                                <span
+                                    class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                    <span>Subscribe</span>
+                                    <span>Subscribe</span>
+                                </span>
+
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-t border-t-white/12 py-8 ">
+        <div class="container">
+            <div
+                class="grid md:grid-cols-4 grid-cols-1 justify-center items-center md:text-start text-center gap-4 w-full">
+                <p class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">© 2026 Pexnet
+                </p>
+                <div class="col-span-2 grid grid-cols-2">
+                    <a href="#"
+                        class="sm:px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">Terms
+                        and Conditions</a>
+                    <a href="#"
+                        class="sm:px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">Privacy
+                        Policy</a>
+                </div>
+                <a href="mailto:info@pexnet.com"
+                    class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">© 2026
+                    Pexnet</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- footer section end -->
+
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/Flip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<!-- jQuery -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js">
+</script>
+<script src="assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="96" height="96" rx="24" fill="url(#paint0_radial_5579_3317)"/>
+<g clip-path="url(#clip0_5579_3317)">
+<path d="M31.9418 50H71.5998L31.9978 71.352C31.1218 71.774 30.2158 71.976 29.3338 71.976C27.9418 71.976 26.6098 71.466 25.5598 70.508C23.8798 68.968 23.3298 66.698 24.1218 64.576L24.2338 64.33L31.9418 50Z" fill="#8BD500"/>
+<path d="M31.6637 24.5641C29.5577 23.5601 27.0917 23.9261 25.3817 25.4981C23.7037 27.0421 23.1557 29.3141 23.9557 31.4341L31.9137 46.0001H71.5957L31.8157 24.6441L31.6637 24.5641Z" fill="#076AAB"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_5579_3317" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(48 48) rotate(90) scale(48)">
+<stop stop-color="white"/>
+<stop offset="0.33" stop-color="#F4FBFF"/>
+<stop offset="0.66" stop-color="#EDF8FF"/>
+<stop offset="1" stop-color="#DEF2FF"/>
+</radialGradient>
+<clipPath id="clip0_5579_3317">
+<rect width="48" height="48" fill="white" transform="translate(23.5977 24)"/>
+</clipPath>
+</defs>
+</svg>

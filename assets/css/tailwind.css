@@ -1191,6 +1191,46 @@ section.about-banner {
 
 
 
+
+
+
+/* NOMAN'CSS START HERE */
+/* Case study pase css () */
+.proven-result-wrap {
+  will-change: transform, opacity;
+}
+.tab-btn-blog.active,
+.tab-btn-case.active {
+  background: transparent !important;
+  border-color: #2A8FD2;
+  color: #ffffff;
+}
+/* Team page css */
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 16px 32px;
+    border-radius: 9999px;
+    font-weight: 700;
+    color: #076AAB;
+    background: rgba(7, 106, 171, 0.08);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.filter-sidebar {
+  will-change: transform;
+}
+
+.filter-btn.active {
+    background: transparent;
+    border: 2px solid #076AAB ;
+}
+
+/* NOMAN'CSS ENDS HERE */
+
 /* footer  */
 
 /* .footer-nav ul li a{
