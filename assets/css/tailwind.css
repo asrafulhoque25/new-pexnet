@@ -1399,3 +1399,240 @@ line-height: 150%;
         transparent 70%
     );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* case study detials start */
+
+  .case-study-details h1{
+color: #002F4D;
+font-size: 56px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%;
+margin-bottom: 24px;
+margin-top: 24px;
+  }
+  .case-study-details h2{
+color: #002F4D;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 38.4px */
+margin-bottom: 24px;
+margin-top: 32px;
+  }
+
+  .case-study-details h3{
+color: #002F4D;
+font-size:  28px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%; 
+margin-bottom: 20px;
+margin-top: 28px;
+  }
+  .case-study-details h4{
+color: #002F4D;
+font-size:  24px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%; 
+margin-bottom: 20px;
+margin-top: 24px;
+  }
+  .case-study-details h5{
+color: #002F4D;
+font-size:  20px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%; 
+margin-bottom: 16px;
+margin-top: 20px;
+  }
+
+.case-study-details p{
+color: #426073;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; 
+margin-bottom: 16px;
+  }
+
+    .case-study-details img{
+        border-radius: 24px;
+        margin-top: 10px;
+        padding-bottom: 16px;
+  }
+
+
+
+  .case-study-details strong {
+    font-weight: 700;
+  }
+
+
+
+  .case-study-details ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .case-study-details ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+     color: #426073;
+}
+
+.case-study-details ul li::before {
+     content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    background-image: url("../images/point-dark.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 6px;
+   
+}
+
+
+
+
+.case-study-details table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #C3E0F3;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.case-study-details table thead tr th {
+    background: radial-gradient(50% 50% at 50% 50%, #FFF 0%, #F4FBFF 33%, #EDF8FF 66%, #DEF2FF 100%);
+    color: #076AAB;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+    padding: 14px 20px;
+    border-bottom: 1px solid #C3E0F3;
+}
+
+.case-study-details table thead tr th:not(:last-child) {
+    border-right: 1px solid #C3E0F3;
+}
+
+.case-study-details table tbody tr td {
+    padding: 14px 20px;
+    color: #426073;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.case-study-details table tbody tr td:not(:last-child) {
+    border-right: 1px solid #C3E0F3;
+}
+
+.case-study-details table tbody tr:not(:last-child) td {
+    border-bottom: 1px solid #C3E0F3;
+}
+/* case study detials end */
+
+
+
+
+
+
+@media (max-width:991px) {
+    .case-study-details h1{
+font-size: 46px;
+margin-bottom: 18px;
+margin-top: 18px;
+  }
+  .case-study-details h2{
+font-size: 28px;
+margin-bottom: 20px;
+margin-top: 28px;
+  }
+
+  .case-study-details h3{
+font-size:  24px;
+margin-bottom: 16px;
+margin-top: 20px;
+  }
+  .case-study-details h4{
+font-size:  20px;
+margin-bottom:16px;
+margin-top: 18px;
+  }
+  .case-study-details h5{
+font-size:  18px;
+margin-bottom: 10px;
+margin-top: 16px;
+  }
+
+.case-study-details p{
+font-size: 16px;
+margin-bottom: 12px;
+  }
+}
+
+
+@media (max-width:640px) {
+    .case-study-details h1{
+font-size: 36px;
+margin-bottom: 16px;
+margin-top: 16px;
+  }
+  .case-study-details h2{
+font-size: 24px;
+margin-bottom: 16px;
+margin-top: 28px;
+  }
+
+  .case-study-details h3{
+font-size:  20px;
+margin-bottom: 12px;
+margin-top: 16px;
+  }
+  .case-study-details h4{
+font-size:  18px;
+margin-bottom:16px;
+margin-top: 16px;
+  }
+  .case-study-details h5{
+font-size:  16px;
+margin-bottom: 10px;
+margin-top: 16px;
+  }
+
+.case-study-details p{
+font-size: 14px;
+margin-bottom: 12px;
+  }
+
+  .case-study-details ul {
+    gap: 6px;
+    margin-bottom: 12px;
+}
+.case-study-details ul li {
+    gap: 8px;
+    font-size: 14px;
+}
+}

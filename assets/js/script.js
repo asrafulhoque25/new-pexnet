@@ -419,16 +419,13 @@ window.addEventListener('load', () => {
 
 document.querySelectorAll('select').forEach(select => {
     
+    if (select.hasAttribute('data-toc-select')) return;
+
     if (select.value === '') {
         select.style.color = '#92B9D2';
     }
-
     select.addEventListener('change', function () {
-        if (this.value === '') {
-            this.style.color = '#92B9D2';
-        } else {
-            this.style.color = '#ffffff';
-        }
+        this.style.color = this.value === '' ? '#92B9D2' : '#ffffff';
     });
 });
 
@@ -1640,162 +1637,454 @@ document.addEventListener("DOMContentLoaded", initProvenCardAnimation);
 // Filter section in team page
 // Team Filter & Scroll
 // Team Filter & Scroll
-const filterBtns = document.querySelectorAll('.filter-btn');
-const sections = document.querySelectorAll('.team-section');
+// ============================================
+// TEAM FILTER & SCROLL SPY
+// ============================================
+(function () {
+  const aside      = document.querySelector('.allteams');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const sections   = document.querySelectorAll('.team-section');
 
-let isClicking = false;
-let clickTimeout = null;
+  // Page has no team filter — exit silently
+  if (!aside && !filterBtns.length && !sections.length) return;
 
-// ===== MOBILE SELECT =====
-const aside = document.querySelector('aside');
+  let isClicking   = false;
+  let clickTimeout = null;
 
-// Create select dropdown for mobile
-const mobileSelect = document.createElement('select');
-mobileSelect.className = 'team-mobile-select';
-mobileSelect.innerHTML = `
+  // ── Mobile select ──────────────────────────
+  const mobileSelect = document.createElement('select');
+  mobileSelect.className = 'team-mobile-select';
+  mobileSelect.innerHTML = `
     <option value="all">All</option>
     <option value="featured">Featured Leadership</option>
     <option value="seo-strategy">SEO Strategy Team</option>
     <option value="content">Content Team</option>
     <option value="design-dev">Design & Development Team</option>
     <option value="social-ppc">Social Media & PPC Team</option>
-`;
+  `;
 
-// Insert select before buttons
-aside.insertBefore(mobileSelect, aside.firstChild);
+  if (aside) {
+    aside.insertBefore(mobileSelect, aside.firstChild);
+  }
 
-// Mobile select CSS inject
-const mobileStyle = document.createElement('style');
-mobileStyle.textContent = `
+  // ── Mobile select CSS ──────────────────────
+  const mobileStyle = document.createElement('style');
+  mobileStyle.textContent = `
     .team-mobile-select {
-        display: none;
-        width: 100%;
-        padding: 14px 20px;
-        border-radius: 9999px;
-        font-weight: 600;
-        font-size: 16px;
-        color: #076AAB;
-        background: #fff;
-        border: 1px solid #076AAB;
-        cursor: pointer;
-        outline: none;
-        appearance: none;
-        -webkit-appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23076AAB' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 20px center;
-        padding-right: 48px;
+      display: none;
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #076AAB;
+      background: #fff;
+      border: 1px solid #076AAB;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23076AAB' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+      padding-right: 48px;
     }
-
     @media (max-width: 1023px) {
-        .team-mobile-select {
-            display: block;
-        }
-        .filter-btn {
-            display: none !important;
-        }
+      .team-mobile-select { display: block; }
+      .filter-btn { display: none !important; }
     }
-`;
-document.head.appendChild(mobileStyle);
+  `;
+  document.head.appendChild(mobileStyle);
 
-// ===== SHARED FUNCTIONS =====
-function setActiveBtn(filter) {
+  // ── Shared helpers ─────────────────────────
+  function setActiveBtn(filter) {
     filterBtns.forEach(b => b.classList.remove('active'));
     const target = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
     if (target) target.classList.add('active');
     mobileSelect.value = filter;
-}
+  }
 
-function scrollToFilter(filter) {
+  function scrollToFilter(filter) {
     isClicking = true;
     clearTimeout(clickTimeout);
-    clickTimeout = setTimeout(() => {
-        isClicking = false;
-    }, 1000);
+    clickTimeout = setTimeout(() => { isClicking = false; }, 1000);
 
     if (filter === 'all') {
-        const firstSection = document.querySelector('.team-section')?.closest('.team-devider-point');
-        if (firstSection) {
-            const offset = 80;
-            const top = firstSection.getBoundingClientRect().top + window.scrollY - offset;
-            window.scrollTo({ top, behavior: 'smooth' });
-        }
-        return;
+      const first = document.querySelector('.team-section')?.closest('.team-devider-point');
+      if (first) {
+        const top = first.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+      return;
     }
 
     const targetSection = document.querySelector(`.team-section[data-category="${filter}"]`);
     if (!targetSection) return;
-
     const wrapper = targetSection.closest('.team-devider-point');
     if (!wrapper) return;
-
-    const offset = 80;
-    const top = wrapper.getBoundingClientRect().top + window.scrollY - offset;
+    const top = wrapper.getBoundingClientRect().top + window.scrollY - 80;
     window.scrollTo({ top, behavior: 'smooth' });
-}
+  }
 
-// ===== DESKTOP BUTTONS =====
-filterBtns.forEach(btn => {
+  // ── Desktop buttons ────────────────────────
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-        setActiveBtn(filter);
-        scrollToFilter(filter);
+      const filter = btn.dataset.filter;
+      setActiveBtn(filter);
+      scrollToFilter(filter);
     });
-});
+  });
 
-// ===== MOBILE SELECT =====
-mobileSelect.addEventListener('change', () => {
-    const filter = mobileSelect.value;
-    setActiveBtn(filter);
-    scrollToFilter(filter);
-});
+  // ── Mobile select change ───────────────────
+  mobileSelect.addEventListener('change', () => {
+    setActiveBtn(mobileSelect.value);
+    scrollToFilter(mobileSelect.value);
+  });
 
-// ===== SCROLL SPY =====
-const observer = new IntersectionObserver(
-    (entries) => {
+  // ── Scroll spy ─────────────────────────────
+  if (sections.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
         if (isClicking) return;
-
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const category = entry.target.dataset.category;
-                setActiveBtn(category);
-            }
+          if (entry.isIntersecting) {
+            setActiveBtn(entry.target.dataset.category);
+          }
         });
-    },
-    {
-        rootMargin: '-20% 0px -70% 0px',
-        threshold: 0
-    }
-);
-
-sections.forEach(section => observer.observe(section));
-
+      },
+      { rootMargin: '-20% 0px -70% 0px', threshold: 0 }
+    );
+    sections.forEach(s => observer.observe(s));
+  }
+})();
 
 // Career details page
-// progress fill animation
-  gsap.to(".progress-fill", {
-    width: "100%",
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".central-content-wrap",
-      start: "top top",
-      end: "bottom 40%",
-      scrub: true
-    }
-  });
-  document.querySelectorAll(".left-aside a").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
 
-    const target = document.querySelector(link.getAttribute("href"));
-    if (!target) return;
+//case study & career details — TOC ScrollSpy (h2 + h3)
+//case study & career details — TOC ScrollSpy (h2 + h3)
+//  TOC ScrollSpy — h2 accordion + h3 children (desktop) | flat select (mobile)
+//  TOC ScrollSpy — h2 accordion + h3 children | fixed spacing
 
-    lenis.scrollTo(target, {
-      offset: -100, // navbar height
-      duration: 1.2,
-      easing: (t) => 1 - Math.pow(1 - t, 3) // smooth ease
+(function () {
+  "use strict";
+
+  const OFFSET          = -100;
+  const SCROLL_DURATION = 1.2;
+  const ACTIVE_CLASS    = "toc-active";
+  const H2_COLOR        = "var(--toc-default-color, #526E80)";
+  const H3_COLOR        = "#7A99AB";
+  const ACTIVE_COLOR    = "var(--toc-active-color, #076AAB)";
+  const MAX_OPT_CHARS   = 38;
+
+  /* ── SLUG ── */
+  const usedSlugs = {};
+  function toSlug(text) {
+    let slug = text.toLowerCase().trim()
+      .replace(/[^a-z0-9\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-");
+    usedSlugs[slug] = (usedSlugs[slug] || 0) + 1;
+    return usedSlugs[slug] > 1 ? slug + "-" + usedSlugs[slug] : slug;
+  }
+
+  /* ── INIT ── */
+  function init() {
+    const contentWrap = document.querySelector("[data-toc-content]");
+    if (!contentWrap) return;
+
+    const navWrap      = document.querySelector("[data-toc-nav]");
+    const progressBar  = document.querySelector("[data-toc-progress]");
+    const mobileSelect = document.querySelector("[data-toc-select]");
+
+    const headings = Array.from(contentWrap.querySelectorAll("h2, h3"));
+    if (!headings.length) return;
+
+    headings.forEach((h) => { if (!h.id) h.id = toSlug(h.textContent); });
+
+    buildNav(headings, navWrap, mobileSelect);
+    if (progressBar)  initProgressBar(contentWrap, progressBar);
+    initScrollSpy(headings, navWrap, mobileSelect);
+    if (navWrap)      bindNavClicks(navWrap);
+    if (mobileSelect) { injectSelectArrow(mobileSelect); bindSelectChange(mobileSelect); }
+  }
+
+  /* ── BUILD NAV ── */
+  function buildNav(headings, navWrap, mobileSelect) {
+    if (!navWrap && !mobileSelect) return;
+    if (navWrap)      navWrap.innerHTML      = "";
+    if (mobileSelect) mobileSelect.innerHTML = "";
+
+    // Group headings into [{h2, children:[h3…]}, …]
+    const groups = [];
+    headings.forEach((h) => {
+      if (h.tagName === "H2") {
+        groups.push({ h2: h, children: [] });
+      } else if (h.tagName === "H3" && groups.length) {
+        groups[groups.length - 1].children.push(h);
+      }
     });
-  });
-});
 
-// JAVASCRIPT BY NOMAN ENDS HERE
+    groups.forEach((group) => {
+      const { h2, children } = group;
+      const hasChildren = children.length > 0;
+
+      /* ── Desktop ── */
+      if (navWrap) {
+
+        // Outer group wrapper — single bottom border, contains BOTH row and childWrap
+        const groupWrap = document.createElement("div");
+        groupWrap.dataset.groupWrap = h2.id;
+        groupWrap.style.cssText = "border-bottom:1px solid #C3E0F3;";
+
+        // H2 row (link + optional arrow)
+        const row = document.createElement("div");
+        row.style.cssText = "display:flex;align-items:center;justify-content:space-between;gap:4px;";
+
+        const a = document.createElement("a");
+        a.href          = "#" + h2.id;
+        a.dataset.tocId = h2.id;
+        a.dataset.level = "2";
+        a.textContent   = h2.textContent.trim();
+        a.style.cssText = [
+          "flex:1",
+          "display:block",
+          "padding-bottom:10px",
+          "padding-top:10px",
+          "font-size:16px",
+          "font-weight:700",
+          "line-height:1.2",
+          "cursor:pointer",
+          "color:" + H2_COLOR,
+          "transition:color 0.2s",
+        ].join(";");
+        a.className = "toc-link";
+        row.appendChild(a);
+
+        if (hasChildren) {
+          const btn = document.createElement("button");
+          btn.dataset.group = h2.id;
+          btn.setAttribute("aria-expanded", "false");
+          btn.innerHTML     = arrowSVG(false);
+          btn.style.cssText = [
+            "background:none",
+            "border:none",
+            "padding:0 0 10px 0",
+            "cursor:pointer",
+            "color:" + H2_COLOR,
+            "display:flex",
+            "align-items:center",
+            "flex-shrink:0",
+            "transition:color 0.2s",
+          ].join(";");
+          btn.className = "toc-arrow-btn";
+          row.appendChild(btn);
+        }
+
+        groupWrap.appendChild(row);
+
+        // H3 childWrap — collapsed by default, sits INSIDE groupWrap above border
+        if (hasChildren) {
+          const childWrap = document.createElement("div");
+          childWrap.dataset.parentGroup = h2.id;
+          childWrap.style.cssText = [
+            "overflow:hidden",
+            "max-height:0",
+            "transition:max-height 0.3s ease",
+          ].join(";");
+
+          children.forEach((h3) => {
+            const child = document.createElement("a");
+            child.href          = "#" + h3.id;
+            child.dataset.tocId = h3.id;
+            child.dataset.level = "3";
+            child.textContent   = h3.textContent.trim();
+            child.className     = "toc-link";
+            child.style.cssText = [
+              "display:block",
+              "padding:4px 0 4px 10px",
+              "font-size:13px",
+              "font-weight:500",
+              "line-height:1.35",
+              "cursor:pointer",
+              "color:" + H3_COLOR,
+              "transition:color 0.2s",
+            ].join(";");
+            childWrap.appendChild(child);
+          });
+
+          // small bottom padding inside childWrap so h3s don't stick to border
+          const spacer = document.createElement("div");
+          spacer.style.height = "6px";
+          childWrap.appendChild(spacer);
+
+          groupWrap.appendChild(childWrap);
+        }
+
+        navWrap.appendChild(groupWrap);
+      }
+
+      /* ── Mobile select ── */
+      if (mobileSelect) {
+        const opt2 = document.createElement("option");
+        opt2.value       = h2.id;
+        const l2         = h2.textContent.trim();
+        opt2.textContent = l2.length > MAX_OPT_CHARS ? l2.slice(0, MAX_OPT_CHARS - 1) + "…" : l2;
+        mobileSelect.appendChild(opt2);
+
+        children.forEach((h3) => {
+          const opt3 = document.createElement("option");
+          opt3.value       = h3.id;
+          const l3         = h3.textContent.trim();
+          const t          = l3.length > MAX_OPT_CHARS - 2 ? l3.slice(0, MAX_OPT_CHARS - 3) + "…" : l3;
+          opt3.textContent = "— " + t;
+          mobileSelect.appendChild(opt3);
+        });
+      }
+    });
+
+    // Arrow toggle — event delegation on navWrap
+    if (navWrap) {
+      navWrap.addEventListener("click", (e) => {
+        const btn = e.target.closest(".toc-arrow-btn");
+        if (!btn) return;
+        e.stopPropagation();
+        toggleGroup(btn.dataset.group, navWrap);
+      });
+    }
+  }
+
+  function toggleGroup(groupId, navWrap, forceOpen) {
+    const childWrap = navWrap.querySelector("[data-parent-group='" + groupId + "']");
+    const btn       = navWrap.querySelector("[data-group='" + groupId + "']");
+    if (!childWrap || !btn) return;
+
+    const isOpen = forceOpen !== undefined ? !forceOpen : btn.getAttribute("aria-expanded") === "true";
+
+    if (isOpen) {
+      // collapse
+      childWrap.style.maxHeight = "0";
+      btn.setAttribute("aria-expanded", "false");
+      btn.innerHTML = arrowSVG(false);
+    } else {
+      // expand
+      childWrap.style.maxHeight = childWrap.scrollHeight + "px";
+      btn.setAttribute("aria-expanded", "true");
+      btn.innerHTML = arrowSVG(true);
+    }
+  }
+
+  /* ── ARROW SVG ── */
+  function arrowSVG(open) {
+    return '<svg style="transform:' + (open ? "rotate(180deg)" : "rotate(0deg)") + ';transition:transform 0.25s ease;" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+  }
+
+  /* ── CUSTOM SELECT ARROW ── */
+  function injectSelectArrow(select) {
+    const chevron = encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23076AAB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>'
+    );
+    select.style.appearance         = "none";
+    select.style.webkitAppearance   = "none";
+    select.style.backgroundImage    = 'url("data:image/svg+xml,' + chevron + '")';
+    select.style.backgroundRepeat   = "no-repeat";
+    select.style.backgroundPosition = "right 12px center";
+    select.style.backgroundSize     = "15px 15px";
+    select.style.paddingRight       = "36px";
+    select.style.maxWidth           = "100%";
+    select.style.width              = "100%";
+    select.style.boxSizing          = "border-box";
+    select.style.fontSize           = "13px";
+  }
+
+  /* ── PROGRESS BAR ── */
+  function initProgressBar(contentWrap, progressBar) {
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+    gsap.to(progressBar, {
+      width: "100%", ease: "none",
+      scrollTrigger: { trigger: contentWrap, start: "top top", end: "bottom 40%", scrub: true },
+    });
+  }
+
+  /* ── SCROLLSPY ── */
+  function initScrollSpy(headings, navWrap, mobileSelect) {
+    if (typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id, navWrap, mobileSelect);
+        });
+      },
+      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+    );
+    headings.forEach((h) => observer.observe(h));
+  }
+
+  function setActive(id, navWrap, mobileSelect) {
+    if (navWrap) {
+      navWrap.querySelectorAll(".toc-link").forEach((link) => {
+        const isActive = link.dataset.tocId === id;
+        link.classList.toggle(ACTIVE_CLASS, isActive);
+        link.style.color = isActive ? ACTIVE_COLOR : (link.dataset.level === "3" ? H3_COLOR : H2_COLOR);
+      });
+
+      // Auto-open parent group when an h3 scrolls into view
+      const activeLink = navWrap.querySelector(".toc-link[data-toc-id='" + id + "']");
+      if (activeLink && activeLink.dataset.level === "3") {
+        const childWrap = activeLink.closest("[data-parent-group]");
+        if (childWrap) {
+          const groupId = childWrap.dataset.parentGroup;
+          const btn = navWrap.querySelector("[data-group='" + groupId + "']");
+          if (btn && btn.getAttribute("aria-expanded") !== "true") {
+            toggleGroup(groupId, navWrap, false); // force open
+          }
+        }
+      }
+    }
+    if (mobileSelect) mobileSelect.value = id;
+  }
+
+  /* ── SCROLL TO ── */
+  function scrollToSection(id) {
+    const target = document.getElementById(id);
+    if (!target) return;
+    if (typeof lenis !== "undefined" && lenis) {
+      lenis.scrollTo(target, { offset: OFFSET, duration: SCROLL_DURATION, easing: (t) => 1 - Math.pow(1 - t, 3) });
+    } else {
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY + OFFSET, behavior: "smooth" });
+    }
+  }
+
+  /* ── CLICK + CHANGE ── */
+function bindNavClicks(navWrap) {
+    navWrap.addEventListener("click", (e) => {
+      const link = e.target.closest(".toc-link");
+      if (!link) return;
+      e.preventDefault();
+
+      // h2 link click করলে — যদি children থাকে তাহলে toggle করো
+      if (link.dataset.level === "2") {
+        const groupId   = link.dataset.tocId;
+        const childWrap = navWrap.querySelector("[data-parent-group='" + groupId + "']");
+        if (childWrap) {
+          // children আছে — toggle group, scroll করো না
+          toggleGroup(groupId, navWrap);
+          return;
+        }
+      }
+
+      // h3 link বা children নেই এমন h2 — scroll করো
+      scrollToSection(link.dataset.tocId);
+    });
+  }
+
+  function bindSelectChange(mobileSelect) {
+    mobileSelect.addEventListener("change", () => scrollToSection(mobileSelect.value));
+  }
+
+  /* ── BOOT ── */
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
