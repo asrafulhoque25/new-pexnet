@@ -31,21 +31,52 @@ ScrollTrigger.scrollerProxy(document.body, {
   pinType: document.body.style.transform ? 'transform' : 'fixed',
 });
 
-
 // ============================================
 // NAV LERP SYSTEM
 // ============================================
+const mainNav = document.getElementById('mainNav');
+
+if (mainNav) {
+  const navInner      = mainNav.querySelector('.nav-inner');
+  const NAV_H_DESKTOP = { max: 92, min: 58 };
+  const NAV_H_MOBILE  = { max: 56, min: 44 };
+  const isMobileNav   = () => window.innerWidth < 768;
+
+  let currentH = isMobileNav() ? NAV_H_MOBILE.max : NAV_H_DESKTOP.max;
+  let targetH  = currentH;
+
+  mainNav.style.background = 'rgba(0, 36, 59, 1)';
+
+  function lerpNav(a, b, t) { return a + (b - a) * t; }
+
+  (function navTick() {
+    currentH = lerpNav(currentH, targetH, 0.08);
+    if (navInner) navInner.style.height = currentH.toFixed(2) + 'px';
+    requestAnimationFrame(navTick);
+  })();
+
+  lenis.on('scroll', ({ scroll }) => {
+    const h = isMobileNav() ? NAV_H_MOBILE : NAV_H_DESKTOP;
+    targetH = scroll < 80 ? h.max : h.min;
+  });
+
+  window.addEventListener('resize', () => {
+    currentH = isMobileNav() ? NAV_H_MOBILE.max : NAV_H_DESKTOP.max;
+    targetH  = currentH;
+  });
+}
+
 // ============================================
-// MOBILE MENU — NEW PANEL SYSTEM
+// MOBILE MENU — PANEL SYSTEM
 // ============================================
-const hamburger   = document.getElementById('hamburger');
-const mobileMenu  = document.getElementById('mobileMenu');
-const mobMain     = document.getElementById('mobMain');
-const mobServices = document.getElementById('mobServices');
-const mobClose    = document.getElementById('mobClose');
-const mobBack     = document.getElementById('mobBack');
+const hamburger      = document.getElementById('hamburger');
+const mobileMenu     = document.getElementById('mobileMenu');
+const mobMain        = document.getElementById('mobMain');
+const mobServices    = document.getElementById('mobServices');
+const mobClose       = document.getElementById('mobClose');
+const mobBack        = document.getElementById('mobBack');
 const mobServicesBtn = document.getElementById('mobServicesBtn');
-const blurOverlay = document.getElementById('navBlurOverlay');
+const blurOverlay    = document.getElementById('navBlurOverlay');
 
 function openMobileMenu() {
   mobileMenu.classList.add('open');
@@ -73,12 +104,10 @@ if (mobClose) {
   mobClose.addEventListener('click', closeMobileMenu);
 }
 
-// Close buttons on sub panel
 document.querySelectorAll('.mob-close-sub').forEach(btn => {
   btn.addEventListener('click', closeMobileMenu);
 });
 
-// Services → sub panel
 if (mobServicesBtn) {
   mobServicesBtn.addEventListener('click', () => {
     mobMain.classList.remove('active');
@@ -86,7 +115,6 @@ if (mobServicesBtn) {
   });
 }
 
-// Back button
 if (mobBack) {
   mobBack.addEventListener('click', () => {
     mobServices.classList.remove('active');
@@ -107,6 +135,38 @@ dropdownItems.forEach(item => {
     blurOverlay.classList.remove('active');
   });
 });
+
+
+
+
+// ============================================
+// ACTIVE NAV LINK — CURRENT PAGE DETECTION
+// ============================================
+(function () {
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+  // Desktop nav
+  document.querySelectorAll('.nav-menu > li > a').forEach(link => {
+    link.classList.remove('active');
+    const linkPath = link.getAttribute('href').split('/').pop();
+    if (linkPath === currentPath) {
+      link.classList.add('active');
+    }
+  });
+
+  // Mobile nav
+  document.querySelectorAll('.mob-nav-list > li').forEach(item => {
+    item.classList.remove('mob-active');
+    const link = item.querySelector('a');
+    if (link) {
+      const linkPath = link.getAttribute('href').split('/').pop();
+      if (linkPath === currentPath) {
+        item.classList.add('mob-active');
+      }
+    }
+  });
+})();
+
 
 // ============================================
 // BANNER 
@@ -1656,63 +1716,85 @@ document.addEventListener("DOMContentLoaded", initProvenCardAnimation);
 // ============================================
 // TEAM FILTER & SCROLL SPY
 // ============================================
+// ============================================
+// TEAM FILTER & SCROLL SPY
+// ============================================
 (function () {
   const aside      = document.querySelector('.allteams');
   const filterBtns = document.querySelectorAll('.filter-btn');
   const sections   = document.querySelectorAll('.team-section');
 
-  // Page has no team filter — exit silently
-  if (!aside && !filterBtns.length && !sections.length) return;
+  // allteams aside না থাকলে exit — career page এ চলবে না
+  if (!aside) return;
 
   let isClicking   = false;
   let clickTimeout = null;
 
-  // ── Mobile select ──────────────────────────
+  // ── Mobile select inject ──────────────────
+  const selectWrapper = document.createElement('div');
+  selectWrapper.className = 'career-mob-select-wrap';
+
   const mobileSelect = document.createElement('select');
-  mobileSelect.className = 'team-mobile-select';
-  mobileSelect.innerHTML = `
-    <option value="all">All</option>
-    <option value="featured">Featured Leadership</option>
-    <option value="seo-strategy">SEO Strategy Team</option>
-    <option value="content">Content Team</option>
-    <option value="design-dev">Design & Development Team</option>
-    <option value="social-ppc">Social Media & PPC Team</option>
-  `;
+  mobileSelect.className = 'career-mob-select';
 
-  if (aside) {
-    aside.insertBefore(mobileSelect, aside.firstChild);
-  }
+  filterBtns.forEach(btn => {
+    const opt = document.createElement('option');
+    opt.value = btn.dataset.filter;
+    opt.textContent = btn.textContent.trim();
+    if (btn.classList.contains('active')) opt.selected = true;
+    mobileSelect.appendChild(opt);
+  });
 
-  // ── Mobile select CSS ──────────────────────
-  const mobileStyle = document.createElement('style');
-  mobileStyle.textContent = `
-    .team-mobile-select {
-      display: none;
-      width: 100%;
-      padding: 14px 20px;
-      border-radius: 9999px;
-      font-weight: 600;
-      font-size: 16px;
-      color: #076AAB;
-      background: #fff;
-      border: 1px solid #076AAB;
-      cursor: pointer;
-      outline: none;
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23076AAB' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 20px center;
-      padding-right: 48px;
+  const arrow = document.createElement('span');
+  arrow.className = 'career-mob-arrow';
+  arrow.innerHTML = `<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.995807 0H12.1758C12.3736 0.000829231 12.5667 0.0602841 12.7306 0.170847C12.8946 0.28141 13.0222 0.438116 13.0971 0.621148C13.172 0.804181 13.191 1.00532 13.1516 1.19913C13.1122 1.39295 13.0162 1.57073 12.8758 1.71L7.29581 7.29C7.20284 7.38373 7.09224 7.45812 6.97038 7.50889C6.84853 7.55966 6.71782 7.5858 6.58581 7.5858C6.4538 7.5858 6.32309 7.55966 6.20123 7.50889C6.07937 7.45812 5.96877 7.38373 5.87581 7.29L0.295808 1.71C0.155386 1.57073 0.059415 1.39295 0.0200298 1.19913C-0.0193553 1.00532 -0.000386119 0.804181 0.0745395 0.621148C0.149465 0.438116 0.276982 0.28141 0.440965 0.170847C0.604949 0.0602841 0.798035 0.000829231 0.995807 0Z" fill="#076AAB"/></svg>`;
+
+  selectWrapper.appendChild(mobileSelect);
+  selectWrapper.appendChild(arrow);
+  aside.insertBefore(selectWrapper, aside.firstChild);
+
+  // ── CSS inject ────────────────────────────
+  if (!document.querySelector('#team-mob-style')) {
+  const style = document.createElement('style');
+  style.id = 'team-mob-style';
+  style.textContent = `
+    .career-mob-select-wrap { display: none; position: relative; width: 100%; }
+    .career-mob-select {
+      width: 100%; padding: 14px 48px 14px 20px; border-radius: 9999px;
+      font-weight: 600; font-size: 16px; color: #076AAB; background: #fff;
+      border: 1px solid #076AAB; cursor: pointer; outline: none;
+      appearance: none; -webkit-appearance: none; box-sizing: border-box;
     }
+    .career-mob-arrow {
+      position: absolute; right: 20px; top: 50%;
+      transform: translateY(-50%) rotate(0deg);
+      transition: transform 0.25s ease; pointer-events: none;
+      display: flex; align-items: center;
+    }
+    .career-mob-arrow.open { transform: translateY(-50%) rotate(180deg); }
     @media (max-width: 1023px) {
-      .team-mobile-select { display: block; }
+      .career-mob-select-wrap { display: block; }
       .filter-btn { display: none !important; }
     }
   `;
-  document.head.appendChild(mobileStyle);
+  document.head.appendChild(style);
+}
 
-  // ── Shared helpers ─────────────────────────
+  // ── Arrow toggle ──────────────────────────
+  let isOpen = false;
+  mobileSelect.addEventListener('click', () => {
+    isOpen = !isOpen;
+    arrow.classList.toggle('open', isOpen);
+  });
+  mobileSelect.addEventListener('blur', () => { isOpen = false; arrow.classList.remove('open'); });
+  mobileSelect.addEventListener('change', () => {
+    isOpen = false;
+    arrow.classList.remove('open');
+    setActiveBtn(mobileSelect.value);
+    scrollToFilter(mobileSelect.value);
+  });
+
+  // ── Shared helpers ────────────────────────
   function setActiveBtn(filter) {
     filterBtns.forEach(b => b.classList.remove('active'));
     const target = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
@@ -1742,7 +1824,7 @@ document.addEventListener("DOMContentLoaded", initProvenCardAnimation);
     window.scrollTo({ top, behavior: 'smooth' });
   }
 
-  // ── Desktop buttons ────────────────────────
+  // ── Desktop button click ──────────────────
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
@@ -1751,27 +1833,130 @@ document.addEventListener("DOMContentLoaded", initProvenCardAnimation);
     });
   });
 
-  // ── Mobile select change ───────────────────
-  mobileSelect.addEventListener('change', () => {
-    setActiveBtn(mobileSelect.value);
-    scrollToFilter(mobileSelect.value);
-  });
-
-  // ── Scroll spy ─────────────────────────────
+  // ── Scroll spy ────────────────────────────
   if (sections.length) {
     const observer = new IntersectionObserver(
       (entries) => {
         if (isClicking) return;
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActiveBtn(entry.target.dataset.category);
-          }
+          if (entry.isIntersecting) setActiveBtn(entry.target.dataset.category);
         });
       },
       { rootMargin: '-20% 0px -70% 0px', threshold: 0 }
     );
     sections.forEach(s => observer.observe(s));
   }
+
+})();
+
+
+
+
+// ============================================
+// CAREER FILTER
+// ============================================
+(function () {
+  const careerAside = document.querySelector('.career-cards-wrapper')
+    ?.closest('section')
+    ?.querySelector('aside');
+
+  if (!careerAside) return;
+
+  const filterBtns = careerAside.querySelectorAll('.filter-btn');
+  if (!filterBtns.length) return;
+
+  // ── Mobile select inject ──────────────────
+  const selectWrapper = document.createElement('div');
+  selectWrapper.className = 'career-mob-select-wrap';
+
+  const mobileSelect = document.createElement('select');
+  mobileSelect.className = 'career-mob-select';
+
+  filterBtns.forEach(btn => {
+    const opt = document.createElement('option');
+    opt.value = btn.dataset.filter;
+    opt.textContent = btn.textContent.trim();
+    if (btn.classList.contains('active')) opt.selected = true;
+    mobileSelect.appendChild(opt);
+  });
+
+  const arrow = document.createElement('span');
+  arrow.className = 'career-mob-arrow';
+  arrow.innerHTML = `<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.995807 0H12.1758C12.3736 0.000829231 12.5667 0.0602841 12.7306 0.170847C12.8946 0.28141 13.0222 0.438116 13.0971 0.621148C13.172 0.804181 13.191 1.00532 13.1516 1.19913C13.1122 1.39295 13.0162 1.57073 12.8758 1.71L7.29581 7.29C7.20284 7.38373 7.09224 7.45812 6.97038 7.50889C6.84853 7.55966 6.71782 7.5858 6.58581 7.5858C6.4538 7.5858 6.32309 7.55966 6.20123 7.50889C6.07937 7.45812 5.96877 7.38373 5.87581 7.29L0.295808 1.71C0.155386 1.57073 0.059415 1.39295 0.0200298 1.19913C-0.0193553 1.00532 -0.000386119 0.804181 0.0745395 0.621148C0.149465 0.438116 0.276982 0.28141 0.440965 0.170847C0.604949 0.0602841 0.798035 0.000829231 0.995807 0Z" fill="#076AAB"/></svg>`;
+
+  selectWrapper.appendChild(mobileSelect);
+  selectWrapper.appendChild(arrow);
+  careerAside.insertBefore(selectWrapper, careerAside.firstChild);
+
+  // ── CSS inject (একবারই) ───────────────────
+  if (!document.querySelector('#career-mob-style')) {
+    const style = document.createElement('style');
+    style.id = 'career-mob-style';
+    style.textContent = `
+      .career-mob-select-wrap { display: none; position: relative; width: 100%; }
+      .career-mob-select {
+        width: 100%; padding: 14px 48px 14px 20px; border-radius: 9999px;
+        font-weight: 600; font-size: 16px; color: #076AAB; background: #fff;
+        border: 1px solid #076AAB; cursor: pointer; outline: none;
+        appearance: none; -webkit-appearance: none; box-sizing: border-box;
+      }
+      .career-mob-arrow {
+        position: absolute; right: 20px; top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        transition: transform 0.25s ease; pointer-events: none;
+        display: flex; align-items: center;
+      }
+      .career-mob-arrow.open { transform: translateY(-50%) rotate(180deg); }
+      @media (max-width: 1023px) {
+        .career-mob-select-wrap { display: block; }
+        .filter-btn { display: none !important; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  // ── Arrow toggle ──────────────────────────
+  let isOpen = false;
+  mobileSelect.addEventListener('click', () => {
+    isOpen = !isOpen;
+    arrow.classList.toggle('open', isOpen);
+  });
+  mobileSelect.addEventListener('blur', () => { isOpen = false; arrow.classList.remove('open'); });
+  mobileSelect.addEventListener('change', () => {
+    isOpen = false;
+    arrow.classList.remove('open');
+    setActiveBtn(mobileSelect.value);
+    applyFilter(mobileSelect.value);
+  });
+
+  // ── Helpers ───────────────────────────────
+  function setActiveBtn(filter) {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    const target = careerAside.querySelector(`.filter-btn[data-filter="${filter}"]`);
+    if (target) target.classList.add('active');
+    mobileSelect.value = filter;
+  }
+
+  function applyFilter(filter) {
+    const cards = document.querySelectorAll('.career-cards-wrapper > div');
+    cards.forEach(card => {
+      if (filter === 'all') {
+        card.style.display = '';
+      } else {
+        card.style.display = card.dataset.category === filter ? '' : 'none';
+      }
+    });
+  }
+
+  // ── Desktop button click ──────────────────
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      setActiveBtn(filter);
+      applyFilter(filter);
+    });
+  });
+
 })();
 
 // Career details page
@@ -2137,4 +2322,191 @@ function bindNavClicks(navWrap) {
   } else {
     init();
   }
+})();
+
+
+
+
+
+
+
+
+
+
+// ============================================
+// SERVICE CARD ICON ANIMATION
+// ============================================
+(function () {
+  const cards = document.querySelectorAll('.servicecommon-item');
+  if (!cards.length) return;
+
+  // CSS inject
+  const style = document.createElement('style');
+  style.textContent = `
+    .comon-service-box-icon {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      will-change: transform;
+    }
+
+    .comon-service-box-icon img {
+      display: block;
+      transition: transform 0.15s ease;
+      will-change: transform;
+    }
+
+    /* Ripple ring */
+    .svc-icon-ring {
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(42, 143, 210, 0);
+      pointer-events: none;
+      transform: scale(0.6);
+      transition: none;
+    }
+
+    /* Glow dot */
+    .svc-icon-glow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(42,143,210,0.25) 0%, transparent 70%);
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.5);
+      transition: none;
+    }
+  `;
+  document.head.appendChild(style);
+
+  cards.forEach(card => {
+    const iconWrap = card.querySelector('.comon-service-box-icon');
+    const img      = iconWrap?.querySelector('img');
+    if (!iconWrap || !img) return;
+
+    // Inject ring + glow
+    const ring = document.createElement('span');
+    ring.className = 'svc-icon-ring';
+    const glow = document.createElement('span');
+    glow.className = 'svc-icon-glow';
+    iconWrap.appendChild(ring);
+    iconWrap.appendChild(glow);
+
+    // State
+    let rafId  = null;
+    let mouseX = 0, mouseY = 0;
+    let curX   = 0, curY   = 0;
+    let inside = false;
+
+    // Initial clipPath reveal on scroll
+    gsap.set(img, { clipPath: 'inset(0 100% 0 0 round 8px)', opacity: 0 });
+
+    ScrollTrigger.create({
+      trigger: card,
+      start: 'top 88%',
+      once: true,
+      onEnter: () => {
+        gsap.to(img, {
+          clipPath: 'inset(0 0% 0 0 round 8px)',
+          opacity: 1,
+          duration: 0.7,
+          ease: 'power3.inOut',
+          onComplete: () => {
+            gsap.set(img, { clearProps: 'clipPath,opacity' });
+          }
+        });
+
+        // Ring burst on reveal
+        gsap.fromTo(ring,
+          { scale: 0.6, opacity: 0, borderColor: 'rgba(42,143,210,0.8)' },
+          { scale: 1.6, opacity: 0, borderColor: 'rgba(42,143,210,0)', duration: 0.8, ease: 'power2.out' }
+        );
+      }
+    });
+
+    // Lerp tick
+ function tick() {
+  if (!inside) return;
+  curX += (mouseX - curX) * 0.08;
+  curY += (mouseY - curY) * 0.08;
+
+  const rect = iconWrap.getBoundingClientRect();
+  const cx   = rect.width  / 2;
+  const cy   = rect.height / 2;
+  const dx   = curX - cx;
+  const dy   = curY - cy;
+  const maxR = Math.max(rect.width, rect.height) * 0.7;
+  const pull = Math.max(0, 1 - Math.sqrt(dx * dx + dy * dy) / maxR);
+
+  const moveX = (dx / maxR) * 6 * pull;
+  const moveY = (dy / maxR) * 6 * pull;
+
+  gsap.set(img, {
+    x: moveX,
+    y: moveY,
+    scale: 1 + pull * 0.08,
+    transformOrigin: 'center center',
+  });
+
+  rafId = requestAnimationFrame(tick);
+}
+
+    card.addEventListener('mousemove', e => {
+      const rect = iconWrap.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+
+
+if (!inside) {
+  inside = true;
+  curX = mouseX;
+  curY = mouseY;
+  rafId = requestAnimationFrame(tick);
+
+  // Glow in
+  gsap.to(glow, { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.out' });
+
+  // Smooth bounce — iconWrap এ
+  gsap.killTweensOf(iconWrap);
+  gsap.timeline()
+    .to(iconWrap, { y: -10, duration: 0.25, ease: 'power2.out' })
+    .to(iconWrap, { y: 2,   duration: 0.2,  ease: 'power1.inOut' })
+    .to(iconWrap, { y: -4,  duration: 0.15, ease: 'power1.inOut' })
+    .to(iconWrap, { y: 0,   duration: 0.4,  ease: 'power2.out' });
+
+  // Ring — force visible
+  gsap.set(ring, { scale: 0.8, opacity: 1, borderColor: 'rgba(42,143,210,0.9)', borderWidth: '2px' });
+  gsap.to(ring, {
+    scale: 1.6,
+    opacity: 0,
+    duration: 1.8,
+    ease: 'power1.out',
+    borderColor: 'rgba(42,143,210,0)',
+  });
+}
+    });
+
+card.addEventListener('mouseleave', () => {
+  inside = false;
+  cancelAnimationFrame(rafId);
+
+  gsap.killTweensOf(iconWrap); 
+  gsap.to(iconWrap, { y: 0, duration: 0.3, ease: 'power2.out' }); 
+
+  gsap.to(img, {
+    x: 0, y: 0,
+    rotateX: 0, rotateY: 0,
+    scale: 1,
+    duration: 0.6,
+    ease: 'elastic.out(1, 0.55)',
+  });
+
+  gsap.to(glow, { opacity: 0, scale: 0.5, duration: 0.4, ease: 'power2.in' });
+});
+  });
 })();
