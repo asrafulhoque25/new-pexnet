@@ -35,62 +35,78 @@ ScrollTrigger.scrollerProxy(document.body, {
 // ============================================
 // NAV LERP SYSTEM
 // ============================================
-const mainNav = document.getElementById('mainNav');
+// ============================================
+// MOBILE MENU — NEW PANEL SYSTEM
+// ============================================
+const hamburger   = document.getElementById('hamburger');
+const mobileMenu  = document.getElementById('mobileMenu');
+const mobMain     = document.getElementById('mobMain');
+const mobServices = document.getElementById('mobServices');
+const mobClose    = document.getElementById('mobClose');
+const mobBack     = document.getElementById('mobBack');
+const mobServicesBtn = document.getElementById('mobServicesBtn');
+const blurOverlay = document.getElementById('navBlurOverlay');
 
-if (mainNav) {
-  const navInner    = mainNav.querySelector('.nav-inner');
-  const NAV_H_DESKTOP = { max: 92, min: 58 };
-  const NAV_H_MOBILE  = { max: 56, min: 44 };
-  const isMobileNav   = () => window.innerWidth < 768;
-
-  let currentH = isMobileNav() ? NAV_H_MOBILE.max : NAV_H_DESKTOP.max;
-  let targetH  = currentH;
-
-  mainNav.style.background = 'rgba(0, 36, 59, 1)';
-
-  function lerpNav(a, b, t) { return a + (b - a) * t; }
-
-  (function navTick() {
-    currentH = lerpNav(currentH, targetH, 0.08);
-    if (navInner) navInner.style.height = currentH.toFixed(2) + 'px';
-    requestAnimationFrame(navTick);
-  })();
-
-  lenis.on('scroll', ({ scroll }) => {
-    const h = isMobileNav() ? NAV_H_MOBILE : NAV_H_DESKTOP;
-    targetH = scroll < 80 ? h.max : h.min;
-  });
-
-  window.addEventListener('resize', () => {
-    currentH = isMobileNav() ? NAV_H_MOBILE.max : NAV_H_DESKTOP.max;
-    targetH  = currentH;
-  });
+function openMobileMenu() {
+  mobileMenu.classList.add('open');
+  mobMain.classList.add('active');
+  mobServices.classList.remove('active');
+  hamburger.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  mobMain.classList.remove('active');
+  mobServices.classList.remove('active');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+}
 
-// ============================================
-// MOBILE MENU & NAVBAR
-// ============================================
-const hamburger             = document.getElementById('hamburger');
-const mobileMenu            = document.getElementById('mobileMenu');
-const mobileServicesBtn     = document.getElementById('mobileServicesBtn');
-const mobileServicesSubmenu = document.getElementById('mobileServicesSubmenu');
-
-if (hamburger && mobileMenu) {
+if (hamburger) {
   hamburger.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
   });
 }
 
-if (mobileServicesBtn && mobileServicesSubmenu) {
-  mobileServicesBtn.addEventListener('click', () => {
-    const isOpen = mobileServicesSubmenu.classList.toggle('open');
-    mobileServicesBtn.classList.toggle('open', isOpen);
+if (mobClose) {
+  mobClose.addEventListener('click', closeMobileMenu);
+}
+
+// Close buttons on sub panel
+document.querySelectorAll('.mob-close-sub').forEach(btn => {
+  btn.addEventListener('click', closeMobileMenu);
+});
+
+// Services → sub panel
+if (mobServicesBtn) {
+  mobServicesBtn.addEventListener('click', () => {
+    mobMain.classList.remove('active');
+    mobServices.classList.add('active');
   });
 }
 
+// Back button
+if (mobBack) {
+  mobBack.addEventListener('click', () => {
+    mobServices.classList.remove('active');
+    mobMain.classList.add('active');
+  });
+}
+
+// ============================================
+// DESKTOP DROPDOWN — BLUR OVERLAY
+// ============================================
+const dropdownItems = document.querySelectorAll('.nav-menu > li.has-dropdown');
+
+dropdownItems.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    blurOverlay.classList.add('active');
+  });
+  item.addEventListener('mouseleave', () => {
+    blurOverlay.classList.remove('active');
+  });
+});
 
 // ============================================
 // BANNER 
@@ -2010,7 +2026,7 @@ function injectSelectArrow(select) {
 
   wrapper.appendChild(arrow);
 
-  // ── Desktop এর মতো toggle state ──
+
   let isOpen = false;
 
   function setArrow(open) {
