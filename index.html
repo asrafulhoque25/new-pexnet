@@ -2902,10 +2902,12 @@
 
 
 
-    <!-- footer section start -->
 
-    <footer class="bg-[radial-gradient(50%_50.08%_at_50%_50.08%,_#076AAB_0%,_#00243B_100%)] border-t border-t-white/12 ">
-        <div class="container">
+    <!-- footer section start -->
+ <!-- <footer class="bg-[radial-gradient(50%_50.08%_at_50%_50.08%,_#076AAB_0%,_#00243B_100%)] border-t border-t-white/12 "> -->
+    <footer class="bg-[#00243B] border-t border-t-white/12 footer-animated" id="animatedFooter">
+         <div class="footer-gradient-bg" id="footerGradientBg"></div>
+        <div class="container" style="position: relative; z-index: 1;">
             <div class="grid grid-cols-1 lg:grid-cols-4">
                 <div class=" lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-l border-l-white/8 border-r border-r-white/8">
 
@@ -3053,22 +3055,27 @@
                 </div>
             </div>
         </div>
-        <div class="border-t border-t-white/12 py-8 ">
+        <div class="border-t border-t-white/12 py-8 footer-bottom">
             <div class="container">
                 <div class="grid md:grid-cols-4 grid-cols-1 justify-center items-center md:text-start text-center gap-4 w-full">
                     <p class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">© 2026 Pexnet</p>
                     <div class="col-span-2 grid grid-cols-2">
-                    <a href="#" class="sm:px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">Terms and Conditions</a>
-                    <a href="#" class="sm:px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">Privacy Policy</a>
+                    <div class="inline-block footer-bottom-link sm:px-8">
+                        <a href="#" class=" text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200 inline-block">Terms and Conditions</a>
                     </div>
-                    <a href="mailto:info@pexnet.com" class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">© 2026 Pexnet</a>
+                    <div class="inline-block footer-bottom-link sm:px-8">
+                        <a href="#" class=" text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200 inline-block">Privacy Policy</a>
+                    </div>
+                    </div>
+                   <div class="inline-block footer-bottom-link px-8">
+                     <a href="mailto:info@pexnet.com" class=" text-[#D4EEFF] text-sm hover:text-white transition-colors inline-block duration-200">info@pexnet.com</a>
+                   </div>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- footer section end -->
-
 
 
 
