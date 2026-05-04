@@ -117,20 +117,16 @@
             </div>
         </div>
  
-        <!--
-            Mobile select — lg এ hidden
-            ⚠️ padding-right Tailwind দিয়ে দিও না —
-               JS (injectSelectArrow) নিজেই arrow + padding-right inject করে
-        -->
+    
         <div class="block lg:hidden">
             <select data-toc-select
                 class="w-full rounded-xl border border-[#C3E0F3] bg-white text-[#526E80] font-bold text-[15px] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#076AAB] cursor-pointer">
             </select>
         </div>
  
-        <!-- Desktop nav — JS auto-populates -->
+     
         <nav data-toc-nav class="hidden lg:block text-sm font-medium bg-white">
-            <!-- h2 links + indented h3 links injected by toc-scrollspy.js -->
+          
         </nav>
  
     </div>
@@ -244,7 +240,7 @@
             <!-- Right Column: Sidebar -->
             <div class="w-full lg:w-1/4 shrink-0  ">
                 <div class="sticky top-24 space-y-6">
-                     <div class="bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-3xl p-6">
+                     <div class="bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] sm:rounded-3xl rounded-2xl md:p-6 sm:p-5 p-4">
                     <div class="mb-3 flex justify-center">
                        <img src="assets/images/company-logos.svg" class="img-fluid" alt="company-logo">
                     </div>
@@ -378,6 +374,54 @@
         </div>
     </section>
     <!-- ===== RELATED OPPORTUNITIES End ===== -->
+
+
+
+        <!-- cta section end -->
+     <section class="cta section-padding bg-[#00243B]">
+        <div class="container">
+                <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                    <h2
+                        class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#fff]">
+                     We’re All Ears!
+                    </h2>
+                    <p class="text-base leading-[150%] text-[#D4EEFF] max-w-184 w-full mx-auto">A simple, open conversation can create new doorways to your professional and business success. Don’t hesitate. Take the first step right now.</p>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:mt-8 mt-6">
+                        <a href="contact.html"
+                            class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] sm:h-13 h-[44px] px-5 group duration-500 ease-in-out">
+                            <span class="cta-arrow">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Get a Free SEO Audit</span>
+                                <span>Get a Free SEO Audit</span>
+                            </span>
+                        </a>
+                        <a href="contact.html"
+                            class="common-cta bg-[#88D1FF] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px]">
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Get a Free SEO Audit</span>
+                                <span>Get a Free SEO Audit</span>
+                            </span>
+                        </a>
+                    </div>
+        </div>
+     </section>
+    <!-- cta section end -->
 
 
     <!-- ===== FOOTER ===== -->

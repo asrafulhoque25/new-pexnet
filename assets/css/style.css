@@ -230,6 +230,9 @@
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
+  .top-10 {
+    top: calc(var(--spacing) * 10);
+  }
   .top-11 {
     top: calc(var(--spacing) * 11);
   }
@@ -350,6 +353,9 @@
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);
   }
@@ -373,6 +379,9 @@
   }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
   }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
@@ -427,9 +436,6 @@
   }
   .hidden {
     display: none;
-  }
-  .inline {
-    display: inline;
   }
   .inline-block {
     display: inline-block;
@@ -493,6 +499,9 @@
   }
   .h-\[46px\] {
     height: 46px;
+  }
+  .h-\[52px\] {
+    height: 52px;
   }
   .h-\[56px\] {
     height: 56px;
@@ -653,6 +662,9 @@
   .max-w-\[502px\] {
     max-width: 502px;
   }
+  .max-w-\[735px\] {
+    max-width: 735px;
+  }
   .max-w-\[736px\] {
     max-width: 736px;
   }
@@ -667,6 +679,9 @@
   }
   .max-w-\[1530px\] {
     max-width: 1530px;
+  }
+  .max-w-full {
+    max-width: 100%;
   }
   .min-w-0 {
     min-width: calc(var(--spacing) * 0);
@@ -756,6 +771,9 @@
   .justify-start {
     justify-content: flex-start;
   }
+  .justify-items-center {
+    justify-items: center;
+  }
   .gap-0 {
     gap: calc(var(--spacing) * 0);
   }
@@ -794,6 +812,13 @@
   }
   .gap-\[44px\] {
     gap: 44px;
+  }
+  .space-y-0 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 0) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-y-reverse)));
+    }
   }
   .space-y-1 {
     :where(& > :not(:last-child)) {
@@ -851,6 +876,13 @@
       margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
+  .space-y-12 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
   .gap-x-0 {
     column-gap: calc(var(--spacing) * 0);
   }
@@ -868,11 +900,6 @@
   }
   .self-start {
     align-self: flex-start;
-  }
-  .truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
   .overflow-hidden {
     overflow: hidden;
@@ -1199,9 +1226,6 @@
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
-  }
-  .p-6 {
-    padding: calc(var(--spacing) * 6);
   }
   .p-8 {
     padding: calc(var(--spacing) * 8);
@@ -1553,6 +1577,10 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
+  .blur {
+    --tw-blur: blur(8px);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
@@ -1663,6 +1691,11 @@
       color: #92B9D2;
     }
   }
+  .placeholder\:text-\[\#526E80\] {
+    &::placeholder {
+      color: #526E80;
+    }
+  }
   .focus-within\:ring-1 {
     &:focus-within {
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
@@ -1740,6 +1773,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-primary);
+      }
+    }
+  }
+  .hover\:text-\[\#002F4D\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #002F4D;
       }
     }
   }
@@ -2039,6 +2079,15 @@
       }
     }
   }
+  .sm\:space-y-8 {
+    @media (width >= 40rem) {
+      :where(& > :not(:last-child)) {
+        --tw-space-y-reverse: 0;
+        margin-block-start: calc(calc(var(--spacing) * 8) * var(--tw-space-y-reverse));
+        margin-block-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-y-reverse)));
+      }
+    }
+  }
   .sm\:space-y-\[16px\] {
     @media (width >= 40rem) {
       :where(& > :not(:last-child)) {
@@ -2061,6 +2110,11 @@
   .sm\:rounded-3xl {
     @media (width >= 40rem) {
       border-radius: var(--radius-3xl);
+    }
+  }
+  .sm\:rounded-4xl {
+    @media (width >= 40rem) {
+      border-radius: var(--radius-4xl);
     }
   }
   .sm\:rounded-full {
@@ -2303,6 +2357,11 @@
       top: calc(var(--spacing) * 20);
     }
   }
+  .md\:top-24 {
+    @media (width >= 48rem) {
+      top: calc(var(--spacing) * 24);
+    }
+  }
   .md\:top-30 {
     @media (width >= 48rem) {
       top: calc(var(--spacing) * 30);
@@ -2346,6 +2405,11 @@
   .md\:mb-0 {
     @media (width >= 48rem) {
       margin-bottom: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:mb-3 {
+    @media (width >= 48rem) {
+      margin-bottom: calc(var(--spacing) * 3);
     }
   }
   .md\:mb-4 {
@@ -2535,6 +2599,15 @@
       }
     }
   }
+  .md\:space-y-12 {
+    @media (width >= 48rem) {
+      :where(& > :not(:last-child)) {
+        --tw-space-y-reverse: 0;
+        margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
+        margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
+      }
+    }
+  }
   .md\:gap-y-0 {
     @media (width >= 48rem) {
       row-gap: calc(var(--spacing) * 0);
@@ -2564,6 +2637,11 @@
   .md\:border-b-transparent {
     @media (width >= 48rem) {
       border-bottom-color: transparent;
+    }
+  }
+  .md\:p-0 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 0);
     }
   }
   .md\:p-5 {
@@ -2802,6 +2880,11 @@
       width: 96px;
     }
   }
+  .lg\:max-w-\[480px\] {
+    @media (width >= 64rem) {
+      max-width: 480px;
+    }
+  }
   .lg\:grid-cols-2 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2946,9 +3029,19 @@
       }
     }
   }
+  .lg\:p-0 {
+    @media (width >= 64rem) {
+      padding: calc(var(--spacing) * 0);
+    }
+  }
   .lg\:p-8 {
     @media (width >= 64rem) {
       padding: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:p-12 {
+    @media (width >= 64rem) {
+      padding: calc(var(--spacing) * 12);
     }
   }
   .lg\:px-4 {
@@ -3036,6 +3129,16 @@
   .xl\:grid-cols-5 {
     @media (width >= 80rem) {
       grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+  .\[\@media\(min-width\:1024px\)\]\:grid-cols-\[480px_1fr\] {
+    @media (min-width:1024px) {
+      grid-template-columns: 480px 1fr;
+    }
+  }
+  .\[\@media\(min-width\:992px\)\]\:justify-items-start {
+    @media (min-width:992px) {
+      justify-items: start;
     }
   }
 }
@@ -4135,6 +4238,9 @@ section.about-banner {
   line-height: 150%;
   margin-bottom: 16px;
 }
+.case-study-details a {
+  color: #076AAB !important;
+}
 .case-study-details img {
   border-radius: 24px;
   margin-top: 10px;
@@ -4150,10 +4256,16 @@ section.about-banner {
   margin-bottom: 16px;
 }
 .case-study-details ul li {
-  display: flex;
   align-items: flex-start;
   gap: 16px;
   color: #426073;
+  position: relative;
+  padding-left: 30px;
+}
+@media (max-width:767px) {
+  .case-study-details ul li {
+    padding-left: 24px;
+  }
 }
 .case-study-details ul li::before {
   content: '';
@@ -4164,7 +4276,9 @@ section.about-banner {
   background-image: url("../images/point-dark.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  margin-top: 6px;
+  top: 6px;
+  position: absolute;
+  left: 0;
 }
 .case-study-details table {
   width: 100%;
@@ -4184,6 +4298,7 @@ section.about-banner {
   text-align: left;
   padding: 14px 20px;
   border-bottom: 1px solid #C3E0F3;
+  line-height: 120%;
 }
 .case-study-details table thead tr th:not(:last-child) {
   border-right: 1px solid #C3E0F3;
@@ -4268,6 +4383,20 @@ section.about-banner {
   .case-study-details ul li {
     gap: 8px;
     font-size: 14px;
+  }
+  .case-study-details table thead tr th {
+    font-size: 14px;
+    text-align: left;
+    padding: 10px 10px;
+  }
+  .case-study-details table tbody tr td {
+    padding: 10px 10px;
+    color: #426073;
+    font-size: 14px;
+  }
+  .case-study-details ul li::before {
+    width: 10px;
+    height: 10px;
   }
 }
 @property --tw-translate-x {

@@ -1469,6 +1469,9 @@ font-weight: 400;
 line-height: 150%; 
 margin-bottom: 16px;
   }
+.case-study-details a{
+color: #076AAB !important;
+  }
 
     .case-study-details img{
         border-radius: 24px;
@@ -1491,10 +1494,17 @@ margin-bottom: 16px;
     margin-bottom: 16px;
   }
   .case-study-details ul li {
-    display: flex;
     align-items: flex-start;
     gap: 16px;
      color: #426073;
+     position:relative;
+     padding-left: 30px;
+}
+
+@media (max-width:767px) {
+   .case-study-details ul li {
+    padding-left: 24px;
+   }
 }
 
 .case-study-details ul li::before {
@@ -1506,7 +1516,10 @@ margin-bottom: 16px;
     background-image: url("../images/point-dark.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    margin-top: 6px;
+    top: 6px;
+    position: absolute;
+    left: 0;
+
    
 }
 
@@ -1532,6 +1545,7 @@ margin-bottom: 16px;
     text-align: left;
     padding: 14px 20px;
     border-bottom: 1px solid #C3E0F3;
+    line-height: 120%;
 }
 
 .case-study-details table thead tr th:not(:last-child) {
@@ -1634,5 +1648,22 @@ margin-bottom: 12px;
 .case-study-details ul li {
     gap: 8px;
     font-size: 14px;
+}
+
+.case-study-details table thead tr th {
+    font-size: 14px;
+    text-align: left;
+      padding: 10px 10px;
+}
+.case-study-details table tbody tr td {
+    padding: 10px 10px;
+    color: #426073;
+    font-size: 14px;
+}
+
+
+.case-study-details ul li::before {
+    width: 10px;
+    height: 10px;
 }
 }

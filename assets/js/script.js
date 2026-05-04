@@ -1848,8 +1848,8 @@ document.addEventListener("DOMContentLoaded", initProvenCardAnimation);
         a.style.cssText = [
           "flex:1",
           "display:block",
-          "padding-bottom:10px",
-          "padding-top:10px",
+          "padding-bottom:12px",
+          "padding-top:12px",
           "font-size:16px",
           "font-weight:700",
           "line-height:1.2",
@@ -1974,28 +1974,64 @@ document.addEventListener("DOMContentLoaded", initProvenCardAnimation);
   }
 
   /* ── ARROW SVG ── */
-  function arrowSVG(open) {
-    return '<svg style="transform:' + (open ? "rotate(180deg)" : "rotate(0deg)") + ';transition:transform 0.25s ease;" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
-  }
+function arrowSVG(open) {
+  return '<svg style="transform:' + (open ? "rotate(180deg)" : "rotate(0deg)") + ';transition:transform 0.25s ease;" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.995807 0H12.1758C12.3736 0.000829231 12.5667 0.0602841 12.7306 0.170847C12.8946 0.28141 13.0222 0.438116 13.0971 0.621148C13.172 0.804181 13.191 1.00532 13.1516 1.19913C13.1122 1.39295 13.0162 1.57073 12.8758 1.71L7.29581 7.29C7.20284 7.38373 7.09224 7.45812 6.97038 7.50889C6.84853 7.55966 6.71782 7.5858 6.58581 7.5858C6.4538 7.5858 6.32309 7.55966 6.20123 7.50889C6.07937 7.45812 5.96877 7.38373 5.87581 7.29L0.295808 1.71C0.155386 1.57073 0.059415 1.39295 0.0200298 1.19913C-0.0193553 1.00532 -0.000386119 0.804181 0.0745395 0.621148C0.149465 0.438116 0.276982 0.28141 0.440965 0.170847C0.604949 0.0602841 0.798035 0.000829231 0.995807 0Z" fill="#92B9D2"/></svg>';
+}
 
   /* ── CUSTOM SELECT ARROW ── */
-  function injectSelectArrow(select) {
-    const chevron = encodeURIComponent(
-      '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23076AAB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>'
-    );
-    select.style.appearance         = "none";
-    select.style.webkitAppearance   = "none";
-    select.style.backgroundImage    = 'url("data:image/svg+xml,' + chevron + '")';
-    select.style.backgroundRepeat   = "no-repeat";
-    select.style.backgroundPosition = "right 12px center";
-    select.style.backgroundSize     = "15px 15px";
-    select.style.paddingRight       = "36px";
-    select.style.maxWidth           = "100%";
-    select.style.width              = "100%";
-    select.style.boxSizing          = "border-box";
-    select.style.fontSize           = "13px";
+function injectSelectArrow(select) {
+  const wrapper = document.createElement("div");
+  wrapper.style.cssText = "position:relative;width:100%;";
+
+  select.parentNode.insertBefore(wrapper, select);
+  wrapper.appendChild(select);
+
+  select.style.appearance       = "none";
+  select.style.webkitAppearance = "none";
+  select.style.backgroundImage  = "none";
+  select.style.paddingRight     = "36px";
+  select.style.maxWidth         = "100%";
+  select.style.width            = "100%";
+  select.style.boxSizing        = "border-box";
+  select.style.fontSize         = "13px";
+
+  const arrow = document.createElement("span");
+  arrow.innerHTML = '<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.995807 0H12.1758C12.3736 0.000829231 12.5667 0.0602841 12.7306 0.170847C12.8946 0.28141 13.0222 0.438116 13.0971 0.621148C13.172 0.804181 13.191 1.00532 13.1516 1.19913C13.1122 1.39295 13.0162 1.57073 12.8758 1.71L7.29581 7.29C7.20284 7.38373 7.09224 7.45812 6.97038 7.50889C6.84853 7.55966 6.71782 7.5858 6.58581 7.5858C6.4538 7.5858 6.32309 7.55966 6.20123 7.50889C6.07937 7.45812 5.96877 7.38373 5.87581 7.29L0.295808 1.71C0.155386 1.57073 0.059415 1.39295 0.0200298 1.19913C-0.0193553 1.00532 -0.000386119 0.804181 0.0745395 0.621148C0.149465 0.438116 0.276982 0.28141 0.440965 0.170847C0.604949 0.0602841 0.798035 0.000829231 0.995807 0Z" fill="#92B9D2"/></svg>';
+  arrow.style.cssText = [
+    "position:absolute",
+    "right:12px",
+    "top:50%",
+    "transform:translateY(-50%) rotate(0deg)",
+    "transition:transform 0.25s ease",
+    "pointer-events:none",
+    "display:flex",
+    "align-items:center",
+  ].join(";");
+
+  wrapper.appendChild(arrow);
+
+  // ── Desktop এর মতো toggle state ──
+  let isOpen = false;
+
+  function setArrow(open) {
+    isOpen = open;
+    arrow.style.transform = open
+      ? "translateY(-50%) rotate(180deg)"
+      : "translateY(-50%) rotate(0deg)";
   }
 
+  select.addEventListener("click", () => {
+    setArrow(!isOpen);
+  });
+
+  select.addEventListener("blur", () => {
+    setArrow(false);
+  });
+
+  select.addEventListener("change", () => {
+    setArrow(false);
+  });
+}
   /* ── PROGRESS BAR ── */
   function initProgressBar(contentWrap, progressBar) {
     if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
@@ -2061,18 +2097,16 @@ function bindNavClicks(navWrap) {
       if (!link) return;
       e.preventDefault();
 
-      // h2 link click করলে — যদি children থাকে তাহলে toggle করো
       if (link.dataset.level === "2") {
         const groupId   = link.dataset.tocId;
         const childWrap = navWrap.querySelector("[data-parent-group='" + groupId + "']");
         if (childWrap) {
-          // children আছে — toggle group, scroll করো না
+          
           toggleGroup(groupId, navWrap);
           return;
         }
       }
 
-      // h3 link বা children নেই এমন h2 — scroll করো
       scrollToSection(link.dataset.tocId);
     });
   }

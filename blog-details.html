@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="mainNav" style="background: rgba(0, 36, 59, 1);">
+        <div class="container">
+            <div class="nav-inner">
+
+                <a href="index.html" class="nav-logo shrink-0">
+                    <img src="assets/images/Logo.svg" class="img-fluid" alt="Logo">
+                </a>
+
+                <ul class="nav-menu max-w-214 w-full justify-between">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li>
+                        <a href="#" class="dropdownlink">Services <span>+</span></a>
+                        <ul>
+                            <li><a href="mobile-app-design.html">Mobile App Design</a></li>
+                            <li><a href="dashboard-design.html">Dashboard Design</a></li>
+                            <li><a href="website-design.html">Website Design</a></li>
+                            <li><a href="web-application-design.html">Web App Design</a></li>
+                            <li><a href="saas-design.html">SaaS Design</a></li>
+                            <li><a href="branding-design.html">Branding</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="case-study.html">Case Studies</a></li>
+                    <li><a href="blog.html">Blogs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="flex items-center gap-4">
+                    <a href="contact.html"
+                        class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out md:block hidden">
+                        <span class="cta-arrow">
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z" fill="currentColor" />
+                            </svg>
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z" fill="white" />
+                            </svg>
+                        </span>
+                        <span class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                            <span>Get a Free SEO Audit</span>
+                            <span>Get a Free SEO Audit</span>
+                        </span>
+                    </a>
+                    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!-- ===== NAVBAR End ===== -->
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <button id="mobileServicesBtn">Services <span>+</span></button>
+                <ul id="mobileServicesSubmenu">
+                    <li><a href="mobile-app-design.html">Mobile App Design</a></li>
+                    <li><a href="dashboard-design.html">Dashboard Design</a></li>
+                    <li><a href="website-design.html">Website Design</a></li>
+                    <li><a href="web-application-design.html">Web App Design</a></li>
+                    <li><a href="saas-design.html">SaaS Design</a></li>
+                    <li><a href="branding-design.html">Branding</a></li>
+                </ul>
+            </li>
+            <li><a href="case-study.html">Case Studies</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="cta-wrap">
+            <a href="contact.html" class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] h-[44px] px-5">
+                <span class="cta-arrow">
+                    <svg viewBox="0 0 16 16"><path d="M12.17 6.78L6.81 1.41 8.22 0 16 7.78 8.22 15.56 6.81 14.14l5.36-5.36H0V6.78h12.17z" /></svg>
+                    <svg viewBox="0 0 16 16"><path d="M12.17 6.78L6.81 1.41 8.22 0 16 7.78 8.22 15.56 6.81 14.14l5.36-5.36H0V6.78h12.17z" /></svg>
+                </span>
+                <span class="cta-text text-[13px] leading-[20px] text-[#0d2235] h-[20px]">
+                    <span>Get a Free SEO Audit</span>
+                    <span>Get a Free SEO Audit</span>
+                </span>
+            </a>
+        </div>
+    </div>
+    <!-- ===== MOBILE MENU End ===== -->
+
+
+    <!-- ===== CAREER DETAILS ===== -->
+    <section class="py-10 md:py-16 sm:px-6">
+        <div class="container mx-auto flex flex-col lg:flex-row lg:gap-12 md:gap-6 gap-4">
+
+         <!-- Left Column: TOC -->
+<aside class="left-aside w-full lg:w-1/5 shrink-0 sticky top-14 z-10">
+    <div class="sm:space-y-6 space-y-2 sticky top-24 z-10">
+ 
+        <!-- Title + Progress bar -->
+        <div class="bg-white">
+            <h3 class="text-2xl font-bold text-[#002F4D] leading-[120%]">Summary</h3>
+            <div class="sm:mt-3 mt-2 w-full sm:h-3 h-2 bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-full overflow-hidden">
+                <div data-toc-progress class="h-full bg-[#076AAB] w-0 rounded-full"></div>
+            </div>
+        </div>
+ 
+        <div class="block lg:hidden">
+            <select data-toc-select
+                class="w-full rounded-xl border border-[#C3E0F3] bg-white text-[#526E80] font-bold text-[15px] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#076AAB] cursor-pointer">
+            </select>
+        </div>
+ 
+        <!-- Desktop nav — JS auto-populates -->
+        <nav data-toc-nav class="hidden lg:block text-sm font-medium bg-white">
+        </nav>
+ 
+    </div>
+</aside>
+
+            <!-- Center Column: Content -->
+            <main data-toc-content class="flex-1 max-w-3xl min-w-0">
+
+                <div class="blog-information flex items-center gap-2">
+                    <div class="inline-flex items-center gap-1 py-1 px-4 justify-center  bg-[radial-gradient(50%_50%_at_50%_50%,#2A8FD2_0%,#076AAB_100%)] rounded-full">
+                        <img src="assets/images/blog-category-icon.svg" alt="blog-category">
+                        <p class="font-bold text-white text-base ">Moving</p>
+                    </div>
+                    <div class="inline-flex items-center gap-1 py-1 px-2 justify-center  bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-full"> 
+                        <p class="font-normal text-[#076AAB] text-base ">03 April</p>
+                    </div>
+                    <div class="inline-flex items-center gap-1 py-1 px-2 justify-center  bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] rounded-full"> 
+                        <p class="font-normal text-[#076AAB] text-base ">Last updated: 12 April</p>
+                    </div>
+
+                </div>
+
+                <div class="case-study-details">
+
+                <div>
+    <h1>1,400% Traffic Growth in 3 Months for SmileCrew Orthodontics</h1>
+    <p>Pledged to serve the community, SmileCrew Orthodontics thrives on healthy smiles. Led by Dr. Connor Steiger, the firm has been providing quality dental health and preventive care to Leicester and the surrounding areas.</p>
+    <p>With PexNet's exceptional dental SEO services, SmileCrew had grown from 100 to 1,500 monthly visitors in just 3 months!</p>
+</div>
+
+<div>
+    <h2>Challenges for SmileCrew</h2>
+    <p>Even with quality dental care, they had significant gaps in their online presence. They approached us to improve their online visibility.</p>
+    <p>After a careful inspection, our team found issues with the website traffic and content quality. For instance:</p>
+
+    <div>
+        <h3>Low organic visibility in Google Search</h3>
+        <p>The website had minimal visibility in industry-specific search results. One of the main reasons was the poor use of keywords on the existing content quality.</p>
+    </div>
+    <div>
+        <h3>Weak Google Maps rankings</h3>
+        <p>They had an NAP inconsistency on their Google Business Profile, resulting in very weak Map-Pack visibility.</p>
+    </div>
+    <div>
+        <h3>Limited service-area targeting</h3>
+        <p>The website lacked clear specifics for the target of Leicester 73, and surrounding areas. In addition, the website lacked local SEO structures.</p>
+    </div>
+    <div>
+        <h3>Only ~100 monthly website visitors</h3>
+        <p>Inconsistent user experience and substandard content quality resulted in a very minimal (~100) monthly number of website visitors.</p>
+    </div>
+    <div>
+        <h3>No strong keyword presence for high-intent orthodontic searches</h3>
+        <p>High-intent keywords, such as 'Orthodontist in Leicester' was significantly missing, resulting in poor brand visibility.</p>
+    </div>
+</div>
+<img src="assets/images/case-study-details-img.png" class="img-fluid" alt="case details image">
+
+
+<div>
+    <h2>What SmileCrew Needed</h2>
+    <p>The client needed expert support to:</p>
+    <ul>
+        <li>Higher rankings in local searches</li>
+        <li>Bring long-blog visibility</li>
+        <li>More qualified website visitors</li>
+        <li>More appointment bookings</li>
+    </ul>
+</div>
+
+<div>
+    <h2>Our Dental SEO Strategy</h2>
+    <p>After a successful audit, the PexNet team had one clear goal: to improve SmileCrew's website's local visibility. To that end, the team started a 3-month aggressive local SEO strategy, drawing on 9+ years of experience working with dental clinics.</p>
+    <p><strong>Analytics and Tools Setup</strong></p>
+    <p>For the audit, our team had to set up analytical tools to measure our progress. For that, we picked:</p>
+    <ul>
+        <li>Google Search Console for Crawling, Sitemaps Setup and Verification</li>
+        <li>Google Analytics 4 for Traffic and Conversion Tracking</li>
+        <li>Domain configuration (newsletter store)</li>
+    </ul>
+    <p>Afterwards, the real show began. From GBP optimization to high intent keyword targeting, the specialists did the following:</p>
+</div>
+<img src="assets/images/case-study-details-img.png" class="img-fluid" alt="case details image">
+<div>
+    <h2>Results After 3 Months</h2>
+    <p>After our team's tireless efforts, SmileCrew's website got a stunning 1,400% increase in organic traffic. From a mere 100 to a staggering 1,400+ monthly visitors, SmileCrew saw more qualified leads, more new patient quotes, and stronger trust and authority.</p>
+</div>
+
+<div>
+    <h2>Traffic Growth</h2>
+    <p>About 1500 visitors judge a business credibility by its website design and browsing experience. The client keeps exploring, reading, and setting up blogs/themes, titles and good for a common-share to different categories.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Before SEO</th>
+                <th>After 3 Months</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monthly Visitors</td>
+                <td>~100</td>
+                <td>1,500+</td>
+            </tr>
+            <tr>
+                <td>Organic Keywords</td>
+                <td>12</td>
+                <td>340+</td>
+            </tr>
+            <tr>
+                <td>Google Maps Ranking</td>
+                <td>Not visible</td>
+                <td>Top 3</td>
+            </tr>
+            <tr>
+                <td>Appointment Inquiries</td>
+                <td>~8/month</td>
+                <td>60+/month</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+                </div>
+
+            </main>
+
+            <!-- Right Column: Sidebar -->
+            <div class="w-full lg:w-1/4 shrink-0  ">
+                <div class="sticky top-24 sm:space-y-6 space-y-3">
+                     <div class="bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] space-y-4 rounded-2xl md:rounded-3xl sm:p-5 p-4 md:p-6">
+                    <div class="mb-3 flex gap-3 ">
+                       <div class=" shrink-0">
+                        <img src="assets/images/riadulislam.png" class="img-fluid" alt="company-logo">
+                       </div>
+                       <div class="space-y-1">
+                            <h4 class="md:text-xl text-lg font-bold text-[#076AAB]">Riadul Islam</h4>
+                            <p class="md:text-sm text-xs text-[#526E80]">Senior SEO Consultant</p>
+                       </div>
+                    </div>
+                        <p class="text-sm leading150 text-[#526E80] line-clamp-3">Riad is a Senior SEO Consult who lives and breathes all things SEO. With 11 years of SEO experience under his belt, he’s now deeply involved in applying AI search technology and data science into niche-specific SEO. He’s an active member of top SEO forums to keep his strategic thinking, problem-solving, and creativity supercharged.</p>
+                  
+                </div>
+
+                <div class="sm:p-5 p-4 md:p-6 border border-[#D4EEFF] rounded-2xl md:rounded-3xl">
+                    <h4 class="text-xl font-bold leading120 text-[#002F4D] md:mb-3 mb-2">Get Quality Leads from Us</h4>
+                    <p class="text-sm leading150 text-[#526E80]">PexNet Newsletter - Subscribe for SEO news, trends, updates, & more.</p>
+                
+                <div class="md:mt-6 mt-4">
+                            <form class="md:space-y-3 space-y-2">
+                                <div class="relative">
+                                    <input type="email" id="email" name="email" placeholder="Email address" required="" class="w-full text-center bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)] text-[#076AAB] placeholder:text-[#526E80] py-4 px-6 text-base h-[52px] flex items-center justify-center leading150 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F] transition duration-200">
+                                </div>
+                                <button type="submit" class="common-cta w-full bg-[#076AAB] text-[#076AAB] text-base h-[56px] flex items-center justify-center font-bold py-2 rounded-full transition duration-300 hover:bg-[#D4EEFF] hover:text-[#002F4D] active:scale-[0.98]">
+                                    <span class="cta-text text-[13px] leading-[20px] text-white group-hover:text-[#002F4D] h-[20px] duration-500 ease-in-out">
+                                        <span>Subscribe</span>
+                                        <span class="text-[#002F4D]">Subscribe</span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                </div>
+
+                  <div class= "rounded-2xl md:rounded-3xl sm:p-5 p-4 md:p-6 border border-[#C3E0F3]">
+                    <h4 class="text-[#002F4D] text-xl font-bold leading-[120%] mb-4">Share this job post</h4>
+                    <div class="flex gap-3">
+                        <a href="#"><img src="assets/images/facebook.svg" alt="facebook"></a>
+                        <a href="#"><img src="assets/images/linkedin.svg" alt="linkedin"></a>
+                        <a href="#"><img src="assets/images/twitter.svg" alt="twitter"></a>
+                        <a href="#"><img src="assets/images/link.svg" alt="link"></a>
+                    </div>
+                </div>
+               
+            </div>
+
+        </div>
+    </section>
+    <!-- ===== CAREER DETAILS End ===== -->
+
+
+    <!-- ===== RELATED OPPORTUNITIES ===== -->
+    <section class="core-value section-padding bg-[#F4FBFF]">
+        <div class="container">
+            <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                <h2
+                    class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#002F4D]">
+                  Related Case Studies</h2>
+                
+            </div>
+
+              <div
+                            class="sm:mt-10 mt-8 md:mt-12  p-4 md:p-6 lg:p-8 rounded-3xl bg-[radial-gradient(50%_50%_at_50%_50%,#FFF_0%,#F4FBFF_33%,#EDF8FF_66%,#DEF2FF_100%)]">
+                            <div
+                                class="grid md:grid-cols-2 grid-cols-1  gap-6 sm:gap-[30px] md:gap-[60px] lg:gap-[128px] items-center">
+                                <div class="proven-result-content flex flex-col gap-6 justify-between h-full">
+                                    <div>
+                                        <div class="flex items-center gap-0 mb-4 md:mb-6">
+                                            <img src="assets/images/proven-icon1.svg" class="img-fluid shrink-0"
+                                                alt="proven result">
+                                            <p
+                                                class="text-xs sm:text-sm font-bold lg:text-base leading-[120%] text-[#076AAB] py-1 px-2 border border-[#076AAB] rounded-full h-[27px] inline-flex items-center">
+                                                Moving SEO</p>
+                                        </div>
+                                        <h3
+                                            class="mb-3 text-2xl sm:text-[28px] lg:text-[32px] font-bold text-[#002F4D] leading120 line-clamp-3">
+                                            <span class="text-[#076AAB]">1,400% Traffic</span> Growth in 3 Months for
+                                            SmileCrew
+                                            Orthodontics</h3>
+                                        <p class="text-[#526E80] text-sm md:text-base leading150 line-clamp-3">In just 3
+                                            months, the clinic saw
+                                            stronger
+                                            rankings, better local visibility, and more qualified patient enquiries.</p>
+                                        <div class="grid grid-cols-3 gap-2 sm:gap-3 md:gap-6 md:mt-8 mt-6">
+                                            <div class="space-y-2">
+                                                <p class="text-xs sm:text-sm lg:text-base text-[#526E80] line-clamp-1">
+                                                    Monthly Visitors</p>
+                                                <h4 class="text-xl md:text-2xl leading-[120%] text-[#002F4D]">1,500+
+                                                </h4>
+                                            </div>
+                                            <div class="space-y-2">
+                                                <p class="text-xs sm:text-sm lg:text-base text-[#526E80] line-clamp-1">
+                                                    Organic Traffic Growth</p>
+                                                <h4 class="text-xl md:text-2xl leading-[120%] text-[#002F4D]">1,400%
+                                                </h4>
+                                            </div>
+                                            <div class="space-y-2">
+                                                <p class="text-xs sm:text-sm lg:text-base text-[#526E80] line-clamp-1">
+                                                    Keywords in Top 3</p>
+                                                <h4 class="text-xl md:text-2xl leading-[120%] text-[#002F4D]">28</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <a href="#proven-results"
+                                        class="max-w-152 w-full min-h-17.5 inline-flex gap-4 justify-between items-center bg-[#D4EEFF] text-white py-3 px-4 md:px-6 rounded-3xl hover:bg-[#62bdfa] border border-[#ABD7F4] transition-colors duration-300">
+
+                                        <div class="flex items-center gap-3">
+                                            <img src="assets/images/company-icon1.svg" class="img-fluid"
+                                                alt="company icon">
+                                            <div class="space-y-1">
+                                                <p
+                                                    class="text-xs sm:text-sm md:text-base leading120 text-[#002F4D] font-bold">
+                                                    SmileCrew
+                                                    Orthodontics
+                                                </p>
+                                                <p class="text-xs sm:text-sm text-[#526E80]">Leander, TX</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="w-[55px] h-[46px] flex items-center justify-end border-l border-l-[#A3CEEB] gap-6">
+                                            <img src="assets/images/proven-arrow-right.svg" class="img-fluid"
+                                                alt="proven arrow right">
+                                        </div>
+
+                                    </a>
+
+                                </div>
+
+                                <div class="resultproven-image rounded-3xl">
+                                    <img src="assets/images/result-proven1.png" class="img-fluid" alt="result proven">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex w-full justify-center md:mt-12 sm:mt-10 mt-8">
+                <a href="contact.html"
+                            class="common-cta bg-[#076AAB] hover:bg-[#BFFB4F] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px] ">
+                            <span class="cta-arrow">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="white" />
+                                </svg>
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </span>
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#fff] group-hover:text-[#00243B] h-[20px] duration-500 ease-in-out">
+                                <span>View more case studies</span>
+                                <span>View more case studies</span>
+                            </span>
+                        </a>
+            </div>
+        </div>
+    </section>
+    <!-- ===== RELATED OPPORTUNITIES End ===== -->
+
+        <!-- cta section end -->
+     <section class="cta section-padding bg-[#00243B]">
+        <div class="container">
+                <div class="common-title max-w-248 w-full mx-auto text-center space-y-4">
+                    <h2
+                        class="lg:text-[56px] md:text-[48px] sm:text-[38px] text-[32px] leading-[120%] font-bold font-notch text-[#fff]">
+                     We’re All Ears!
+                    </h2>
+                    <p class="text-base leading-[150%] text-[#D4EEFF] max-w-184 w-full mx-auto">A simple, open conversation can create new doorways to your professional and business success. Don’t hesitate. Take the first step right now.</p>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:mt-8 mt-6">
+                        <a href="contact.html"
+                            class="common-cta bg-[#BFFB4F] hover:bg-[#05314D] sm:h-13 h-[44px] px-5 group duration-500 ease-in-out">
+                            <span class="cta-arrow">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.143 5.64852L5.673 1.17851L6.8515 0L13.3333 6.48185L6.8515 12.9636L5.673 11.7851L10.143 7.31518H0V5.64852H10.143Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Get a Free SEO Audit</span>
+                                <span>Get a Free SEO Audit</span>
+                            </span>
+                        </a>
+                        <a href="contact.html"
+                            class="common-cta bg-[#88D1FF] hover:bg-[#05314D] h-[44px] px-5 group duration-500 ease-in-out sm:h-13 h-[44px]">
+                            <span
+                                class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                <span>Get a Free SEO Audit</span>
+                                <span>Get a Free SEO Audit</span>
+                            </span>
+                        </a>
+                    </div>
+        </div>
+     </section>
+    <!-- cta section end -->
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-[radial-gradient(50%_50.08%_at_50%_50.08%,#076AAB_0%,#00243B_100%)] border-t border-t-white/12">
+        <div class="container">
+            <div class="grid grid-cols-1 lg:grid-cols-4">
+
+                <div class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-l border-l-white/8 border-r border-r-white/8">
+                    <div class="lg:mb-8 sm:mb-6 mb-4">
+                        <img src="assets/images/logo-footer.svg" class="img-fluid" alt="footer-logo">
+                    </div>
+                    <div class="flex justify-start md:gap-1.5 gap-1 lg:gap-1.5 footer-social-link">
+                        <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors"><img src="assets/images/footer-social1.svg" class="img-fluid" alt="social link"></a>
+                        <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors"><img src="assets/images/footer-social2.svg" class="img-fluid" alt="social link"></a>
+                        <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors"><img src="assets/images/footer-social3.svg" class="img-fluid" alt="social link"></a>
+                        <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors"><img src="assets/images/footer-social4.svg" class="img-fluid" alt="social link"></a>
+                        <a href="#" target="_blank" class="bg-white/8 hover:bg-[#BFFB4F] sm:p-3 p-2 rounded-full sm:h-[56px] h-[40px] sm:w-[56px] w-[40px] flex items-center justify-center transition-colors"><img src="assets/images/footer-social5.svg" class="img-fluid" alt="social link"></a>
+                    </div>
+                </div>
+
+                <div class="col-span-2">
+                    <div class="grid grid-cols-2 border-b lg:border-b-transparent border-b-white/8">
+                        <div class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-l border-t lg:border-l-transparent lg:border-t-transparent border-t-white/8 border-l-white/8 border-r border-r-white/8">
+                            <div class="footer-nav">
+                                <h3 class="text-base sm:text-lg md:text-xl font-bold leading120 text-[#fff] mb-4">Services</h3>
+                                <ul>
+                                    <li><a href="#">SEO for Dental Clinics</a></li>
+                                    <li><a href="#">SEO for Law Firms</a></li>
+                                    <li><a href="#">SEO for Carpet Cleaning Companies</a></li>
+                                    <li><a href="#">SEO for Moving Companies</a></li>
+                                    <li><a href="#">SEO for Restoration Companies</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-nav">
+                                <h3 class="text-base sm:text-lg md:text-xl font-bold leading120 text-[#fff] mb-4">Resources</h3>
+                                <ul>
+                                    <li><a href="#">Case Studies</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-t lg:border-t-transparent border-t-white/8 border-r border-r-white/8">
+                            <div class="footer-nav">
+                                <h3 class="text-base sm:text-lg md:text-xl font-bold leading120 text-[#fff] mb-4">Pexnet</h3>
+                                <ul>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                    <li><a href="#">Faq's</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:px-8 md:px-6 sm:px-4 px-3 lg:py-24 md:py-16 sm:py-8 py-4 border-r border-l lg:border-l-transparent border-l-white/8 border-r-white/8">
+                    <div>
+                        <h3 class="text-xl font-bold text-white sm:mb-4 mb-3">Get Quality Leads from Us</h3>
+                        <p class="text-[#D4EEFF] sm:text-sm text-xs leading150">PexNet Newsletter - Subscribe for SEO news, trends, updates, & more.</p>
+                        <div class="mt-6">
+                            <form class="space-y-3">
+                                <div class="relative">
+                                    <input type="email" id="email" name="email" placeholder="Email address" required
+                                        class="w-full bg-white/8 text-white placeholder:text-[#92B9D2] py-4 px-6 text-base h-[56px] flex items-center justify-center leading150 rounded-full border-none outline-none focus:ring-1 focus:ring-[#BFFB4F] transition duration-200">
+                                </div>
+                                <button type="submit"
+                                    class="common-cta w-full bg-[#88D1FF] text-[#002F4D] text-base h-[56px] flex items-center justify-center font-bold py-2 rounded-full transition duration-300 hover:bg-[#D4EEFF] hover:text-[#00243B] active:scale-[0.98]">
+                                    <span class="cta-text text-[13px] leading-[20px] text-[#00243B] group-hover:text-white h-[20px] duration-500 ease-in-out">
+                                        <span>Subscribe</span>
+                                        <span>Subscribe</span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="border-t border-t-white/12 py-8">
+            <div class="container">
+                <div class="grid md:grid-cols-4 grid-cols-1 justify-center items-center md:text-start text-center gap-4 w-full">
+                    <p class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">© 2026 Pexnet</p>
+                    <div class="col-span-2 grid grid-cols-2">
+                        <a href="#" class="sm:px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">Terms and Conditions</a>
+                        <a href="#" class="sm:px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">Privacy Policy</a>
+                    </div>
+                    <a href="mailto:info@pexnet.com" class="px-8 text-[#D4EEFF] text-sm hover:text-white transition-colors duration-200">info@pexnet.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ===== FOOTER End ===== -->
+
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
