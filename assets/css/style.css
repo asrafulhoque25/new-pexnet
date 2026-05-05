@@ -3681,12 +3681,14 @@ nav {
 }
 .game-changer-wrapper {
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+  padding: 2rem;
 }
 .game-changer {
-  background: radial-gradient(50% 50% at 50% 50%, #FFF 0%, #F4FBFF 33%, #EDF8FF 66%, #DEF2FF 100%);
+  background: radial-gradient( 50% 50% at 50% 50%, #FFF 0%, #F4FBFF 33%, #EDF8FF 66%, #DEF2FF 100% );
   border-radius: 25px;
-  will-change: clip-path;
+  will-change: transform;
+  transform-origin: center center;
 }
 .proven-result-wrap {
   position: relative;

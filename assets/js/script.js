@@ -363,27 +363,24 @@ window.addEventListener('load', () => {
   const gcWrapper = document.querySelector('.game-changer-wrapper');
   if (!gcSection || !gcWrapper) return;
 
-  gsap.set(gcSection, { clipPath: 'circle(160px at 50% 50%)' });
-
-  const gcTl = gsap.timeline({ paused: true });
-  gcTl.to(gcSection, { clipPath: 'circle(150% at 50% 50%)', ease: 'none', duration: 1 });
+  gsap.set(gcSection, {
+    scale: 0.75,
+    transformOrigin: '50% 50%'
+  });
 
   ScrollTrigger.create({
     trigger: gcWrapper,
-    scroller: document.body,
-    start: 'center center',
-    end: '+=1000',
-    pin: gcSection,
-    pinSpacing: true,
-    scrub: 2.5,
-    anticipatePin: 0,
+    start: 'top bottom',
+    end: 'top top',
+    scrub: 1,
     invalidateOnRefresh: true,
-    onUpdate: (self) => gcTl.progress(self.progress),
+    onUpdate(self) {
+      gsap.set(gcSection, {
+        scale: 0.75 + self.progress * 0.25
+      });
+    }
   });
-
-  ScrollTrigger.refresh();
 });
-
 
 
 // PROVEN RESULTS 
