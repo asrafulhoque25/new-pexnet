@@ -364,19 +364,19 @@ window.addEventListener('load', () => {
   if (!gcSection || !gcWrapper) return;
 
   gsap.set(gcSection, {
-    scale: 0.75,
+    scale: 0.85,
     transformOrigin: '50% 50%'
   });
 
   ScrollTrigger.create({
     trigger: gcWrapper,
     start: 'top bottom',
-    end: 'top top',
-    scrub: 1,
+    end: 'top 30%',
+    scrub: 2,
     invalidateOnRefresh: true,
     onUpdate(self) {
       gsap.set(gcSection, {
-        scale: 0.75 + self.progress * 0.25
+        scale: 0.85 + self.progress * 0.15
       });
     }
   });
@@ -390,9 +390,9 @@ window.addEventListener('load', () => {
 
   function getStackConfig() {
     const w = window.innerWidth;
-    if (w < 640)  return { base: 80,  step: 50 };
-    if (w < 1024) return { base: 120, step: 70 };
-    return                { base: 160, step: 60 };
+    if (w < 640)  return { base: 80,  step: 0 };
+    if (w < 1024) return { base: 120, step: 0 };
+    return                { base: 160, step: 0 };
   }
 
   function setCardTops() {
@@ -405,35 +405,31 @@ window.addEventListener('load', () => {
 
   gsap.set(cards, { y: 60, opacity: 0, scale: 0.97, transformOrigin: 'top center', transformPerspective: 1200 });
 
-  cards.forEach((card, i) => {
+  // Common title pin
+  const commonTitle = document.querySelector('.proven-result .common-title');
+  if (commonTitle) {
+    ScrollTrigger.create({
+      trigger: '.proven-section',
+      scroller: document.body,
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: commonTitle,
+      pinSpacing: false,
+    });
+  }
+
+cards.forEach((card, i) => {
     gsap.to(card, {
       y: 0, opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.3)', delay: i * 0.06,
       scrollTrigger: { trigger: card, scroller: document.body, start: 'top 85%', once: true },
     });
 
-    gsap.fromTo(card,
-      { rotateX: 0 },
-      { rotateX: 3, ease: 'none',
-        scrollTrigger: { trigger: card, scroller: document.body, start: 'top 60%', end: 'bottom 20%', scrub: 1.5 } }
-    );
-
-    if (i > 0) {
-      ScrollTrigger.create({
-        trigger: card, scroller: document.body, start: 'top 60%', once: true,
-        onEnter: () => {
-          cards.slice(0, i).forEach((prev, j) => {
-            gsap.to(prev, { scale: 1 - (i - j) * 0.03, duration: 0.5, ease: 'power2.inOut' });
-          });
-        }
-      });
-    }
-
-    card.addEventListener('mouseenter', () => {
-      gsap.to(card, { y: -8, scale: 1.008, duration: 0.4, ease: 'power2.out' });
-    });
-    card.addEventListener('mouseleave', () => {
-      gsap.to(card, { y: 0, scale: 1, duration: 0.6, ease: 'elastic.out(1, 0.6)' });
-    });
+if (i > 0) {
+  ScrollTrigger.create({
+    trigger: card, scroller: document.body, start: 'top 60%', once: true,
+    onEnter: () => {}
+  });
+}
   });
 })();
 
