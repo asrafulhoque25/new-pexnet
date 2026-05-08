@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why SEO Cards - Hover Animation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <style>
+        /* ─── ONLY ANIMATION CSS — Add this to your stylesheet ─── */
+
+        .why-outer {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .why-outer .ripple-bg {
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            background: radial-gradient(
+                500px circle at var(--rx, 50%) var(--ry, 50%),
+                rgba(7, 106, 171, 0.22) 0%,
+                rgba(7, 106, 171, 0.08) 30%,
+                #DEF2FF 65%
+            );
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .why-outer:hover .ripple-bg {
+            opacity: 1;
+        }
+
+        .why-need-card {
+            position: relative;
+            z-index: 1;
+            transition: border-color 0.3s ease;
+        }
+
+        .why-outer:hover .why-need-card {
+            border-color: transparent !important;
+        }
+
+        .why-outer .border-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .why-outer .border-svg rect {
+            fill: none;
+            stroke: #076AAB;
+            stroke-width: 2.5;
+            rx: 23;
+            ry: 23;
+            stroke-dasharray: var(--perimeter, 1200);
+            stroke-dashoffset: var(--perimeter, 1200);
+            transition: stroke-dashoffset 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .why-outer:hover .border-svg rect {
+            stroke-dashoffset: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-10">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl">
+
+        <!-- ✅ YOUR EXACT ORIGINAL HTML — only 2 lines added inside -->
+        <div class="why-outer bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+            <div class="ripple-bg"></div> <!-- ← ADD THIS -->
+            <svg class="border-svg" xmlns="http://www.w3.org/2000/svg"><rect/></svg> <!-- ← ADD THIS -->
+            <div class="why-need-card bg-white md:pt-6 sm:pt-4 pt-3 rounded-3xl border border-[#D4EEFF] h-full">
+                <div class="why-card-img px-3">
+                    <img src="assets/images/why-seo-1.svg" class="img-fluid" alt="why-seo">
+                </div>
+                <div class="why-card-content sm:mt-6 mt-4 md:px-6 sm:px-4 px-3 sm:pb-6 pb-4 md:pb-8">
+                    <h3 class="text-xl sm:text-2xl font-bold leading-[120%] text-[#076AAB] mb-2 sm:mb-3 md:mb-4">
+                        Thin or AI-Heavy Content</h3>
+                    <p class="text-[#526E80] text-xs sm:text-sm leading-[150%]">Once AI became common, so many
+                        businesses generated AI content. But they didn't rank because AI gave everyone more
+                        or less the same, vague content.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="why-outer bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+            <div class="ripple-bg"></div>
+            <svg class="border-svg" xmlns="http://www.w3.org/2000/svg"><rect/></svg>
+            <div class="why-need-card bg-white md:pt-6 sm:pt-4 pt-3 rounded-3xl border border-[#D4EEFF] h-full">
+                <div class="why-card-img px-3">
+                    <img src="assets/images/why-seo-2.svg" class="img-fluid" alt="why-seo">
+                </div>
+                <div class="why-card-content sm:mt-6 mt-4 md:px-6 sm:px-4 px-3 sm:pb-6 pb-4 md:pb-8">
+                    <h3 class="text-xl sm:text-2xl font-bold leading-[120%] text-[#076AAB] mb-2 sm:mb-3 md:mb-4">
+                        Not Investing in SEO</h3>
+                    <p class="text-[#526E80] text-xs sm:text-sm leading-[150%]">Many small businesses wait too long to start
+                        SEO. By then, your competitors already have better service pages, more reviews, and
+                        higher rankings.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="why-outer bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+            <div class="ripple-bg"></div>
+            <svg class="border-svg" xmlns="http://www.w3.org/2000/svg"><rect/></svg>
+            <div class="why-need-card bg-white md:pt-6 sm:pt-4 pt-3 rounded-3xl border border-[#D4EEFF] h-full">
+                <div class="why-card-img px-3">
+                    <img src="assets/images/why-seo-3.svg" class="img-fluid" alt="why-seo">
+                </div>
+                <div class="why-card-content sm:mt-6 mt-4 md:px-6 sm:px-4 px-3 sm:pb-6 pb-4 md:pb-8">
+                    <h3 class="text-xl sm:text-2xl font-bold leading-[120%] text-[#076AAB] mb-2 sm:mb-3 md:mb-4">
+                        Unrealistic Expectations</h3>
+                    <p class="text-[#526E80] text-xs sm:text-sm leading-[150%]">Many entrepreneurs expect quick
+                        results when their site goes live. But when that doesn't work, they think SEO is nothing
+                        but a waste of money.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="why-outer bg-[#DEF2FF] rounded-3xl px-0 pt-0 pb-1.5">
+            <div class="ripple-bg"></div>
+            <svg class="border-svg" xmlns="http://www.w3.org/2000/svg"><rect/></svg>
+            <div class="why-need-card bg-white md:pt-6 sm:pt-4 pt-3 rounded-3xl border border-[#D4EEFF] h-full">
+                <div class="why-card-img px-3">
+                    <img src="assets/images/why-seo-4.svg" class="img-fluid" alt="why-seo">
+                </div>
+                <div class="why-card-content sm:mt-6 mt-4 md:px-6 sm:px-4 px-3 sm:pb-6 pb-4 md:pb-8">
+                    <h3 class="text-xl sm:text-2xl font-bold leading-[120%] text-[#076AAB] mb-2 sm:mb-3 md:mb-4">
+                        Outdated Website Design</h3>
+                    <p class="text-[#526E80] text-xs sm:text-sm leading-[150%]">A website built years ago may look fine to you,
+                        but to Google and your visitors, it signals neglect. Modern UX patterns directly impact your rankings.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ─── ONLY JS NEEDED — Add to your JS file ─── -->
+    <script>
+        document.querySelectorAll('.why-outer').forEach(outer => {
+            const rect = outer.querySelector('.border-svg rect');
+
+            // SVG rect e calc() kaj kore na — tai JS diye size set kora hocche
+            function setRectSize() {
+                const w = outer.offsetWidth;
+                const h = outer.offsetHeight;
+                rect.setAttribute('x', '1.5');
+                rect.setAttribute('y', '1.5');
+                rect.setAttribute('width', w - 3);
+                rect.setAttribute('height', h - 3);
+
+                // Exact perimeter calculate kora — rounded rectangle er jonno
+                const rx = 23;
+                const rw = w - 3;
+                const rh = h - 3;
+                const perimeter = 2 * (rw - 2 * rx) + 2 * (rh - 2 * rx) + 2 * Math.PI * rx;
+                outer.style.setProperty('--perimeter', perimeter.toFixed(1));
+            }
+
+            setRectSize();
+            window.addEventListener('resize', setRectSize);
+
+            // Ripple cursor follow
+            outer.addEventListener('mousemove', (e) => {
+                const box = outer.getBoundingClientRect();
+                outer.style.setProperty('--rx', ((e.clientX - box.left) / box.width * 100).toFixed(1) + '%');
+                outer.style.setProperty('--ry', ((e.clientY - box.top) / box.height * 100).toFixed(1) + '%');
+            });
+
+            outer.addEventListener('mouseleave', () => {
+                outer.style.setProperty('--rx', '50%');
+                outer.style.setProperty('--ry', '50%');
+            });
+        });
+    </script>
+</body>
+</html>

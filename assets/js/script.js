@@ -286,32 +286,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// WHY SEO NEEDED CARDS
-document.querySelectorAll('.why-outer').forEach(card => {
-  const img = card.querySelector('.why-card-img img');
-  if (!img) return;
-
-  let isAnimating = false;
-
-  card.addEventListener('mouseenter', () => {
-    if (isAnimating) return;
-    isAnimating = true;
-    gsap.timeline({ onComplete: () => { isAnimating = false; } })
-      .to(img, { y: -14, skewX: -6, scaleX: 1.04, duration: 0.22, ease: 'power2.out' })
-      .to(img, { y: 8,   skewX: 5,  scaleX: 0.98, duration: 0.28, ease: 'sine.inOut' })
-      .to(img, { y: -6,  skewX: -3, scaleX: 1.02, duration: 0.22, ease: 'sine.inOut' })
-      .to(img, { y: 0,   skewX: 0,  scaleX: 1,    duration: 0.35, ease: 'elastic.out(1, 0.6)' });
-  });
-
-  card.addEventListener('mouseleave', () => {
-    if (!isAnimating) return;
-    gsap.to(img, {
-      y: 0, skewX: 0, scaleX: 1,
-      duration: 0.4, ease: 'power2.out', overwrite: true,
-      onComplete: () => { isAnimating = false; }
-    });
-  });
-});
 
 
 
@@ -2503,3 +2477,99 @@ card.addEventListener('mouseleave', () => {
 });
   });
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+// WHY SEO NEEDED CARDS
+ // ─── ADD THIS TO YOUR JS FILE ───
+
+ 
+ document.querySelectorAll('.cardhoveranimation .why-outer').forEach(card => {
+  const img = card.querySelector('.why-card-img img');
+  if (!img) return;
+
+  let isAnimating = false;
+
+  function createRipple(e) {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const ripple = document.createElement('div');
+    ripple.style.cssText = `
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: scale(0);
+      background: linear-gradient(180deg, rgba(136,209,255,0.35) 0%, rgba(212,238,255,0.18) 100%);
+      box-shadow: 0 6px 0 0 #DEF2FF;
+      opacity: 0.45;
+      width: 20px;
+      height: 20px;
+      left: ${x - 10}px;
+      top: ${y - 10}px;
+      z-index: 0;
+    `;
+
+    card.style.position = 'relative';
+    card.style.overflow = 'hidden';
+    card.appendChild(ripple);
+
+    const maxDim = Math.max(rect.width, rect.height) * 2.5;
+
+    gsap.timeline({ onComplete: () => ripple.remove() })
+      .to(ripple, {
+        scale: maxDim / 20,
+        opacity: 0.35,
+        duration: 0.7,
+        ease: 'power2.out'
+      })
+      .to(ripple, {
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power1.in'
+      }, '-=0.15');
+  }
+
+  card.addEventListener('mouseenter', (e) => {
+    createRipple(e);
+
+    gsap.to(card, {
+      scale: 1.025,
+      duration: 0.4,
+      ease: 'back.out(2)'
+    });
+
+    if (isAnimating) return;
+    isAnimating = true;
+    gsap.timeline({ onComplete: () => { isAnimating = false; } })
+      .to(img, { y: -14, skewX: -6, scaleX: 1.04, duration: 0.22, ease: 'power2.out' })
+      .to(img, { y: 8,   skewX: 5,  scaleX: 0.98, duration: 0.28, ease: 'sine.inOut' })
+      .to(img, { y: -6,  skewX: -3, scaleX: 1.02, duration: 0.22, ease: 'sine.inOut' })
+      .to(img, { y: 0,   skewX: 0,  scaleX: 1,    duration: 0.35, ease: 'elastic.out(1, 0.6)' });
+  });
+
+  card.addEventListener('mouseleave', () => {
+    gsap.to(card, {
+      scale: 1,
+      duration: 0.45,
+      ease: 'power2.out'
+    });
+
+    if (!isAnimating) return;
+    gsap.to(img, {
+      y: 0, skewX: 0, scaleX: 1,
+      duration: 0.4, ease: 'power2.out', overwrite: true,
+      onComplete: () => { isAnimating = false; }
+    });
+  });
+});
