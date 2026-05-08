@@ -911,13 +911,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function placeArrow() {
     var len = path.getTotalLength();
-    var p1  = path.getPointAtLength(len - 3);
-    var p2  = path.getPointAtLength(len + 4);
+    var p1  = path.getPointAtLength(len - 10);
+    var p2  = path.getPointAtLength(len + 8);
 
     var angle = Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Math.PI;
 
     var tipX = 21.3708;
-    var tipY = 5.72535;
+    var tipY = 3.72535;
     var rad  = (angle * Math.PI) / 180;
 
     var rotTipX = tipX * Math.cos(rad) - tipY * Math.sin(rad);
@@ -2492,17 +2492,21 @@ card.addEventListener('mouseleave', () => {
 // WHY SEO NEEDED CARDS
  // ─── ADD THIS TO YOUR JS FILE ───
 
- 
  document.querySelectorAll('.cardhoveranimation .why-outer').forEach(card => {
   const img = card.querySelector('.why-card-img img');
   if (!img) return;
 
   let isAnimating = false;
 
-  function createRipple(e) {
+function createRipple(e) {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
+
+    // ✅ mouse position থেকে card এর চার কোণার সবচেয়ে দূরের distance বের করো
+    const distX = Math.max(x, rect.width - x);
+    const distY = Math.max(y, rect.height - y);
+    const radius = Math.sqrt(distX * distX + distY * distY) * 2;
 
     const ripple = document.createElement('div');
     ripple.style.cssText = `
@@ -2513,10 +2517,10 @@ card.addEventListener('mouseleave', () => {
       background: linear-gradient(180deg, rgba(136,209,255,0.35) 0%, rgba(212,238,255,0.18) 100%);
       box-shadow: 0 6px 0 0 #DEF2FF;
       opacity: 0.45;
-      width: 20px;
-      height: 20px;
-      left: ${x - 10}px;
-      top: ${y - 10}px;
+      width: ${radius}px;
+      height: ${radius}px;
+      left: ${x - radius / 2}px;
+      top: ${y - radius / 2}px;
       z-index: 0;
     `;
 
@@ -2524,29 +2528,27 @@ card.addEventListener('mouseleave', () => {
     card.style.overflow = 'hidden';
     card.appendChild(ripple);
 
-    const maxDim = Math.max(rect.width, rect.height) * 2.5;
-
     gsap.timeline({ onComplete: () => ripple.remove() })
       .to(ripple, {
-        scale: maxDim / 20,
+        scale: 1,           // ✅ fixed size, scale 0 → 1
         opacity: 0.35,
-        duration: 0.7,
-        ease: 'power2.out'
+        duration: 1.2,
+        ease: 'power1.out'
       })
       .to(ripple, {
         opacity: 0,
-        duration: 0.5,
+        duration: 0.8,
         ease: 'power1.in'
-      }, '-=0.15');
+      }, '-=0.2');
   }
 
   card.addEventListener('mouseenter', (e) => {
     createRipple(e);
 
     gsap.to(card, {
-      scale: 1.025,
+      y: -4,
       duration: 0.4,
-      ease: 'back.out(2)'
+      ease: 'power2.out'
     });
 
     if (isAnimating) return;
@@ -2560,7 +2562,7 @@ card.addEventListener('mouseleave', () => {
 
   card.addEventListener('mouseleave', () => {
     gsap.to(card, {
-      scale: 1,
+      y: 0,
       duration: 0.45,
       ease: 'power2.out'
     });
