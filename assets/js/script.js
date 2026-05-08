@@ -2503,7 +2503,7 @@ function createRipple(e) {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    // ✅ mouse position থেকে card এর চার কোণার সবচেয়ে দূরের distance বের করো
+   
     const distX = Math.max(x, rect.width - x);
     const distY = Math.max(y, rect.height - y);
     const radius = Math.sqrt(distX * distX + distY * distY) * 2;
@@ -2530,7 +2530,7 @@ function createRipple(e) {
 
     gsap.timeline({ onComplete: () => ripple.remove() })
       .to(ripple, {
-        scale: 1,           // ✅ fixed size, scale 0 → 1
+        scale: 1,           
         opacity: 0.35,
         duration: 1.2,
         ease: 'power1.out'
