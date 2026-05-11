@@ -2491,7 +2491,6 @@ card.addEventListener('mouseleave', () => {
 
 document.querySelectorAll('.cardhoveranimation .why-outer').forEach(card => {
   const img = card.querySelector('.why-card-img img');
-  if (!img) return;
 
   let isAnimating = false;
 
@@ -2525,52 +2524,36 @@ document.querySelectorAll('.cardhoveranimation .why-outer').forEach(card => {
     card.appendChild(ripple);
 
     gsap.timeline({ onComplete: () => ripple.remove() })
-      .to(ripple, {
-        scale: 1,
-        opacity: 0.3,
-        duration: 0.7,        // ছিল 1.2 → 0.7
-        ease: 'power1.out'
-      })
-      .to(ripple, {
-        opacity: 0,
-        duration: 0.45,       // ছিল 0.8 → 0.45
-        ease: 'power1.in'
-      }, '-=0.15');
+      .to(ripple, { scale: 1, opacity: 0.3, duration: 0.7, ease: 'power1.out' })
+      .to(ripple, { opacity: 0, duration: 0.45, ease: 'power1.in' }, '-=0.15');
   }
 
   card.addEventListener('mouseenter', (e) => {
     createRipple(e);
 
-    gsap.to(card, {
-      y: -4,
-      duration: 0.2,          // ছিল 0.4 → 0.2
-      ease: 'power2.out'
-    });
+    gsap.to(card, { y: -4, duration: 0.2, ease: 'power2.out' });
 
-    if (isAnimating) return;
-    isAnimating = true;
-
-    gsap.timeline({ onComplete: () => { isAnimating = false; } })
-      .to(img, { y: -12, skewX: -5, scaleX: 1.03, duration: 0.13, ease: 'linear' })
-      .to(img, { y:   6, skewX:  4, scaleX: 0.98, duration: 0.13, ease: 'linear' })
-      .to(img, { y:  -4, skewX: -2, scaleX: 1.01, duration: 0.11, ease: 'linear' })
-      .to(img, { y:   0, skewX:  0, scaleX: 1,    duration: 0.22, ease: 'elastic.out(1, 0.5)' });
+ 
+    if (img && !isAnimating) {
+      isAnimating = true;
+      gsap.timeline({ onComplete: () => { isAnimating = false; } })
+        .to(img, { y: -12, skewX: -5, scaleX: 1.03, duration: 0.13, ease: 'linear' })
+        .to(img, { y:   6, skewX:  4, scaleX: 0.98, duration: 0.13, ease: 'linear' })
+        .to(img, { y:  -4, skewX: -2, scaleX: 1.01, duration: 0.11, ease: 'linear' })
+        .to(img, { y:   0, skewX:  0, scaleX: 1,    duration: 0.22, ease: 'elastic.out(1, 0.5)' });
+    }
   });
 
   card.addEventListener('mouseleave', () => {
-    gsap.to(card, {
-      y: 0,
-      duration: 0.25,         // ছিল 0.45 → 0.25
-      ease: 'power2.out'
-    });
+    gsap.to(card, { y: 0, duration: 0.25, ease: 'power2.out' });
 
-    if (!isAnimating) return;
-    gsap.to(img, {
-      y: 0, skewX: 0, scaleX: 1,
-      duration: 0.2,          // ছিল 0.4 → 0.2
-      ease: 'power2.out',
-      overwrite: true,
-      onComplete: () => { isAnimating = false; }
-    });
+  
+    if (img && isAnimating) {
+      gsap.to(img, {
+        y: 0, skewX: 0, scaleX: 1,
+        duration: 0.2, ease: 'power2.out', overwrite: true,
+        onComplete: () => { isAnimating = false; }
+      });
+    }
   });
 });
