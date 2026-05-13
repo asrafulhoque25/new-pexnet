@@ -2563,14 +2563,12 @@ document.querySelectorAll('.cardhoveranimation .why-outer').forEach(card => {
 
 //audit on scroll
 
- // পেজের সব .lottie-hover element খুঁজে বের করো
   document.querySelectorAll('.lottie-hover').forEach(function(el) {
 
-    // প্রতিটা element-এর data-animation path নাও
     const animPath = el.getAttribute('data-animation');
-    if (!animPath) return; // path না থাকলে skip
+    if (!animPath) return; 
 
-    // Lottie load করো — autoplay বন্ধ রাখো
+   
     const anim = lottie.loadAnimation({
       container: el,
       renderer: 'svg',
@@ -2579,10 +2577,9 @@ document.querySelectorAll('.cardhoveranimation .why-outer').forEach(card => {
       path: animPath
     });
 
-    // ScrollTrigger — ঐ element টা দেখা গেলেই চালু
     ScrollTrigger.create({
       trigger: el,
-      start: 'top 85%', // element viewport-এ ঢুকলে
+      start: 'top 85%', 
       end: 'bottom 10%',
       onEnter:     () => anim.play(),
       onLeave:     () => anim.pause(),
