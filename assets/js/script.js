@@ -655,8 +655,11 @@ function initFAQ() {
     const content   = item.querySelector('.faq-content');
     const border    = item.querySelector('.faq-border');
     const iconClose = item.querySelector('.icon-close');
-    const iconOpen  = item.querySelector('.icon-open');
     if (!trigger) return;
+
+    if (iconClose) {
+      iconClose.style.transition = 'transform 0.5s ease-in-out';
+    }
 
     trigger.addEventListener('click', () => {
       const isOpen = item.classList.contains('active');
@@ -667,11 +670,9 @@ function initFAQ() {
           const oc = other.querySelector('.faq-content');
           const ob = other.querySelector('.faq-border');
           const oC = other.querySelector('.icon-close');
-          const oO = other.querySelector('.icon-open');
           if (oc) oc.style.maxHeight = '0';
           if (ob) ob.classList.add('hidden');
-          if (oC) oC.classList.remove('hidden');
-          if (oO) oO.classList.add('hidden');
+          if (oC) oC.style.transform = 'rotate(0deg)';
         }
       });
 
@@ -679,14 +680,12 @@ function initFAQ() {
         item.classList.remove('active');
         if (content)   content.style.maxHeight = '0';
         if (border)    border.classList.add('hidden');
-        if (iconClose) iconClose.classList.remove('hidden');
-        if (iconOpen)  iconOpen.classList.add('hidden');
+        if (iconClose) iconClose.style.transform = 'rotate(0deg)';
       } else {
         item.classList.add('active');
         if (content)   content.style.maxHeight = content.scrollHeight + 'px';
         if (border)    border.classList.remove('hidden');
-        if (iconClose) iconClose.classList.add('hidden');
-        if (iconOpen)  iconOpen.classList.remove('hidden');
+        if (iconClose) iconClose.style.transform = 'rotate(45deg)';
       }
     });
   });
@@ -2556,4 +2555,75 @@ document.querySelectorAll('.cardhoveranimation .why-outer').forEach(card => {
       });
     }
   });
+});
+
+
+
+
+
+//audit on scroll
+
+ // পেজের সব .lottie-hover element খুঁজে বের করো
+  document.querySelectorAll('.lottie-hover').forEach(function(el) {
+
+    // প্রতিটা element-এর data-animation path নাও
+    const animPath = el.getAttribute('data-animation');
+    if (!animPath) return; // path না থাকলে skip
+
+    // Lottie load করো — autoplay বন্ধ রাখো
+    const anim = lottie.loadAnimation({
+      container: el,
+      renderer: 'svg',
+      loop: true,
+      autoplay: false,
+      path: animPath
+    });
+
+    // ScrollTrigger — ঐ element টা দেখা গেলেই চালু
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 85%', // element viewport-এ ঢুকলে
+      end: 'bottom 10%',
+      onEnter:     () => anim.play(),
+      onLeave:     () => anim.pause(),
+      onEnterBack: () => anim.play(),
+      onLeaveBack: () => anim.pause()
+    });
+
+  });
+
+
+
+
+
+
+
+
+
+
+// json animation
+const lottieItems = document.querySelectorAll(".lottie-hover");
+
+lottieItems.forEach((item) => {
+
+  const animation = lottie.loadAnimation({
+    container: item,
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: item.dataset.animation
+  });
+
+  const card = item.closest(".why-need-card");
+
+  card.addEventListener("mouseenter", () => {
+    animation.setDirection(1);
+    animation.play();
+  });
+
+  card.addEventListener("mouseleave", () => {
+    animation.setDirection(-1);
+    animation.play();
+  });
+
 });
