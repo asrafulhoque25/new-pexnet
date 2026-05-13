@@ -1046,117 +1046,169 @@ if (document.querySelector('.quote-mask-img') && document.querySelector('.quote-
     }
   );
 }
+// Lottie instances store করার জন্য
+// Lottie instances — শুধু এই একটাই থাকবে
+const lottieMap = new Map();
 
-//icon global animaiton
+document.querySelectorAll('.logo-lottie-hover').forEach((el) => {
+    const animPath = el.getAttribute('data-animation');
+    if (!animPath) return;
 
+    const anim = lottie.loadAnimation({
+        container: el,
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: animPath
+    });
+
+    anim.addEventListener('DOMLoaded', () => {
+        anim.goToAndStop(anim.totalFrames - 1, true);
+    });
+
+    anim.addEventListener('complete', () => {
+        anim.goToAndStop(anim.totalFrames - 1, true);
+    });
+
+    lottieMap.set(el, anim);
+});
+
+
+
+
+
+
+// icon global animation
 const iconGroups = new Map();
 
 document.querySelectorAll('.anim-icon').forEach((icon) => {
-    const img = icon.querySelector('img, svg');
-    if (!img) return;
+    // Skip if this icon contains a lottie-hover element (handled separately)
+    if (icon.querySelector('.lottie-hover')) return;
 
-  
-    gsap.set(img, {
+    const lottieEl = icon.querySelector('.logo-lottie-hover');
+    const img      = lottieEl ? null : icon.querySelector('img');
+
+    if (!img && !lottieEl) return;
+
+    // target একটাই — lottie থাকলে lottie, নাহলে img
+    const target = lottieEl || img;
+
+    gsap.set(target, {
         scale: 0,
         rotate: -15,
         opacity: 0,
         transformOrigin: 'center center',
     });
 
-    
+  
+    if (lottieEl) {
+        gsap.set(lottieEl.querySelectorAll('svg'), {
+            clearProps: 'all'
+        });
+    }
+
     const parent = icon.closest('.grid, [class*="grid"]') || icon.parentElement;
 
     if (!iconGroups.has(parent)) {
         iconGroups.set(parent, []);
     }
-    iconGroups.get(parent).push({ icon, img });
+    iconGroups.get(parent).push({ icon, target, lottieEl });
 });
 
 
 iconGroups.forEach((items, parent) => {
-    const imgs  = items.map(item => item.img);
-    const icons = items.map(item => item.icon);
+    const targets = items.map(item => item.target);
 
     const animateIn = () => {
-        gsap.to(imgs, {
+        gsap.to(targets, {
             scale: 1,
             rotate: 0,
             opacity: 1,
             duration: 0.65,
             ease: 'back.out(1.7)',
-            stagger: 0.12, 
+            stagger: 0.12,
         });
     };
 
     const animateOut = () => {
-        gsap.to(imgs, {
-            scale: 0,
-            rotate: -15,
-            opacity: 0,
-            duration: 0.35,
-            ease: 'power2.in',
-            stagger: 0, 
+        gsap.to(targets, {
+               scale: 0,
+    rotate: -15,
+    opacity: 0,
+    transformOrigin: 'center center',
+    force3D: true,        // ← GPU layer force
+    z: 0.01,  
         });
     };
 
     ScrollTrigger.create({
-        trigger: parent,  
+        trigger: parent,
         start: 'top 85%',
         end: 'bottom 15%',
         once: false,
-        onEnter:      animateIn,
-        onEnterBack:  animateIn,
-        onLeave:      animateOut,
-        onLeaveBack:  animateOut,
+        onEnter:     animateIn,
+        onEnterBack: animateIn,
+        onLeave:     animateOut,
+        onLeaveBack: animateOut,
     });
-
 
     const STRENGTH = 18;
     const TILT     = 12;
 
-    icons.forEach((icon, i) => {
-        const img = imgs[i];
+    items.forEach(({ icon, target, lottieEl }) => {
 
-        icon.addEventListener('mousemove', (e) => {
-            const rect    = icon.getBoundingClientRect();
-            const cx      = rect.left + rect.width  / 2;
-            const cy      = rect.top  + rect.height / 2;
-            const dx      = e.clientX - cx;
-            const dy      = e.clientY - cy;
-            const dist    = Math.sqrt(dx * dx + dy * dy);
-            const radius  = Math.max(rect.width, rect.height) * 0.85;
-            const pull    = Math.max(0, 1 - dist / radius);
-            const moveX   = (dx / radius) * STRENGTH * pull;
-            const moveY   = (dy / radius) * STRENGTH * pull;
-            const rotateY =  (dx / radius) * TILT;
-            const rotateX = -(dy / radius) * TILT;
+    const logoItem = icon.closest('.logo-item') || icon;
 
-            gsap.to(img, {
-                x: moveX,
-                y: moveY,
-                rotateX,
-                rotateY,
-                scale: 1.08,
-                transformPerspective: 600,
-                transformOrigin: 'center center',
-                duration: 0.35,
-                ease: 'power2.out',
-            });
+    logoItem.addEventListener('mouseenter', () => {
+        if (lottieEl && lottieMap.has(lottieEl)) {
+            lottieMap.get(lottieEl).goToAndPlay(0, true);
+        }
+    });
+
+    logoItem.addEventListener('mousemove', (e) => {  
+        const rect    = icon.getBoundingClientRect(); 
+        const cx      = rect.left + rect.width  / 2;
+        const cy      = rect.top  + rect.height / 2;
+        const dx      = e.clientX - cx;
+        const dy      = e.clientY - cy;
+        const dist    = Math.sqrt(dx * dx + dy * dy);
+        const radius  = Math.max(rect.width, rect.height) * 0.85;
+        const pull    = Math.max(0, 1 - dist / radius);
+        const moveX   = (dx / radius) * STRENGTH * pull;
+        const moveY   = (dy / radius) * STRENGTH * pull;
+        const rotateY =  (dx / radius) * TILT;
+        const rotateX = -(dy / radius) * TILT;
+
+        gsap.to(target, {
+       x: moveX,
+    y: moveY,
+    rotateX,
+    rotateY,
+    // scale নেই
+    transformPerspective: 600,
+    transformOrigin: 'center center',
+    duration: 0.35,
+    ease: 'power2.out',
         });
+    });
 
-        icon.addEventListener('mouseleave', () => {
-            gsap.to(img, {
-                x: 0,
-                y: 0,
-                rotateX: 0,
-                rotateY: 0,
-                scale: 1,
-                duration: 0.6,
-                ease: 'elastic.out(1, 0.5)',
-            });
+    logoItem.addEventListener('mouseleave', () => {  
+        gsap.to(target, {
+            x: 0,
+            y: 0,
+            rotateX: 0,
+            rotateY: 0,
+            scale: 1,
+            duration: 0.6,
+            ease: 'elastic.out(1, 0.5)',
         });
     });
 });
+});
+
+
+
+
 
 
 
@@ -2617,3 +2669,6 @@ lottieItems.forEach((item) => {
   });
 
 });
+
+
+//logo animation on hover
