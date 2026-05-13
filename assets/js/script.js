@@ -2562,34 +2562,27 @@ document.querySelectorAll('.cardhoveranimation .why-outer').forEach(card => {
 
 
 //audit on scroll
-
-  document.querySelectorAll('.lottie-hover').forEach(function(el) {
-
+window.addEventListener('load', () => {
+  document.querySelectorAll('.audit-lottie-hover').forEach(function(el) {
     const animPath = el.getAttribute('data-animation');
-    if (!animPath) return; 
+    if (!animPath) return;
 
-   
     const anim = lottie.loadAnimation({
       container: el,
       renderer: 'svg',
-      loop: true,
+      loop: false,
       autoplay: false,
       path: animPath
     });
 
     ScrollTrigger.create({
       trigger: el,
-      start: 'top 85%', 
-      end: 'bottom 10%',
-      onEnter:     () => anim.play(),
-      onLeave:     () => anim.pause(),
-      onEnterBack: () => anim.play(),
-      onLeaveBack: () => anim.pause()
+      start: 'top 80%',
+      onEnter:     () => { anim.goToAndPlay(0, true); }, // প্রতিবার শুরু থেকে
+      onEnterBack: () => { anim.goToAndPlay(0, true); }  // উপর থেকে আসলেও
     });
-
   });
-
-
+});
 
 
 
