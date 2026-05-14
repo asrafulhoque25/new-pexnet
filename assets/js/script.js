@@ -1184,7 +1184,7 @@ iconGroups.forEach((items, parent) => {
     y: moveY,
     rotateX,
     rotateY,
-    // scale নেই
+  
     transformPerspective: 600,
     transformOrigin: 'center center',
     duration: 0.35,
@@ -2641,8 +2641,8 @@ window.addEventListener('load', () => {
 
 
 
-
-
+// json animation
+// json animation
 // json animation
 const lottieItems = document.querySelectorAll(".lottie-hover");
 
@@ -2656,19 +2656,18 @@ lottieItems.forEach((item) => {
     path: item.dataset.animation
   });
 
+  // Initially last frame e show koro
+  animation.addEventListener("DOMLoaded", () => {
+    animation.goToAndStop(animation.totalFrames - 1, true);
+  });
+
   const card = item.closest(".why-need-card");
 
   card.addEventListener("mouseenter", () => {
-    animation.setDirection(1);
-    animation.play();
-  });
-
-  card.addEventListener("mouseleave", () => {
-    animation.setDirection(-1);
+    animation.goToAndStop(0, true); // first frame e jao
+    animation.setDirection(1); // forward
     animation.play();
   });
 
 });
-
-
 //logo animation on hover
