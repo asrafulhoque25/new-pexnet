@@ -1046,8 +1046,7 @@ if (document.querySelector('.quote-mask-img') && document.querySelector('.quote-
     }
   );
 }
-// Lottie instances store করার জন্য
-// Lottie instances — শুধু এই একটাই থাকবে
+
 const lottieMap = new Map();
 
 document.querySelectorAll('.logo-lottie-hover').forEach((el) => {
@@ -1090,7 +1089,6 @@ document.querySelectorAll('.anim-icon').forEach((icon) => {
 
     if (!img && !lottieEl) return;
 
-    // target একটাই — lottie থাকলে lottie, নাহলে img
     const target = lottieEl || img;
 
     gsap.set(target, {
