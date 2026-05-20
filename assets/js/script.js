@@ -2669,3 +2669,19 @@ lottieItems.forEach((item) => {
 
 });
 //logo animation on hover
+
+
+//logo animation atuo
+
+document.querySelectorAll('.logo-lottie-auto').forEach((el) => {
+    const animPath = el.getAttribute('data-animation');
+    if (!animPath) return;
+
+    const anim = lottie.loadAnimation({
+        container: el,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: animPath
+    });
+});
