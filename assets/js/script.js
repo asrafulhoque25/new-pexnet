@@ -1163,44 +1163,44 @@ iconGroups.forEach((items, parent) => {
         }
     });
 
-    logoItem.addEventListener('mousemove', (e) => {  
-        const rect    = icon.getBoundingClientRect(); 
-        const cx      = rect.left + rect.width  / 2;
-        const cy      = rect.top  + rect.height / 2;
-        const dx      = e.clientX - cx;
-        const dy      = e.clientY - cy;
-        const dist    = Math.sqrt(dx * dx + dy * dy);
-        const radius  = Math.max(rect.width, rect.height) * 0.85;
-        const pull    = Math.max(0, 1 - dist / radius);
-        const moveX   = (dx / radius) * STRENGTH * pull;
-        const moveY   = (dy / radius) * STRENGTH * pull;
-        const rotateY =  (dx / radius) * TILT;
-        const rotateX = -(dy / radius) * TILT;
+    // logoItem.addEventListener('mousemove', (e) => {  
+    //     const rect    = icon.getBoundingClientRect(); 
+    //     const cx      = rect.left + rect.width  / 2;
+    //     const cy      = rect.top  + rect.height / 2;
+    //     const dx      = e.clientX - cx;
+    //     const dy      = e.clientY - cy;
+    //     const dist    = Math.sqrt(dx * dx + dy * dy);
+    //     const radius  = Math.max(rect.width, rect.height) * 0.85;
+    //     const pull    = Math.max(0, 1 - dist / radius);
+    //     const moveX   = (dx / radius) * STRENGTH * pull;
+    //     const moveY   = (dy / radius) * STRENGTH * pull;
+    //     const rotateY =  (dx / radius) * TILT;
+    //     const rotateX = -(dy / radius) * TILT;
 
-        gsap.to(target, {
-       x: moveX,
-    y: moveY,
-    rotateX,
-    rotateY,
+    //     gsap.to(target, {
+    //    x: moveX,
+    // y: moveY,
+    // rotateX,
+    // rotateY,
   
-    transformPerspective: 600,
-    transformOrigin: 'center center',
-    duration: 0.35,
-    ease: 'power2.out',
-        });
-    });
+    // transformPerspective: 600,
+    // transformOrigin: 'center center',
+    // duration: 0.35,
+    // ease: 'power2.out',
+    //     });
+    // });
 
-    logoItem.addEventListener('mouseleave', () => {  
-        gsap.to(target, {
-            x: 0,
-            y: 0,
-            rotateX: 0,
-            rotateY: 0,
-            scale: 1,
-            duration: 0.6,
-            ease: 'elastic.out(1, 0.5)',
-        });
-    });
+    // logoItem.addEventListener('mouseleave', () => {  
+    //     gsap.to(target, {
+    //         x: 0,
+    //         y: 0,
+    //         rotateX: 0,
+    //         rotateY: 0,
+    //         scale: 1,
+    //         duration: 0.6,
+    //         ease: 'elastic.out(1, 0.5)',
+    //     });
+    // });
 });
 });
 
@@ -2345,197 +2345,6 @@ function bindNavClicks(navWrap) {
 
 
 
-
-
-
-
-// ============================================
-// SERVICE CARD ICON ANIMATION
-// ============================================
-(function () {
-  const cards = document.querySelectorAll('.servicecommon-item');
-  if (!cards.length) return;
-
-  // CSS inject
-  const style = document.createElement('style');
-  style.textContent = `
-    .comon-service-box-icon {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      will-change: transform;
-    }
-
-    .comon-service-box-icon img {
-      display: block;
-      transition: transform 0.15s ease;
-      will-change: transform;
-    }
-
-    /* Ripple ring */
-    .svc-icon-ring {
-      position: absolute;
-      inset: -8px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(42, 143, 210, 0);
-      pointer-events: none;
-      transform: scale(0.6);
-      transition: none;
-    }
-
-    /* Glow dot */
-    .svc-icon-glow {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(42,143,210,0.25) 0%, transparent 70%);
-      opacity: 0;
-      pointer-events: none;
-      transform: scale(0.5);
-      transition: none;
-    }
-  `;
-  document.head.appendChild(style);
-
-  cards.forEach(card => {
-    const iconWrap = card.querySelector('.comon-service-box-icon');
-    const img      = iconWrap?.querySelector('img');
-    if (!iconWrap || !img) return;
-
-    // Inject ring + glow
-    const ring = document.createElement('span');
-    ring.className = 'svc-icon-ring';
-    const glow = document.createElement('span');
-    glow.className = 'svc-icon-glow';
-    iconWrap.appendChild(ring);
-    iconWrap.appendChild(glow);
-
-    // State
-    let rafId  = null;
-    let mouseX = 0, mouseY = 0;
-    let curX   = 0, curY   = 0;
-    let inside = false;
-
-    // Initial clipPath reveal on scroll
-    gsap.set(img, { clipPath: 'inset(0 100% 0 0 round 8px)', opacity: 0 });
-
-    ScrollTrigger.create({
-      trigger: card,
-      start: 'top 88%',
-      once: true,
-      onEnter: () => {
-        gsap.to(img, {
-          clipPath: 'inset(0 0% 0 0 round 8px)',
-          opacity: 1,
-          duration: 0.7,
-          ease: 'power3.inOut',
-          onComplete: () => {
-            gsap.set(img, { clearProps: 'clipPath,opacity' });
-          }
-        });
-
-        // Ring burst on reveal
-        gsap.fromTo(ring,
-          { scale: 0.6, opacity: 0, borderColor: 'rgba(42,143,210,0.8)' },
-          { scale: 1.6, opacity: 0, borderColor: 'rgba(42,143,210,0)', duration: 0.8, ease: 'power2.out' }
-        );
-      }
-    });
-
-    // Lerp tick
- function tick() {
-  if (!inside) return;
-  curX += (mouseX - curX) * 0.08;
-  curY += (mouseY - curY) * 0.08;
-
-  const rect = iconWrap.getBoundingClientRect();
-  const cx   = rect.width  / 2;
-  const cy   = rect.height / 2;
-  const dx   = curX - cx;
-  const dy   = curY - cy;
-  const maxR = Math.max(rect.width, rect.height) * 0.7;
-  const pull = Math.max(0, 1 - Math.sqrt(dx * dx + dy * dy) / maxR);
-
-  const moveX = (dx / maxR) * 6 * pull;
-  const moveY = (dy / maxR) * 6 * pull;
-
-  gsap.set(img, {
-    x: moveX,
-    y: moveY,
-    scale: 1 + pull * 0.08,
-    transformOrigin: 'center center',
-  });
-
-  rafId = requestAnimationFrame(tick);
-}
-
-    card.addEventListener('mousemove', e => {
-      const rect = iconWrap.getBoundingClientRect();
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
-
-
-if (!inside) {
-  inside = true;
-  curX = mouseX;
-  curY = mouseY;
-  rafId = requestAnimationFrame(tick);
-
-  // Glow in
-  gsap.to(glow, { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.out' });
-
-  // Smooth bounce — iconWrap এ
-  gsap.killTweensOf(iconWrap);
-  gsap.timeline()
-    .to(iconWrap, { y: -10, duration: 0.25, ease: 'power2.out' })
-    .to(iconWrap, { y: 2,   duration: 0.2,  ease: 'power1.inOut' })
-    .to(iconWrap, { y: -4,  duration: 0.15, ease: 'power1.inOut' })
-    .to(iconWrap, { y: 0,   duration: 0.4,  ease: 'power2.out' });
-
-  // Ring — force visible
-  gsap.set(ring, { scale: 0.8, opacity: 1, borderColor: 'rgba(42,143,210,0.9)', borderWidth: '2px' });
-  gsap.to(ring, {
-    scale: 1.6,
-    opacity: 0,
-    duration: 1.8,
-    ease: 'power1.out',
-    borderColor: 'rgba(42,143,210,0)',
-  });
-}
-    });
-
-card.addEventListener('mouseleave', () => {
-  inside = false;
-  cancelAnimationFrame(rafId);
-
-  gsap.killTweensOf(iconWrap); 
-  gsap.to(iconWrap, { y: 0, duration: 0.3, ease: 'power2.out' }); 
-
-  gsap.to(img, {
-    x: 0, y: 0,
-    rotateX: 0, rotateY: 0,
-    scale: 1,
-    duration: 0.6,
-    ease: 'elastic.out(1, 0.55)',
-  });
-
-  gsap.to(glow, { opacity: 0, scale: 0.5, duration: 0.4, ease: 'power2.in' });
-});
-  });
-})();
-
-
-
-
-
-
-
-
-
-
 // WHY SEO NEEDED CARDS
 
 document.querySelectorAll('.cardhoveranimation .why-outer').forEach(card => {
@@ -2628,8 +2437,8 @@ window.addEventListener('load', () => {
     ScrollTrigger.create({
       trigger: el,
       start: 'top 80%',
-      onEnter:     () => { anim.goToAndPlay(0, true); }, // প্রতিবার শুরু থেকে
-      onEnterBack: () => { anim.goToAndPlay(0, true); }  // উপর থেকে আসলেও
+      onEnter:     () => { anim.goToAndPlay(0, true); },
+      onEnterBack: () => { anim.goToAndPlay(0, true); }  
     });
   });
 });
@@ -2642,10 +2451,10 @@ window.addEventListener('load', () => {
 // json animation
 // json animation
 // json animation
+// json animation — lottie-hover (why-need-card + servicecommon-item)
 const lottieItems = document.querySelectorAll(".lottie-hover");
 
 lottieItems.forEach((item) => {
-
   const animation = lottie.loadAnimation({
     container: item,
     renderer: "svg",
@@ -2654,19 +2463,18 @@ lottieItems.forEach((item) => {
     path: item.dataset.animation
   });
 
-  // Initially last frame e show koro
   animation.addEventListener("DOMLoaded", () => {
     animation.goToAndStop(animation.totalFrames - 1, true);
   });
 
-  const card = item.closest(".why-need-card");
+  const card = item.closest(".why-need-card") || item.closest(".servicecommon-item");
+  if (!card) return;
 
   card.addEventListener("mouseenter", () => {
-    animation.goToAndStop(0, true); // first frame e jao
-    animation.setDirection(1); // forward
+    animation.goToAndStop(0, true);
+    animation.setDirection(1);
     animation.play();
   });
-
 });
 //logo animation on hover
 
@@ -2685,3 +2493,150 @@ document.querySelectorAll('.logo-lottie-auto').forEach((el) => {
         path: animPath
     });
 });
+
+
+// ============================================
+// SERVICE CARD ICON ANIMATION
+// ============================================
+// ============================================
+// SERVICE CARD ICON ANIMATION
+// ============================================
+(function () {
+  const cards = document.querySelectorAll('.servicecommon-item');
+  if (!cards.length) return;
+
+  const style = document.createElement('style');
+  style.textContent = `
+    .comon-service-box-icon {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      will-change: transform;
+    }
+    .comon-service-box-icon img {
+      display: block;
+      transition: transform 0.15s ease;
+      will-change: transform;
+    }
+    .svc-icon-ring {
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(42, 143, 210, 0);
+      pointer-events: none;
+      transform: scale(0.6);
+      transition: none;
+    }
+    .svc-icon-glow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(42,143,210,0.25) 0%, transparent 70%);
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.5);
+      transition: none;
+    }
+  `;
+  document.head.appendChild(style);
+
+  cards.forEach(card => {
+    const iconWrap = card.querySelector('.comon-service-box-icon');
+    if (!iconWrap) return;
+
+    const img      = iconWrap.querySelector('img');
+    const lottieEl = iconWrap.querySelector('.lottie-hover');
+    if (!img && !lottieEl) return;
+
+    // ring + glow inject
+    const ring = document.createElement('span');
+    ring.className = 'svc-icon-ring';
+    const glow = document.createElement('span');
+    glow.className = 'svc-icon-glow';
+    iconWrap.appendChild(ring);
+    iconWrap.appendChild(glow);
+
+    let rafId = null, mouseX = 0, mouseY = 0, curX = 0, curY = 0, inside = false;
+
+    // img clipPath reveal
+    if (img) {
+      gsap.set(img, { clipPath: 'inset(0 100% 0 0 round 8px)', opacity: 0 });
+    }
+
+    ScrollTrigger.create({
+      trigger: card,
+      start: 'top 88%',
+      once: true,
+      onEnter: () => {
+        if (img) {
+          gsap.to(img, {
+            clipPath: 'inset(0 0% 0 0 round 8px)', opacity: 1,
+            duration: 0.7, ease: 'power3.inOut',
+            onComplete: () => gsap.set(img, { clearProps: 'clipPath,opacity' })
+          });
+        }
+        gsap.fromTo(ring,
+          { scale: 0.6, opacity: 0, borderColor: 'rgba(42,143,210,0.8)' },
+          { scale: 1.6, opacity: 0, borderColor: 'rgba(42,143,210,0)', duration: 0.8, ease: 'power2.out' }
+        );
+      }
+    });
+
+    // lerp tick — img only
+    function tick() {
+      if (!inside || !img) return;
+      curX += (mouseX - curX) * 0.08;
+      curY += (mouseY - curY) * 0.08;
+      const rect = iconWrap.getBoundingClientRect();
+      const cx = rect.width / 2, cy = rect.height / 2;
+      const dx = curX - cx, dy = curY - cy;
+      const maxR = Math.max(rect.width, rect.height) * 0.7;
+      const pull = Math.max(0, 1 - Math.sqrt(dx * dx + dy * dy) / maxR);
+      gsap.set(img, {
+        x: (dx / maxR) * 6 * pull,
+        y: (dy / maxR) * 6 * pull,
+        scale: 1 + pull * 0.08,
+        transformOrigin: 'center center',
+      });
+      rafId = requestAnimationFrame(tick);
+    }
+
+    card.addEventListener('mousemove', e => {
+      const rect = iconWrap.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+
+      if (!inside) {
+        inside = true;
+        curX = mouseX;
+        curY = mouseY;
+        if (img) rafId = requestAnimationFrame(tick);
+
+        gsap.to(glow, { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.out' });
+
+        gsap.killTweensOf(iconWrap);
+        gsap.timeline()
+          .to(iconWrap, { y: -10, duration: 0.25, ease: 'power2.out' })
+          .to(iconWrap, { y: 2,   duration: 0.2,  ease: 'power1.inOut' })
+          .to(iconWrap, { y: -4,  duration: 0.15, ease: 'power1.inOut' })
+          .to(iconWrap, { y: 0,   duration: 0.4,  ease: 'power2.out' });
+
+        gsap.set(ring, { scale: 0.8, opacity: 1, borderColor: 'rgba(42,143,210,0.9)', borderWidth: '2px' });
+        gsap.to(ring, { scale: 1.6, opacity: 0, duration: 1.8, ease: 'power1.out', borderColor: 'rgba(42,143,210,0)' });
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      inside = false;
+      cancelAnimationFrame(rafId);
+      gsap.killTweensOf(iconWrap);
+      gsap.to(iconWrap, { y: 0, duration: 0.3, ease: 'power2.out' });
+      if (img) {
+        gsap.to(img, { x: 0, y: 0, rotateX: 0, rotateY: 0, scale: 1, duration: 0.6, ease: 'elastic.out(1, 0.55)' });
+      }
+      gsap.to(glow, { opacity: 0, scale: 0.5, duration: 0.4, ease: 'power2.in' });
+    });
+  });
+})();
